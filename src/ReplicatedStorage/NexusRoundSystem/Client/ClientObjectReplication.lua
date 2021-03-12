@@ -1,0 +1,149 @@
+--[[
+TheNexusAvenger
+
+Replicates objects on the client.
+--]]
+
+local SERVER_TIME_SYNC_DELAY = 3
+local SERVER_TIME_SAMPLES = 5
+local SERVER_TIME_THRESHOLD = 0.1
+
+
+
+local NexusRoundSystem = require(script.Parent.Parent)
+
+local ObjectCreated = NexusRoundSystem:GetResource("NexusRoundSystemReplication.ObjectCreated")
+local SendSignal = NexusRoundSystem:GetResource("NexusRoundSystemReplication.SendSignal")
+local GetObjects = NexusRoundSystem:GetResource("NexusRoundSystemReplication.GetObjects")
+local GetServerTime = NexusRoundSystem:GetResource("NexusRoundSystemReplication.GetServerTime")
+local NexusEventCreator = NexusRoundSystem:GetResource("NexusInstance.Event.NexusEventCreator")
+
+local ClientObjectReplication = NexusRoundSystem:GetResource("Common.ObjectReplication"):Extend()
+ClientObjectReplication:SetClassName("ClientObjectReplication")
+
+
+
+--[[
+Creates the object replicator.
+--]]
+function ClientObjectReplication:__new()
+    self:InitializeSuper()
+
+    --Set the id and incrementer for client-only objects.
+    self.CurrentId = -1
+    self.IdIncrementer = -1
+
+    --Store the loading state.
+    self.ObjectLoaded = NexusEventCreator:CreateEvent()
+    self.InitialObjectsLoading = 0
+
+    --Connect loading new objects.
+    ObjectCreated.OnClientEvent:Connect(function(ObjectData)
+        self:LoadObject(ObjectData)
+    end)
+
+    --Connect listening to events.
+    SendSignal.OnClientEvent:Connect(function(Id,...)
+        local Object = self.ObjectRegistry[Id] or self.DisposeObjectRegistry[Id]
+        if Object then
+            Object:OnSignal(...)
+        end
+    end)
+
+    --Get the server time.
+    self:UpdateServerTime()
+
+    --Set up a loop update the server time until the time has stabilized.
+    --Sometimes the server time is off when a player joins.
+    local ServerTimeOffsets = {self.ServerTimeOffset}
+    local CurrentIndex = 2
+    for _ = 1,SERVER_TIME_SAMPLES - 1 do
+        table.insert(ServerTimeOffsets,math.huge)
+    end
+    coroutine.wrap(function()
+        while true do
+            --Update the server time.
+            wait(SERVER_TIME_SYNC_DELAY)
+            self:UpdateServerTime()
+            ServerTimeOffsets[CurrentIndex] = self.ServerTimeOffset
+            CurrentIndex = (CurrentIndex % SERVER_TIME_SAMPLES) + 1
+
+            --Break the loop if all the samples are "close" (stable).
+            local ValuesClose = true
+            for i = 2,SERVER_TIME_SAMPLES do
+                if math.abs(ServerTimeOffsets[1] - ServerTimeOffsets[i]) > SERVER_TIME_THRESHOLD then
+                    ValuesClose = false
+                    break
+                end
+            end
+            if ValuesClose then
+                break
+            end
+        end
+    end)()
+end
+
+--[[
+Updates the server time.
+--]]
+function ClientObjectReplication:UpdateServerTime()
+    local StartTime = tick()
+    local ServerTime = GetServerTime:InvokeServer()
+    local EndTime = tick()
+    local AverageClientTime = StartTime + ((EndTime - StartTime)/2)
+    self.ServerTimeOffset = ServerTime - AverageClientTime
+end
+
+--[[
+Loads the current objects from the server.
+Done seprately from the constructor due to a
+cyclic dependency.
+--]]
+function ClientObjectReplication:LoadServerObjects()
+    for _,ObjectData in pairs(GetObjects:InvokeServer()) do
+        self.InitialObjectsLoading = self.InitialObjectsLoading + 1
+        coroutine.wrap(function()
+            self:LoadObject(ObjectData)
+            self.InitialObjectsLoading = self.InitialObjectsLoading - 1
+            self.ObjectLoaded:Fire()
+        end)()
+    end
+end
+
+--[[
+Loads an object from serialization data.
+--]]
+function ClientObjectReplication:LoadObject(ObjectData)
+    return self:GetClass(ObjectData.Type).FromSerializedData(ObjectData.Object,ObjectData.Id)
+end
+
+--[[
+Yields for the initial objects to load.
+--]]
+function ClientObjectReplication:YieldForInitialLoad()
+    while self.InitialObjectsLoading > 0 do
+        self.ObjectLoaded:Wait()
+    end
+end
+
+--[[
+Returns the global replicated container.
+If GetGlobalContainer is not called on the server,
+this will yield indefinetly.
+--]]
+function ClientObjectReplication:GetGlobalContainer()
+    self:YieldForInitialLoad()
+    return self:GetObject(0)
+end
+
+--[[
+Returns the current server time.
+May not be completely accurate.
+--]]
+function ClientObjectReplication:GetServerTime()
+    return tick() + self.ServerTimeOffset
+end
+
+
+
+return ClientObjectReplication

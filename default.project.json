@@ -1,0 +1,57 @@
+
+{
+    "name": "Nexus-Battles",
+    "tree": {
+        "$className": "DataModel",
+        "Players": {
+            "$className": "Players",
+            "$properties": {
+                "CharacterAutoLoads": false
+            }
+        },
+        "ReplicatedStorage": {
+            "$className": "ReplicatedStorage",
+            "$path": "src/ReplicatedStorage",
+            "External": {
+                "$className": "Folder",
+                "NexusInstance": {
+                    "$path": "module/Nexus-Instance/src"
+                },
+                "NexusProject": {
+                    "$path": "module/Nexus-Project/src",
+                    "NexusInstance": {
+                        "$path": "module/Nexus-Project/module/Nexus-Instance/src"
+                    }
+                },
+                "NexusButton": {
+                    "$path": "module/Nexus-Button/src",
+                    "NexusInstance": {
+                        "$path": "module/Nexus-Button/module/NexusInstance/src"
+                    }
+                }
+            }
+        },
+        "ServerScriptService": {
+            "$className": "ServerScriptService",
+            "$path": "src/ServerScriptService"
+        },
+        "ServerStorage": {
+            "$className": "ServerStorage",
+            "$path": "src/ServerStorage"
+        },
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+            "$properties": {
+                "LoadCharacterAppearance": false
+            },
+            "StarterPlayerScripts": {
+                "$className": "StarterPlayerScripts",
+                "$path": "src/StarterPlayerScripts"
+            }
+        },
+        "TestService": {
+            "$className": "TestService",
+            "$path": "test"
+        }
+    }
+}
