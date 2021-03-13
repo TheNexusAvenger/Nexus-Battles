@@ -15,6 +15,7 @@ local BORDER_IDLE_ANIMATION_SPEED = 0.5
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
 
 local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
 local ObjectReplication = NexusRoundSystem:GetObjectReplicator()
@@ -223,6 +224,66 @@ function LobbySelectionRound:UpdateAnimationParts()
             Part.Parent = nil
         end
     end
+
+    --Display a red border if the round is full.
+    if #self.Players:GetAll() == self.MaxPlayers then
+        if not self.RoundFullParts then
+            self.RoundFullParts = {}
+            for i = 1,4 do
+                local Border = Instance.new("Part")
+                Border.Transparency = 1
+                Border.CFrame = self.SelectionPart.CFrame * CFrame.Angles(0,math.pi * (i/2),0) * CFrame.new(0,(self.SelectionPart.Size.Y/2) + 2,self.SelectionPart.Size.Z/2)
+                Border.Size = Vector3.new(self.SelectionPart.Size.X,4,0.2)
+                Border.Anchored = true
+                Border.CanCollide = false
+                Border.Parent = self.SelectionPart
+                table.insert(self.RoundFullParts,Border)
+
+                local BorderMesh = Instance.new("SpecialMesh")
+                BorderMesh.MeshType = Enum.MeshType.Brick
+                BorderMesh.Scale = Vector3.new(1,1,0)
+                BorderMesh.Parent = Border
+
+                local FrontGradient = Instance.new("Decal")
+                FrontGradient.Name = "FrontGradient"
+                FrontGradient.Color3 = Color3.new(1,0,0)
+                FrontGradient.Transparency = 1
+                FrontGradient.Texture = "http://www.roblox.com/asset/?id=154741878"
+                FrontGradient.Face = "Front"
+                FrontGradient.Parent = Border
+
+                local BackGradient = Instance.new("Decal")
+                BackGradient.Name = "BackGradient"
+                BackGradient.Color3 = Color3.new(1,0,0)
+                BackGradient.Transparency = 1
+                BackGradient.Texture = "http://www.roblox.com/asset/?id=154741878"
+                BackGradient.Face = "Back"
+                BackGradient.Parent = Border
+
+                TweenService:Create(FrontGradient,TweenInfo.new(0.5),{
+                    Transparency = 0.6,
+                }):Play()
+                TweenService:Create(BackGradient,TweenInfo.new(0.5),{
+                    Transparency = 0.6,
+                }):Play()
+            end
+        end
+    else
+        if self.RoundFullParts then
+            for _,Part in pairs(self.RoundFullParts) do
+                TweenService:Create(Part:WaitForChild("FrontGradient"),TweenInfo.new(0.5),{
+                    Transparency = 1,
+                }):Play()
+                TweenService:Create(Part:WaitForChild("BackGradient"),TweenInfo.new(0.5),{
+                    Transparency = 1,
+                }):Play()
+                delay(0.5,function()
+                    Part:Destroy()
+                end)
+            end
+            self.RoundFullParts = nil
+        end
+    end
 end
 
 --[[
@@ -261,6 +322,12 @@ function LobbySelectionRound:Dispose()
         for _,Part in pairs(self.AnimatedBorderParts) do
             Part:Destroy()
         end
+    end
+    if self.RoundFullParts then
+        for _,Part in pairs(self.RoundFullParts) do
+            Part:Destroy()
+        end
+        self.RoundFullParts = nil
     end
 end
 
