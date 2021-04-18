@@ -18,7 +18,7 @@ NexusRoundSystem:SetResource("NexusInstance.Event.NexusEventCreator",require(Rep
 
 --Set up the replication.
 local NexusRoundSystemReplication
-if RunService:IsServer() then
+if RunService:IsServer() and not ReplicatedStorage:FindFirstChild("NexusRoundSystemReplication") then
     NexusRoundSystemReplication = Instance.new("Folder")
     NexusRoundSystemReplication.Name = "NexusRoundSystemReplication"
     NexusRoundSystemReplication.Parent = ReplicatedStorage
@@ -86,6 +86,9 @@ function NexusRoundSystem:ClearInstances()
         end
     end
     NexusRoundSystem.SingletonInstances = {}
+    delay(1,function()
+        NexusRoundSystemReplication:Destroy()
+    end)
 end
 
 --[[

@@ -97,7 +97,7 @@ end
 --[[
 Starts the round.
 --]]
-function BaseRound:Start(RoundPlayers)
+function BaseRound:Start(RoundPlayers,LoadTimeElapsedCallback)
     --Add the players.
     for _,Player in pairs(RoundPlayers) do
         self.Players:Add(Player)
@@ -109,10 +109,13 @@ function BaseRound:Start(RoundPlayers)
     end)
 
     --Run the load timer.
-    self.Timer:SetDuration(LOAD_TIME)
+    self.Timer:SetDuration(self.LoadTime or LOAD_TIME)
     self.Timer:Start()
     while self.Timer.State ~= "COMPLETE" do
         self.Timer:GetPropertyChangedSignal("State"):Wait()
+    end
+    if LoadTimeElapsedCallback then
+        LoadTimeElapsedCallback()
     end
 
     --Start the main timer.

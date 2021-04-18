@@ -41,6 +41,10 @@ local LeaveRound = Instance.new("RemoteEvent")
 LeaveRound.Name = "LeaveRound"
 LeaveRound.Parent = RoundReplication
 
+local JoinTeam = Instance.new("RemoteEvent")
+JoinTeam.Name = "JoinTeam"
+JoinTeam.Parent = RoundReplication
+
 local ActiveRounds = ObjectReplicator:CreateObject("ReplicatedContainer")
 ActiveRounds.Name = "ActiveRounds"
 ActiveRounds.Parent = ObjectReplicator:GetGlobalContainer()
