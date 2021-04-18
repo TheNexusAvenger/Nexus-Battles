@@ -26,7 +26,7 @@ local FireSuperballEvent = RemoteEventCreator:GetRemoteEvent("FireSuperball")
 
 local LocalEquipSound,LocalThrowSound
 local CurrentAnimation,CurrentIdleAnimation
-local CurrentEquipAnimation,CurrentUnequipAnimation
+local CurrentEquipAnimation
 local CurrentMouse
 local Equipped = false
 local EquipVolume,ThrowVolume = EquipSound.Volume,ThrowSound.Volume
@@ -105,7 +105,6 @@ Tool.Equipped:Connect(function(NewMouse)
         ThrowSound:Stop()
 
         --Play the equip and idle animations.
-        if CurrentUnequipAnimation then CurrentUnequipAnimation:Stop() end
         CurrentEquipAnimation = AnimationPlayer:PlayAnimation("SuperballEquip")
         delay(0.75,function()
             if Equipped then
@@ -123,7 +122,6 @@ Tool.Unequipped:Connect(function()
         if CurrentAnimation then CurrentAnimation:Stop() end
         if CurrentIdleAnimation then CurrentIdleAnimation:Stop() end
         if CurrentEquipAnimation then CurrentEquipAnimation:Stop() end
-        --CurrentUnequipAnimation = AnimationPlayer:PlayAnimation("SuperballUnequip")
 
         --Destroy local sounds.
         if LocalEquipSound then

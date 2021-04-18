@@ -52,7 +52,7 @@ local function UpdateInstance(Ins,Player,PlayerRound)
     elseif Ins:IsA("Humanoid") then
         --Update the visibility of the nametag.
         Ins.DisplayDistanceType = (InSameRound and Enum.HumanoidDisplayDistanceType.Viewer or Enum.HumanoidDisplayDistanceType.None)
-    elseif Ins:IsA("Forcefield") then
+    elseif Ins:IsA("ForceField") then
         --Update the visibility of the forcefield.
         Ins.Visible = InSameRound
     end
