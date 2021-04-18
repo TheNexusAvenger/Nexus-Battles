@@ -6,6 +6,7 @@ Tests the TeamSelection class.
 
 local NexusUnitTesting = require("NexusUnitTesting")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Teams = game:GetService("Teams")
 
 local NexusEventCreator = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusInstance"):WaitForChild("Event"):WaitForChild("NexusEventCreator"))
 local TeamSelection = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("Helper"):WaitForChild("TeamSelection"))
@@ -75,6 +76,7 @@ Tears down the test.
 --]]
 function TeamSelectionTest:Teardown()
     self.ReplicationContainer:Destroy()
+    Teams:ClearAllChildren()
 end
 
 --[[
