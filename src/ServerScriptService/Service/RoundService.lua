@@ -206,6 +206,10 @@ LeaveRound.OnServerEvent:Connect(function(Player)
             --Remove the player.
             Round:RemoveCurrentPlayer(Player)
 
+            --Remove the player team.
+            Player.Team = nil
+            Player.Neutral = true
+
             --Respawn the player.
             CharacterService:SpawnCharacter(Player)
             break
