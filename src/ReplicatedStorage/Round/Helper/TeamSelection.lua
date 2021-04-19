@@ -48,7 +48,7 @@ function TeamSelection:__new()
         self:GetPropertyChangedSignal("ParentRound"):Connect(function()
             if self.ParentRound then
                 self.ParentRound.Players.ItemRemoved:Connect(function(Player)
-                    self.PlayerTeams:Set(Player,nil)
+                    self.PlayerTeams:Set(Player.Name,nil)
                 end)
             end
         end)
@@ -118,7 +118,7 @@ function TeamSelection:SetPlayerTeam(Player,TeamColor)
     --Join the team.
     if NexusRoundSystem:IsServer() then
         --Set the player team.
-        self.PlayerTeams:Set(Player,TeamColor)
+        self.PlayerTeams:Set(Player.Name,TeamColor)
         if not TeamService then
             TeamService = ServerScriptServiceProject:GetResource("Service.TeamService")
         end
@@ -136,7 +136,7 @@ Finalizes the teams before starting a round.
 function TeamSelection:Finalize()
     --Move the unassigned players to a non-full team.
     for _,Player in pairs(self.ParentRound.Players:GetAll()) do
-        if not self.PlayerTeams:Get(Player) then
+        if not self.PlayerTeams:Get(Player.Name) then
             for _,TeamColor in pairs(self.TeamColors) do
                 if not self:IsFull(TeamColor) then
                     self:SetPlayerTeam(Player,TeamColor)

@@ -5,7 +5,7 @@ Base round class used by the game that includes
 a team selection at the beginning.
 --]]
 
-local TEAM_SELECTION_TIME = 20
+local TEAM_SELECTION_TIME = 10
 local DEFAULT_TEAMS = {
     BrickColor.new("Bright blue"),
     BrickColor.new("Bright red"),

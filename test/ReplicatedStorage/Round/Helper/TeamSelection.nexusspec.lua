@@ -33,14 +33,14 @@ function TeamSelectionTest:Setup()
 
     --Create mock players.
     self.MockPlayers = {
-        {UserId = 1},
-        {UserId = 2},
-        {UserId = 3},
-        {UserId = 4},
-        {UserId = 5},
-        {UserId = 6},
-        {UserId = 7},
-        {UserId = 8},
+        {UserId = 1,Name = "MockPlayer1"},
+        {UserId = 2,Name = "MockPlayer2"},
+        {UserId = 3,Name = "MockPlayer3"},
+        {UserId = 4,Name = "MockPlayer4"},
+        {UserId = 5,Name = "MockPlayer5"},
+        {UserId = 6,Name = "MockPlayer6"},
+        {UserId = 7,Name = "MockPlayer7"},
+        {UserId = 8,Name = "MockPlayer8"},
     }
 
     --Create a mock round.
@@ -85,7 +85,7 @@ Tests the SetPlayerTeam method.
 NexusUnitTesting:RegisterUnitTest(TeamSelectionTest.new("SetPlayerTeam"):SetRun(function(self)
     --Assert teams can't be set to invalid colors or players not in the round.
     self.CuT:SetPlayerTeam(self.MockPlayers[1],BrickColor.new("Bright yellow"))
-    self.CuT:SetPlayerTeam({UserId=10},BrickColor.new("Bright blue"))
+    self.CuT:SetPlayerTeam({UserId=10,Name = "MockPlayer10"},BrickColor.new("Bright blue"))
     self:AssertEquals(self.CuT.PlayerTeams.Table,{})
 
     --Assert adding players is set correctly.
@@ -94,19 +94,19 @@ NexusUnitTesting:RegisterUnitTest(TeamSelectionTest.new("SetPlayerTeam"):SetRun(
     self.CuT:SetPlayerTeam(self.MockPlayers[3],BrickColor.new("Bright green"))
     self.CuT:SetPlayerTeam(self.MockPlayers[4],BrickColor.new("Bright red"))
     self:AssertEquals(self.CuT.PlayerTeams.Table,{
-        [self.MockPlayers[1]] = BrickColor.new("Bright blue"),
-        [self.MockPlayers[2]] = BrickColor.new("Bright green"),
-        [self.MockPlayers[3]] = BrickColor.new("Bright green"),
-        [self.MockPlayers[4]] = BrickColor.new("Bright red"),
+        [self.MockPlayers[1].Name] = BrickColor.new("Bright blue"),
+        [self.MockPlayers[2].Name] = BrickColor.new("Bright green"),
+        [self.MockPlayers[3].Name] = BrickColor.new("Bright green"),
+        [self.MockPlayers[4].Name] = BrickColor.new("Bright red"),
     })
 
     --Assert changing teams is set correctly.
     self.CuT:SetPlayerTeam(self.MockPlayers[3],BrickColor.new("Bright red"))
     self:AssertEquals(self.CuT.PlayerTeams.Table,{
-        [self.MockPlayers[1]] = BrickColor.new("Bright blue"),
-        [self.MockPlayers[2]] = BrickColor.new("Bright green"),
-        [self.MockPlayers[3]] = BrickColor.new("Bright red"),
-        [self.MockPlayers[4]] = BrickColor.new("Bright red"),
+        [self.MockPlayers[1].Name] = BrickColor.new("Bright blue"),
+        [self.MockPlayers[2].Name] = BrickColor.new("Bright green"),
+        [self.MockPlayers[3].Name] = BrickColor.new("Bright red"),
+        [self.MockPlayers[4].Name] = BrickColor.new("Bright red"),
     })
     self:AssertFalse(self.CuT:IsFull(BrickColor.new("Bright blue")))
     self:AssertFalse(self.CuT:IsFull(BrickColor.new("Bright green")))
@@ -116,12 +116,12 @@ NexusUnitTesting:RegisterUnitTest(TeamSelectionTest.new("SetPlayerTeam"):SetRun(
     self.CuT:SetPlayerTeam(self.MockPlayers[5],BrickColor.new("Bright green"))
     self.CuT:SetPlayerTeam(self.MockPlayers[6],BrickColor.new("Bright green"))
     self:AssertEquals(self.CuT.PlayerTeams.Table,{
-        [self.MockPlayers[1]] = BrickColor.new("Bright blue"),
-        [self.MockPlayers[2]] = BrickColor.new("Bright green"),
-        [self.MockPlayers[3]] = BrickColor.new("Bright red"),
-        [self.MockPlayers[4]] = BrickColor.new("Bright red"),
-        [self.MockPlayers[5]] = BrickColor.new("Bright green"),
-        [self.MockPlayers[6]] = BrickColor.new("Bright green"),
+        [self.MockPlayers[1].Name] = BrickColor.new("Bright blue"),
+        [self.MockPlayers[2].Name] = BrickColor.new("Bright green"),
+        [self.MockPlayers[3].Name] = BrickColor.new("Bright red"),
+        [self.MockPlayers[4].Name] = BrickColor.new("Bright red"),
+        [self.MockPlayers[5].Name] = BrickColor.new("Bright green"),
+        [self.MockPlayers[6].Name] = BrickColor.new("Bright green"),
     })
     self:AssertFalse(self.CuT:IsFull(BrickColor.new("Bright blue")))
     self:AssertTrue(self.CuT:IsFull(BrickColor.new("Bright green")))
@@ -131,12 +131,12 @@ NexusUnitTesting:RegisterUnitTest(TeamSelectionTest.new("SetPlayerTeam"):SetRun(
     self.CuT:SetPlayerTeam(self.MockPlayers[1],BrickColor.new("Bright green"))
     self.CuT:SetPlayerTeam(self.MockPlayers[7],BrickColor.new("Bright green"))
     self:AssertEquals(self.CuT.PlayerTeams.Table,{
-        [self.MockPlayers[1]] = BrickColor.new("Bright blue"),
-        [self.MockPlayers[2]] = BrickColor.new("Bright green"),
-        [self.MockPlayers[3]] = BrickColor.new("Bright red"),
-        [self.MockPlayers[4]] = BrickColor.new("Bright red"),
-        [self.MockPlayers[5]] = BrickColor.new("Bright green"),
-        [self.MockPlayers[6]] = BrickColor.new("Bright green"),
+        [self.MockPlayers[1].Name] = BrickColor.new("Bright blue"),
+        [self.MockPlayers[2].Name] = BrickColor.new("Bright green"),
+        [self.MockPlayers[3].Name] = BrickColor.new("Bright red"),
+        [self.MockPlayers[4].Name] = BrickColor.new("Bright red"),
+        [self.MockPlayers[5].Name] = BrickColor.new("Bright green"),
+        [self.MockPlayers[6].Name] = BrickColor.new("Bright green"),
     })
     self:AssertFalse(self.CuT:IsFull(BrickColor.new("Bright blue")))
     self:AssertTrue(self.CuT:IsFull(BrickColor.new("Bright green")))
@@ -149,11 +149,11 @@ NexusUnitTesting:RegisterUnitTest(TeamSelectionTest.new("SetPlayerTeam"):SetRun(
     table.remove(self.MockPlayers,5)
     self.MockRound.Players.ItemRemoved:Fire(PlayerToRemove)
     self:AssertEquals(self.CuT.PlayerTeams.Table,{
-        [self.MockPlayers[1]] = BrickColor.new("Bright blue"),
-        [self.MockPlayers[2]] = BrickColor.new("Bright green"),
-        [self.MockPlayers[3]] = BrickColor.new("Bright red"),
-        [self.MockPlayers[4]] = BrickColor.new("Bright red"),
-        [self.MockPlayers[5]] = BrickColor.new("Bright green"),
+        [self.MockPlayers[1].Name] = BrickColor.new("Bright blue"),
+        [self.MockPlayers[2].Name] = BrickColor.new("Bright green"),
+        [self.MockPlayers[3].Name] = BrickColor.new("Bright red"),
+        [self.MockPlayers[4].Name] = BrickColor.new("Bright red"),
+        [self.MockPlayers[5].Name] = BrickColor.new("Bright green"),
     })
     self:AssertFalse(self.CuT:IsFull(BrickColor.new("Bright blue")))
     self:AssertTrue(self.CuT:IsFull(BrickColor.new("Bright green")))
@@ -173,14 +173,14 @@ NexusUnitTesting:RegisterUnitTest(TeamSelectionTest.new("Finalize"):SetRun(funct
     --Finalize the round and assert the players are put into teams correctly.
     self.CuT:Finalize()
     self:AssertEquals(self.CuT.PlayerTeams.Table,{
-        [self.MockPlayers[1]] = BrickColor.new("Bright blue"),
-        [self.MockPlayers[2]] = BrickColor.new("Bright green"),
-        [self.MockPlayers[3]] = BrickColor.new("Bright green"),
-        [self.MockPlayers[4]] = BrickColor.new("Bright red"),
-        [self.MockPlayers[5]] = BrickColor.new("Bright blue"),
-        [self.MockPlayers[6]] = BrickColor.new("Bright blue"),
-        [self.MockPlayers[7]] = BrickColor.new("Bright red"),
-        [self.MockPlayers[8]] = BrickColor.new("Bright red"),
+        [self.MockPlayers[1].Name] = BrickColor.new("Bright blue"),
+        [self.MockPlayers[2].Name] = BrickColor.new("Bright green"),
+        [self.MockPlayers[3].Name] = BrickColor.new("Bright green"),
+        [self.MockPlayers[4].Name] = BrickColor.new("Bright red"),
+        [self.MockPlayers[5].Name] = BrickColor.new("Bright blue"),
+        [self.MockPlayers[6].Name] = BrickColor.new("Bright blue"),
+        [self.MockPlayers[7].Name] = BrickColor.new("Bright red"),
+        [self.MockPlayers[8].Name] = BrickColor.new("Bright red"),
     })
 end))
 

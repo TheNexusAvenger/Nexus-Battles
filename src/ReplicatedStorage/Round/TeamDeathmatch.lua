@@ -21,6 +21,13 @@ Creates the round object.
 function TeamDeathmatch:__new()
     self:InitializeSuper()
     self.Name = "TeamDeathmatch"
+
+    --TODO: Remove
+    self.TeamColors = {
+        BrickColor.new("Bright red"),
+        BrickColor.new("Bright blue"),
+        BrickColor.new("Bright green"),
+    }
 end
 
 --[[
