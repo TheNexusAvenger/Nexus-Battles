@@ -52,6 +52,12 @@
         "TestService": {
             "$className": "TestService",
             "$path": "test"
+        },
+        "Chat": {
+            "$className": "Chat",
+            "$properties": {
+                "BubbleChatEnabled": true
+            }
         }
     }
 }
