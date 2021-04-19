@@ -14,7 +14,6 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local CurrentRoundState = ReplicatedStorageProject:GetResource("State.CurrentRound")
-local TextButtonFactory = ReplicatedStorageProject:GetResource("External.NexusButton.Factory.TextButtonFactory")
 local JoinTeamTextButtonFactory = ReplicatedStorageProject:GetResource("External.NexusButton.Factory.TextButtonFactory").CreateDefault(Color3.new(1,1,1))
 JoinTeamTextButtonFactory:SetTextDefault("Font",Enum.Font.SourceSansBold)
 JoinTeamTextButtonFactory:SetTextDefault("Text","JOIN")
@@ -99,7 +98,6 @@ local function CurrentRoundChanged(CurrentRound)
     local PlayerImages = {}
     local JoinTeamButtons = {}
     TeamSelectionGui.Enabled = true
-    --TODO: Implement rest
 
     --[[
     Updates the player grid layout.
