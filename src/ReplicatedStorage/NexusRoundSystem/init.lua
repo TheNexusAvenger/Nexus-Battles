@@ -9,10 +9,13 @@ local RunService = game:GetService("RunService")
 
 local NexusProject = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusProject"))
 local NexusRoundSystem = NexusProject.new(script)
-NexusRoundSystem.SingletonInstances = {}
 NexusRoundSystem:SetResource("NexusInstance.NexusInstance",require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusInstance"):WaitForChild("NexusInstance")))
 NexusRoundSystem:SetResource("NexusInstance.NexusObject",require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusInstance"):WaitForChild("NexusObject")))
 NexusRoundSystem:SetResource("NexusInstance.Event.NexusEventCreator",require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusInstance"):WaitForChild("Event"):WaitForChild("NexusEventCreator")))
+NexusRoundSystem.SingletonInstanceLoaded = NexusRoundSystem:GetResource("NexusInstance.Event.NexusEventCreator"):CreateEvent()
+NexusRoundSystem.LoadingSingletonInstances = {}
+NexusRoundSystem.SingletonInstances = {}
+NexusRoundSystem.ReplicationLoadStarted = false
 
 
 
@@ -66,9 +69,17 @@ Intended for objects that can only have
 1 instance.
 --]]
 function NexusRoundSystem:GetInstance(Path)
+    --Wait for the instance to load if it is loading.
+    while NexusRoundSystem.LoadingSingletonInstances[Path] do
+        NexusRoundSystem.SingletonInstanceLoaded:Wait()
+    end
+
     --Create the singleton instance if non exists.
     if not NexusRoundSystem.SingletonInstances[Path] then
+        NexusRoundSystem.LoadingSingletonInstances[Path] = true
         NexusRoundSystem.SingletonInstances[Path] = NexusRoundSystem:GetResource(Path).new()
+        NexusRoundSystem.SingletonInstanceLoaded:Fire()
+        NexusRoundSystem.LoadingSingletonInstances[Path] = nil
     end
 
     --Return the singleton instance.
@@ -98,9 +109,10 @@ function NexusRoundSystem:GetObjectReplicator()
     if self:IsServer() then
         return self:GetInstance("Server.ServerObjectReplication")
     else
-        if not NexusRoundSystem.SingletonInstances["Client.ClientObjectReplication"] then
-            local ClientObjectReplication = self:GetInstance("Client.ClientObjectReplication")
-            ClientObjectReplication:LoadServerObjects()
+        local Replication = self:GetInstance("Client.ClientObjectReplication")
+        if not NexusRoundSystem.ReplicationLoadStarted then
+            NexusRoundSystem.ReplicationLoadStarted = true
+            Replication:LoadServerObjects()
         end
         return self:GetInstance("Client.ClientObjectReplication")
     end

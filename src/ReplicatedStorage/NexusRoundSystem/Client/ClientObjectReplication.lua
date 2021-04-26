@@ -36,9 +36,20 @@ function ClientObjectReplication:__new()
     --Store the loading state.
     self.ObjectLoaded = NexusEventCreator:CreateEvent()
     self.InitialObjectsLoading = 0
+    self.InitialIds = nil --Set in LoadServerObjects
 
     --Connect loading new objects.
     ObjectCreated.OnClientEvent:Connect(function(ObjectData)
+        --Return if the object will be or has been created by the initial ids.
+        --This is due to a race condition where this is invoked first.
+        if not self.InitialIds then
+            self:GetPropertyChangedSignal("InitialIds"):Wait()
+        end
+        if self.InitialIds[ObjectData.Id] then
+            return
+        end
+
+        --Create the object.
         self:LoadObject(ObjectData)
     end)
 
@@ -100,7 +111,17 @@ Done seprately from the constructor due to a
 cyclic dependency.
 --]]
 function ClientObjectReplication:LoadServerObjects()
-    for _,ObjectData in pairs(GetObjects:InvokeServer()) do
+    --Get the ids of the objects.
+    --This is done before creating objects from ObjectCreated due to a race condition where it is invoked first.
+    local InitialObjects = GetObjects:InvokeServer()
+    local InitialIds = {}
+    for _,ObjectData in pairs(InitialObjects) do
+        InitialIds[ObjectData.Id] = true
+    end
+    self.InitialIds = InitialIds
+
+    --Load to the objects.
+    for _,ObjectData in pairs(InitialObjects) do
         self.InitialObjectsLoading = self.InitialObjectsLoading + 1
         coroutine.wrap(function()
             self:LoadObject(ObjectData)
