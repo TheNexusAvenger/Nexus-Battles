@@ -16,6 +16,7 @@ local ServerStorage = game:GetService("ServerStorage")
 
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 local CharacterService
+local StatService
 
 local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
 local ObjectReplication = NexusRoundSystem:GetObjectReplicator()
@@ -49,6 +50,30 @@ function BaseRound:__new()
     self:AddToSerialization("RoundContainer")
     self:AddToSerialization("Players","ObjectReference")
     self:AddToSerialization("Timer","ObjectReference")
+
+    --Store the stats.
+    self.RoundStats = {
+        {
+            Name = "KOs",
+            ValueType = "IntValue",
+            DefaultValue = 0,
+        },
+        {
+            Name = "WOs",
+            ValueType = "IntValue",
+            DefaultValue = 0,
+        },
+        {
+            Name = "CurrentStreak",
+            ValueType = "IntValue",
+            DefaultValue = 0,
+        },
+        {
+            Name = "MaxStreak",
+            ValueType = "IntValue",
+            DefaultValue = 0,
+        },
+    }
 
     --Set up the spawn points.
     self.SpawnPoints = {
@@ -98,6 +123,15 @@ end
 Starts the round.
 --]]
 function BaseRound:Start(RoundPlayers,LoadTimeElapsedCallback)
+    --Create the temporary stats.
+    self:LoadServices()
+    for _,Player in pairs(RoundPlayers) do
+        local Stats = StatService:GetTemporaryStats(Player)
+        for _,StatData in pairs(self.RoundStats) do
+            Stats:Create(StatData.Name,StatData.ValueType,StatData.DefaultValue)
+        end
+    end
+
     --Add the players.
     for _,Player in pairs(RoundPlayers) do
         self.Players:Add(Player)
@@ -143,6 +177,20 @@ function BaseRound:End()
 end
 
 --[[
+Loads the services if it wasn't done so already.
+Can't be loaded the beginning due to a cyclic dependency,
+and they can only be loaded on the server.
+--]]
+function BaseRound:LoadServices()
+    if not CharacterService then
+        CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
+    end
+    if not StatService then
+        StatService = ServerScriptServiceProject:GetResource("Service.StatService")
+    end
+end
+
+--[[
 Sets if automatic spawning of a player is enabled.
 --]]
 function BaseRound:SetSpawningEnabled(Player,Enabled)
@@ -162,13 +210,8 @@ function BaseRound:SpawnPlayer(Player)
         local SpawnPart = SpawnParts.Parts[SpawnParts.CurrentSpawn]
         SpawnParts.CurrentSpawn = (SpawnParts.CurrentSpawn % #SpawnParts.Parts) + 1
 
-        --Load the CharacterService if it wasn't done so already.
-        --Can't be loaded the beginning due to a cyclic dependency.
-        if not CharacterService then
-            CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
-        end
-
         --Teleport the player.
+        self:LoadServices()
         local Character = CharacterService:SpawnCharacter(Player)
         CharacterService:AddForceField(Player)
         if not Character then return end
@@ -196,9 +239,7 @@ Despawns a player.
 function BaseRound:DespawnPlayer(Player)
     if not Player or not Player.Parent or not self.Players:Contains(Player) then return end
     if not Player.Character then return end
-    if not CharacterService then
-        CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
-    end
+    self:LoadServices()
     CharacterService:DespawnCharacter(Player)
 end
 
@@ -254,7 +295,11 @@ Removes a player currently in the round,
 such as when the round ends.
 --]]
 function BaseRound:RemoveCurrentPlayer(Player)
-    self.Players:Remove(Player)
+    if self.Players:Contains(Player) then
+        self.Players:Remove(Player)
+        self:LoadServices()
+        StatService:ClearTemporaryStats(Player)
+    end
 end
 
 
