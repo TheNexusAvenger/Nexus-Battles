@@ -2,9 +2,6 @@
 TheNexusAvenger
 
 Service for damaging players.
-
-TODO: Connect humanoids dieing; current implementation makes it so
-players who reset or fall into the void don't register kills.
 --]]
 
 local TAG_EXPIRE_TIME_SECONDS = 10
@@ -26,40 +23,19 @@ DamageService.PlayersToHumanoids = {}
 
 
 --[[
-Damages a humanoid.
+Connects a character being added.
 --]]
-function DamageService:DamageHumanoid(Humanoid,Damage,DamagingPlayer,DamagingToolName)
-    if not Humanoid.Parent then return end
-    if Humanoid.Health == 0 then return end
-    Damage = math.min(Damage,Humanoid.Health)
+local function CharacterAdded(Character)
+    --Return if there is no character.
+    if not Character then return end
+    local Player = Players:GetPlayerFromCharacter(Character)
 
-    --Set up the humanoid.
-    local Player = Players:GetPlayerFromCharacter(Humanoid.Parent)
-    if not self.HumanoidTags[Humanoid] then
-        self.HumanoidTags[Humanoid] = {}
-        if Player then
-            self.PlayersToHumanoids[Player] = Humanoid
-        end
-    end
-
-    --Add the tag.
-    if DamagingPlayer or Player then
-        table.insert(self.HumanoidTags[Humanoid],{
-            Damage = Damage,
-            Player = DamagingPlayer or Player,
-            Tool = DamagingToolName,
-            Time = tick(),
-        })
-    end
-
-    --Damage the humanoid.
-    Humanoid:TakeDamage(Damage)
-
-    --Award the player kill.
-    if Humanoid.Health <= 0 and Player then
+    --Connect the character being killed.
+    local Humanoid = Character:WaitForChild("Humanoid")
+    Humanoid.Died:Connect(function()
         --Split the tags by damaging player.
         local HumanoidTagsByPlayer = {}
-        for _,Tag in pairs(self.HumanoidTags[Humanoid]) do
+        for _,Tag in pairs(DamageService.HumanoidTags[Humanoid] or {}) do
             if tick() - Tag.Time  <= TAG_EXPIRE_TIME_SECONDS then
                 --Store the killing player information.
                 if not HumanoidTagsByPlayer[Tag.Player] then
@@ -136,7 +112,47 @@ function DamageService:DamageHumanoid(Humanoid,Damage,DamagingPlayer,DamagingToo
                 DamagedPlayerPersistentStats:Get("MostWOs"):Set(DamagedPlayerTemporaryStats:Get("WOs"):Get())
             end
         end
+    end)
+end
+
+--[[
+Connects a player being added.
+--]]
+local function PlayerAdded(Player)
+    Player.CharacterAdded:Connect(CharacterAdded)
+    CharacterAdded(Player.Character)
+end
+
+
+--[[
+Damages a humanoid.
+--]]
+function DamageService:DamageHumanoid(Humanoid,Damage,DamagingPlayer,DamagingToolName)
+    if not Humanoid.Parent then return end
+    if Humanoid.Health == 0 then return end
+    Damage = math.min(Damage,Humanoid.Health)
+
+    --Set up the humanoid.
+    local Player = Players:GetPlayerFromCharacter(Humanoid.Parent)
+    if not self.HumanoidTags[Humanoid] then
+        self.HumanoidTags[Humanoid] = {}
+        if Player then
+            self.PlayersToHumanoids[Player] = Humanoid
+        end
     end
+
+    --Add the tag.
+    if DamagingPlayer or Player then
+        table.insert(self.HumanoidTags[Humanoid],{
+            Damage = Damage,
+            Player = DamagingPlayer or Player,
+            Tool = DamagingToolName,
+            Time = tick(),
+        })
+    end
+
+    --Damage the humanoid.
+    Humanoid:TakeDamage(Damage)
 
     --Display the indicator.
     local Head = Humanoid.Parent:FindFirstChild("Head")
@@ -151,6 +167,12 @@ end
 
 
 --Connect players leaving.
+Players.PlayerAdded:Connect(PlayerAdded)
+for _,Player in pairs(Players:GetPlayers()) do
+    coroutine.wrap(function()
+        PlayerAdded(Player)
+    end)()
+end
 Players.PlayerRemoving:Connect(function(Player)
     DamageService.PlayersToHumanoids[Player] = nil
 end)
