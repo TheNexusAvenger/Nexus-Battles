@@ -5,6 +5,7 @@ Controls the UI for the timer and round loading.
 --]]
 
 local ZOOM_TIME_THRESHOLD = 30
+local TICK_SOUND = "rbxassetid://156286438"
 
 
 
@@ -12,6 +13,7 @@ local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
 local Lighting = game:GetService("Lighting")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local SoundService = game:GetService("SoundService")
 local TweenService = game:GetService("TweenService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
@@ -21,6 +23,10 @@ local CurrentRoundState = ReplicatedStorageProject:GetResource("State.CurrentRou
 local GameTypes = ReplicatedStorageProject:GetResource("Data.GameTypes")
 
 
+
+--Create the timer tick sound.
+local TickSound = Instance.new("Sound")
+TickSound.SoundId = TICK_SOUND
 
 --Create the user interface.
 local RoundGui = Instance.new("ScreenGui")
@@ -168,6 +174,7 @@ local function CurrentRoundChanged(CurrentRound)
         if RemainingTime ~= LastRemainingTime then
             LastRemainingTime = RemainingTime
             if RemainingTime <= ZOOM_TIME_THRESHOLD then
+                SoundService:PlayLocalSound(TickSound)
                 TweenService:Create(TimerTimeScale,TweenInfo.new(0.25),{
                     Scale = 1.5,
                 }):Play()
