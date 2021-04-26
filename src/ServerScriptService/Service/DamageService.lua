@@ -9,16 +9,14 @@ players who reset or fall into the void don't register kills.
 
 local TAG_EXPIRE_TIME_SECONDS = 10
 
-local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local ServerStorage = game:GetService("ServerStorage")
-local PhysicsService = game:GetService("PhysicsService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
 local LocalEffectService = ServerScriptServiceProject:GetResource("Service.LocalEffectService")
+local StatService = ServerScriptServiceProject:GetResource("Service.StatService")
 
 local DamageService = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
 DamageService:SetClassName("DamageService")
@@ -91,18 +89,53 @@ function DamageService:DamageHumanoid(Humanoid,Damage,DamagingPlayer,DamagingToo
         end
 
         --Award the kill.
+        local DamagedPlayerPersistentStats = StatService:GetPersistentStats(Player)
+        local DamagedPlayerTemporaryStats = StatService:GetTemporaryStats(Player,false)
         if not MostDamagePlayer or MostDamagePlayer == Player then
-            --TODO: Player killed self
-            print("Player killed self: "..tostring(Player))
+            --Display the killfeed.
+            print("Player killed self: "..tostring(Player)) --TODO: Killfeed
         else
-            --TODO: Award kill
-            print(tostring(Player).." killed by "..tostring(MostDamagePlayer).." with "..tostring(MostDamageTool))
-            --TODO: Give kill
+            --Display the killfeed.
+            print(tostring(Player).." killed by "..tostring(MostDamagePlayer).." with "..tostring(MostDamageTool)) --TODO: Killfeed
+
+            --Drop the coins.
             --TODO: Drop coins
-            --TODO: Show killing player
-            LocalEffectService:PlayLocalEffect(Player,"FocusKillingPlayer",DamagingPlayer)
+
+            --Increment the stats.
+            local KillingPlayerPersistentStats = StatService:GetPersistentStats(MostDamagePlayer)
+            local KillingPlayerTemporaryStats = StatService:GetTemporaryStats(MostDamagePlayer,false)
+            KillingPlayerPersistentStats:Create("TotalKOs_"..tostring(MostDamageTool))
+            KillingPlayerPersistentStats:Get("TotalKOs"):Increment(1)
+            KillingPlayerPersistentStats:Get("TotalKOs_"..tostring(MostDamageTool)):Increment(1)
+            if KillingPlayerTemporaryStats then
+                KillingPlayerTemporaryStats:Create("KOs_"..tostring(MostDamageTool))
+                KillingPlayerTemporaryStats:Get("KOs"):Increment(1)
+                KillingPlayerTemporaryStats:Get("KOs_"..tostring(MostDamageTool)):Increment(1)
+                KillingPlayerTemporaryStats:Get("CurrentStreak"):Increment(1)
+                if KillingPlayerTemporaryStats:Get("CurrentStreak"):Get() > KillingPlayerTemporaryStats:Get("MaxStreak"):Get() then
+                    KillingPlayerTemporaryStats:Get("MaxStreak"):Set(KillingPlayerTemporaryStats:Get("CurrentStreak"):Get())
+                end
+                if KillingPlayerTemporaryStats:Get("KOs"):Get() > KillingPlayerPersistentStats:Get("MostKOs"):Get() then
+                    KillingPlayerPersistentStats:Get("MostKOs"):Set(KillingPlayerTemporaryStats:Get("KOs"):Get())
+                end
+                if KillingPlayerTemporaryStats:Get("CurrentStreak"):Get() > KillingPlayerPersistentStats:Get("LongestKOStreak"):Get() then
+                    KillingPlayerPersistentStats:Get("LongestKOStreak"):Set(KillingPlayerTemporaryStats:Get("CurrentStreak"):Get())
+                end
+            end
+
+            --Focus on the credited player.
+            LocalEffectService:PlayLocalEffect(Player,"FocusKillingPlayer",MostDamagePlayer)
         end
-        --TODO: Give Wipeout
+
+        --Award the wipeout.
+        DamagedPlayerPersistentStats:Get("TotalWOs"):Increment(1)
+        if DamagedPlayerTemporaryStats then
+            DamagedPlayerTemporaryStats:Get("WOs"):Increment(1)
+            DamagedPlayerTemporaryStats:Get("CurrentStreak"):Set(0)
+            if DamagedPlayerTemporaryStats:Get("WOs"):Get() > DamagedPlayerPersistentStats:Get("MostWOs"):Get() then
+                DamagedPlayerPersistentStats:Get("MostWOs"):Set(DamagedPlayerTemporaryStats:Get("WOs"):Get())
+            end
+        end
     end
 
     --Display the indicator.

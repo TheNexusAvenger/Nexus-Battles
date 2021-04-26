@@ -90,9 +90,11 @@ end
 --[[
 Returns the temporary stat container for the player.
 --]]
-function StatService:GetTemporaryStats(Player)
+function StatService:GetTemporaryStats(Player,Create)
+    if Create == nil then Create = true end
+
     --Create the temporary stats if they don't exist.
-    if not self.CachedTemporaryStats[Player] then
+    if not self.CachedTemporaryStats[Player] and Create then
         self.CachedTemporaryStats[Player] = StatContainer.GetContainer(Player,"TemporaryStats")
     end
 
