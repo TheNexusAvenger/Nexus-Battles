@@ -19,6 +19,7 @@ local LobbySelectionService = ServerScriptServiceProject:GetResource("Service.Lo
 
 --Load the services that don't load immediately.
 ServerScriptServiceProject:GetResource("Service.LocalEffectService")
+ServerScriptServiceProject:GetResource("Service.StatService")
 
 --Initialize the lobby selection parts.
 for i = 1,3 do

@@ -101,8 +101,8 @@ function StatContainer:SetDataSource(DataSource)
         table.insert(self.DataSourceEvents,ValueObject:GetPropertyChangedSignal("Value"):Connect(function()
             self.DataSource:Set(ValueObject.Name,ValueObject.Value)
         end))
-        table.insert(self.DataSourceEvents,self.DataSource:OnUpdate(ValueObject.Name):Connect(function(ChangedValue)
-            if NewValue then
+        table.insert(self.DataSourceEvents,self.DataSource:OnUpdate(ValueObject.Name,function(ChangedValue)
+            if ChangedValue then
                 ValueObject.Value = ChangedValue
             end
         end))

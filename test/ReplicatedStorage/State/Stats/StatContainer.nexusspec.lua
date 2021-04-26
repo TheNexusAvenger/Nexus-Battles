@@ -67,8 +67,10 @@ NexusUnitTesting:RegisterUnitTest(StatContainerTest.new("SetDataSource"):SetRun(
         Set = function(_,Name,Value)
             MockValues[Name] = Value
         end,
-        OnUpdate = function(_,Name)
-            return MockEvents[Name].Event
+        OnUpdate = function(_,Name,Callback)
+            return MockEvents[Name].Event:Connect(function()
+                Callback(MockValues[Name])
+            end)
         end,
     }
 

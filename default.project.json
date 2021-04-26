@@ -28,6 +28,9 @@
                     "NexusInstance": {
                         "$path": "module/Nexus-Button/module/NexusInstance/src"
                     }
+                },
+                "NexusDataStore": {
+                    "$path": "module/Nexus-Data-Store/src"
                 }
             }
         },

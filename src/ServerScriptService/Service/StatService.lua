@@ -59,6 +59,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
+local NexusDataStore = ReplicatedStorageProject:GetResource("External.NexusDataStore")
 local StatContainer = ReplicatedStorageProject:GetResource("State.Stats.StatContainer")
 
 local StatService = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
@@ -75,7 +76,14 @@ function StatService:GetPersistentStats(Player)
     --Create the persistent stats if they don't exist.
     if not self.CachedPersistentStats[Player] then
         self.CachedPersistentStats[Player] = StatContainer.GetContainer(Player,"PersistentStats")
-        --TODO: Set data source for DataStores.
+
+        --Set the data source.
+        local Worked,Error = pcall(function()
+            self.CachedPersistentStats[Player]:SetDataSource(NexusDataStore:GetSaveData(Player))
+        end)
+        if not Worked then
+            warn("Failed to set data source for "..tostring(Player).." because: "..tostring(Error))
+        end
 
         --Create the stats.
         for _,StatData in pairs(DEFAULT_STATS) do
@@ -113,6 +121,16 @@ function StatService:ClearTemporaryStats(Player)
 end
 
 
+
+--Connect players joining and load the persistent stats.
+Players.PlayerAdded:Connect(function(Player)
+    StatService:GetPersistentStats(Player)
+end)
+for _,Player in pairs(Players:GetPlayers()) do
+    coroutine.wrap(function()
+        StatService:GetPersistentStats(Player)
+    end)()
+end
 
 --Connect players leaving.
 Players.PlayerRemoving:Connect(function(Player)
