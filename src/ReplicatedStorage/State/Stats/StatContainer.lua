@@ -73,6 +73,49 @@ function StatContainer:Get(Name)
 end
 
 --[[
+Sets the persistent data source to use.
+--]]
+function StatContainer:SetDataSource(DataSource)
+    --Set the data source.
+    self.DataSource = DataSource
+    if self.DataSourceEvents then
+        for _,Event in pairs(self.DataSourceEvents) do
+            Event:Disconnect()
+        end
+        self.DataSourceEvents = nil
+    end
+    if not self.DataSource then return end
+    self.DataSourceEvents = {}
+
+    --[[
+    Connects changes to the stat value object.
+    --]]
+    local function ConnectValueObject(ValueObject)
+        --Set the initial value.
+        local NewValue = DataSource:Get(ValueObject.Name)
+        if NewValue then
+            ValueObject.Value = NewValue
+        end
+
+        --Connect the value changing.
+        table.insert(self.DataSourceEvents,ValueObject:GetPropertyChangedSignal("Value"):Connect(function()
+            self.DataSource:Set(ValueObject.Name,ValueObject.Value)
+        end))
+        table.insert(self.DataSourceEvents,self.DataSource:OnUpdate(ValueObject.Name):Connect(function(ChangedValue)
+            if NewValue then
+                ValueObject.Value = ChangedValue
+            end
+        end))
+    end
+
+    --Connect stats changing.
+    table.insert(self.DataSourceEvents,self.Container.ChildAdded:Connect(ConnectValueObject))
+    for _,ValueObject in pairs(self.Container:GetChildren()) do
+        ConnectValueObject(ValueObject)
+    end
+end
+
+--[[
 Destroys the container.
 --]]
 function StatContainer:Destroy()
