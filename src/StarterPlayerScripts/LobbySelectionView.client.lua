@@ -14,8 +14,7 @@ local NexusRoundSystem = ReplicatedStorageProject:GetResource("NexusRoundSystem"
 local LobbySelectionRounds = NexusRoundSystem:GetObjectReplicator():GetGlobalContainer():WaitForChildBy("Name","LobbySelectionRounds")
 local SetReady = ReplicatedStorageProject:GetResource("Replication.Lobby.SetReady")
 local CurrentRoundState = ReplicatedStorageProject:GetResource("State.CurrentRound")
-local GreenTextButtonFactory = ReplicatedStorageProject:GetResource("External.NexusButton.Factory.TextButtonFactory").CreateDefault(Color3.new(0,170/255,0))
-GreenTextButtonFactory:SetTextDefault("Font",Enum.Font.SourceSansBold)
+local GreenTextButtonFactory = ReplicatedStorageProject:GetResource("UI.AudibleTextButtonFactory").CreateDefault(Color3.new(0,170/255,0))
 
 
 
