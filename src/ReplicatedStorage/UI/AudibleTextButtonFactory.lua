@@ -18,6 +18,9 @@ local TextButtonFactory = ReplicatedStorageProject:GetResource("External.NexusBu
 local AudibleTextButtonFactory = TextButtonFactory:Extend()
 AudibleTextButtonFactory:SetClassName(AudibleTextButtonFactory)
 
+local ClickSound = Instance.new("Sound")
+ClickSound.SoundId = CLICK_SOUND
+
 
 
 --[[
@@ -69,9 +72,7 @@ function AudibleTextButtonFactory:Create()
 
     --Connect the button being clicked and play a sound.
     Button.MouseButton1Down:Connect(function()
-        local Sound = Instance.new("Sound")
-        Sound.SoundId = CLICK_SOUND
-        SoundService:PlayLocalSound(Sound)
+        SoundService:PlayLocalSound(ClickSound)
     end)
 
     --Return the button and textlabel.
