@@ -34,6 +34,9 @@ Returns the player that reflected the ball, if any.
 --]]
 local function GetReflectedByPlayer()
     local ReflectedByValue = FiredByValue:FindFirstChild("ReflectedBy")
+    while ReflectedByValue and ReflectedByValue:FindFirstChild("ReflectedBy") do
+        ReflectedByValue = ReflectedByValue:FindFirstChild("ReflectedBy")
+    end
     return ReflectedByValue and ReflectedByValue.Value
 end
 

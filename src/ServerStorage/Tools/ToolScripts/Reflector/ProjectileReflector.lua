@@ -27,17 +27,29 @@ local function ReflectProjectiles(Handle,Center)
     local Character = Handle.Parent.Parent
     local Player = Players:GetPlayerFromCharacter(Character)
 
+    --Set the reflected tags.
+    --Actually reflecting is done by the client.
     local Parts = Workspace:FindPartsInRegion3(Region3.new(Center - REFLECT_RADIUS,Center + REFLECT_RADIUS),Character,100)
     for _,Projectile in pairs(Parts) do
         local FiredByValue = Projectile:FindFirstChild("FiredBy")
         if FiredByValue and FiredByValue.Value and not Projectile:FindFirstChild("BodyWeld") then
-            local ReflectedBy = FiredByValue:FindFirstChild("ReflectedBy")
-            if (not ReflectedBy and FiredByValue.Value ~= Player) or (ReflectedBy and ReflectedBy.Value ~= Player) then
-                if ReflectedBy then ReflectedBy:Destroy() end
-                ReflectedBy = Instance.new("ObjectValue")
+            --Get the last relevant tag.
+            local LatestTag = FiredByValue
+            while LatestTag:FindFirstChild("ReflectedBy") do
+                LatestTag = LatestTag:FindFirstChild("ReflectedBy")
+            end
+
+            --Add the ReflectedBy tag.
+            if LatestTag.Value ~= Player then
+                local ReflectedBy = Instance.new("ObjectValue")
                 ReflectedBy.Name = "ReflectedBy"
                 ReflectedBy.Value = Player
-                ReflectedBy.Parent = FiredByValue
+                ReflectedBy.Parent = LatestTag
+
+                local LocallyReflected = Instance.new("BoolValue")
+                LocallyReflected.Name = "LocallyReflected"
+                LocallyReflected.Value = false
+                LocallyReflected.Parent = ReflectedBy
             end
         end
     end

@@ -24,20 +24,30 @@ local function ReflectProjectiles(Handle,Center)
     local Character = Handle.Parent.Parent
     local Player = Players:GetPlayerFromCharacter(Character)
 
+    --Reflect the parts.
     local Parts = Workspace:FindPartsInRegion3(Region3.new(Center - REFLECT_RADIUS,Center + REFLECT_RADIUS),Character,100)
     for _,Projectile in pairs(Parts) do
         local FiredByValue = Projectile:FindFirstChild("FiredBy")
         if FiredByValue and FiredByValue.Value and not Projectile:FindFirstChild("BodyWeld") then
-            local ReflectedBy = FiredByValue:FindFirstChild("ReflectedBy")
-            if (not ReflectedBy and FiredByValue.Value ~= Player) or (ReflectedBy and ReflectedBy.Value ~= Player) then
-                local SourceHumanoidRootPart = FiredByValue.Value.Character:FindFirstChild("HumanoidRootPart")
+            --Determine the last 2 relevant tags.
+            local LastTag,CurrentTag = nil,FiredByValue
+            while CurrentTag:FindFirstChild("ReflectedBy") do
+                LastTag = CurrentTag
+                CurrentTag = CurrentTag:FindFirstChild("ReflectedBy")
+            end
+            local CurrentLocallyReflected = CurrentTag:FindFirstChild("LocallyReflected")
+
+            --Reflect the part if the projectile was shot or reflected by someone else.
+            if (CurrentTag.Value ~= Player) or (LastTag and CurrentLocallyReflected and CurrentTag.Value == Player and LastTag.Value ~= Player and not CurrentLocallyReflected.Value) then
+                if CurrentLocallyReflected then CurrentLocallyReflected.Value = true end
+                local TargetPlayer = (LastTag and LastTag.Value ~= Player and LastTag.Value) or CurrentTag.Value
+                local SourceHumanoidRootPart = TargetPlayer.Character:FindFirstChild("HumanoidRootPart")
                 if SourceHumanoidRootPart then
                     local SourcePos = SourceHumanoidRootPart.Position
                     local NewStartPos = Projectile.Position
                     local NewCF = CFrame.new(NewStartPos,SourcePos)
                     local NewDirection = NewCF.LookVector.Unit
                     local Velocity = Projectile.AssemblyLinearVelocity.Magnitude
-
                     Projectile.CFrame = NewCF
                     Projectile.AssemblyLinearVelocity = NewDirection * Velocity
 
