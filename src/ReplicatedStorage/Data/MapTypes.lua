@@ -6,7 +6,7 @@ Maps that can be used.
 
 return {
     Bloxburg = {
-        GameTypes = {"TeamDeathmatch",},
+        GameTypes = {"FreeForAll",},
 		ImageId = 116668979, --TODO: Update image
 		Lighting = {
 			Ambient = Color3.new(70/255,70/255,70/255),

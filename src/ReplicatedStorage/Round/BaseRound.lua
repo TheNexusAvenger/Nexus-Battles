@@ -57,11 +57,13 @@ function BaseRound:__new()
             Name = "KOs",
             ValueType = "IntValue",
             DefaultValue = 0,
+            ShowInLeaderstats = true,
         },
         {
             Name = "WOs",
             ValueType = "IntValue",
             DefaultValue = 0,
+            ShowInLeaderstats = true,
         },
         {
             Name = "CurrentStreak",

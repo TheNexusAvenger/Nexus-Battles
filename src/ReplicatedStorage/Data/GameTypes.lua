@@ -68,7 +68,7 @@ return {
 	TeamDeathmatch = {
         DisplayName = "Team Deathmatch",
         Description = "Team vs team!",
-        RequiredPlayers = 1, --TODO: Revert after Nexus Admin integrated
+        RequiredPlayers = DEFAULT_REQUIRED_PLAYERS_TEAMS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.TeamDeathmatch",
     },
