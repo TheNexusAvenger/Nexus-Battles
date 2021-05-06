@@ -13,6 +13,7 @@ local HEADER_SPACING_HEIGHT_RELATIVE = 0.75
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+local StatsSorter = ReplicatedStorageProject:GetResource("State.Stats.StatsSorter")
 local BaseEntry = ReplicatedStorageProject:GetResource("UI.PlayerList.BaseEntry")
 local TeamHeader = ReplicatedStorageProject:GetResource("UI.PlayerList.TeamHeader")
 local PlayerEntry = ReplicatedStorageProject:GetResource("UI.PlayerList.PlayerEntry")
@@ -50,6 +51,7 @@ function RoundPlayerlist:__new(RoundPlayers)
         end
 
         --Update the stats of the player entries.
+        self.StatsSorter = StatsSorter.new(self.Stats)
         for _,Entry in pairs(self.PlayerEntries) do
             Entry.Stats = self.Stats
         end
@@ -122,7 +124,7 @@ Returns the groups of entries to display in order.
 --]]
 function RoundPlayerlist:GetEntryGroups()
     --Create the initial groups.
-    local UngroupedEntries = {}
+    local UngroupedEntriesMap = {}
     local TeamEntries = {}
     local TeamEntriesMap = {}
     for _,TeamColor in pairs(self.TeamColors or {}) do
@@ -130,32 +132,48 @@ function RoundPlayerlist:GetEntryGroups()
             ColorName = TeamColor.Name,
             TeamHeader = self.TeamHeaders[TeamColor.Name],
             Entries = {},
+            EntriesMap = {},
         }
         table.insert(TeamEntries,NewEntry)
         TeamEntriesMap[TeamColor.Name] = NewEntry
     end
 
-    --Add the player entries.
-    for Player,Entry in pairs(self.PlayerEntries) do
-        if Player.Neutral or not TeamEntriesMap[Player.TeamColor.Name] then
-            table.insert(UngroupedEntries,Entry)
-        else
-            table.insert(TeamEntriesMap[Player.TeamColor.Name].Entries,Entry)
-        end
-    end
-
-    --Sort the player entries.
-    --TODO: Sort based on stats.
-
-    --Sort the team entries by group.
+    --Sort the team entries by group name.
     table.sort(TeamEntries,function(a,b)
         return string.lower(a.ColorName) < string.lower(b.ColorName)
     end)
 
-    --Add the ungroup entried and return.
+    --Add the ungrouped players map.
     table.insert(TeamEntries,{
-        Entries = UngroupedEntries,
+        Entries = {},
+        EntriesMap = UngroupedEntriesMap,
     })
+
+    --Add the player entries.
+    for Player,Entry in pairs(self.PlayerEntries) do
+        if Player.Neutral or not TeamEntriesMap[Player.TeamColor.Name] then
+            UngroupedEntriesMap[Player] = Entry
+        else
+            TeamEntriesMap[Player.TeamColor.Name].EntriesMap[Player] = Entry
+        end
+    end
+
+    --Sort the player entries.
+    for _,TeamGroup in pairs(TeamEntries) do
+        --Create the list of players.
+        local PlayersToSort = {}
+        for Player,_ in pairs(TeamGroup.EntriesMap) do
+            table.insert(PlayersToSort,Player)
+        end
+
+        --Get the sorted players and add them to the entries.
+        local SortedPlayers = self.StatsSorter:GetSortedPlayers(PlayersToSort)
+        for _,Player in pairs(SortedPlayers) do
+            table.insert(TeamGroup.Entries,TeamGroup.EntriesMap[Player])
+        end
+    end
+
+    --Return the team entries.
     return TeamEntries
 end
 

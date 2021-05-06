@@ -58,12 +58,14 @@ function BaseRound:__new()
             ValueType = "IntValue",
             DefaultValue = 0,
             ShowInLeaderstats = true,
+            Prefer = "Higher",
         },
         {
             Name = "WOs",
             ValueType = "IntValue",
             DefaultValue = 0,
             ShowInLeaderstats = true,
+            Prefer = "Lower",
         },
         {
             Name = "CurrentStreak",
