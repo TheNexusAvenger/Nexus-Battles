@@ -36,6 +36,12 @@ end
 Returns a list of players in order by their temporary stats.
 --]]
 function StatSorter:GetSortedPlayers(Players,OverrideMVPs)
+    --Clone the Players table.
+    local NewPlayers = {}
+    for _,Player in pairs(Players) do
+        table.insert(NewPlayers,Player)
+    end
+
     --Convert the most valuable players to a map.
     local OverrideMVPsMap = {}
     for _,Player in pairs(OverrideMVPs or {}) do
@@ -43,7 +49,7 @@ function StatSorter:GetSortedPlayers(Players,OverrideMVPs)
     end
 
     --Sort the players.
-    table.sort(Players,function(Player1,Player2)
+    table.sort(NewPlayers,function(Player1,Player2)
         --Get the player stats.
         local Player1Stats,Player2Stats = Player1:FindFirstChild("TemporaryStats"),Player2:FindFirstChild("TemporaryStats")
 
@@ -75,7 +81,7 @@ function StatSorter:GetSortedPlayers(Players,OverrideMVPs)
     end)
 
     --Return the player.
-    return Players
+    return NewPlayers
 end
 
 
