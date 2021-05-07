@@ -174,14 +174,16 @@ local function CurrentRoundChanged(CurrentRound)
         if RemainingTime ~= LastRemainingTime then
             LastRemainingTime = RemainingTime
             if RemainingTime <= ZOOM_TIME_THRESHOLD then
-                SoundService:PlayLocalSound(TickSound)
-                TweenService:Create(TimerTimeScale,TweenInfo.new(0.25),{
-                    Scale = 1.5,
-                }):Play()
-                wait(0.25)
-                TweenService:Create(TimerTimeScale,TweenInfo.new(0.25),{
-                    Scale = 1,
-                }):Play()
+                coroutine.wrap(function()
+                    SoundService:PlayLocalSound(TickSound)
+                    TweenService:Create(TimerTimeScale,TweenInfo.new(0.25),{
+                        Scale = 1.5,
+                    }):Play()
+                    wait(0.25)
+                    TweenService:Create(TimerTimeScale,TweenInfo.new(0.25),{
+                        Scale = 1,
+                    }):Play()
+                end)()
             end
         end
 
