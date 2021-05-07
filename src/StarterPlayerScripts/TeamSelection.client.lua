@@ -18,6 +18,7 @@ local JoinTeamTextButtonFactory = ReplicatedStorageProject:GetResource("UI.Audib
 JoinTeamTextButtonFactory:SetTextDefault("Text","JOIN")
 JoinTeamTextButtonFactory:SetDefault("Size",UDim2.new(4,0,1,0))
 JoinTeamTextButtonFactory:SetDefault("SizeConstraint",Enum.SizeConstraint.RelativeYY)
+local TextTimer = ReplicatedStorageProject:GetResource("UI.TextTimer")
 
 
 
@@ -64,6 +65,19 @@ TeamButtonList.HorizontalAlignment = Enum.HorizontalAlignment.Center
 TeamButtonList.FillDirection = Enum.FillDirection.Horizontal
 TeamButtonList.Parent = TeamButtonView
 
+local TeamSelectionTimerText = Instance.new("TextLabel")
+TeamSelectionTimerText.BackgroundTransparency = 1
+TeamSelectionTimerText.Size = UDim2.new(0.1,0,0.065,0)
+TeamSelectionTimerText.SizeConstraint = Enum.SizeConstraint.RelativeYY
+TeamSelectionTimerText.AnchorPoint = Vector2.new(0.5,0.5)
+TeamSelectionTimerText.Font = "SourceSansBold"
+TeamSelectionTimerText.TextColor3 = Color3.new(0,0,0)
+TeamSelectionTimerText.TextStrokeColor3 = Color3.new(1,1,1)
+TeamSelectionTimerText.TextStrokeTransparency = 0
+TeamSelectionTimerText.TextScaled = true
+TeamSelectionTimerText.Text = "0:00"
+TeamSelectionTimerText.Parent = TeamSelectionGui
+
 
 
 --[[
@@ -97,6 +111,7 @@ local function CurrentRoundChanged(CurrentRound)
     local PlayerImages = {}
     local JoinTeamButtons = {}
     TeamSelectionGui.Enabled = true
+    local TeamSelectionTimer = TextTimer.new(TeamSelectionTimerText,CurrentRound.Timer)
 
     --[[
     Updates the player grid layout.
@@ -146,6 +161,9 @@ local function CurrentRoundChanged(CurrentRound)
             ButtonsMultiplier = ScreenSize.X/RequiredButtonsWidth
         end
         TeamButtonView.Size = UDim2.new(0.065 * 4 * ButtonsMultiplier,0,0.065 * ButtonsMultiplier,0)
+
+        --Update the timer position.
+        TeamSelectionTimerText.Position = UDim2.new(1,-(0.04 + (0.1/2)) * ScreenSize.Y,0.9,-(0.04 + (0.065/2)) * ScreenSize.Y)
     end
 
     --[[
@@ -273,6 +291,7 @@ local function CurrentRoundChanged(CurrentRound)
     for _,JoinButton in pairs(JoinTeamButtons) do
         JoinButton.Button:Destroy()
     end
+    TeamSelectionTimer:Destroy()
     TeamSelectionGui.Enabled = false
 end
 
