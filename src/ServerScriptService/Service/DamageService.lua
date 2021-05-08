@@ -5,6 +5,9 @@ Service for damaging players.
 --]]
 
 local TAG_EXPIRE_TIME_SECONDS = 10
+local MINIMUM_KILLS_FOR_INCREASED_COINS = 3
+
+
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -12,7 +15,9 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
+local CoinService = ServerScriptServiceProject:GetResource("Service.CoinService")
 local LocalEffectService = ServerScriptServiceProject:GetResource("Service.LocalEffectService")
+local RoundService = ServerScriptServiceProject:GetResource("Service.RoundService")
 local StatService = ServerScriptServiceProject:GetResource("Service.StatService")
 
 local DamageService = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
@@ -74,9 +79,6 @@ local function CharacterAdded(Character)
             --Display the killfeed.
             print(tostring(Player).." killed by "..tostring(MostDamagePlayer).." with "..tostring(MostDamageTool)) --TODO: Killfeed
 
-            --Drop the coins.
-            --TODO: Drop coins
-
             --Increment the stats.
             local KillingPlayerPersistentStats = StatService:GetPersistentStats(MostDamagePlayer)
             local KillingPlayerTemporaryStats = StatService:GetTemporaryStats(MostDamagePlayer,false)
@@ -96,6 +98,19 @@ local function CharacterAdded(Character)
                 end
                 if KillingPlayerTemporaryStats:Get("CurrentStreak"):Get() > KillingPlayerPersistentStats:Get("LongestKOStreak"):Get() then
                     KillingPlayerPersistentStats:Get("LongestKOStreak"):Set(KillingPlayerTemporaryStats:Get("CurrentStreak"):Get())
+                end
+            end
+
+            --Drop the coins.
+            local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+            if HumanoidRootPart then
+                local TotalCoins = 4
+                local KillStreak = KillingPlayerTemporaryStats:Get("CurrentStreak"):Get()
+                if KillStreak >= MINIMUM_KILLS_FOR_INCREASED_COINS then
+                    TotalCoins = TotalCoins + (KillStreak - MINIMUM_KILLS_FOR_INCREASED_COINS + 1)
+                end
+                for _ = 1,TotalCoins do
+                    CoinService:DropCoin(HumanoidRootPart.Position,RoundService:GetPlayerRoundContainer(Player))
                 end
             end
 
