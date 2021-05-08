@@ -78,12 +78,21 @@ function StatService:GetPersistentStats(Player)
         self.CachedPersistentStats[Player] = StatContainer.GetContainer(Player,"PersistentStats")
 
         --Set the data source.
+        local DataLoadSuccessful = false
         local Worked,Error = pcall(function()
-            self.CachedPersistentStats[Player]:SetDataSource(NexusDataStore:GetSaveData(Player))
+            local DataSource = NexusDataStore:GetSaveData(Player)
+            self.CachedPersistentStats[Player]:SetDataSource(DataSource)
+            DataLoadSuccessful = DataSource.DataLoadSuccessful
         end)
         if not Worked then
             warn("Failed to set data source for "..tostring(Player).." because: "..tostring(Error))
         end
+
+        --Add the load indicator.
+        local DataLoadSuccessfulValue = Instance.new("BoolValue")
+        DataLoadSuccessfulValue.Name = "DataLoadSuccessful"
+        DataLoadSuccessfulValue.Value = DataLoadSuccessful
+        DataLoadSuccessfulValue.Parent = Player
 
         --Create the stats.
         for _,StatData in pairs(DEFAULT_STATS) do
