@@ -108,6 +108,7 @@ Tool.Equipped:Connect(function(NewMouse)
         CurrentEquipAnimation = AnimationPlayer:PlayAnimation("SuperballEquip")
         delay(0.75,function()
             if Equipped then
+                if CurrentIdleAnimation then CurrentIdleAnimation:Stop() end
                 CurrentIdleAnimation = AnimationPlayer:PlayAnimation("SuperballIdle")
             end
         end)
