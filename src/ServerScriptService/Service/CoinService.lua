@@ -5,7 +5,6 @@ Service for managing player coins.
 --]]
 
 local Workspace = game:GetService("Workspace")
-local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Debris = game:GetService("Debris")
 
@@ -52,6 +51,8 @@ function CoinService:GiveCoins(Player,Total,WorldPosition)
     --Play the animation on the client.
     if WorldPosition then
         LocalEffectService:PlayLocalEffect(Player,"DisplayWorldSpaceCoin",WorldPosition)
+    else
+        LocalEffectService:PlayLocalEffect(Player,"DisplayCoinsUpdate",WorldPosition)
     end
 
     --Return true.
