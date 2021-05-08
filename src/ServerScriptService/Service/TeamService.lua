@@ -30,6 +30,7 @@ function TeamService:GetTeam(Color)
     local NewTeam = Instance.new("Team")
     NewTeam.Name = tostring(Color).." Team"
     NewTeam.TeamColor = Color
+    NewTeam.AutoAssignable = false
     NewTeam.Parent = Teams
     return NewTeam
 end
