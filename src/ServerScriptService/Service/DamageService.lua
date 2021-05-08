@@ -6,6 +6,11 @@ Service for damaging players.
 
 local TAG_EXPIRE_TIME_SECONDS = 10
 local MINIMUM_KILLS_FOR_INCREASED_COINS = 3
+local KILLSTREAK_MESSAGES = {
+    [3] = {AudioId = 104480252,Message = "'s on a streak!"},
+    [5] = {AudioId = 104480252,Message = " is on fire!"},
+    [8] = {AudioId = 104480252,Message = " is UNSTOPPABLE!"},
+}
 
 
 
@@ -74,11 +79,10 @@ local function CharacterAdded(Character)
         local DamagedPlayerTemporaryStats = StatService:GetTemporaryStats(Player,false)
         if not MostDamagePlayer or MostDamagePlayer == Player then
             --Display the killfeed.
-            print("Player killed self: "..tostring(Player)) --TODO: Killfeed
+            LocalEffectService:BroadcastLocalEffect(Player,"DisplayKillFeed",{
+                KilledPlayer = Player,
+            })
         else
-            --Display the killfeed.
-            print(tostring(Player).." killed by "..tostring(MostDamagePlayer).." with "..tostring(MostDamageTool)) --TODO: Killfeed
-
             --Increment the stats.
             local KillingPlayerPersistentStats = StatService:GetPersistentStats(MostDamagePlayer)
             local KillingPlayerTemporaryStats = StatService:GetTemporaryStats(MostDamagePlayer,false)
@@ -100,6 +104,23 @@ local function CharacterAdded(Character)
                     KillingPlayerPersistentStats:Get("LongestKOStreak"):Set(KillingPlayerTemporaryStats:Get("CurrentStreak"):Get())
                 end
             end
+
+            --Display the killfeed.
+            if KillingPlayerTemporaryStats then
+                local KillStreak = KillingPlayerTemporaryStats:Get("CurrentStreak"):Get()
+                local KillstreakMessage = KILLSTREAK_MESSAGES[KillStreak]
+                if KillstreakMessage then
+                    LocalEffectService:BroadcastLocalEffect(Player,"DisplayKillFeed",{
+                        Message = tostring(MostDamagePlayer)..KillstreakMessage.Message,
+                        AudioId = KillstreakMessage.AudioId,
+                    })
+                end
+            end
+            LocalEffectService:BroadcastLocalEffect(Player,"DisplayKillFeed",{
+                KilledPlayer = Player,
+                KillingPlayer = MostDamagePlayer,
+                MostDamageTool = MostDamageTool,
+            })
 
             --Drop the coins.
             local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
