@@ -111,13 +111,13 @@ function BaseRound:__new()
         if not TeamSpawnPoints then return end
         for _,Part in pairs(TeamSpawnPoints:GetChildren()) do
             if Part:IsA("BasePart") then
-                if not self.SpawnPoints.Team[Part.Name] then
-                    self.SpawnPoints.Team[Part.Name] = {
+                if not self.SpawnPoints.Team[Part.BrickColor.Name] then
+                    self.SpawnPoints.Team[Part.BrickColor.Name] = {
                         CurrentSpawn = 1,
                         Parts = {},
                     }
                 end
-                table.insert(self.SpawnPoints.Team[Part.Name].Parts,Part)
+                table.insert(self.SpawnPoints.Team[Part.BrickColor.Name].Parts,Part)
             end
         end
     end)
@@ -209,7 +209,7 @@ function BaseRound:SpawnPlayer(Player)
     if not Player or not Player.Parent or not self.Players:Contains(Player) then return end
     coroutine.wrap(function()
         --Get a spawn location part.
-        local SpawnParts = self.SpawnPoints.Normal --TODO: Check teams
+        local SpawnParts = (not Player.Neutral and self.SpawnPoints.Team[Player.TeamColor.Name] or self.SpawnPoints.Normal)
         if #SpawnParts.Parts == 0 then return end
         local SpawnPart = SpawnParts.Parts[SpawnParts.CurrentSpawn]
         SpawnParts.CurrentSpawn = (SpawnParts.CurrentSpawn % #SpawnParts.Parts) + 1
