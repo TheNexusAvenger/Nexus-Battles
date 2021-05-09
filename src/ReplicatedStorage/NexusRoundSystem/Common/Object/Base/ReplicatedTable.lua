@@ -139,8 +139,9 @@ function ReplicatedTable:Dispose()
     self.super:Dispose()
 
     --Disconnect the events.
-    self.ChildAdded:Disconnect()
-    self.ChildRemoved:Disconnect()
+    self.ItemAdded:Disconnect()
+    self.ItemRemoved:Disconnect()
+    self.ItemChanged:Disconnect()
 end
 
 

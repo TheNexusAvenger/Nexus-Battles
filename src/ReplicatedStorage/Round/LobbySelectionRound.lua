@@ -313,6 +313,7 @@ function LobbySelectionRound:Dispose()
     --Destroy the state.
     self.Timer:Destroy()
     self.Players:Destroy()
+    self.ReadyPlayers:Destroy()
 
     --Destroy the parts.
     if self.OuterAnimationPart then
