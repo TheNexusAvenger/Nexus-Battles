@@ -150,6 +150,17 @@ function TeamSelection:Finalize()
     self.Finalized = true
 end
 
+--[[
+Disposes of the object.
+--]]
+function TeamSelection:Dispose()
+    self.super:Dispose()
+
+    --Destroy the objects.
+    self.PlayerTeams:Destroy()
+    self.ParentRound = nil
+end
+
 
 
 return TeamSelection

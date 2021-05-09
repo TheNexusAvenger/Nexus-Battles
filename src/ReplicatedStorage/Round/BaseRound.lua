@@ -306,6 +306,17 @@ function BaseRound:RemoveCurrentPlayer(Player)
     end
 end
 
+--[[
+Disposes of the object.
+--]]
+function BaseRound:Dispose()
+    self.super:Dispose()
+
+    --Destroy the objects.
+    self.Players:Destroy()
+    self.Timer:Destroy()
+end
+
 
 
 return BaseRound

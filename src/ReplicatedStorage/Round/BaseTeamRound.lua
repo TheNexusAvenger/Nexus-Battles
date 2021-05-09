@@ -63,6 +63,16 @@ function BaseTeamRound:Start(RoundPlayers)
     end)
 end
 
+--[[
+Disposes of the object.
+--]]
+function BaseTeamRound:Dispose()
+    self.super:Dispose()
+
+    --Destroy the objects.
+    self.TeamSelection:Destroy()
+end
+
 
 
 return BaseTeamRound
