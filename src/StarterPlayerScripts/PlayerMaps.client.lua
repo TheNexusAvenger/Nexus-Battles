@@ -61,7 +61,7 @@ CurrentRoundChanged(CurrentRoundState.CurrentRound)
 --Currently, maps may not be properly destroyed on the client.
 ActiveRounds.ChildRemoved:Connect(function(Round)
     --Clear the current map.
-    if CurrentId == Round.Id then
+    if CurrentId == Round.Id and CurrentMap then
         CurrentMap:Destroy()
         CurrentMap = nil
     end
