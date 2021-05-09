@@ -41,21 +41,23 @@ local function ReflectProjectiles(Handle,Center)
             if (CurrentTag.Value ~= Player) or (LastTag and CurrentLocallyReflected and CurrentTag.Value == Player and LastTag.Value ~= Player and not CurrentLocallyReflected.Value) then
                 if CurrentLocallyReflected then CurrentLocallyReflected.Value = true end
                 local TargetPlayer = (LastTag and LastTag.Value ~= Player and LastTag.Value) or CurrentTag.Value
-                local SourceHumanoidRootPart = TargetPlayer.Character:FindFirstChild("HumanoidRootPart")
-                if SourceHumanoidRootPart then
-                    local SourcePos = SourceHumanoidRootPart.Position
-                    local NewStartPos = Projectile.Position
-                    local NewCF = CFrame.new(NewStartPos,SourcePos)
-                    local NewDirection = NewCF.LookVector.Unit
-                    local Velocity = Projectile.AssemblyLinearVelocity.Magnitude
-                    Projectile.CFrame = NewCF
-                    Projectile.AssemblyLinearVelocity = NewDirection * Velocity
+                if TargetPlayer.Character then
+                    local SourceHumanoidRootPart = TargetPlayer.Character:FindFirstChild("HumanoidRootPart")
+                    if SourceHumanoidRootPart then
+                        local SourcePos = SourceHumanoidRootPart.Position
+                        local NewStartPos = Projectile.Position
+                        local NewCF = CFrame.new(NewStartPos,SourcePos)
+                        local NewDirection = NewCF.LookVector.Unit
+                        local Velocity = Projectile.AssemblyLinearVelocity.Magnitude
+                        Projectile.CFrame = NewCF
+                        Projectile.AssemblyLinearVelocity = NewDirection * Velocity
 
-                    for _,Ins in pairs(Projectile:GetChildren()) do
-                        if Ins:IsA("BodyVelocity") then
-                            Ins.Velocity = NewDirection * Velocity
-                        elseif Ins:IsA("BodyGyro") then
-                            Ins.CFrame = NewCF
+                        for _,Ins in pairs(Projectile:GetChildren()) do
+                            if Ins:IsA("BodyVelocity") then
+                                Ins.Velocity = NewDirection * Velocity
+                            elseif Ins:IsA("BodyGyro") then
+                                Ins.CFrame = NewCF
+                            end
                         end
                     end
                 end
