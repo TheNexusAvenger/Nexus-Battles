@@ -178,10 +178,10 @@ function DamageService:DamageHumanoid(Humanoid,Damage,DamagingPlayer,DamagingToo
     end
 
     --Add the tag.
-    if DamagingPlayer or Player then
+    if DamagingPlayer and DamagingPlayer ~= Player then
         table.insert(self.HumanoidTags[Humanoid],{
             Damage = Damage,
-            Player = DamagingPlayer or Player,
+            Player = DamagingPlayer,
             Tool = DamagingToolName,
             Time = tick(),
         })
