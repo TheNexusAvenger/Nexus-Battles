@@ -17,12 +17,19 @@ local ReplicatedContainerTest = NexusUnitTesting.UnitTest:Extend()
 Sets up the test.
 --]]
 function ReplicatedContainerTest:Setup()
+    NexusRoundSystem:GetObjectReplicator().ObjectRegistry = {
+        [-1] = {},
+        [-2] = {},
+        [-3] = {},
+    }
     self.CuT1 = ReplicatedContainer.new()
     self.CuT1.Id = -1
     self.CuT2 = ReplicatedContainer.new()
     self.CuT2.Id = -2
     self.CuT3 = ReplicatedContainer.new()
     self.CuT3.Id = -3
+    self.CuT4 = ReplicatedContainer.new()
+    self.CuT4.Id = -4
 end
 
 --[[
@@ -68,6 +75,10 @@ NexusUnitTesting:RegisterUnitTest(ReplicatedContainerTest.new("Serialize"):SetRu
     self:AssertEquals(self.CuT1:Serialize(),{Children={-3},Name="ReplicatedContainer",Name2="Test1"})
     self:AssertEquals(self.CuT2:Serialize(),{Children={},Name="ReplicatedContainer",Name2="Test2"})
     self:AssertEquals(self.CuT3:Serialize(),{Children={},Parent=-1,Name="ReplicatedContainer"})
+
+    --Set the parent of a object not in the object registry and assert it isn't serialized.
+    self.CuT4.Parent = self.CuT1
+    self:AssertEquals(self.CuT1:Serialize(),{Children={-3},Name="ReplicatedContainer",Name2="Test1"})
 end))
 
 
