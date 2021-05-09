@@ -59,8 +59,8 @@ return {
 			TimeOfDay = 14,
 		},
 	},
-	--[[TheShard = {
-		GameTypes = {"FreeForAll","TeamDeathmatch","Juggernaut","OneWeaponSuperball","TeamSwap","OneWeaponMadness",},
+	TheShard = {
+		GameTypes = {"FreeForAll","OneWeaponSuperball","TeamDeathmatch",}, --{"TeamSwap","Juggernaut","OneWeaponMadness",}, --TODO: Enable more rounds.
 		ImageId = 117446222, --TODO: Update image
 		Lighting = {
 			Ambient = Color3.new(75/255,75/255,75/255),
@@ -70,7 +70,7 @@ return {
 			TimeOfDay = 9,
 		},
 	},
-	Dodgeball = {
+	--[[Dodgeball = {
 		GameTypes = {"Dodgeball",},
 		ImageId = 122328784, --TODO: Update image
 		Lighting = {

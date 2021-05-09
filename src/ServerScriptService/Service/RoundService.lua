@@ -139,19 +139,26 @@ function RoundService:StartRound(RoundType,MapType,Players)
     end
     self.AllocatedPositions[AllocatedPosition] = true
 
-    --Load the map.
-    local RoundContainer = GetAllocatedRoundContainer()
-    local Map = Maps:WaitForChild(MapType):Clone()
-    Map.Name = "Map"
-    Map:TranslateBy(Vector3.new(0,0,AllocatedPosition * MAP_POSITION_MULTIPLIER))
-    Map.Parent = RoundContainer
-
     --Load the round.
+    local RoundContainer = GetAllocatedRoundContainer()
     local Round = ObjectReplicator:CreateObject(RoundType)
     Round.RoundContainer = RoundContainer
+    RoundContainer.Name = tostring(Round.Id)
+
+    --Load the map.
+    local BaseMap = Maps:WaitForChild(MapType)
+    local Map
+    if BaseMap:IsA("ModuleScript") then
+        Map = Instance.new("Model")
+        require(BaseMap)(Map,Vector3.new(0,0,AllocatedPosition * MAP_POSITION_MULTIPLIER),Round)
+    else
+        Map = Maps:WaitForChild(MapType):Clone()
+        Map:TranslateBy(Vector3.new(0,0,AllocatedPosition * MAP_POSITION_MULTIPLIER))
+    end
+    Map.Name = "Map"
+    Map.Parent = RoundContainer
     Round.Map = Map
     Round.Parent = ActiveRounds
-    RoundContainer.Name = tostring(Round.Id)
 
     --Start the round.
     coroutine.wrap(function()
