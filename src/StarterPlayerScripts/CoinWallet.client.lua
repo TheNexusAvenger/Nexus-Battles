@@ -7,7 +7,8 @@ Displays the coins of the player.
 --TODO: Add coin collect sound?
 
 local COIN_WIDTH = 1.5
-local COIN_TRAVEL_TIME_SCREEN_WIDTH_MULTIPLIER = 1
+local COIN_TRAVEL_TIME_SCREEN_WIDTH_MULTIPLIER = 0.5
+local MAX_COIN_SCREEN_HEIGHT = 0.3
 
 
 
@@ -101,6 +102,12 @@ end
 Shows a coin animated in local space.
 --]]
 local function ShowLocalCoin(PosX,PosY,Width)
+    --camp the width.
+    local ScreenHeight = CoinWalletContainer.AbsoluteSize.Y
+    if Width > ScreenHeight * MAX_COIN_SCREEN_HEIGHT then
+        Width = ScreenHeight * MAX_COIN_SCREEN_HEIGHT
+    end
+
     --Create the coin.
     local MovingCoinImage = Instance.new("ImageLabel")
     MovingCoinImage.AnchorPoint = Vector2.new(0.5,0.5)
@@ -115,10 +122,14 @@ local function ShowLocalCoin(PosX,PosY,Width)
     local TargetPosX,TargetPosY = CoinImage.AbsolutePosition.X + (CoinImage.AbsoluteSize.X/2),CoinImage.AbsolutePosition.Y + (CoinImage.AbsoluteSize.Y/2)
     local TravelDistance = (((PosX - TargetPosX) ^ 2) + ((PosY - TargetPosY) ^ 2)) ^ 0.5
     local TravelTime = COIN_TRAVEL_TIME_SCREEN_WIDTH_MULTIPLIER * (TravelDistance / CoinWalletContainer.AbsoluteSize.X)
+    local MaxTravelTime = 2 * COIN_TRAVEL_TIME_SCREEN_WIDTH_MULTIPLIER * (CoinWalletContainer.AbsoluteSize.X / CoinWalletContainer.AbsoluteSize.X)
+    if MaxTravelTime > TravelTime then
+        TravelTime = MaxTravelTime
+    end
 
     --Animate moving the coin.
-    MovingCoinImage:TweenSize(UDim2.new(0,CoinImage.AbsoluteSize.X,0,CoinImage.AbsoluteSize.Y),"Out","Quad",TravelTime)
-    MovingCoinImage:TweenPosition(UDim2.new(0,TargetPosX,0,TargetPosY),"Out","Quad",TravelTime)
+    MovingCoinImage:TweenSize(UDim2.new(0,CoinImage.AbsoluteSize.X,0,CoinImage.AbsoluteSize.Y),"Out","Sine",TravelTime)
+    MovingCoinImage:TweenPosition(UDim2.new(0,TargetPosX,0,TargetPosY),"Out","Sine",TravelTime)
     wait(TravelTime)
     MovingCoinImage:Destroy()
     FlashCoins()
