@@ -4,7 +4,7 @@ TheNexusAvenger
 Game types that are usable.
 --]]
 
-local DEFAULT_REQUIRED_PLAYERS = 2
+local DEFAULT_REQUIRED_PLAYERS = 1 --TODO: Revert after Nexus Admin integrated
 local DEFAULT_REQUIRED_PLAYERS_TEAMS = 4
 local DEFAULT_MAX_PLAYERS = 12
 
@@ -19,7 +19,7 @@ return {
     FreeForAll = {
         DisplayName = "Free For All",
         Description = "Everyone for themselves!",
-        RequiredPlayers = 1, --TODO: Revert after Nexus Admin integrated
+        RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.FreeForAll",
     },
@@ -28,35 +28,35 @@ return {
         Description = "Swords only!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
+        RoundClass = "Round.OneWeaponSword",
 	},
 	OneWeaponSuperball = {
         DisplayName = "Superball Smackdown",
         Description = "Superballs only!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
+        RoundClass = "Round.OneWeaponSuperball",
     },
 	OneWeaponBomb = {
         DisplayName = "Bomb Blitz",
         Description = "Bombs only!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
+        RoundClass = "Round.OneWeaponBomb",
     },
 	OneWeaponRocketLauncher = {
         DisplayName = "Rocket Rampage",
         Description = "Rocket Launchers only!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
+        RoundClass = "Round.OneWeaponRocketLauncher",
     },
 	Party = {
         DisplayName = "Party",
         Description = "Three random weapons!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
+        RoundClass = "Round.Party",
     },
 	BurnDown = {
         DisplayName = "Burn Down",
