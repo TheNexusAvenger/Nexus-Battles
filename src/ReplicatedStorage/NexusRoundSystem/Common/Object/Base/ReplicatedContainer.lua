@@ -17,12 +17,16 @@ ReplicatedContainer.SerializationMethods = {
         return PropertyValue
     end,
     ObjectReference = function(PropertyValue)
-        return PropertyValue and PropertyValue.Id
+        --Return the id if the object exists and isn't disposed.
+        return PropertyValue and ObjectReplication.ObjectRegistry[PropertyValue.Id] and PropertyValue.Id
     end,
     ObjectTableReference = function(PropertyValue)
         local Ids = {}
-        for _,Object in pairs(PropertyValue) do
-            table.insert(Ids,Object.Id)
+        --Return the id if the object exists and isn't disposed.
+        for _,Object in pairs(PropertyValue or {}) do
+            if ObjectReplication.ObjectRegistry[Object.Id] then
+                table.insert(Ids,Object.Id)
+            end
         end
         return Ids
     end,
