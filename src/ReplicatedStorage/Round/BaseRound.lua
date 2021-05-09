@@ -120,6 +120,9 @@ function BaseRound:__new()
                 table.insert(self.SpawnPoints.Team[Part.BrickColor.Name].Parts,Part)
             end
         end
+
+        --Destroy the spawn points so that they can't be moved if unachored.
+        SpawnPoints:Destroy()
     end)
 end
 
