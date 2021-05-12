@@ -95,16 +95,16 @@ return {
 			ShadowColor = Color3.new(100/255,100/255,100/255),
 			TimeOfDay = 8,
 		},
-	},
+	},]]
 	KingOfTheHill = {
 		GameTypes = {"KingOfTheHill",},
 		ImageId = 300084452, --TODO: Update image
 		Lighting = {
-			Ambient = Color3.new(128/255, 128/255, 128/255),
+			Ambient = Color3.new(128/255,128/255,128/255),
 			FogEnd = 1000,
 			FogStart = 100,
 			ShadowColor = Color3.new(0/255,0/255,0/255),
 			TimeOfDay = 14,
 		}
-	},]]
+	},
 }

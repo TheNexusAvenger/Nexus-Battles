@@ -116,7 +116,7 @@ return {
         Description = "Stay at the top of the hill for as long as you can!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
+        RoundClass = "Round.KingOfTheHill",
 		Weight = 2,
     },
     TeamSwap = {

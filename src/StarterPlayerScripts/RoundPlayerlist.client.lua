@@ -5,7 +5,7 @@ Displays the player list during the active round.
 Does not handle the end of rounds.
 --]]
 
-local STAT_TEXT_ASPECT_RATIO = 1.6
+local STAT_TEXT_ASPECT_RATIO = 1.8
 local USERNAME_SIZE_ASPECT_RATIO = 8
 local LEADERBOARD_ENTRY_HEIGHT_RELATIVE = 0.035
 local MAX_SCREEN_WIDTH_RELATIVE = 0.2

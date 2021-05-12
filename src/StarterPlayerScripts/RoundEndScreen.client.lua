@@ -4,7 +4,7 @@ TheNexusAvenger
 Controls the end screen of rounds.
 --]]
 
-local STAT_TEXT_ASPECT_RATIO = 1.6
+local STAT_TEXT_ASPECT_RATIO = 1.8
 local USERNAME_SIZE_ASPECT_RATIO = 8
 local LEADERBOARD_ENTRY_HEIGHT_RELATIVE = 0.045
 

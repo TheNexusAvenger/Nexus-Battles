@@ -5,7 +5,7 @@ Base entry for the player list.
 --]]
 
 local TEXT_SIZE_MULTIPLIER = 0.85
-local STAT_TEXT_ASPECT_RATIO = 1.6
+local STAT_TEXT_ASPECT_RATIO = 1.8
 local TRIANGLE_ASPECT_RATIO = 0.2
 local BORDER_ASPECT_RATIO_SPACE = 0.5
 local TRIANGLE_TEXTURES = "rbxassetid://4449507744"
