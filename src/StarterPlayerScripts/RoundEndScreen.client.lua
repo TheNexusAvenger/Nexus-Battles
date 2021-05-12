@@ -67,6 +67,7 @@ local function CurrentRoundChanged(CurrentRound)
 
     local Playerlist = RoundEndPlayerlist.new(CurrentRound.Players)
     Playerlist.Stats = Stats
+    Playerlist.MVPs = CurrentRound.MVPs
     Playerlist.Parent = PlayerListAdorn
 
     --[[
@@ -111,6 +112,9 @@ local function CurrentRoundChanged(CurrentRound)
     end
 
     --Connect the events.
+    CurrentRound:GetPropertyChangedSignal("MVPs"):Connect(function()
+        Playerlist.MVPs = CurrentRoundState.MVPs
+    end)
     ContinueButton.MouseButton1Down:Connect(function()
         LeaveRound:FireServer()
     end)

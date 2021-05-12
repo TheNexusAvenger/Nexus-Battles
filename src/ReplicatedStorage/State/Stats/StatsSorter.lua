@@ -84,6 +84,50 @@ function StatSorter:GetSortedPlayers(Players,OverrideMVPs)
     return NewPlayers
 end
 
+--[[
+Returns the MVPs given the current stats.
+--]]
+function StatSorter:GetMVPs(Players)
+    --Return an empty list if there are no players.
+    if #Players == 0 then
+        return {}
+    end
+
+    --Sort the players.
+    local SortedPlayers = self:GetSortedPlayers(Players)
+    local MVPs = {}
+
+    --Add the players that have the same stats as the first player.
+    local FirstPlayer = SortedPlayers[1]
+    local Player1Stats = FirstPlayer:FindFirstChild("TemporaryStats")
+    for _,Player in pairs(SortedPlayers) do
+        local OtherPlayerStats = Player:FindFirstChild("TemporaryStats")
+
+        --Determine if there is at least 1 stat that doesn't match.
+        local AllStatsMatch = true
+        for _,StatSortData in pairs(self.SortStats) do
+            local Name,Default = StatSortData.Name,StatSortData.DefaultValue
+            local Stat1,Stat2 = (Player1Stats and Player1Stats:FindFirstChild(Name)),(OtherPlayerStats and OtherPlayerStats:FindFirstChild(Name))
+            local Value1,Value2 = (Stat1 and Stat1.Value or Default),(Stat2 and Stat2.Value or Default)
+            if Value1 ~= Value2 then
+                AllStatsMatch = false
+                break
+            end
+        end
+
+        --Add the player or break the loop.
+        --All players after the next match will not have the same stats since they are sorted.
+        if AllStatsMatch then
+            table.insert(MVPs,Player)
+        else
+            break
+        end
+    end
+
+    --Return the MVPs.
+    return MVPs
+end
+
 
 
 return StatSorter

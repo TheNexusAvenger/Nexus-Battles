@@ -60,6 +60,11 @@ function StatsSorterTest:Setup()
         Stat1 = 5,
     })
     CreateMockPlayer("MockPlayer5")
+    CreateMockPlayer("MockPlayer6",{
+        Stat1 = 4,
+        Stat2 = 1,
+        Stat3 = 2,
+    })
 
     --Create the component under test.
     self.CuT = StatsSorter.new({
@@ -103,11 +108,26 @@ NexusUnitTesting:RegisterUnitTest(StatsSorterTest.new("GetSortedPlayers"):SetRun
     self:AssetPlayerNames(self.CuT:GetSortedPlayers({self.MockPlayers[1],self.MockPlayers[2],self.MockPlayers[3]}),{"MockPlayer2","MockPlayer3","MockPlayer1"})
 
     --Test the sorted players are correct with missing values.
-    self:AssetPlayerNames(self.CuT:GetSortedPlayers(self.MockPlayers),{"MockPlayer4","MockPlayer2","MockPlayer3","MockPlayer1","MockPlayer5"})
+    self:AssetPlayerNames(self.CuT:GetSortedPlayers({self.MockPlayers[1],self.MockPlayers[2],self.MockPlayers[3],self.MockPlayers[4],self.MockPlayers[5]}),{"MockPlayer4","MockPlayer2","MockPlayer3","MockPlayer1","MockPlayer5"})
 
     --Test that MVP players appear at the front.
-    self:AssetPlayerNames(self.CuT:GetSortedPlayers(self.MockPlayers,{self.MockPlayers[1]}),{"MockPlayer1","MockPlayer4","MockPlayer2","MockPlayer3","MockPlayer5"})
-    self:AssetPlayerNames(self.CuT:GetSortedPlayers(self.MockPlayers,{self.MockPlayers[1],self.MockPlayers[3]}),{"MockPlayer3","MockPlayer1","MockPlayer4","MockPlayer2","MockPlayer5"})
+    self:AssetPlayerNames(self.CuT:GetSortedPlayers({self.MockPlayers[1],self.MockPlayers[2],self.MockPlayers[3],self.MockPlayers[4],self.MockPlayers[5]},{self.MockPlayers[1]}),{"MockPlayer1","MockPlayer4","MockPlayer2","MockPlayer3","MockPlayer5"})
+    self:AssetPlayerNames(self.CuT:GetSortedPlayers({self.MockPlayers[1],self.MockPlayers[2],self.MockPlayers[3],self.MockPlayers[4],self.MockPlayers[5]},{self.MockPlayers[1],self.MockPlayers[3]}),{"MockPlayer3","MockPlayer1","MockPlayer4","MockPlayer2","MockPlayer5"})
+end))
+
+--[[
+Tests the GetMVPs method.
+--]]
+NexusUnitTesting:RegisterUnitTest(StatsSorterTest.new("GetMVPs"):SetRun(function(self)
+    --Test the MVPs are correct with all values populated.
+    self:AssetPlayerNames(self.CuT:GetMVPs({self.MockPlayers[1],self.MockPlayers[2]}),{"MockPlayer2"})
+    self:AssetPlayerNames(self.CuT:GetMVPs({self.MockPlayers[1],self.MockPlayers[2],self.MockPlayers[6]}),{"MockPlayer2","MockPlayer6"})
+
+    --Test the MVPs are correct with missing values.
+    self:AssetPlayerNames(self.CuT:GetMVPs({self.MockPlayers[1],self.MockPlayers[2],self.MockPlayers[3],self.MockPlayers[4],self.MockPlayers[5],self.MockPlayers[6]}),{"MockPlayer4"})
+    self:AssetPlayerNames(self.CuT:GetMVPs({self.MockPlayers[1],self.MockPlayers[4]}),{"MockPlayer4"})
+    self:AssetPlayerNames(self.CuT:GetMVPs({self.MockPlayers[1],self.MockPlayers[5]}),{"MockPlayer1"})
+    self:AssetPlayerNames(self.CuT:GetMVPs({self.MockPlayers[4],self.MockPlayers[5]}),{"MockPlayer4"})
 end))
 
 

@@ -17,6 +17,7 @@ local ServerStorage = game:GetService("ServerStorage")
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 local CharacterService
 local StatService
+local StatsSorter
 
 local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
 local ObjectReplication = NexusRoundSystem:GetObjectReplicator()
@@ -40,6 +41,7 @@ function BaseRound:__new()
     self.PlayerStarterTools = {}
     self.State = "LOADING"
     self.TimerText = "TIME REMAINING"
+    self.MVPs = {}
     if NexusRoundSystem:IsServer() then
         self.Players = ObjectReplication:CreateObject("ReplicatedTable")
         self.Timer = ObjectReplication:CreateObject("Timer")
@@ -48,6 +50,7 @@ function BaseRound:__new()
     self:AddToSerialization("TimerText")
     self:AddToSerialization("Map")
     self:AddToSerialization("RoundContainer")
+    self:AddToSerialization("MVPs")
     self:AddToSerialization("Players","ObjectReference")
     self:AddToSerialization("Timer","ObjectReference")
 
@@ -172,6 +175,18 @@ end
 Ends the round.
 --]]
 function BaseRound:End()
+    if self.State == "ENDED" then return end
+
+    --Set the MVPs if they weren't set.
+    if not self.MVPs or #self.MVPs == 0 then
+        if not StatsSorter then
+            local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+            StatsSorter = ReplicatedStorageProject:GetResource("State.Stats.StatsSorter")
+        end
+        local Sorter = StatsSorter.new(self.RoundStats)
+        self.MVPs = Sorter:GetMVPs(self.Players:GetAll())
+    end
+
     --Stop the round.
     self.Timer:Stop()
     self.State = "ENDED"
