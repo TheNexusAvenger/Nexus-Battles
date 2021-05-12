@@ -5940,132 +5940,6 @@
 							<Z>66.8697891</Z>
 						</Vector3>
 					</Properties>
-					<Item class="Smoke" referent="RBX16F35DED8F234C8EA80BCB86B97C0F01">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<Color3 name="Color">
-								<R>0</R>
-								<G>0</G>
-								<B>0</B>
-							</Color3>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Smoke</string>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<float name="opacity_xml">1</float>
-							<float name="riseVelocity_xml">1</float>
-							<float name="size_xml">100</float>
-						</Properties>
-					</Item>
-				</Item>
-				<Item class="Part" referent="RBXDA21D37EAEDC4243B4AA839C3ABC4A90">
-					<Properties>
-						<bool name="Anchored">true</bool>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<float name="BackParamA">-0.5</float>
-						<float name="BackParamB">0.5</float>
-						<token name="BackSurface">0</token>
-						<token name="BackSurfaceInput">0</token>
-						<float name="BottomParamA">-0.5</float>
-						<float name="BottomParamB">0.5</float>
-						<token name="BottomSurface">4</token>
-						<token name="BottomSurfaceInput">0</token>
-						<CoordinateFrame name="CFrame">
-							<X>96.9400024</X>
-							<Y>890.590942</Y>
-							<Z>76.3399658</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>1</R11>
-							<R12>0</R12>
-							<R20>0</R20>
-							<R21>0</R21>
-							<R22>1</R22>
-						</CoordinateFrame>
-						<bool name="CanCollide">false</bool>
-						<bool name="CanTouch">true</bool>
-						<bool name="CastShadow">true</bool>
-						<int name="CollisionGroupId">0</int>
-						<Color3uint8 name="Color3uint8">4279308561</Color3uint8>
-						<PhysicalProperties name="CustomPhysicalProperties">
-							<CustomPhysics>false</CustomPhysics>
-						</PhysicalProperties>
-						<float name="FrontParamA">-0.5</float>
-						<float name="FrontParamB">0.5</float>
-						<token name="FrontSurface">0</token>
-						<token name="FrontSurfaceInput">0</token>
-						<float name="LeftParamA">-0.5</float>
-						<float name="LeftParamB">0.5</float>
-						<token name="LeftSurface">0</token>
-						<token name="LeftSurfaceInput">0</token>
-						<bool name="Locked">false</bool>
-						<bool name="Massless">false</bool>
-						<token name="Material">800</token>
-						<string name="Name">SmokePart</string>
-						<CoordinateFrame name="PivotOffset">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>1</R11>
-							<R12>0</R12>
-							<R20>0</R20>
-							<R21>0</R21>
-							<R22>1</R22>
-						</CoordinateFrame>
-						<float name="Reflectance">0</float>
-						<float name="RightParamA">-0.5</float>
-						<float name="RightParamB">0.5</float>
-						<token name="RightSurface">0</token>
-						<token name="RightSurfaceInput">0</token>
-						<int name="RootPriority">0</int>
-						<Vector3 name="RotVelocity">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<float name="TopParamA">-0.5</float>
-						<float name="TopParamB">0.5</float>
-						<token name="TopSurface">3</token>
-						<token name="TopSurfaceInput">0</token>
-						<float name="Transparency">0</float>
-						<Vector3 name="Velocity">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<token name="formFactorRaw">3</token>
-						<token name="shape">1</token>
-						<Vector3 name="size">
-							<X>62.1599007</X>
-							<Y>0.200000003</Y>
-							<Z>65.579689</Z>
-						</Vector3>
-					</Properties>
-					<Item class="Smoke" referent="RBX7EDB04C20B8944FD8E2B44809F1F85CD">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<Color3 name="Color">
-								<R>0</R>
-								<G>0</G>
-								<B>0</B>
-							</Color3>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Smoke</string>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<float name="opacity_xml">1</float>
-							<float name="riseVelocity_xml">1</float>
-							<float name="size_xml">100</float>
-						</Properties>
-					</Item>
 				</Item>
 				<Item class="Part" referent="RBX273F52A5C1B6406F8862E39C3DB767E2">
 					<Properties>
@@ -6158,23 +6032,6 @@
 							<Z>67.6598358</Z>
 						</Vector3>
 					</Properties>
-					<Item class="Smoke" referent="RBX566BB3578B084A7EA4C5575D4C09161F">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<Color3 name="Color">
-								<R>0</R>
-								<G>0</G>
-								<B>0</B>
-							</Color3>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Smoke</string>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<float name="opacity_xml">1</float>
-							<float name="riseVelocity_xml">1</float>
-							<float name="size_xml">100</float>
-						</Properties>
-					</Item>
 				</Item>
 				<Item class="Part" referent="RBXD2252A660D204416AC820CBDD58F056D">
 					<Properties>
@@ -6267,23 +6124,6 @@
 							<Z>61.3697662</Z>
 						</Vector3>
 					</Properties>
-					<Item class="Smoke" referent="RBX508A77FC429C436D81A1245D85D7EBCE">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<Color3 name="Color">
-								<R>0</R>
-								<G>0</G>
-								<B>0</B>
-							</Color3>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Smoke</string>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<float name="opacity_xml">1</float>
-							<float name="riseVelocity_xml">1</float>
-							<float name="size_xml">100</float>
-						</Properties>
-					</Item>
 				</Item>
 				<Item class="Part" referent="RBX78873227E6CB41EAA5051E1CA1D1AFA0">
 					<Properties>
@@ -6742,6 +6582,98 @@
 							<X>121.799934</X>
 							<Y>6.41999435</Y>
 							<Z>124.599777</Z>
+						</Vector3>
+					</Properties>
+				</Item>
+				<Item class="Part" referent="RBXDA21D37EAEDC4243B4AA839C3ABC4A90">
+					<Properties>
+						<bool name="Anchored">true</bool>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<float name="BackParamA">-0.5</float>
+						<float name="BackParamB">0.5</float>
+						<token name="BackSurface">0</token>
+						<token name="BackSurfaceInput">0</token>
+						<float name="BottomParamA">-0.5</float>
+						<float name="BottomParamB">0.5</float>
+						<token name="BottomSurface">4</token>
+						<token name="BottomSurfaceInput">0</token>
+						<CoordinateFrame name="CFrame">
+							<X>96.9400024</X>
+							<Y>890.590942</Y>
+							<Z>76.3399658</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>1</R22>
+						</CoordinateFrame>
+						<bool name="CanCollide">false</bool>
+						<bool name="CanTouch">true</bool>
+						<bool name="CastShadow">true</bool>
+						<int name="CollisionGroupId">0</int>
+						<Color3uint8 name="Color3uint8">4279308561</Color3uint8>
+						<PhysicalProperties name="CustomPhysicalProperties">
+							<CustomPhysics>false</CustomPhysics>
+						</PhysicalProperties>
+						<float name="FrontParamA">-0.5</float>
+						<float name="FrontParamB">0.5</float>
+						<token name="FrontSurface">0</token>
+						<token name="FrontSurfaceInput">0</token>
+						<float name="LeftParamA">-0.5</float>
+						<float name="LeftParamB">0.5</float>
+						<token name="LeftSurface">0</token>
+						<token name="LeftSurfaceInput">0</token>
+						<bool name="Locked">false</bool>
+						<bool name="Massless">false</bool>
+						<token name="Material">800</token>
+						<string name="Name">SmokePart</string>
+						<CoordinateFrame name="PivotOffset">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>1</R22>
+						</CoordinateFrame>
+						<float name="Reflectance">0</float>
+						<float name="RightParamA">-0.5</float>
+						<float name="RightParamB">0.5</float>
+						<token name="RightSurface">0</token>
+						<token name="RightSurfaceInput">0</token>
+						<int name="RootPriority">0</int>
+						<Vector3 name="RotVelocity">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<float name="TopParamA">-0.5</float>
+						<float name="TopParamB">0.5</float>
+						<token name="TopSurface">3</token>
+						<token name="TopSurfaceInput">0</token>
+						<float name="Transparency">0</float>
+						<Vector3 name="Velocity">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+						</Vector3>
+						<token name="formFactorRaw">3</token>
+						<token name="shape">1</token>
+						<Vector3 name="size">
+							<X>62.1599007</X>
+							<Y>0.200000003</Y>
+							<Z>65.579689</Z>
 						</Vector3>
 					</Properties>
 				</Item>
@@ -10888,7 +10820,7 @@
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
 								<bool name="CanTouch">true</bool>
-								<bool name="CastShadow">true</bool>
+								<bool name="CastShadow">false</bool>
 								<int name="CollisionGroupId">0</int>
 								<Color3uint8 name="Color3uint8">4285087784</Color3uint8>
 								<PhysicalProperties name="CustomPhysicalProperties">
@@ -11109,13 +11041,13 @@
 									<float name="Brightness">1</float>
 									<Color3 name="Color">
 										<R>1</R>
-										<G>1</G>
-										<B>1</B>
+										<G>0.501960814</G>
+										<B>0</B>
 									</Color3>
 									<bool name="Enabled">true</bool>
 									<string name="Name">PointLight</string>
 									<float name="Range">60</float>
-									<bool name="Shadows">false</bool>
+									<bool name="Shadows">true</bool>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
@@ -12774,7 +12706,7 @@
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
 								<bool name="CanTouch">true</bool>
-								<bool name="CastShadow">true</bool>
+								<bool name="CastShadow">false</bool>
 								<int name="CollisionGroupId">0</int>
 								<Color3uint8 name="Color3uint8">4285087784</Color3uint8>
 								<PhysicalProperties name="CustomPhysicalProperties">
@@ -12995,13 +12927,13 @@
 									<float name="Brightness">1</float>
 									<Color3 name="Color">
 										<R>1</R>
-										<G>1</G>
-										<B>1</B>
+										<G>0.501960814</G>
+										<B>0</B>
 									</Color3>
 									<bool name="Enabled">true</bool>
 									<string name="Name">PointLight</string>
 									<float name="Range">60</float>
-									<bool name="Shadows">false</bool>
+									<bool name="Shadows">true</bool>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
@@ -16547,7 +16479,7 @@
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
 								<bool name="CanTouch">true</bool>
-								<bool name="CastShadow">true</bool>
+								<bool name="CastShadow">false</bool>
 								<int name="CollisionGroupId">0</int>
 								<Color3uint8 name="Color3uint8">4285087784</Color3uint8>
 								<PhysicalProperties name="CustomPhysicalProperties">
@@ -16768,13 +16700,13 @@
 									<float name="Brightness">1</float>
 									<Color3 name="Color">
 										<R>1</R>
-										<G>1</G>
-										<B>1</B>
+										<G>0.501960814</G>
+										<B>0</B>
 									</Color3>
 									<bool name="Enabled">true</bool>
 									<string name="Name">PointLight</string>
 									<float name="Range">60</float>
-									<bool name="Shadows">false</bool>
+									<bool name="Shadows">true</bool>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
@@ -18759,7 +18691,7 @@
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
 								<bool name="CanTouch">true</bool>
-								<bool name="CastShadow">true</bool>
+								<bool name="CastShadow">false</bool>
 								<int name="CollisionGroupId">0</int>
 								<Color3uint8 name="Color3uint8">4285087784</Color3uint8>
 								<PhysicalProperties name="CustomPhysicalProperties">
@@ -18980,13 +18912,13 @@
 									<float name="Brightness">1</float>
 									<Color3 name="Color">
 										<R>1</R>
-										<G>1</G>
-										<B>1</B>
+										<G>0.501960814</G>
+										<B>0</B>
 									</Color3>
 									<bool name="Enabled">true</bool>
 									<string name="Name">PointLight</string>
 									<float name="Range">60</float>
-									<bool name="Shadows">false</bool>
+									<bool name="Shadows">true</bool>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
@@ -29811,7 +29743,7 @@
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
 								<bool name="CanTouch">true</bool>
-								<bool name="CastShadow">true</bool>
+								<bool name="CastShadow">false</bool>
 								<int name="CollisionGroupId">0</int>
 								<Color3uint8 name="Color3uint8">4285087784</Color3uint8>
 								<PhysicalProperties name="CustomPhysicalProperties">
@@ -30032,13 +29964,13 @@
 									<float name="Brightness">1</float>
 									<Color3 name="Color">
 										<R>1</R>
-										<G>1</G>
-										<B>1</B>
+										<G>0.501960814</G>
+										<B>0</B>
 									</Color3>
 									<bool name="Enabled">true</bool>
 									<string name="Name">PointLight</string>
 									<float name="Range">60</float>
-									<bool name="Shadows">false</bool>
+									<bool name="Shadows">true</bool>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
@@ -30118,7 +30050,7 @@
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
 								<bool name="CanTouch">true</bool>
-								<bool name="CastShadow">true</bool>
+								<bool name="CastShadow">false</bool>
 								<int name="CollisionGroupId">0</int>
 								<Color3uint8 name="Color3uint8">4285087784</Color3uint8>
 								<PhysicalProperties name="CustomPhysicalProperties">
@@ -30339,13 +30271,13 @@
 									<float name="Brightness">1</float>
 									<Color3 name="Color">
 										<R>1</R>
-										<G>1</G>
-										<B>1</B>
+										<G>0.501960814</G>
+										<B>0</B>
 									</Color3>
 									<bool name="Enabled">true</bool>
 									<string name="Name">PointLight</string>
 									<float name="Range">60</float>
-									<bool name="Shadows">false</bool>
+									<bool name="Shadows">true</bool>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
@@ -34716,7 +34648,7 @@
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
 								<bool name="CanTouch">true</bool>
-								<bool name="CastShadow">true</bool>
+								<bool name="CastShadow">false</bool>
 								<int name="CollisionGroupId">0</int>
 								<Color3uint8 name="Color3uint8">4285087784</Color3uint8>
 								<PhysicalProperties name="CustomPhysicalProperties">
@@ -34937,13 +34869,13 @@
 									<float name="Brightness">1</float>
 									<Color3 name="Color">
 										<R>1</R>
-										<G>1</G>
-										<B>1</B>
+										<G>0.501960814</G>
+										<B>0</B>
 									</Color3>
 									<bool name="Enabled">true</bool>
 									<string name="Name">PointLight</string>
 									<float name="Range">60</float>
-									<bool name="Shadows">false</bool>
+									<bool name="Shadows">true</bool>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
@@ -37993,7 +37925,7 @@
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
 								<bool name="CanTouch">true</bool>
-								<bool name="CastShadow">true</bool>
+								<bool name="CastShadow">false</bool>
 								<int name="CollisionGroupId">0</int>
 								<Color3uint8 name="Color3uint8">4285087784</Color3uint8>
 								<PhysicalProperties name="CustomPhysicalProperties">
@@ -38214,13 +38146,13 @@
 									<float name="Brightness">1</float>
 									<Color3 name="Color">
 										<R>1</R>
-										<G>1</G>
-										<B>1</B>
+										<G>0.501960814</G>
+										<B>0</B>
 									</Color3>
 									<bool name="Enabled">true</bool>
 									<string name="Name">PointLight</string>
 									<float name="Range">60</float>
-									<bool name="Shadows">false</bool>
+									<bool name="Shadows">true</bool>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
@@ -42991,7 +42923,7 @@
 								</CoordinateFrame>
 								<bool name="CanCollide">true</bool>
 								<bool name="CanTouch">true</bool>
-								<bool name="CastShadow">true</bool>
+								<bool name="CastShadow">false</bool>
 								<int name="CollisionGroupId">0</int>
 								<Color3uint8 name="Color3uint8">4285087784</Color3uint8>
 								<PhysicalProperties name="CustomPhysicalProperties">
@@ -43212,13 +43144,13 @@
 									<float name="Brightness">1</float>
 									<Color3 name="Color">
 										<R>1</R>
-										<G>1</G>
-										<B>1</B>
+										<G>0.501960814</G>
+										<B>0</B>
 									</Color3>
 									<bool name="Enabled">true</bool>
 									<string name="Name">PointLight</string>
 									<float name="Range">40</float>
-									<bool name="Shadows">false</bool>
+									<bool name="Shadows">true</bool>
 									<int64 name="SourceAssetId">-1</int64>
 									<BinaryString name="Tags"></BinaryString>
 								</Properties>
