@@ -89,6 +89,7 @@ function BaseRound:__new()
             Parts = {},
         },
         Team = {},
+        Players = {},
     }
     self:GetPropertyChangedSignal("Map"):Connect(function()
         --Get the spawn point models.
@@ -98,6 +99,7 @@ function BaseRound:__new()
                 Parts = {},
             },
             Team = {},
+            Players = {},
         }
         local SpawnPoints = self.Map:FindFirstChild("SpawnPoints")
         if not SpawnPoints then return end
@@ -123,9 +125,6 @@ function BaseRound:__new()
                 table.insert(self.SpawnPoints.Team[Part.BrickColor.Name].Parts,Part)
             end
         end
-
-        --Destroy the spawn points so that they can't be moved if unachored.
-        SpawnPoints:Destroy()
     end)
 end
 
@@ -225,16 +224,26 @@ function BaseRound:SetSpawningEnabled(Player,Enabled)
 end
 
 --[[
+Sets the spawn location of a player.
+--]]
+function BaseRound:SetPlayerSpawn(Player,SpawnPart)
+    self.SpawnPoints.Players[Player] = SpawnPart
+end
+
+--[[
 Spawns a player.
 --]]
 function BaseRound:SpawnPlayer(Player)
     if not Player or not Player.Parent or not self.Players:Contains(Player) then return end
     coroutine.wrap(function()
         --Get a spawn location part.
-        local SpawnParts = (not Player.Neutral and self.SpawnPoints.Team[Player.TeamColor.Name] or self.SpawnPoints.Normal)
-        if #SpawnParts.Parts == 0 then return end
-        local SpawnPart = SpawnParts.Parts[SpawnParts.CurrentSpawn]
-        SpawnParts.CurrentSpawn = (SpawnParts.CurrentSpawn % #SpawnParts.Parts) + 1
+        local SpawnPart = self.SpawnPoints.Players[Player]
+        if not SpawnPart then
+            local SpawnParts = (not Player.Neutral and self.SpawnPoints.Team[Player.TeamColor.Name] or self.SpawnPoints.Normal)
+            if #SpawnParts.Parts == 0 then return end
+            SpawnPart = SpawnParts.Parts[SpawnParts.CurrentSpawn]
+            SpawnParts.CurrentSpawn = (SpawnParts.CurrentSpawn % #SpawnParts.Parts) + 1
+        end
 
         --Teleport the player.
         local CharacterService = self:GetService("CharacterService")

@@ -82,7 +82,7 @@ return {
 			ShadowColor = Color3.new(190/255,190/255,190/255),
 			TimeOfDay = 1,
 		},
-	},
+	},]]
 	RocketRace = {
 		GameTypes = {"RocketRace",},
 		ImageId = 3040728324, --TODO: Update image
@@ -95,7 +95,7 @@ return {
 			ShadowColor = Color3.new(100/255,100/255,100/255),
 			TimeOfDay = 8,
 		},
-	},]]
+	},
 	KingOfTheHill = {
 		GameTypes = {"KingOfTheHill",},
 		ImageId = 300084452, --TODO: Update image

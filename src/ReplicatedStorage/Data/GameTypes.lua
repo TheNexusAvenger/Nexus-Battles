@@ -77,7 +77,7 @@ return {
         Description = "Get to the top! Hold the point!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
+        RoundClass = "Round.RocketRace",
 		Weight = 2,
     },
     Juggernaut = {
