@@ -157,6 +157,7 @@ function RoundService:StartRound(RoundType,MapType,Players)
     end
     Map.Name = "Map"
     Map.Parent = RoundContainer
+    Round.MapName = MapType
     Round.Map = Map
     Round.Parent = ActiveRounds
 
