@@ -92,7 +92,8 @@ return {
         Description = "Swords Vs. Brooms!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
+        RoundClass = "Round.SwordSwept",
+		Weight = 2,
     },
     Dodgeball = {
         DisplayName = "Dodgeball",
@@ -100,6 +101,7 @@ return {
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS_TEAMS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.NullRound",
+		Weight = 2,
     },
     CaptureTheFlag = {
         DisplayName = "Capture The Flag",
@@ -107,6 +109,7 @@ return {
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS_TEAMS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.NullRound",
+		Weight = 2,
     },
     KingOfTheHill = {
         DisplayName = "King Of The Hill",
@@ -136,6 +139,6 @@ return {
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.NullRound",
-		Weight = 5,
+		Weight = 3,
     },
 }

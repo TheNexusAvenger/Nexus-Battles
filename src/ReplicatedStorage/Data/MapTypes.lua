@@ -38,7 +38,7 @@ return {
 		},
 	},
 	Skylands = {
-		GameTypes = {"FreeForAll","TeamDeathmatch","OneWeaponRocketLauncher","OneWeaponSuperball","Party",}, --{"BurnDown","Juggernaut","SwordSwept","TeamSwap","OneWeaponMadness","CaptureTheFlag",}, --TODO: Enable more rounds.
+		GameTypes = {"FreeForAll","TeamDeathmatch","OneWeaponRocketLauncher","OneWeaponSuperball","Party","SwordSwept",}, --{"BurnDown","Juggernaut","TeamSwap","OneWeaponMadness","CaptureTheFlag",}, --TODO: Enable more rounds.
 		ImageId = 119699444, --TODO: Update image
 		Lighting = {
 			Ambient = Color3.new(80/255,80/255,80/255),
