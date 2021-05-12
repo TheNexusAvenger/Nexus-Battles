@@ -85,7 +85,7 @@ return {
         Description = "Fight to be the Juggernaut!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
+        RoundClass = "Round.Juggernaut",
     },
     SwordSwept = {
         DisplayName = "Sword Swept",
