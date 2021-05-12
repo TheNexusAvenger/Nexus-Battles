@@ -19,6 +19,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
 
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
+local DamageService
 local LocalEffectService
 
 local OneWeaponMadness = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
@@ -66,7 +67,6 @@ function OneWeaponMadness:RoundStarted()
         end
         self:SetTools(Player,{LastWeapons[Player]})
 
-
         if DisplayMessage then
             --Equip the new tool.
             Humanoid:EquipTool(Backpack:GetChildren()[1])
@@ -98,7 +98,10 @@ function OneWeaponMadness:RoundStarted()
             PlayerAdded(Player)
 
             --Connect the player getting kills.
-            table.insert(RoundEvents,Player:WaitForChild("TemporaryStats"):WaitForChild("KOs"):GetPropertyChangedSignal("Value"):Connect(function()
+            if not DamageService then
+                DamageService = ServerScriptServiceProject:GetResource("Service.DamageService")
+            end
+            table.insert(RoundEvents,DamageService:GetKOEvent(Player):Connect(function()
                 ReplaceRandomTool(Player,Player.Character,true)
             end))
         end)()

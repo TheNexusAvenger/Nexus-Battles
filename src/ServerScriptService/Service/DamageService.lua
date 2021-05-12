@@ -20,6 +20,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
+local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
 local CoinService = ServerScriptServiceProject:GetResource("Service.CoinService")
 local LocalEffectService = ServerScriptServiceProject:GetResource("Service.LocalEffectService")
 local RoundService = ServerScriptServiceProject:GetResource("Service.RoundService")
@@ -29,6 +30,8 @@ local DamageService = ReplicatedStorageProject:GetResource("External.NexusInstan
 DamageService:SetClassName("DamageService")
 DamageService.HumanoidTags = {}
 DamageService.PlayersToHumanoids = {}
+DamageService.PlayerKOEvents = {}
+DamageService.PlayerWOEvents = {}
 
 
 
@@ -82,6 +85,11 @@ local function CharacterAdded(Character)
             LocalEffectService:BroadcastLocalEffect(Player,"DisplayKillFeed",{
                 KilledPlayer = Player,
             })
+
+            --Fire the WO event.
+            if DamageService.PlayerWOEvents[Player] then
+                DamageService.PlayerWOEvents[Player]:Fire()
+            end
         else
             --Increment the stats.
             local KillingPlayerPersistentStats = StatService:GetPersistentStats(MostDamagePlayer)
@@ -133,6 +141,14 @@ local function CharacterAdded(Character)
                 for _ = 1,TotalCoins do
                     CoinService:DropCoin(HumanoidRootPart.Position,RoundService:GetPlayerRoundContainer(Player))
                 end
+            end
+
+            --Fire the KO and WO events.
+            if DamageService.PlayerKOEvents[MostDamagePlayer] then
+                DamageService.PlayerKOEvents[MostDamagePlayer]:Fire(Player,MostDamageTool)
+            end
+            if DamageService.PlayerWOEvents[Player] then
+                DamageService.PlayerWOEvents[Player]:Fire(MostDamagePlayer,MostDamageTool)
             end
 
             --Focus on the credited player.
@@ -200,6 +216,26 @@ function DamageService:DamageHumanoid(Humanoid,Damage,DamagingPlayer,DamagingToo
     end
 end
 
+--[[
+Returns the KO event for a player.
+--]]
+function DamageService:GetKOEvent(Player)
+    if not self.PlayerKOEvents[Player] then
+        self.PlayerKOEvents[Player] = NexusEventCreator:CreateEvent()
+    end
+    return self.PlayerKOEvents[Player]
+end
+
+--[[
+Returns the WO event for a player.
+--]]
+function DamageService:GetWOEvent(Player)
+    if not self.PlayerWOEvents[Player] then
+        self.PlayerWOEvents[Player] = NexusEventCreator:CreateEvent()
+    end
+    return self.PlayerWOEvents[Player]
+end
+
 
 
 --Connect players leaving.
@@ -211,6 +247,8 @@ for _,Player in pairs(Players:GetPlayers()) do
 end
 Players.PlayerRemoving:Connect(function(Player)
     DamageService.PlayersToHumanoids[Player] = nil
+    DamageService.PlayerKOEvents[Player] = nil
+    DamageService.PlayerWOEvents[Player] = nil
 end)
 
 
