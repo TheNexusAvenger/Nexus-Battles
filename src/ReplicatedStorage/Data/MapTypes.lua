@@ -6,7 +6,7 @@ Maps that can be used.
 
 return {
     Bloxburg = {
-        GameTypes = {"FreeForAll","TeamDeathmatch","OneWeaponRocketLauncher","OneWeaponSuperball","Party",}, --{"BurnDown","Juggernaut","TeamSwap","OneWeaponMadness","CaptureTheFlag",}, --TODO: Enable more rounds.
+        GameTypes = {"FreeForAll","TeamDeathmatch","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party",}, --{"BurnDown","Juggernaut","TeamSwap","CaptureTheFlag",}, --TODO: Enable more rounds.
 		ImageId = 116668979, --TODO: Update image
 		Lighting = {
 			Ambient = Color3.new(70/255,70/255,70/255),
@@ -16,7 +16,7 @@ return {
 		},
     },
 	Crossroads = {
-		GameTypes = {"FreeForAll","TeamDeathmatch","OneWeaponRocketLauncher","OneWeaponSuperball","Party",}, --{"BurnDown","Juggernaut","TeamSwap","OneWeaponMadness",}, --TODO: Enable more rounds.
+		GameTypes = {"FreeForAll","TeamDeathmatch","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party",}, --{"BurnDown","Juggernaut","TeamSwap",}, --TODO: Enable more rounds.
 		ImageId = 116669007, --TODO: Update image
 		Lighting = {
 			Ambient = Color3.new(75/255,75/255,75/255),
@@ -27,7 +27,7 @@ return {
 		},
 	},
 	RavenRock = {
-		GameTypes = {"FreeForAll","TeamDeathmatch","OneWeaponSword","OneWeaponBomb","OneWeaponSuperball","OneWeaponRocketLauncher","Party",}, --{"BurnDown","Juggernaut","TeamSwap","OneWeaponMadness",}, --TODO: Enable more rounds.
+		GameTypes = {"FreeForAll","TeamDeathmatch","OneWeaponSword","OneWeaponBomb","OneWeaponSuperball","OneWeaponRocketLauncher","OneWeaponMadness","Party",}, --{"BurnDown","Juggernaut","TeamSwap",}, --TODO: Enable more rounds.
 		ImageId = 116669027, --TODO: Update image
 		Lighting = {
 			Ambient = Color3.new(75/255,75/255,75/255),
@@ -38,7 +38,7 @@ return {
 		},
 	},
 	Skylands = {
-		GameTypes = {"FreeForAll","TeamDeathmatch","OneWeaponRocketLauncher","OneWeaponSuperball","Party","SwordSwept",}, --{"BurnDown","Juggernaut","TeamSwap","OneWeaponMadness","CaptureTheFlag",}, --TODO: Enable more rounds.
+		GameTypes = {"FreeForAll","TeamDeathmatch","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","SwordSwept",}, --{"BurnDown","Juggernaut","TeamSwap","CaptureTheFlag",}, --TODO: Enable more rounds.
 		ImageId = 119699444, --TODO: Update image
 		Lighting = {
 			Ambient = Color3.new(80/255,80/255,80/255),
@@ -60,7 +60,7 @@ return {
 		},
 	},
 	TheShard = {
-		GameTypes = {"FreeForAll","OneWeaponSuperball","TeamDeathmatch",}, --{"TeamSwap","Juggernaut","OneWeaponMadness",}, --TODO: Enable more rounds.
+		GameTypes = {"FreeForAll","TeamDeathmatch","OneWeaponSuperball","OneWeaponMadness",}, --{"TeamSwap","Juggernaut",}, --TODO: Enable more rounds.
 		ImageId = 117446222, --TODO: Update image
 		Lighting = {
 			Ambient = Color3.new(75/255,75/255,75/255),

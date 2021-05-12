@@ -131,7 +131,7 @@ return {
         Description = "Get one random weapon every knockout!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
+        RoundClass = "Round.OneWeaponMadness",
     },
     FuelFrenzy = {
         DisplayName = "Fuel Frenzy",

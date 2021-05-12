@@ -270,7 +270,9 @@ function BaseRound:SpawnPlayer(Player)
         end)
 
         --Set the tools.
-        self:SetTools(Player,self.PlayerStarterTools[Player] or {})
+        if self.PlayerStarterTools[Player] then
+            self:SetTools(Player,self.PlayerStarterTools[Player])
+        end
     end)()
 end
 
@@ -326,7 +328,7 @@ function BaseRound:SetTools(Player,PlayerTools)
     end
     local EquippedTool = Character:FindFirstChildOfClass("Tool")
     if EquippedTool and not PlayerToolsMap[EquippedTool.Name] then
-        Humanoid:UnequipAllTools()
+        Humanoid:UnequipTools()
         EquippedTool:Destroy()
     end
 end
