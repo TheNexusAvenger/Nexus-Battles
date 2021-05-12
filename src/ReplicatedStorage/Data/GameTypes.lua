@@ -63,7 +63,7 @@ return {
         Description = "Get a KO with each weapon!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
+        RoundClass = "Round.BurnDown",
     },
 	TeamDeathmatch = {
         DisplayName = "Team Deathmatch",
