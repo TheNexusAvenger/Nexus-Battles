@@ -18,8 +18,6 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
 
-local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
-
 local OneWeaponMadness = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 OneWeaponMadness:SetClassName("OneWeaponMadness")
 OneWeaponMadness:AddFromSerializeData("OneWeaponMadness")

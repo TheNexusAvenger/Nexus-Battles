@@ -124,7 +124,7 @@ return {
         Description = "Kill the other team's players to get them on your team!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS_TEAMS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
+        RoundClass = "Round.TeamSwap",
     },
     OneWeaponMadness = {
         DisplayName = "One Weapon Madness",
