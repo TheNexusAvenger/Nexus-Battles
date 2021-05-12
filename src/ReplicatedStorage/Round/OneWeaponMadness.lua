@@ -19,8 +19,6 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
 
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
-local DamageService
-local LocalEffectService
 
 local OneWeaponMadness = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 OneWeaponMadness:SetClassName("OneWeaponMadness")
@@ -72,10 +70,7 @@ function OneWeaponMadness:RoundStarted()
             Humanoid:EquipTool(Backpack:GetChildren()[1])
 
             --Display the message.
-            if not LocalEffectService then
-                LocalEffectService = ServerScriptServiceProject:GetResource("Service.LocalEffectService")
-            end
-            LocalEffectService:PlayLocalEffect(Player,"DisplayAlert","Lets change things up a bit!")
+            self:GetService("LocalEffectService"):PlayLocalEffect(Player,"DisplayAlert","Lets change things up a bit!")
         end
     end
 
@@ -98,10 +93,7 @@ function OneWeaponMadness:RoundStarted()
             PlayerAdded(Player)
 
             --Connect the player getting kills.
-            if not DamageService then
-                DamageService = ServerScriptServiceProject:GetResource("Service.DamageService")
-            end
-            table.insert(RoundEvents,DamageService:GetKOEvent(Player):Connect(function()
+            table.insert(RoundEvents,self:GetService("DamageService"):GetKOEvent(Player):Connect(function()
                 ReplaceRandomTool(Player,Player.Character,true)
             end))
         end)()

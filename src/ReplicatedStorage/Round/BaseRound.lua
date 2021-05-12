@@ -16,9 +16,6 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerStorage = game:GetService("ServerStorage")
 
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
-local CharacterService
-local CoinService
-local StatService
 local StatsSorter
 
 local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
@@ -133,13 +130,19 @@ function BaseRound:__new()
 end
 
 --[[
+Returns a service.
+--]]
+function BaseRound:GetService(ServiceName)
+    return ServerScriptServiceProject:GetResource("Service."..tostring(ServiceName))
+end
+
+--[[
 Starts the round.
 --]]
 function BaseRound:Start(RoundPlayers,LoadTimeElapsedCallback)
     --Create the temporary stats.
-    self:LoadServices()
     for _,Player in pairs(RoundPlayers) do
-        local Stats = StatService:GetTemporaryStats(Player)
+        local Stats = self:GetService("StatService"):GetTemporaryStats(Player)
         for _,StatData in pairs(self.RoundStats) do
             Stats:Create(StatData.Name,StatData.ValueType,StatData.DefaultValue)
         end
@@ -201,33 +204,15 @@ function BaseRound:End()
     end
 
     --Award the MVP coins.
-    self:LoadServices()
     local MVPCoins = math.ceil(MVP_COINS/#self.MVPs)
     for _,Player in pairs(self.MVPs) do
         coroutine.wrap(function()
             for _ = 1,MVPCoins do
                 if not Player.Parent then return end
-                CoinService:GiveCoins(Player,1)
+                self:GetService("CoinService"):GiveCoins(Player,1)
                 wait()
             end
         end)()
-    end
-end
-
---[[
-Loads the services if it wasn't done so already.
-Can't be loaded the beginning due to a cyclic dependency,
-and they can only be loaded on the server.
---]]
-function BaseRound:LoadServices()
-    if not CharacterService then
-        CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
-    end
-    if not StatService then
-        StatService = ServerScriptServiceProject:GetResource("Service.StatService")
-    end
-    if not CoinService then
-        CoinService = ServerScriptServiceProject:GetResource("Service.CoinService")
     end
 end
 
@@ -252,7 +237,7 @@ function BaseRound:SpawnPlayer(Player)
         SpawnParts.CurrentSpawn = (SpawnParts.CurrentSpawn % #SpawnParts.Parts) + 1
 
         --Teleport the player.
-        self:LoadServices()
+        local CharacterService = self:GetService("CharacterService")
         local Character = CharacterService:SpawnCharacter(Player)
         CharacterService:AddForceField(Player)
         if not Character then return end
@@ -282,8 +267,7 @@ Despawns a player.
 function BaseRound:DespawnPlayer(Player)
     if not Player or not Player.Parent or not self.Players:Contains(Player) then return end
     if not Player.Character then return end
-    self:LoadServices()
-    CharacterService:DespawnCharacter(Player)
+    self:GetService("CharacterService"):DespawnCharacter(Player)
 end
 
 --[[
@@ -340,8 +324,7 @@ such as when the round ends.
 function BaseRound:RemoveCurrentPlayer(Player)
     if self.Players:Contains(Player) then
         self.Players:Remove(Player)
-        self:LoadServices()
-        StatService:ClearTemporaryStats(Player)
+        self:GetService("StatService"):ClearTemporaryStats(Player)
     end
 end
 
