@@ -70,7 +70,7 @@ local function GetDamageName()
     if GetReflectedByPlayer() then
         return "Reflector"
     end
-    return "Rocket Launcher"
+    return "RocketLauncher"
 end
 
 --[[

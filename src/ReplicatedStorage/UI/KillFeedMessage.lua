@@ -10,9 +10,10 @@ local TweenService = game:GetService("TweenService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
+local WeaponIcon = ReplicatedStorageProject:GetResource("UI.Icon.WeaponIcon")
+
 local KillFeedMessage = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
 KillFeedMessage:SetClassName("KillFeedMessage")
-
 
 
 
@@ -62,9 +63,9 @@ function KillFeedMessage:__new(KillFeedData)
         KillingPlayerText.Text = KillFeedData.KillingPlayer.DisplayName
         KillingPlayerText.Parent = AdornFrame
 
-        local WeaponIcon = Instance.new("Frame") --TODO: Use actual icon
-        WeaponIcon.BackgroundTransparency = 0.5
-        WeaponIcon.Parent = AdornFrame
+        local KillingWeaponIcon = WeaponIcon.new(KillFeedData.MostDamageTool)
+        KillingWeaponIcon.Parent = AdornFrame
+        self.KillingWeaponIcon = KillingWeaponIcon
 
         local KilledPlayerText = Instance.new("TextLabel")
         KilledPlayerText.BackgroundTransparency = 1
@@ -82,8 +83,8 @@ function KillFeedMessage:__new(KillFeedData)
 
             KillingPlayerText.Size = UDim2.new(0,KillingPlayerSizeBounds.X + 10,0,self.HeightPixels)
             KillingPlayerText.TextSize = self.HeightPixels
-            WeaponIcon.Size = UDim2.new(0,self.HeightPixels,0,self.HeightPixels)
-            WeaponIcon.Position = UDim2.new(0,KillingPlayerSizeBounds.X + 10,0,0)
+            KillingWeaponIcon.Size = UDim2.new(0,self.HeightPixels,0,self.HeightPixels)
+            KillingWeaponIcon.Position = UDim2.new(0,KillingPlayerSizeBounds.X + 10,0,0)
             KilledPlayerText.Size = UDim2.new(0,KilledPlayerSizeBounds.X + 10,0,self.HeightPixels)
             KilledPlayerText.Position = UDim2.new(0,KillingPlayerSizeBounds.X + self.HeightPixels + 10,0,0)
             KilledPlayerText.TextSize = self.HeightPixels
@@ -137,6 +138,9 @@ Destroys the text timer.
 function KillFeedMessage:Destroy()
     self.super:Destroy()
     self.MessageFrame:Destroy()
+    if self.KillingWeaponIcon then
+        self.KillingWeaponIcon:Destroy()
+    end
 end
 
 

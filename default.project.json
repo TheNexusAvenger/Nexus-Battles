@@ -14,6 +14,9 @@
             "$path": "src/ReplicatedStorage",
             "External": {
                 "$className": "Folder",
+                "Module3D": {
+                    "$path": "module/Module3D/Module3D.lua"
+                },
                 "NexusInstance": {
                     "$path": "module/Nexus-Instance/src"
                 },
