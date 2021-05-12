@@ -133,12 +133,4 @@ return {
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.OneWeaponMadness",
     },
-    FuelFrenzy = {
-        DisplayName = "Fuel Frenzy",
-        Description = "Gather up fuel and return it to your rocket to blast off!",
-        RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
-        MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
-		Weight = 3,
-    },
 }

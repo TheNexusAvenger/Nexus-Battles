@@ -106,19 +106,5 @@ return {
 			ShadowColor = Color3.new(0/255,0/255,0/255),
 			TimeOfDay = 14,
 		}
-	},
-	ConcaveCalamity = {
-		GameTypes = {"FuelFrenzy",},
-		ImageId = 3040739059, --TODO: Update image
-		Lighting = {
-			Ambient = Color3.new(80/255,80/255,80/255),
-			FogColor = Color3.new(147/255,207/255,227/255),
-			Brightness = 20,
-			FogEnd = 1000000000,
-			FogStart = 200,
-			ShadowColor = Color3.new(116/255,116/255,116/255),
-			TimeOfDay = 24,
-		},
-		RequiredEvents = {"Easter"},
 	},]]
 }
