@@ -7,6 +7,7 @@ Base round class used by the game.
 local DEFAULT_ROUND_TIME = 5 * 60
 local LOAD_TIME = 5
 local DEFAULT_RESPAWN_TIME = 3
+local MVP_COINS = 20
 
 
 
@@ -16,6 +17,7 @@ local ServerStorage = game:GetService("ServerStorage")
 
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 local CharacterService
+local CoinService
 local StatService
 local StatsSorter
 
@@ -196,6 +198,19 @@ function BaseRound:End()
         self:SetSpawningEnabled(Player,false)
         self:DespawnPlayer(Player)
     end
+
+    --Award the MVP coins.
+    self:LoadServices()
+    local MVPCoins = math.ceil(MVP_COINS/#self.MVPs)
+    for _,Player in pairs(self.MVPs) do
+        coroutine.wrap(function()
+            for _ = 1,MVPCoins do
+                if not Player.Parent then return end
+                CoinService:GiveCoins(Player,1)
+                wait()
+            end
+        end)()
+    end
 end
 
 --[[
@@ -209,6 +224,9 @@ function BaseRound:LoadServices()
     end
     if not StatService then
         StatService = ServerScriptServiceProject:GetResource("Service.StatService")
+    end
+    if not CoinService then
+        CoinService = ServerScriptServiceProject:GetResource("Service.CoinService")
     end
 end
 
