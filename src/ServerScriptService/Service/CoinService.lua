@@ -50,9 +50,9 @@ function CoinService:GiveCoins(Player,Total,WorldPosition)
 
     --Play the animation on the client.
     if WorldPosition then
-        LocalEffectService:PlayLocalEffect(Player,"DisplayWorldSpaceCoin",WorldPosition)
+        LocalEffectService:PlayLocalEffect(Player,"DisplayWorldSpaceCoin",Total,WorldPosition)
     else
-        LocalEffectService:PlayLocalEffect(Player,"DisplayCoinsUpdate",WorldPosition)
+        LocalEffectService:PlayLocalEffect(Player,"DisplayCoinsUpdate",Total)
     end
 
     --Return true.

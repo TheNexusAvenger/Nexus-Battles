@@ -61,9 +61,12 @@ CoinCount.Parent = CoinImage
 --[[
 Flashes a coin and updates the count.
 --]]
-local function FlashCoins()
+local function FlashCoins(AddedCoins)
+    AddedCoins = AddedCoins or math.huge
+
     --Update the text.
-    CoinCount.Text = tostring(CoinsValue.Value)
+    local CurrentDisplayedCoins = tonumber(CoinCount.Text)
+    CoinCount.Text = math.min(CurrentDisplayedCoins + AddedCoins,CoinsValue.Value)
 
     --Create the coin to flash.
     local FlashCoinImage = Instance.new("ImageLabel")
@@ -101,7 +104,7 @@ end
 --[[
 Shows a coin animated in local space.
 --]]
-local function ShowLocalCoin(PosX,PosY,Width)
+local function ShowLocalCoin(AddedCoins,PosX,PosY,Width)
     --camp the width.
     local ScreenHeight = CoinWalletContainer.AbsoluteSize.Y
     if Width > ScreenHeight * MAX_COIN_SCREEN_HEIGHT then
@@ -132,13 +135,13 @@ local function ShowLocalCoin(PosX,PosY,Width)
     MovingCoinImage:TweenPosition(UDim2.new(0,TargetPosX,0,TargetPosY),"Out","Sine",TravelTime)
     wait(TravelTime)
     MovingCoinImage:Destroy()
-    FlashCoins()
+    FlashCoins(AddedCoins)
 end
 
 --[[
 Shows a coin animating from the world space.
 --]]
-local function ShowWorldCoin(WorldPosition)
+local function ShowWorldCoin(AddedCoins,WorldPosition)
     --Calculate a rough bounding box of the coin.
     local CoinWorldPoints = {
         WorldToScreenPoint(WorldPosition + Vector3.new(COIN_WIDTH/2,0,COIN_WIDTH/2)),
@@ -183,16 +186,16 @@ local function ShowWorldCoin(WorldPosition)
     end
 
     --Show the coin.
-    ShowLocalCoin(CoinX,CoinY,CoinSize)
+    ShowLocalCoin(AddedCoins,CoinX,CoinY,CoinSize)
 end
 
 
 
 --Connect the events.
-DisplayCoinsUpdateEvent.Event:Connect(function()
+DisplayCoinsUpdateEvent.Event:Connect(function(AddedCoins)
     local ScreenSize = CoinWalletContainer.AbsoluteSize
-    ShowLocalCoin(ScreenSize.X/2,ScreenSize.Y/2,ScreenSize.Y * 0.075)
+    ShowLocalCoin(AddedCoins,ScreenSize.X/2,ScreenSize.Y/2,ScreenSize.Y * 0.075)
 end)
-DisplayWorldSpaceCoinEvent.Event:Connect(function(WorldPosition)
-    ShowWorldCoin(WorldPosition)
+DisplayWorldSpaceCoinEvent.Event:Connect(function(AddedCoins,WorldPosition)
+    ShowWorldCoin(AddedCoins,WorldPosition)
 end)

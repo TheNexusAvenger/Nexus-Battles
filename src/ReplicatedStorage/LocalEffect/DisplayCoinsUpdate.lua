@@ -9,6 +9,6 @@ local Players = game:GetService("Players")
 local PlayerScripts = Players.LocalPlayer:WaitForChild("PlayerScripts")
 local DisplayCoinsUpdate = PlayerScripts:WaitForChild("CoinWallet"):WaitForChild("DisplayCoinsUpdate")
 
-return function()
-    DisplayCoinsUpdate:Fire()
+return function(AddedCoins)
+    DisplayCoinsUpdate:Fire(AddedCoins)
 end
