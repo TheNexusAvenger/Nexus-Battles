@@ -119,7 +119,7 @@ local function CharacterAdded(Character)
                 local KillstreakMessage = KILLSTREAK_MESSAGES[KillStreak]
                 if KillstreakMessage then
                     LocalEffectService:BroadcastLocalEffect(Player,"DisplayKillFeed",{
-                        Message = tostring(MostDamagePlayer)..KillstreakMessage.Message,
+                        Message = MostDamagePlayer.DisplayName..KillstreakMessage.Message,
                         AudioId = KillstreakMessage.AudioId,
                     })
                 end
