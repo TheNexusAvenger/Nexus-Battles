@@ -70,7 +70,7 @@ return {
 			TimeOfDay = 9,
 		},
 	},
-	--[[Dodgeball = {
+	DodgeballArena = {
 		GameTypes = {"Dodgeball",},
 		ImageId = 122328784, --TODO: Update image
 		Lighting = {
@@ -82,7 +82,7 @@ return {
 			ShadowColor = Color3.new(190/255,190/255,190/255),
 			TimeOfDay = 1,
 		},
-	},]]
+	},
 	RocketRace = {
 		GameTypes = {"RocketRace",},
 		ImageId = 3040728324, --TODO: Update image

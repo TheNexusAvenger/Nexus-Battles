@@ -100,7 +100,7 @@ return {
         Description = "Eliminate the other team!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS_TEAMS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
+        RoundClass = "Round.Dodgeball",
 		Weight = 2,
     },
     CaptureTheFlag = {
