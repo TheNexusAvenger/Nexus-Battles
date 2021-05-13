@@ -17,7 +17,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
 local ObjectReplication = NexusRoundSystem:GetObjectReplicator()
-require(script.Parent:WaitForChild("Helper"):WaitForChild("TeamSelection"))
+require(ReplicatedStorage:WaitForChild("State"):WaitForChild("TeamSelection"))
 
 local BaseTeamRound = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 BaseTeamRound:SetClassName("BaseTeamRound")

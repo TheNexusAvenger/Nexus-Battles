@@ -9,7 +9,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Teams = game:GetService("Teams")
 
 local NexusEventCreator = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusInstance"):WaitForChild("Event"):WaitForChild("NexusEventCreator"))
-local TeamSelection = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("Helper"):WaitForChild("TeamSelection"))
+local TeamSelection = require(ReplicatedStorage:WaitForChild("State"):WaitForChild("TeamSelection"))
 local TeamSelectionTest = NexusUnitTesting.UnitTest:Extend()
 
 
