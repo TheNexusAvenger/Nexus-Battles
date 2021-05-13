@@ -262,8 +262,10 @@ return function(MapModel,MapCenter,Round)
             SpawnLocation.Parent = MapModel
             
             local ActualSpawn = Instance.new("Part")
+            ActualSpawn.Transparency = 1
             ActualSpawn.Name = "Spawn"
             ActualSpawn.Anchored = true
+            ActualSpawn.CanCollide = false
             ActualSpawn.BrickColor = BrickColor.new("Bright violet")
             ActualSpawn.Size = Vector3.new(SPAWNSIZE-2,0.2,SPAWNSIZE-2)
             ActualSpawn.CFrame = SpawnLocation.CFrame * CFrame.new(0,SPAWNHEIGHT/2,0) * CFrame.Angles(0,math.pi,0)
