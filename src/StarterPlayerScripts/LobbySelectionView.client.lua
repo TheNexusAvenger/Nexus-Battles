@@ -7,6 +7,7 @@ the player is selecting in the lobby.
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
@@ -87,8 +88,10 @@ local function ShowLobbyInformation(Round)
     --[[
     Updates the text.
     --]]
+    local RequiredPlayersMet = false
     local function UpdateText()
         local CurrentPlayers,RequiedPlayers,MaxPlayers = #Round.Players:GetAll(),Round.RequiredPlayers,Round.MaxPlayers
+        RequiredPlayersMet = (CurrentPlayers >= RequiedPlayers)
         RoundTypeNameText.Text = string.upper(Round.RoundName)
         if CurrentPlayers >= RequiedPlayers then
             RequiredPlayersText.Text = tostring(CurrentPlayers).."/"..tostring(MaxPlayers).." Players"
@@ -142,6 +145,10 @@ local function ShowLobbyInformation(Round)
     table.insert(Events,Round.Players.ItemRemoved:Connect(UpdateText))
     table.insert(Events,Round.ReadyPlayers.ItemAdded:Connect(UpdateText))
     table.insert(Events,Round.ReadyPlayers.ItemRemoved:Connect(UpdateText))
+    table.insert(Events,RunService.RenderStepped:Connect(function()
+        local WhiteFactor = (RequiredPlayersMet and 1 or (math.sin((tick() * 2) % (2 * math.pi))/2) + 0.5)
+        RequiredPlayersText.TextStrokeColor3 = Color3.new(1,WhiteFactor,WhiteFactor)
+    end))
     UpdateText()
 
     --Show the text.
