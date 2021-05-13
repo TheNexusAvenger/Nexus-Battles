@@ -90,7 +90,7 @@ return {
     SwordSwept = {
         DisplayName = "Sword Swept",
         Description = "Swords Vs. Brooms!",
-        RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
+        RequiredPlayers = DEFAULT_REQUIRED_PLAYERS_TEAMS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.SwordSwept",
 		Weight = 2,
