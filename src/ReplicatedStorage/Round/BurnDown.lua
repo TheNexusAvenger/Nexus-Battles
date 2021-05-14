@@ -38,8 +38,6 @@ end
 Starts the round.
 --]]
 function BurnDown:RoundStarted()
-    --TODO: Set tools
-
     --Set up the initial loadouts.
     local Loadouts = {}
     for _,Player in pairs(self.Players:GetAll()) do
