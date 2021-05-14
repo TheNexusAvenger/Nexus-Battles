@@ -80,13 +80,14 @@ Returns the persistent stat container for the player.
 function StatService:GetPersistentStats(Player)
     --Create the persistent stats if they don't exist.
     if not self.CachedPersistentStats[Player] then
-        self.CachedPersistentStats[Player] = StatContainer.GetContainer(Player,"PersistentStats")
+        local PersistentStats = StatContainer.GetContainer(Player,"PersistentStats")
+        self.CachedPersistentStats[Player] = PersistentStats
 
         --Set the data source.
         local DataLoadSuccessful = false
         local Worked,Error = pcall(function()
             local DataSource = NexusDataStore:GetSaveData(Player)
-            self.CachedPersistentStats[Player]:SetDataSource(DataSource)
+            PersistentStats:SetDataSource(DataSource)
             DataLoadSuccessful = DataSource.DataLoadSuccessful
         end)
         if not Worked then
@@ -101,7 +102,7 @@ function StatService:GetPersistentStats(Player)
 
         --Create the stats.
         for _,StatData in pairs(DEFAULT_STATS) do
-            self.CachedPersistentStats[Player]:Create(StatData.Name,StatData.ValueType,StatData.DefaultValue)
+            PersistentStats:Create(StatData.Name,StatData.ValueType,StatData.DefaultValue)
         end
     end
 
