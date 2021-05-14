@@ -89,9 +89,9 @@ function Juggernaut:RoundStarted()
         for _,Player in pairs(self.Players:GetAll()) do
             if Player == CurrentJuggernaut then
                 LocalEffectService:PlayLocalEffect(Player,"DisplayAlert","YOU ARE THE JUGGERNAUT!")
-			else
+            else
                 LocalEffectService:PlayLocalEffect(Player,"DisplayAlert",string.upper(CurrentJuggernaut.DisplayName).." IS THE JUGGERNAUT!")
-			end
+            end
         end
         LocalEffectService:BroadcastLocalEffect(CurrentJuggernaut,"CreateJuggernautArrow",Head)
 

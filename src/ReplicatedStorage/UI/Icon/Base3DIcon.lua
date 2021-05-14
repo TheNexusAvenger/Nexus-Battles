@@ -28,7 +28,7 @@ function Base3DIcon:__new(Model)
     --Set up the Module3D frame.
     self.Module3DFrame = Module3D.new(Model)
     self.Module3DFrame.Camera.FieldOfView = 10
-	self.Module3DFrame:SetDepthMultiplier(1.2)
+    self.Module3DFrame:SetDepthMultiplier(1.2)
     self.RotationOffset = CFrame.new()
     self.RotationSpeed = ROTATION_SPEED_MULTIPLIER
 

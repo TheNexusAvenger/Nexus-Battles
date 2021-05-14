@@ -65,7 +65,7 @@ function ReplicatedContainer:__new()
     self.Name = self.ClassName
     self:AddToSerialization("Children","ObjectTableReference")
     self:AddToSerialization("Parent","ObjectReference")
-	self:AddToSerialization("Name")
+    self:AddToSerialization("Name")
 
     --Connect parent changes.
     self:GetPropertyChangedSignal("Parent"):Connect(function()

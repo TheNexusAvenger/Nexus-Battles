@@ -26,9 +26,9 @@ function Timer:__new()
     self.State = "STOPPED"
     self.StartTime = 0
     self.RemainingTimeFromStart = 0
-	self:AddToSerialization("State")
-	self:AddToSerialization("StartTime")
-	self:AddToSerialization("RemainingTimeFromStart")
+    self:AddToSerialization("State")
+    self:AddToSerialization("StartTime")
+    self:AddToSerialization("RemainingTimeFromStart")
 end
 
 --[[

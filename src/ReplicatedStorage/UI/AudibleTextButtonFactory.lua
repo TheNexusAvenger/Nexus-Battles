@@ -27,16 +27,16 @@ ClickSound.SoundId = CLICK_SOUND
 Adds two Color3s.
 --]]
 local function AddColor3(Color1,Color2)
-	--Multiply the R,G,B values.
-	local NewR,NewG,NewB = Color1.R + Color2.R,Color1.G + Color2.G,Color1.B + Color2.B
+    --Multiply the R,G,B values.
+    local NewR,NewG,NewB = Color1.R + Color2.R,Color1.G + Color2.G,Color1.B + Color2.B
 
-	--Clamp the values.
-	NewR = math.clamp(NewR,0,1)
-	NewG = math.clamp(NewG,0,1)
-	NewB = math.clamp(NewB,0,1)
+    --Clamp the values.
+    NewR = math.clamp(NewR,0,1)
+    NewG = math.clamp(NewG,0,1)
+    NewB = math.clamp(NewB,0,1)
 
-	--Return the color.
-	return Color3.new(NewR,NewG,NewB)
+    --Return the color.
+    return Color3.new(NewR,NewG,NewB)
 end
 
 

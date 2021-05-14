@@ -5,12 +5,12 @@ Class for a Sword Swept round.
 --]]
 
 local TEAM_TOOLS = {
-	["Bright blue"] = {
-		"Sword",
-	},
-	["Bright red"] = {
-		"Broom",
-	},
+    ["Bright blue"] = {
+        "Sword",
+    },
+    ["Bright red"] = {
+        "Broom",
+    },
 }
 
 

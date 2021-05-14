@@ -93,12 +93,12 @@ function LobbySelectionService:InitializePart(Part)
         RoundTypeText.Text = RoundType.DisplayName or SelectedRound.Type
 
         --Start the round for selecting players.
-		local LobbySelectionRound = ObjectReplicator:CreateObject("LobbySelectionRound")
+        local LobbySelectionRound = ObjectReplicator:CreateObject("LobbySelectionRound")
         if RoundType.DisplayName then LobbySelectionRound.RoundName = RoundType.DisplayName end
         if RoundType.RequiredPlayers then LobbySelectionRound.RequiredPlayers = RoundType.RequiredPlayers end
         if RoundType.MaxPlayers then LobbySelectionRound.MaxPlayers = RoundType.MaxPlayers end
-		LobbySelectionRound.SelectionPart = Part
-		LobbySelectionRound.Parent = LobbySelectionRounds
+        LobbySelectionRound.SelectionPart = Part
+        LobbySelectionRound.Parent = LobbySelectionRounds
 
         --Connect removing ready indicators.
         LobbySelectionRound.ReadyPlayers.ItemRemoved:Connect(function(Player)
@@ -115,17 +115,17 @@ function LobbySelectionService:InitializePart(Part)
         end)
 
         --Wait for the round to complete.
-		while LobbySelectionRound.Timer.State ~= "COMPLETE" do
-			LobbySelectionRound.Timer:GetPropertyChangedSignal("State"):Wait()
-		end
+        while LobbySelectionRound.Timer.State ~= "COMPLETE" do
+            LobbySelectionRound.Timer:GetPropertyChangedSignal("State"):Wait()
+        end
 
         --Start the round.
         RoundService:StartRound(SelectedRound.Type,SelectedRound.Map,LobbySelectionRound.Players:GetAll())
 
         --Clear the lobby round and prepare to restart.
-		wait(3)
-		LobbySelectionRound:Destroy()
-	end
+        wait(3)
+        LobbySelectionRound:Destroy()
+    end
 end
 
 --[[
