@@ -291,8 +291,8 @@ function CaptureTheFlag:CreateFlag(FlagBase,FlagTeamColor)
     end
 
     --Connect the flag disappearing.
-    Post:GetPropertyChangedSignal("Parent"):Connect(function()
-        if not Post.Parent then
+    Post.AncestryChanged:Connect(function()
+        if not Post:IsDescendantOf(game) then
             if FlagObject.State ~= "BASE" then
                 self:BroadcastLocalEffect("DisplayAlert","The "..FlagTeamName.." flag has been returned!")
             end
