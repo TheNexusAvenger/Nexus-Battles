@@ -23,6 +23,13 @@ ServerScriptServiceProject:GetResource("Service.DamageService")
 --Initialize the lobby selection parts.
 for i = 1,3 do
     coroutine.wrap(function()
-        LobbySelectionService:InitializePart(Workspace:WaitForChild("RoundPart"..tostring(i)))
+        LobbySelectionService:InitializePart(Workspace:WaitForChild("RoundPart"..tostring(i)),function(RoundData)
+            --Allow the round with the first 2 slots being non-team rounds and the last round being for teams.
+            if i == 3 then
+                return RoundData.RequiredPlayers >= 4
+            else
+               return RoundData.RequiredPlayers <= 2
+            end
+        end)
     end)()
 end

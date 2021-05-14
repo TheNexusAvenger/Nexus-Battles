@@ -57,7 +57,7 @@ end
 --[[
 Initializes a part in the lobby for starting rounds.
 --]]
-function LobbySelectionService:InitializePart(Part)
+function LobbySelectionService:InitializePart(Part,RoundValidationFunction)
     --Create the round display.
     local DisplayGui = Instance.new("SurfaceGui")
     DisplayGui.Face = Enum.NormalId.Top
@@ -85,6 +85,9 @@ function LobbySelectionService:InitializePart(Part)
     while true do
         --Select a random round type.
         local SelectedRound = LobbySelectionService.RoundOptions[math.random(1,#LobbySelectionService.RoundOptions)]
+        while RoundValidationFunction and not RoundValidationFunction(GameTypes[SelectedRound.Type],GameTypes[SelectedRound.Type]) do
+            SelectedRound = LobbySelectionService.RoundOptions[math.random(1,#LobbySelectionService.RoundOptions)]
+        end
         local MapType = MapTypes[SelectedRound.Map]
         local RoundType = GameTypes[SelectedRound.Type]
 
