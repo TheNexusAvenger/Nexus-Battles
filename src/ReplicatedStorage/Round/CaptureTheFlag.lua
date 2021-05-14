@@ -159,7 +159,7 @@ function CaptureTheFlag:CreateFlag(FlagBase,FlagTeamColor)
     local OppositeFlagTeamName = OPPOSITE_TEAM_COLOR_NAME_TO_NAME[FlagTeamColor.Name] or "(TEAM)"
 
     --Create the flag parts.
-    local PostCFrame = CFrame.new(FlagBase.Position) * CFrame.new(0,2.4,0) * CFrame.Angles(0,0,math.pi/2)
+    local PostCFrame = CFrame.new(FlagBase.Position) * CFrame.Angles(0,2 * math.pi * math.random(),0) * CFrame.new(0,2.4,0) * CFrame.Angles(0,0,math.pi/2)
     local Post = Instance.new("Part")
     Post.BrickColor = BrickColor.new("Medium stone grey")
     Post.Material = "SmoothPlastic"
@@ -264,7 +264,7 @@ function CaptureTheFlag:CreateFlag(FlagBase,FlagTeamColor)
         end
         Post.Parent = FlagBase
         Post.Anchored = true
-        Post.CFrame = PostCFrame
+        Post.CFrame = PostCFrame * CFrame.Angles(0,2 * math.pi * math.random(),0)
         Flag.CanCollide = false
     end
 
