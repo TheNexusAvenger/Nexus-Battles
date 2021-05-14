@@ -23,6 +23,6 @@ ServerScriptServiceProject:GetResource("Service.DamageService")
 --Initialize the lobby selection parts.
 for i = 1,3 do
     coroutine.wrap(function()
-		LobbySelectionService:InitializePart(Workspace:WaitForChild("RoundPart"..tostring(i)))
-	end)()
+        LobbySelectionService:InitializePart(Workspace:WaitForChild("RoundPart"..tostring(i)))
+    end)()
 end

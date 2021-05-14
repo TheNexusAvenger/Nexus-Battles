@@ -29,56 +29,56 @@ return {
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.OneWeaponSword",
-	},
-	OneWeaponSuperball = {
+    },
+    OneWeaponSuperball = {
         DisplayName = "Superball Smackdown",
         Description = "Superballs only!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.OneWeaponSuperball",
     },
-	OneWeaponBomb = {
+    OneWeaponBomb = {
         DisplayName = "Bomb Blitz",
         Description = "Bombs only!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.OneWeaponBomb",
     },
-	OneWeaponRocketLauncher = {
+    OneWeaponRocketLauncher = {
         DisplayName = "Rocket Rampage",
         Description = "Rocket Launchers only!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.OneWeaponRocketLauncher",
     },
-	Party = {
+    Party = {
         DisplayName = "Party",
         Description = "Three random weapons!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.Party",
     },
-	BurnDown = {
+    BurnDown = {
         DisplayName = "Burn Down",
         Description = "Get a KO with each weapon!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.BurnDown",
     },
-	TeamDeathmatch = {
+    TeamDeathmatch = {
         DisplayName = "Team Deathmatch",
         Description = "Team vs team!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS_TEAMS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.TeamDeathmatch",
     },
-	RocketRace = {
+    RocketRace = {
         DisplayName = "Rocket Race",
         Description = "Get to the top! Hold the point!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.RocketRace",
-		Weight = 2,
+        Weight = 2,
     },
     Juggernaut = {
         DisplayName = "Juggernaut",
@@ -93,7 +93,7 @@ return {
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS_TEAMS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.SwordSwept",
-		Weight = 2,
+        Weight = 2,
     },
     Dodgeball = {
         DisplayName = "Dodgeball",
@@ -101,7 +101,7 @@ return {
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS_TEAMS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.Dodgeball",
-		Weight = 2,
+        Weight = 2,
     },
     CaptureTheFlag = {
         DisplayName = "Capture The Flag",
@@ -109,7 +109,7 @@ return {
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS_TEAMS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.CaptureTheFlag",
-		Weight = 2,
+        Weight = 2,
     },
     KingOfTheHill = {
         DisplayName = "King Of The Hill",
@@ -117,7 +117,7 @@ return {
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.KingOfTheHill",
-		Weight = 2,
+        Weight = 2,
     },
     TeamSwap = {
         DisplayName = "Team Swap",

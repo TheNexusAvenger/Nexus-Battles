@@ -151,13 +151,13 @@ local function ShowWorldCoin(AddedCoins,WorldPosition)
     }
     local MinX,MaxX,MinY,MaxY = math.huge,-math.huge,math.huge,-math.huge
     local CoinBehindCamera = false
-	for _,Point in pairs(CoinWorldPoints) do
+    for _,Point in pairs(CoinWorldPoints) do
         MinX = math.min(MinX,Point.X)
         MaxX = math.max(MaxX,Point.X)
         MinY = math.min(MinY,Point.Y)
         MaxY = math.max(MaxY,Point.Y)
         CoinBehindCamera = CoinBehindCamera or (Point.Z < 0)
-	end
+    end
 
     --Modify the coin to come from the edge if it is behind the player.
     local CoinSize = math.max(math.abs(MaxX - MinX),math.abs(MaxY - MinY))

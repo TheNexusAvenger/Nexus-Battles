@@ -38,36 +38,36 @@ function BaseEntry:__new()
     self.AdornFrame = AdornFrame
 
     local BorderBottomLeftTriangle = Instance.new("ImageLabel")
-	BorderBottomLeftTriangle.BackgroundTransparency = 1
-	BorderBottomLeftTriangle.Image = TRIANGLE_TEXTURES
-	BorderBottomLeftTriangle.ImageRectSize = TRIANGLE_TEXTURE_SIZE
-	BorderBottomLeftTriangle.ImageRectOffset = BOTTOM_LEFT_TRIANGLE_OFFSET
+    BorderBottomLeftTriangle.BackgroundTransparency = 1
+    BorderBottomLeftTriangle.Image = TRIANGLE_TEXTURES
+    BorderBottomLeftTriangle.ImageRectSize = TRIANGLE_TEXTURE_SIZE
+    BorderBottomLeftTriangle.ImageRectOffset = BOTTOM_LEFT_TRIANGLE_OFFSET
     BorderBottomLeftTriangle.Parent = AdornFrame
-	self.BorderBottomLeftTriangle = BorderBottomLeftTriangle
+    self.BorderBottomLeftTriangle = BorderBottomLeftTriangle
 
     local BorderTopRightTriangle = Instance.new("ImageLabel")
-	BorderTopRightTriangle.BackgroundTransparency = 1
-	BorderTopRightTriangle.Image = TRIANGLE_TEXTURES
-	BorderTopRightTriangle.ImageRectSize = TRIANGLE_TEXTURE_SIZE
-	BorderTopRightTriangle.ImageRectOffset = TOP_RIGHT_TRIANGLE_OFFSET
+    BorderTopRightTriangle.BackgroundTransparency = 1
+    BorderTopRightTriangle.Image = TRIANGLE_TEXTURES
+    BorderTopRightTriangle.ImageRectSize = TRIANGLE_TEXTURE_SIZE
+    BorderTopRightTriangle.ImageRectOffset = TOP_RIGHT_TRIANGLE_OFFSET
     BorderTopRightTriangle.Parent = AdornFrame
-	self.BorderTopRightTriangle = BorderTopRightTriangle
+    self.BorderTopRightTriangle = BorderTopRightTriangle
 
-	local BottomLeftTriangle = Instance.new("ImageLabel")
-	BottomLeftTriangle.BackgroundTransparency = 1
-	BottomLeftTriangle.Image = TRIANGLE_TEXTURES
-	BottomLeftTriangle.ImageRectSize = TRIANGLE_TEXTURE_SIZE
-	BottomLeftTriangle.ImageRectOffset = BOTTOM_LEFT_TRIANGLE_OFFSET
+    local BottomLeftTriangle = Instance.new("ImageLabel")
+    BottomLeftTriangle.BackgroundTransparency = 1
+    BottomLeftTriangle.Image = TRIANGLE_TEXTURES
+    BottomLeftTriangle.ImageRectSize = TRIANGLE_TEXTURE_SIZE
+    BottomLeftTriangle.ImageRectOffset = BOTTOM_LEFT_TRIANGLE_OFFSET
     BottomLeftTriangle.Parent = AdornFrame
-	self.BottomLeftTriangle = BottomLeftTriangle
+    self.BottomLeftTriangle = BottomLeftTriangle
 
     local TopRightTriangle = Instance.new("ImageLabel")
-	TopRightTriangle.BackgroundTransparency = 1
-	TopRightTriangle.Image = TRIANGLE_TEXTURES
-	TopRightTriangle.ImageRectSize = TRIANGLE_TEXTURE_SIZE
-	TopRightTriangle.ImageRectOffset = TOP_RIGHT_TRIANGLE_OFFSET
+    TopRightTriangle.BackgroundTransparency = 1
+    TopRightTriangle.Image = TRIANGLE_TEXTURES
+    TopRightTriangle.ImageRectSize = TRIANGLE_TEXTURE_SIZE
+    TopRightTriangle.ImageRectOffset = TOP_RIGHT_TRIANGLE_OFFSET
     TopRightTriangle.Parent = AdornFrame
-	self.TopRightTriangle = TopRightTriangle
+    self.TopRightTriangle = TopRightTriangle
 
     local CenterFillFrame = Instance.new("Frame")
     CenterFillFrame.Size = UDim2.new(1,0,1,0)
