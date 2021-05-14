@@ -89,7 +89,6 @@ function Dodgeball:RunDoggeballMatch()
     local LocalEffectService = self:GetService("LocalEffectService")
 
     --Determine the players.
-    local ReferencePlayer = self.Players:GetAll()[1]
     local ActiveMatchPlayers = {}
     for _,Player in pairs(self.Players:GetAll()) do
         local Character = Player.Character
@@ -162,7 +161,7 @@ function Dodgeball:RunDoggeballMatch()
                                 local CharacterPosition = HumanoidRootPart.Position
                                 if CharacterPosition.X < MinX or CharacterPosition.X > MaxX or CharacterPosition.Z < MinZ or CharacterPosition.Z > MaxZ then
                                     Humanoid.Health = 0
-                                    LocalEffectService:PlayLocalEffect(ReferencePlayer,"DisplayAlert","Don't cross the line!")
+                                    LocalEffectService:PlayLocalEffect(Player,"DisplayAlert","Don't cross the line!")
                                 end
                                 wait()
                             end
@@ -186,17 +185,15 @@ function Dodgeball:RunDoggeballMatch()
         --Award the point to the team and stop the loop if there is 1 team.
         if #TeamsWithPlayers == 0 then
             --Display the message.
-            if ReferencePlayer then
-                LocalEffectService:BroadcastLocalEffect(ReferencePlayer,"DisplayAlert","No team wins!")
-            end
+            self:BroadcastLocalEffect("DisplayAlert","No team wins!")
 
             --Break the match loop.
             break
         elseif #TeamsWithPlayers == 1 then
             --Display the message.
             local WinningTeamColorName = TeamsWithPlayers[1]
-            if ReferencePlayer and TEAM_COLOR_NAME_TO_NAME[WinningTeamColorName] then
-                LocalEffectService:BroadcastLocalEffect(ReferencePlayer,"DisplayAlert",tostring(TEAM_COLOR_NAME_TO_NAME[WinningTeamColorName]).." wins!")
+            if TEAM_COLOR_NAME_TO_NAME[WinningTeamColorName] then
+                self:BroadcastLocalEffect("DisplayAlert",tostring(TEAM_COLOR_NAME_TO_NAME[WinningTeamColorName]).." wins!")
             end
 
             --Award a point.
@@ -223,6 +220,16 @@ function Dodgeball:RunDoggeballMatch()
     for _,Event in pairs(MatchEvents) do
         Event:Disconnect()
     end
+end
+
+--[[
+Disposes of the object.
+--]]
+function Dodgeball:Dispose()
+    self.super:Dispose()
+
+    --Destroy the objects.
+    self.TeamScores:Destroy()
 end
 
 

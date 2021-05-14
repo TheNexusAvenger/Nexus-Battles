@@ -338,6 +338,17 @@ function BaseRound:RemoveCurrentPlayer(Player)
 end
 
 --[[
+Broadcasts a local effect to all the
+players of the round.
+--]]
+function BaseRound:BroadcastLocalEffect(...)
+    local LocalEffectService = self:GetService("LocalEffectService")
+    for _,Player in pairs(self.Players:GetAll()) do
+        LocalEffectService:PlayLocalEffect(Player,...)
+    end
+end
+
+--[[
 Disposes of the object.
 --]]
 function BaseRound:Dispose()

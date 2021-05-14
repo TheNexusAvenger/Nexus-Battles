@@ -108,7 +108,7 @@ return {
         Description = "Capture the other team's flag and bring it back!",
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS_TEAMS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
-        RoundClass = "Round.NullRound",
+        RoundClass = "Round.CaptureTheFlag",
 		Weight = 2,
     },
     KingOfTheHill = {

@@ -52,7 +52,7 @@ end
 Increments the value of the stat.
 --]]
 function Stat:Increment(Increment)
-    self:Set(self:Get() + Increment)
+    self:Set(self:Get() + (Increment or 1))
 end
 
 

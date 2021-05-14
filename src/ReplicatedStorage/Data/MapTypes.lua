@@ -6,7 +6,7 @@ Maps that can be used.
 
 return {
 	Bloxburg = {
-        GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","TeamDeathmatch","TeamSwap",}, --{"CaptureTheFlag",}, --TODO: Enable more rounds.
+        GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","TeamDeathmatch","TeamSwap","CaptureTheFlag",},
 		ImageId = 116668979, --TODO: Update image
 		Lighting = {
 			Ambient = Color3.new(70/255,70/255,70/255),
@@ -38,7 +38,7 @@ return {
 		},
 	},
 	Skylands = {
-		GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordSwept","TeamDeathmatch","TeamSwap",}, --{"CaptureTheFlag",}, --TODO: Enable more rounds.
+		GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordSwept","TeamDeathmatch","TeamSwap","CaptureTheFlag",},
 		ImageId = 119699444, --TODO: Update image
 		Lighting = {
 			Ambient = Color3.new(80/255,80/255,80/255),

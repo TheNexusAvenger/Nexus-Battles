@@ -50,6 +50,11 @@ local DEFAULT_STATS = {
         ValueType = "IntValue",
         DefaultValue = 0,
     },
+    {
+        Name = "CapturedFlags",
+        ValueType = "IntValue",
+        DefaultValue = 0,
+    },
 }
 
 
