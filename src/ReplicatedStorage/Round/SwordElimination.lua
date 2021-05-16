@@ -47,6 +47,16 @@ function SwordElimination:RoundStarted()
         table.insert(RoundEvents,DamageService:GetWOEvent(Player):Connect(function()
             --End the round if there is only 1 player left (2 with killing player).
             if #self.Players:GetAll() <= 2 then
+                --Set the MVP to the last player.
+                --The WO event is not used because the player can reset.
+                for _,OtherPlayer in pairs(self.Players:GetAll()) do
+                    if Player ~= OtherPlayer then
+                        self.MVPs = {OtherPlayer}
+                        break
+                    end
+                end
+
+                --Stop the timer and allow the round to complete.
                 self.Timer:Stop()
                 self.Timer.State = "COMPLETE"
             else
