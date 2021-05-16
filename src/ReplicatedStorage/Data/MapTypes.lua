@@ -6,7 +6,7 @@ Maps that can be used.
 
 return {
     Bloxburg = {
-        GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","TeamDeathmatch","TeamSwap","CaptureTheFlag",},
+        GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordElimination","TeamDeathmatch","TeamSwap","CaptureTheFlag",},
         ImageId = 116668979, --TODO: Update image
         Lighting = {
             Ambient = Color3.new(70/255,70/255,70/255),
@@ -16,7 +16,7 @@ return {
         },
     },
     Crossroads = {
-        GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","TeamDeathmatch","TeamSwap",},
+        GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordElimination","TeamDeathmatch","TeamSwap",},
         ImageId = 116669007, --TODO: Update image
         Lighting = {
             Ambient = Color3.new(75/255,75/255,75/255),
@@ -27,7 +27,7 @@ return {
         },
     },
     RavenRock = {
-        GameTypes = {"FreeForAll","OneWeaponSword","OneWeaponBomb","OneWeaponSuperball","OneWeaponRocketLauncher","OneWeaponMadness","Party","BurnDown","Juggernaut","TeamDeathmatch","TeamSwap",},
+        GameTypes = {"FreeForAll","OneWeaponSword","OneWeaponBomb","OneWeaponSuperball","OneWeaponRocketLauncher","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordElimination","TeamDeathmatch","TeamSwap",},
         ImageId = 116669027, --TODO: Update image
         Lighting = {
             Ambient = Color3.new(75/255,75/255,75/255),

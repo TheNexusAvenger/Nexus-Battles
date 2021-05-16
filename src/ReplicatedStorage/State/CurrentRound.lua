@@ -16,6 +16,8 @@ local ActiveRounds = NexusRoundSystem:GetObjectReplicator():GetGlobalContainer()
 local CurrentRound = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusObject"):Extend()
 CurrentRound:SetClassName("CurrentRound")
 CurrentRound.CurrentRoundChanged = NexusEventCreator:CreateEvent()
+CurrentRound.CurrentPlayingRoundChanged = NexusEventCreator:CreateEvent()
+CurrentRound.CurrentSpectatingRoundChanged = NexusEventCreator:CreateEvent()
 
 
 
@@ -25,18 +27,30 @@ Sets the current round the player is in.
 --]]
 local function UpdateCurrentRound()
     --Find the current round the player is in.
-    local PlayerRound
+    local PlayerRound,SpectatorRound
     for _,Round in pairs(ActiveRounds:GetChildren()) do
         if Round.Players:Contains(Players.LocalPlayer) then
             PlayerRound = Round
-            break
+        end
+        if Round.Spectators:Contains(Players.LocalPlayer) then
+            SpectatorRound = Round
         end
     end
 
     --Update the current round.
-    if PlayerRound ~= CurrentRound.CurrentRound then
-        CurrentRound.CurrentRound = PlayerRound
-        CurrentRound.CurrentRoundChanged:Fire(PlayerRound)
+    local LastCurrentRound = CurrentRound.CurrentRound
+    local NewCurrentRound = PlayerRound or SpectatorRound
+    if PlayerRound ~= CurrentRound.CurrentPlayingRound then
+        CurrentRound.CurrentPlayingRound = PlayerRound
+        CurrentRound.CurrentPlayingRoundChanged:Fire(PlayerRound)
+    end
+    if SpectatorRound ~= CurrentRound.CurrentSpectatingRound then
+        CurrentRound.CurrentSpectatingRound = SpectatorRound
+        CurrentRound.CurrentSpectatingRoundChanged:Fire(SpectatorRound)
+    end
+    if LastCurrentRound ~= NewCurrentRound then
+        CurrentRound.CurrentRound = NewCurrentRound
+        CurrentRound.CurrentRoundChanged:Fire(NewCurrentRound)
     end
 end
 
@@ -51,6 +65,16 @@ local function RegisterRound(RoundInstance)
         end
     end)
     RoundInstance.Players.ItemRemoved:Connect(function(Player)
+        if Player == Players.LocalPlayer then
+            UpdateCurrentRound()
+        end
+    end)
+    RoundInstance.Spectators.ItemAdded:Connect(function(Player)
+        if Player == Players.LocalPlayer then
+            UpdateCurrentRound()
+        end
+    end)
+    RoundInstance.Spectators.ItemRemoved:Connect(function(Player)
         if Player == Players.LocalPlayer then
             UpdateCurrentRound()
         end

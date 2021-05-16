@@ -133,4 +133,11 @@ return {
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.OneWeaponMadness",
     },
+    SwordElimination = {
+        DisplayName = "Sword Elimination",
+        Description = "Last one standing wins!",
+        RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
+        MaxPlayers = DEFAULT_MAX_PLAYERS,
+        RoundClass = "Round.SwordElimination",
+    },
 }

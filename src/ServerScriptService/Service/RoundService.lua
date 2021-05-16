@@ -167,16 +167,18 @@ function RoundService:StartRound(RoundType,MapType,Players)
     end)()
 
     --Connect clearing when all players leave the round.
-    Round.Players.ItemRemoved:Connect(function()
-        if #Round.Players:GetAll() == 0 then
-            --Clear the map and map.
-            RoundContainer:Destroy()
-            Round:Destroy()
+    for _,Table in pairs({Round.Players,Round.Spectators}) do
+        Table.ItemRemoved:Connect(function()
+            if #Round.Players:GetAll() == 0 and #Round.Spectators:GetAll() == 0 then
+                --Clear the map and map.
+                RoundContainer:Destroy()
+                Round:Destroy()
 
-            --De-allocate the position.
-            self.AllocatedPositions[AllocatedPosition] = nil
-        end
-    end)
+                --De-allocate the position.
+                self.AllocatedPositions[AllocatedPosition] = nil
+            end
+        end)
+    end
 end
 
 --[[
@@ -187,7 +189,16 @@ if the player is not in a round.
 function RoundService:GetPlayersInRound(ReferencePlayer)
     for _,Round in pairs(ActiveRounds:GetChildren()) do
         if Round.Players:Contains(ReferencePlayer) then
-            return Round.Players:GetAll()
+            local RoundPlayers,RoundPlayersMap = {},{}
+            for _,Table in pairs({Round.Players,Round.Spectators}) do
+                for _,Player in pairs(Table:GetAll()) do
+                    if not RoundPlayersMap[Player] then
+                        table.insert(RoundPlayers,Player)
+                        RoundPlayersMap[Player] = true
+                    end
+                end
+            end
+            return RoundPlayers
         end
     end
     return {}
@@ -198,7 +209,7 @@ Returns the round container of the reference player.
 --]]
 function RoundService:GetPlayerRoundContainer(ReferencePlayer)
     for _,Round in pairs(ActiveRounds:GetChildren()) do
-        if Round.Players:Contains(ReferencePlayer) then
+        if Round.Players:Contains(ReferencePlayer) or Round.Spectators:Contains(ReferencePlayer) then
             return Round.RoundContainer
         end
     end
@@ -210,9 +221,10 @@ end
 --Connect the remote events.
 LeaveRound.OnServerEvent:Connect(function(Player)
     for _,Round in pairs(ActiveRounds:GetChildren()) do
-        if Round.Players:Contains(Player) then
+        if Round.Players:Contains(Player) or Round.Spectators:Contains(Player) then
             --Remove the player.
             Round:RemoveCurrentPlayer(Player)
+            Round.Spectators:Remove(Player)
 
             --Remove the player team.
             Player.Team = nil

@@ -121,6 +121,17 @@ function ReplicatedTable:GetAll(ConditionFunction)
 end
 
 --[[
+Returns the index at a given value.
+--]]
+function ReplicatedTable:Find(Value)
+    for i,OtherValue in pairs(self.Table) do
+        if Value == OtherValue then
+            return i
+        end
+    end
+end
+
+--[[
 Returns if the table contains the given value.
 --]]
 function ReplicatedTable:Contains(Value)

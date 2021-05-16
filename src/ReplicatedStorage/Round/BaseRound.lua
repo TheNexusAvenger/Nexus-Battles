@@ -43,6 +43,7 @@ function BaseRound:__new()
     self.MVPs = {}
     if NexusRoundSystem:IsServer() then
         self.Players = ObjectReplication:CreateObject("ReplicatedTable")
+        self.Spectators = ObjectReplication:CreateObject("ReplicatedTable")
         self.Timer = ObjectReplication:CreateObject("Timer")
     end
     self:AddToSerialization("State")
@@ -52,6 +53,7 @@ function BaseRound:__new()
     self:AddToSerialization("RoundContainer")
     self:AddToSerialization("MVPs")
     self:AddToSerialization("Players","ObjectReference")
+    self:AddToSerialization("Spectators","ObjectReference")
     self:AddToSerialization("Timer","ObjectReference")
 
     --Store the stats.
@@ -152,9 +154,8 @@ function BaseRound:Start(RoundPlayers,LoadTimeElapsedCallback)
         self.Players:Add(Player)
     end
     Players.PlayerRemoving:Connect(function(Player)
-        if self.Players:Contains(Player) then
-            self.Players:Remove(Player)
-        end
+        self.Players:Remove(Player)
+        self.Spectators:Remove(Player)
     end)
 
     --Run the load timer.
@@ -338,12 +339,30 @@ function BaseRound:RemoveCurrentPlayer(Player)
 end
 
 --[[
+Eliminates a player from the existing round
+and makes them a spectator.
+--]]
+function BaseRound:EliminatePlayer(Player)
+    if self.Players:Contains(Player) and not self.Spectators:Contains(Player) and self.State ~= "ENDED" then
+        --Despawn the player.
+        self:DespawnPlayer(Player)
+
+        --Add the spectator and remove the player from the round.
+        self.Spectators:Add(Player)
+        self:RemoveCurrentPlayer(Player)
+    end
+end
+
+--[[
 Broadcasts a local effect to all the
 players of the round.
 --]]
 function BaseRound:BroadcastLocalEffect(...)
     local LocalEffectService = self:GetService("LocalEffectService")
     for _,Player in pairs(self.Players:GetAll()) do
+        LocalEffectService:PlayLocalEffect(Player,...)
+    end
+    for _,Player in pairs(self.Spectators:GetAll()) do
         LocalEffectService:PlayLocalEffect(Player,...)
     end
 end
@@ -356,6 +375,7 @@ function BaseRound:Dispose()
 
     --Destroy the objects.
     self.Players:Destroy()
+    self.Spectators:Destroy()
     self.Timer:Destroy()
 end
 
