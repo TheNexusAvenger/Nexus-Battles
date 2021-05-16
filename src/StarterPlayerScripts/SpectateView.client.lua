@@ -112,6 +112,10 @@ local function CurrentSpectatorRoundChanged(CurrentRound)
     --]]
     local function CloseSpectate()
         --Disconnect the events.
+        if UpdateCharacterEvent then
+            UpdateCharacterEvent:Disconnect()
+        end
+        UpdateCharacterEvent = nil
         for _,Connection in pairs(SpectateEvents) do
             Connection:Disconnect()
         end
