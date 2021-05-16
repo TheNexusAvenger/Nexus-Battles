@@ -4,6 +4,7 @@ TheNexusAvenger
 Hides players of other rounds on the client.
 --]]
 
+local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local PhysicsService = game:GetService("PhysicsService")
@@ -55,6 +56,9 @@ local function UpdateInstance(Ins,Player,PlayerRound)
     elseif Ins:IsA("ForceField") then
         --Update the visibility of the forcefield.
         Ins.Visible = InSameRound
+    elseif Ins:IsA("Fire") then
+        --Update the visibility of the fire.
+        Ins.Enabled = InSameRound
     end
 end
 
@@ -126,3 +130,8 @@ for _,Round in pairs(ActiveRounds:GetChildren()) do
     RoundAdded(Round)
 end
 CurrentRoundState.CurrentRoundChanged:Connect(UpdateAllCharacters)
+Workspace.CurrentCamera:GetPropertyChangedSignal("CameraSubject"):Connect(function()
+    --Race condition with spectating when leaving where the LocalTransparencyModifer is also set.
+    wait()
+    UpdateAllCharacters()
+end)
