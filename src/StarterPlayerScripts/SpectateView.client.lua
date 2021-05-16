@@ -91,7 +91,7 @@ local function CurrentSpectatorRoundChanged(CurrentRound)
     SpectateRightText.Text = ">"
 
     local ContinueButton,ContinueText = ContinueTextButtonFactory:Create()
-    ContinueButton.Position = UDim2.new(0.5,0,0.9,0)
+    ContinueButton.Position = UDim2.new(0.5,0,1.05,0)
     ContinueButton.AnchorPoint = Vector2.new(0.5,0)
     ContinueButton.Size = UDim2.new(0.9 * (0.3 / 0.065),0,0.9,0)
     ContinueButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
