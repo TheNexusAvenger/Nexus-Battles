@@ -29,6 +29,12 @@ local function CurrentSpectatorRoundChanged(CurrentRound)
         return
     end
 
+    --Wait for the round to start.
+    while CurrentRound.State == "LOADING" do
+        CurrentRound:GetPropertyChangedSignal("State"):Wait()
+    end
+    if CurrentRoundState.CurrentSpectatingRound ~= CurrentRound then return end
+
     --Get the current spectating player, if any.
     --This allows for spectating the last killing player.
     local SpectateEvents = {}

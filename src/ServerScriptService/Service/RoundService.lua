@@ -215,6 +215,30 @@ function RoundService:GetPlayerRoundContainer(ReferencePlayer)
     end
 end
 
+--[[
+Starts allowing a player to spectate.
+--]]
+function RoundService:StartSpectating(Player,RoundId)
+    --Return if the round doesn't exist or has ended.
+    local Round = ActiveRounds:FindFirstChildBy("Id",RoundId)
+    if not Round or Round.State == "ENDED" then
+        return
+    end
+
+    --Return if the player is in a round or spectating.
+    for _,OtherRound in pairs(ActiveRounds:GetChildren()) do
+        if OtherRound.Players:Contains(Player) or OtherRound.Spectators:Contains(Player) then
+            return
+        end
+    end
+
+    --Despawn the player.
+    CharacterService:StoreCharacterCFramne(Player)
+    CharacterService:DespawnCharacter(Player)
+
+    --Add the player to the spectating players.
+    Round.Spectators:Add(Player)
+end
 
 
 

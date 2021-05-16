@@ -4,6 +4,7 @@ TheNexusAvenger
 Service for managing character loading.
 --]]
 
+local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
@@ -11,6 +12,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 local CharacterService = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
 CharacterService:SetClassName("CharacterService")
 CharacterService.LastTools = {}
+CharacterService.LastCFrames = {}
 
 
 
@@ -92,6 +94,12 @@ function CharacterService:SpawnCharacter(Player)
         Humanoid:EquipTool(Tool)
     end)
 
+    --Set the last CFrame.
+    if self.LastCFrames[Player] then
+        HumanoidRootPart.CFrame = self.LastCFrames[Player]
+        self.LastCFrames[Player] = nil
+    end
+
     --Return the character.
     return Character
 end
@@ -113,6 +121,18 @@ function CharacterService:DespawnCharacter(Player)
     local Backpack = Player:FindFirstChild("Backpack")
     if not Backpack then return end
     Backpack:ClearAllChildren()
+end
+
+--[[
+Stores the last character CFrame to use when
+spawning later.
+--]]
+function CharacterService:StoreCharacterCFramne(Player)
+    local Character = Player.Character
+    if not Character then return end
+    local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+    if not HumanoidRootPart then return end
+    self.LastCFrames[Player] = HumanoidRootPart.CFrame
 end
 
 --[[
@@ -140,6 +160,14 @@ function CharacterService:AddForceField(Player,Duration)
         ForceField:Destroy()
     end)
 end
+
+
+
+--Connect players leaving.
+Players.PlayerRemoving:Connect(function(Player)
+    CharacterService.LastTools[Player] = nil
+    CharacterService.LastCFrames[Player] = nil
+end)
 
 
 

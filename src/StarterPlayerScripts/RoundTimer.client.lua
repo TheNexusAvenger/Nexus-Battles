@@ -135,7 +135,13 @@ local function CurrentRoundChanged(CurrentRound)
         GameTypeDescriptionText.Text = GameData.Description
 
         --Wait for the character to load.
-        Players.LocalPlayer.CharacterAdded:Wait()
+        if CurrentRound.Players:Contains(Players.LocalPlayer) then
+            Players.LocalPlayer.CharacterAdded:Wait()
+        else
+            while CurrentRound.State == "LOADING" do
+                CurrentRound:GetPropertyChangedSignal("State"):Wait()
+            end
+        end
         Blur:Destroy()
         FlashScreen()
         Camera.CameraType = Enum.CameraType.Custom

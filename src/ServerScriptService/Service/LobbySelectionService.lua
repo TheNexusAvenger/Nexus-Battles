@@ -30,6 +30,10 @@ local SetReady = Instance.new("RemoteEvent")
 SetReady.Name = "SetReady"
 SetReady.Parent = LobbyReplication
 
+local StartSpectating = Instance.new("RemoteEvent")
+StartSpectating.Name = "StartSpectating"
+StartSpectating.Parent = LobbyReplication
+
 local LobbySelectionRounds = ObjectReplicator:CreateObject("ReplicatedContainer")
 LobbySelectionRounds.Name = "LobbySelectionRounds"
 LobbySelectionRounds.Parent = ObjectReplicator:GetGlobalContainer()
@@ -185,6 +189,10 @@ end
 --Connect the remote events.
 SetReady.OnServerEvent:Connect(function(Player)
     LobbySelectionService:SetPlayerReady(Player)
+end)
+
+StartSpectating.OnServerEvent:Connect(function(Player,RoundId)
+    RoundService:StartSpectating(Player,RoundId)
 end)
 
 
