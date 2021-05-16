@@ -10,6 +10,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
+local MapTypes = ReplicatedStorageProject:GetResource("Data.MapTypes")
 local GameTypes = ReplicatedStorageProject:GetResource("Data.GameTypes")
 
 local Replication = Instance.new("Folder")
@@ -25,10 +26,13 @@ ServerScriptServiceProject:GetResource("Service.DamageService")
 
 --Determine if there are any rounds that require 4 or more players.
 local RoundWith4PlayersExists = false
-for _,RoundData in pairs(GameTypes) do
-    if RoundData.RequiredPlayers and RoundData.RequiredPlayers >= 4 then
-        RoundWith4PlayersExists = true
-        break
+for _,MapData in pairs(MapTypes) do
+    for _,RoundTypeName in pairs(MapData.GameTypes or {}) do
+        local RoundData = GameTypes[RoundTypeName]
+        if RoundData.RequiredPlayers and RoundData.RequiredPlayers >= 4 then
+            RoundWith4PlayersExists = true
+            break
+        end
     end
 end
 
