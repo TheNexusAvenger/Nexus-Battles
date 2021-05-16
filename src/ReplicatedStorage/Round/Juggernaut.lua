@@ -72,9 +72,11 @@ function Juggernaut:RoundStarted()
             NewJuggernaut = nil
             while not NewJuggernaut do 
                 local Players = self.Players:GetAll()
-                local NewPlayer = Players[math.random(1,#Players)]
-                if PlayerValid(NewPlayer) then
-                    NewJuggernaut = NewPlayer
+                if #Players > 0 then
+                    local NewPlayer = Players[math.random(1,#Players)]
+                    if PlayerValid(NewPlayer) then
+                        NewJuggernaut = NewPlayer
+                    end
                 end
                 wait()
             end
