@@ -44,6 +44,7 @@ function BaseRound:__new()
     if NexusRoundSystem:IsServer() then
         self.Players = ObjectReplication:CreateObject("ReplicatedTable")
         self.Spectators = ObjectReplication:CreateObject("ReplicatedTable")
+        self.EliminatedPlayerStats = ObjectReplication:CreateObject("ReplicatedTable")
         self.Timer = ObjectReplication:CreateObject("Timer")
     end
     self:AddToSerialization("State")
@@ -54,6 +55,7 @@ function BaseRound:__new()
     self:AddToSerialization("MVPs")
     self:AddToSerialization("Players","ObjectReference")
     self:AddToSerialization("Spectators","ObjectReference")
+    self:AddToSerialization("EliminatedPlayerStats","ObjectReference")
     self:AddToSerialization("Timer","ObjectReference")
 
     --Store the stats.
@@ -347,6 +349,20 @@ function BaseRound:EliminatePlayer(Player)
         --Despawn the player.
         self:DespawnPlayer(Player)
 
+        --Store the temporary stats.
+        local PlayerData = {
+            Player = Player,
+            Stats = {},
+        }
+        if not Player.Neutral then
+            PlayerData.TeamColor = Player.TeamColor
+        end
+        local TemporaryStats = self:GetService("StatService"):GetTemporaryStats(Player)
+        for _,RoundStat in pairs(self.RoundStats) do
+            PlayerData.Stats[RoundStat.Name] = TemporaryStats:Get(RoundStat.Name):Get()
+        end
+        self.EliminatedPlayerStats:Add(PlayerData)
+
         --Add the spectator and remove the player from the round.
         self.Spectators:Add(Player)
         self:RemoveCurrentPlayer(Player)
@@ -376,6 +392,7 @@ function BaseRound:Dispose()
     --Destroy the objects.
     self.Players:Destroy()
     self.Spectators:Destroy()
+    self.EliminatedPlayerStats:Destroy()
     self.Timer:Destroy()
 end
 

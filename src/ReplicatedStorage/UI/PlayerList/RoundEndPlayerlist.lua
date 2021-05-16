@@ -23,7 +23,7 @@ RoundEndPlayerlist:SetClassName("RoundEndPlayerlist")
 --[[
 Creates the round end playerlist.
 --]]
-function RoundEndPlayerlist:__new(RoundPlayers)
+function RoundEndPlayerlist:__new(RoundPlayers,EliminatedPlayerStats)
     self:InitializeSuper()
 
     --Create the adorn frame.
@@ -37,7 +37,29 @@ function RoundEndPlayerlist:__new(RoundPlayers)
     --Store the initial state.
     self.PlayerEntries = {}
     self.Players = RoundPlayers:GetAll()
+    self.EliminatedPlayersMap = {}
+    self.StaticStatValues = {}
+    self.StaticTeamColors = {}
     self.MainText.Text = ""
+    for _,Player in pairs(RoundPlayers:GetAll()) do
+        local TemporaryStats = Player:FindFirstChild("TemporaryStats")
+        if TemporaryStats then
+            local StatValues = {}
+            self.StaticStatValues[Player] = StatValues
+            for _,StatValue in pairs(TemporaryStats:GetChildren()) do
+                StatValues[StatValue.Name] = StatValue.Value
+            end
+        end
+        if not Player.Neutral then
+            self.StaticTeamColors[Player] = Player.TeamColor
+        end
+    end
+    for _,PlayerData in pairs(EliminatedPlayerStats:GetAll()) do
+        table.insert(self.Players,PlayerData.Player)
+        self.StaticTeamColors[PlayerData.Player] = PlayerData.TeamColor
+        self.StaticStatValues[PlayerData.Player] = PlayerData.Stats
+        self.EliminatedPlayersMap[PlayerData.Player] = true
+    end
 
     --Connect the events.
     self:GetPropertyChangedSignal("Stats"):Connect(function()
@@ -95,19 +117,20 @@ function RoundEndPlayerlist:UpdatePlayers()
     end
 
     --Get the order to display the players.
-    local SortedPlayers = self.StatsSorter:GetSortedPlayers(self.Players,self.MVPs)
+    local SortedPlayers = self.StatsSorter:GetSortedPlayers(self.Players,self.StaticStatValues,self.MVPs)
 
     --Update the player list.
     for i,PlayerEntry in pairs(self.PlayerEntries) do
         local Player = SortedPlayers[i]
         PlayerEntry.MainText.Text = Player.DisplayName
-        PlayerEntry.BorderColor3 = (Player.Neutral and Color3.new(1,1,1) or Player.TeamColor.Color)
+        PlayerEntry.MainText.TextColor3 = (self.EliminatedPlayersMap[Player] and Color3.new(0.6,0.6,0.6) or Color3.new(1,1,1))
+        PlayerEntry.BorderColor3 = (self.StaticTeamColors[Player] and self.StaticTeamColors[Player].Color or Color3.new(1,1,1))
 
         --Update the player stats.
-        local TemporaryStats = Player:FindFirstChild("TemporaryStats")
+        local Stats = self.StaticStatValues[Player]
         for j,StatData in pairs(self.Stats) do
-            local StatValue = (TemporaryStats and TemporaryStats:FindFirstChild(StatData.Name))
-            PlayerEntry.StatLabels[j].Text = tostring(StatValue and StatValue.Value or StatData.DefaultValue or 0)
+            PlayerEntry.StatLabels[j].Text = tostring(Stats[StatData.Name] or StatData.DefaultValue or 0)
+            PlayerEntry.StatLabels[j].TextColor3 = (self.EliminatedPlayersMap[Player] and Color3.new(0.6,0.6,0.6) or Color3.new(1,1,1))
         end
     end
 end

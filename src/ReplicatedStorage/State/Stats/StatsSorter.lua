@@ -35,7 +35,9 @@ end
 --[[
 Returns a list of players in order by their temporary stats.
 --]]
-function StatSorter:GetSortedPlayers(Players,OverrideMVPs)
+function StatSorter:GetSortedPlayers(Players,PlayerStatValues,OverrideMVPs)
+    PlayerStatValues = PlayerStatValues or {}
+
     --Clone the Players table.
     local NewPlayers = {}
     for _,Player in pairs(Players) do
@@ -48,10 +50,22 @@ function StatSorter:GetSortedPlayers(Players,OverrideMVPs)
         OverrideMVPsMap[Player] = true
     end
 
+    --Add the player stats.
+    for _,Player in pairs(Players) do
+        if not PlayerStatValues[Player] then
+            PlayerStatValues[Player] = {}
+            local TemporaryStats = Player:FindFirstChild("TemporaryStats")
+            for _,StatData in pairs(self.SortStats) do
+                local StatValueObject = (TemporaryStats and TemporaryStats:FindFirstChild(StatData.Name))
+                PlayerStatValues[Player][StatData.Name] = (StatValueObject and StatValueObject.Value or StatData.DefaultValue)
+            end
+        end
+    end
+
     --Sort the players.
     table.sort(NewPlayers,function(Player1,Player2)
         --Get the player stats.
-        local Player1Stats,Player2Stats = Player1:FindFirstChild("TemporaryStats"),Player2:FindFirstChild("TemporaryStats")
+        local Player1Stats,Player2Stats = PlayerStatValues[Player1],PlayerStatValues[Player2]
 
         --Return if 1 player is the MVP.
         if OverrideMVPsMap[Player1] and not OverrideMVPsMap[Player2] then
@@ -63,8 +77,7 @@ function StatSorter:GetSortedPlayers(Players,OverrideMVPs)
         --Return if two stats are different.
         for _,StatSortData in pairs(self.SortStats) do
             local Name,Default,PreferHigher = StatSortData.Name,StatSortData.DefaultValue,StatSortData.PreferHigher
-            local Stat1,Stat2 = (Player1Stats and Player1Stats:FindFirstChild(Name)),(Player2Stats and Player2Stats:FindFirstChild(Name))
-            local Value1,Value2 = (Stat1 and Stat1.Value or Default),(Stat2 and Stat2.Value or Default)
+            local Value1,Value2 = Player1Stats[Name] or Default,Player2Stats[Name] or Default
 
             --Return based on the values being different.
             if Value1 ~= Value2 then

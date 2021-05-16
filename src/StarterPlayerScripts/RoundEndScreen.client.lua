@@ -65,7 +65,7 @@ local function CurrentRoundChanged(CurrentRound)
     ContinueButton.Parent = EndScreeenContainer
     ContinueText.Text = "CONTINUE"
 
-    local Playerlist = RoundEndPlayerlist.new(CurrentRound.Players)
+    local Playerlist = RoundEndPlayerlist.new(CurrentRound.Players,CurrentRound.EliminatedPlayerStats)
     Playerlist.Stats = Stats
     Playerlist.MVPs = CurrentRound.MVPs
     Playerlist.Parent = PlayerListAdorn

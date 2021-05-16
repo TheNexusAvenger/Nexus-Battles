@@ -104,15 +104,15 @@ Tests the GetSortedPlayers method.
 --]]
 NexusUnitTesting:RegisterUnitTest(StatsSorterTest.new("GetSortedPlayers"):SetRun(function(self)
     --Test the sorted players are correct with all values populated.
-    self:AssetPlayerNames(self.CuT:GetSortedPlayers({self.MockPlayers[1],self.MockPlayers[2]}),{"MockPlayer2","MockPlayer1"})
-    self:AssetPlayerNames(self.CuT:GetSortedPlayers({self.MockPlayers[1],self.MockPlayers[2],self.MockPlayers[3]}),{"MockPlayer2","MockPlayer3","MockPlayer1"})
+    self:AssetPlayerNames(self.CuT:GetSortedPlayers({self.MockPlayers[1],self.MockPlayers[2]},{}),{"MockPlayer2","MockPlayer1"})
+    self:AssetPlayerNames(self.CuT:GetSortedPlayers({self.MockPlayers[1],self.MockPlayers[2],self.MockPlayers[3]},{}),{"MockPlayer2","MockPlayer3","MockPlayer1"})
 
     --Test the sorted players are correct with missing values.
-    self:AssetPlayerNames(self.CuT:GetSortedPlayers({self.MockPlayers[1],self.MockPlayers[2],self.MockPlayers[3],self.MockPlayers[4],self.MockPlayers[5]}),{"MockPlayer4","MockPlayer2","MockPlayer3","MockPlayer1","MockPlayer5"})
+    self:AssetPlayerNames(self.CuT:GetSortedPlayers({self.MockPlayers[1],self.MockPlayers[2],self.MockPlayers[3],self.MockPlayers[4],self.MockPlayers[5]},{}),{"MockPlayer4","MockPlayer2","MockPlayer3","MockPlayer1","MockPlayer5"})
 
     --Test that MVP players appear at the front.
-    self:AssetPlayerNames(self.CuT:GetSortedPlayers({self.MockPlayers[1],self.MockPlayers[2],self.MockPlayers[3],self.MockPlayers[4],self.MockPlayers[5]},{self.MockPlayers[1]}),{"MockPlayer1","MockPlayer4","MockPlayer2","MockPlayer3","MockPlayer5"})
-    self:AssetPlayerNames(self.CuT:GetSortedPlayers({self.MockPlayers[1],self.MockPlayers[2],self.MockPlayers[3],self.MockPlayers[4],self.MockPlayers[5]},{self.MockPlayers[1],self.MockPlayers[3]}),{"MockPlayer3","MockPlayer1","MockPlayer4","MockPlayer2","MockPlayer5"})
+    self:AssetPlayerNames(self.CuT:GetSortedPlayers({self.MockPlayers[1],self.MockPlayers[2],self.MockPlayers[3],self.MockPlayers[4],self.MockPlayers[5]},{},{self.MockPlayers[1]}),{"MockPlayer1","MockPlayer4","MockPlayer2","MockPlayer3","MockPlayer5"})
+    self:AssetPlayerNames(self.CuT:GetSortedPlayers({self.MockPlayers[1],self.MockPlayers[2],self.MockPlayers[3],self.MockPlayers[4],self.MockPlayers[5]},{},{self.MockPlayers[1],self.MockPlayers[3]}),{"MockPlayer3","MockPlayer1","MockPlayer4","MockPlayer2","MockPlayer5"})
 end))
 
 --[[

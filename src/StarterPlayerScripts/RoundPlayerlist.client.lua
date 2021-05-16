@@ -68,7 +68,7 @@ local function CurrentRoundChanged(CurrentRound)
     end
 
     --Create the playerlist.
-    CurrentPlayerlist = RoundPlayerlist.new(CurrentRound.Players)
+    CurrentPlayerlist = RoundPlayerlist.new(CurrentRound.Players,CurrentRound.EliminatedPlayerStats)
     CurrentPlayerlist.Stats = Stats
     CurrentPlayerlist.TeamColors = CurrentRound.TeamColors
     CurrentPlayerlist.Parent = PlayerListAdorn

@@ -26,7 +26,7 @@ RoundPlayerlist:SetClassName("RoundPlayerlist")
 --[[
 Creates the round playerlist.
 --]]
-function RoundPlayerlist:__new(RoundPlayers)
+function RoundPlayerlist:__new(RoundPlayers,EliminatedPlayerStats)
     self:InitializeSuper()
 
     --Create the adorn frame.
@@ -38,6 +38,7 @@ function RoundPlayerlist:__new(RoundPlayers)
     self.EntryAdorn = EntryAdorn
 
     --Set up the initial state.
+    self.DataPlayerEntries = {}
     self.PlayerEntries = {}
     self.TeamHeaders = {}
     self.MainText.Text = ""
@@ -117,6 +118,14 @@ function RoundPlayerlist:__new(RoundPlayers)
             self:AddPlayer(Player)
         end
     end
+    if EliminatedPlayerStats then
+        EliminatedPlayerStats.ItemAdded:Connect(function(PlayerData)
+            self:AddPlayerFromData(PlayerData)
+        end)
+        for _,PlayerData in pairs(EliminatedPlayerStats:GetAll()) do
+            self:AddPlayerFromData(PlayerData)
+        end
+    end
 end
 
 --[[
@@ -150,11 +159,20 @@ function RoundPlayerlist:GetEntryGroups()
     })
 
     --Add the player entries.
+    local StaticStatValues = {}
     for Player,Entry in pairs(self.PlayerEntries) do
         if Player.Neutral or not TeamEntriesMap[Player.TeamColor.Name] then
             UngroupedEntriesMap[Player] = Entry
         else
             TeamEntriesMap[Player.TeamColor.Name].EntriesMap[Player] = Entry
+        end
+    end
+    for Player,Entry in pairs(self.DataPlayerEntries) do
+        StaticStatValues[Player] = Entry.StatValues
+        if not Entry.TeamColor or not TeamEntriesMap[Entry.TeamColor.Name] then
+            UngroupedEntriesMap[Player] = Entry
+        else
+            TeamEntriesMap[Entry.TeamColor.Name].EntriesMap[Player] = Entry
         end
     end
 
@@ -167,7 +185,7 @@ function RoundPlayerlist:GetEntryGroups()
         end
 
         --Get the sorted players and add them to the entries.
-        local SortedPlayers = self.StatsSorter:GetSortedPlayers(PlayersToSort)
+        local SortedPlayers = self.StatsSorter:GetSortedPlayers(PlayersToSort,StaticStatValues,nil)
         for _,Player in pairs(SortedPlayers) do
             table.insert(TeamGroup.Entries,TeamGroup.EntriesMap[Player])
         end
@@ -253,12 +271,46 @@ function RoundPlayerlist:RemovePlayer(Player)
 end
 
 --[[
+Adds a player to the playerlist with fixed data.
+--]]
+function RoundPlayerlist:AddPlayerFromData(PlayerData)
+    --Return if the player already exists.
+    if self.DataPlayerEntries[PlayerData.Player] then return end
+
+    --Create the player entry.
+    local Entry = PlayerEntry.new()
+    Entry.StatValues = PlayerData.Stats
+    Entry.TeamColor = PlayerData.TeamColor
+    Entry.TotalStats = #self.Stats
+    Entry.Parent = self.EntryAdorn
+    self.DataPlayerEntries[PlayerData.Player] = Entry
+
+    --Set the colors.
+    Entry.MainText.Text = PlayerData.Player.DisplayName
+    Entry.MainText.TextColor3 = Color3.new(0.6,0.6,0.6)
+    Entry.BorderColor3 = (PlayerData.TeamColor and PlayerData.TeamColor.Color or Color3.new(1,1,1))
+
+    --Set the stat values.
+    for i,StatData in pairs(self.Stats) do
+        local StatLabel = Entry.StatLabels[i]
+        StatLabel.Text = PlayerData.Stats[StatData.Name]
+        StatLabel.TextColor3 = Color3.new(0.6,0.6,0.6)
+    end
+
+    --Update the order.
+    self:UpdateEntries()
+end
+
+--[[
 Destroys the playerlist.
 --]]
 function RoundPlayerlist:Destroy()
     self.super:Destroy()
 
     --Destroy the headers and entries.
+    for _,Entry in pairs(self.DataPlayerEntries) do
+        Entry:Destroy()
+    end
     for _,Entry in pairs(self.PlayerEntries) do
         Entry:Destroy()
     end
