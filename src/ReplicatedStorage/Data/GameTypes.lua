@@ -7,6 +7,7 @@ Game types that are usable.
 local DEFAULT_REQUIRED_PLAYERS = 1 --TODO: Revert after Nexus Admin integrated
 local DEFAULT_REQUIRED_PLAYERS_TEAMS = 4
 local DEFAULT_MAX_PLAYERS = 12
+local DEFAULT_MAX_PLAYERS_4_TEAMS = 16
 
 
 
@@ -139,5 +140,12 @@ return {
         RequiredPlayers = DEFAULT_REQUIRED_PLAYERS,
         MaxPlayers = DEFAULT_MAX_PLAYERS,
         RoundClass = "Round.SwordElimination",
+    },
+    TeamDestruction = {
+        DisplayName = "Team Destruction",
+        Description = "Last team structure wins!",
+        RequiredPlayers = DEFAULT_REQUIRED_PLAYERS_TEAMS,
+        MaxPlayers = DEFAULT_MAX_PLAYERS_4_TEAMS,
+        RoundClass = "Round.TeamDestruction",
     },
 }

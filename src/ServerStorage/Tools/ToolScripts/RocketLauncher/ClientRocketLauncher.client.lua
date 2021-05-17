@@ -67,7 +67,7 @@ local function LaunchRocket(Rocket,TargetPos)
     --Fire the event when touched.
     if ExplodeEvent then
         Rocket.Touched:Connect(function(TouchPart)
-            if not IGNORE_LIST[string.lower(TouchPart.Name)] and not TouchPart:IsDescendantOf(Character) then
+            if TouchPart.CanCollide and not IGNORE_LIST[string.lower(TouchPart.Name)] and not TouchPart:IsDescendantOf(Character) then
                 ExplodeEvent:FireServer(Rocket.Position)
             end
         end)

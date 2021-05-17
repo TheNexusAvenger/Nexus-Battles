@@ -107,4 +107,13 @@ return {
             TimeOfDay = 14,
         }
     },
+    Doomspires = {
+        GameTypes = {"TeamDestruction",},
+        ImageId = 0, --TODO: Update image
+        Lighting = {
+            Ambient = Color3.new(128/255,128/255,128/255),
+            FogEnd = 100000,
+            TimeOfDay = 14,
+        }
+    },
 }

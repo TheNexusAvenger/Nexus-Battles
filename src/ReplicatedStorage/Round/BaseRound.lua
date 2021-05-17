@@ -97,7 +97,7 @@ function BaseRound:__new()
     }
     self:GetPropertyChangedSignal("Map"):Connect(function()
         --Get the spawn point models.
-        self.SpawnPoints = {
+        local NewSpawnPoints = {
             Normal = {
                 CurrentSpawn = 1,
                 Parts = {},
@@ -105,6 +105,7 @@ function BaseRound:__new()
             Team = {},
             Players = {},
         }
+        self.SpawnPoints = NewSpawnPoints
         local SpawnPoints = self.Map:FindFirstChild("SpawnPoints")
         if not SpawnPoints then return end
         local TeamSpawnPoints = SpawnPoints:FindFirstChild("TeamSpawnPoints")
@@ -112,23 +113,70 @@ function BaseRound:__new()
         --Add the base spawn parts.
         for _,Part in pairs(SpawnPoints:GetChildren()) do
             if Part:IsA("BasePart") then
-                table.insert(self.SpawnPoints.Normal.Parts,Part)
+                table.insert(NewSpawnPoints.Normal.Parts,Part)
             end
         end
+        SpawnPoints.ChildAdded:Connect(function(Part)
+            if Part:IsA("BasePart") then
+                table.insert(NewSpawnPoints.Normal.Parts,Part)
+            end
+        end)
+        SpawnPoints.ChildRemoved:Connect(function(Part)
+            local Index
+            for i,OtherPart in pairs(NewSpawnPoints.Normal.Parts) do
+                if Part == OtherPart then
+                    Index = i
+                    break
+                end
+            end
+            if not Index then return end
+            table.remove(NewSpawnPoints.Normal.Parts,Index)
+            if NewSpawnPoints.Normal.CurrentSpawn > #NewSpawnPoints.Normal.Parts then
+                NewSpawnPoints.Normal.CurrentSpawn = #NewSpawnPoints.Normal.Parts
+            end
+        end)
 
         --Add the team spawn parts.
         if not TeamSpawnPoints then return end
         for _,Part in pairs(TeamSpawnPoints:GetChildren()) do
             if Part:IsA("BasePart") then
-                if not self.SpawnPoints.Team[Part.BrickColor.Name] then
-                    self.SpawnPoints.Team[Part.BrickColor.Name] = {
+                if not NewSpawnPoints.Team[Part.BrickColor.Name] then
+                    NewSpawnPoints.Team[Part.BrickColor.Name] = {
                         CurrentSpawn = 1,
                         Parts = {},
                     }
                 end
-                table.insert(self.SpawnPoints.Team[Part.BrickColor.Name].Parts,Part)
+                table.insert(NewSpawnPoints.Team[Part.BrickColor.Name].Parts,Part)
             end
         end
+        TeamSpawnPoints.ChildAdded:Connect(function(Part)
+            if Part:IsA("BasePart") then
+                if not NewSpawnPoints.Team[Part.BrickColor.Name] then
+                    NewSpawnPoints.Team[Part.BrickColor.Name] = {
+                        CurrentSpawn = 1,
+                        Parts = {},
+                    }
+                end
+                table.insert(NewSpawnPoints.Team[Part.BrickColor.Name].Parts,Part)
+            end
+        end)
+        TeamSpawnPoints.ChildRemoved:Connect(function(Part)
+            for _,TeamSpawns in pairs(NewSpawnPoints.Team) do
+                local Index
+                for i,OtherPart in pairs(TeamSpawns.Parts) do
+                    if Part == OtherPart then
+                        Index = i
+                        break
+                    end
+                end
+                if Index then
+                    table.remove(TeamSpawns.Parts,Index)
+                    if TeamSpawns.CurrentSpawn > #TeamSpawns.Parts then
+                        TeamSpawns.CurrentSpawn = #TeamSpawns.Parts
+                    end
+                end
+            end
+        end)
     end)
 end
 

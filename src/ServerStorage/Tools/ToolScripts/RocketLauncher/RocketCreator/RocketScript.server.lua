@@ -89,7 +89,7 @@ end
 
 --Register touched events.
 Rocket.Touched:Connect(function(TouchPart)
-    if not Exploded and not IGNORE_LIST[string.lower(TouchPart.Name)] and (not TouchPart:IsDescendantOf(FiredCharacter) or GetReflectedByPlayer()) then
+    if not Exploded and TouchPart.CanCollide and not IGNORE_LIST[string.lower(TouchPart.Name)] and (not TouchPart:IsDescendantOf(FiredCharacter) or GetReflectedByPlayer()) then
         Explode((Rocket.CFrame * CFrame.new(0,0,-Rocket.Size.Z/2)).Position)
     end
 end)
