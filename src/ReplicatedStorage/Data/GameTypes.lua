@@ -4,7 +4,7 @@ TheNexusAvenger
 Game types that are usable.
 --]]
 
-local DEFAULT_REQUIRED_PLAYERS = 1 --TODO: Revert after Nexus Admin integrated
+local DEFAULT_REQUIRED_PLAYERS = 2
 local DEFAULT_REQUIRED_PLAYERS_TEAMS = 4
 local DEFAULT_MAX_PLAYERS = 12
 local DEFAULT_MAX_PLAYERS_4_TEAMS = 16
