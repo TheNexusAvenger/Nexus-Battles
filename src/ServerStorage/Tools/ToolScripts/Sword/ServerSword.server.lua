@@ -16,6 +16,7 @@ local HitSound = Handle:WaitForChild("HitSound")
 
 local RemoteEventCreator = require(Tool:WaitForChild("RemoteEventCreator"))
 local PlayerDamager = require(Tool:WaitForChild("PlayerDamager"))
+local Modifiers = require(Tool:WaitForChild("Modifiers"))
 local Configuration = require(Tool:WaitForChild("Configuration"))
 
 local WALK_SPEED_BUFF = Configuration.WALK_SPEED_BUFF
@@ -138,7 +139,7 @@ Tool.Equipped:Connect(function()
         CurrentPlayer = Players:GetPlayerFromCharacter(CurrentCharacter)
 
         --Add a walkspeed modifier and play the equip sound.
-        CurrentHumanoid.WalkSpeed = CurrentHumanoid.WalkSpeed + WALK_SPEED_BUFF
+        Modifiers:Add("SwordSpeed","Speed",WALK_SPEED_BUFF)
         delay(0.55, function()
             if not Equipped then return end
             UnsheathSound:Play()
@@ -151,7 +152,7 @@ Tool.Unequipped:Connect(function()
         Equipped = false
 
         --Remove the walkspeed modifier.
-        CurrentHumanoid.WalkSpeed = CurrentHumanoid.WalkSpeed - WALK_SPEED_BUFF
+        Modifiers:Remove("SwordSpeed")
 
         --Reset the current character.
         CurrentCharacter = nil

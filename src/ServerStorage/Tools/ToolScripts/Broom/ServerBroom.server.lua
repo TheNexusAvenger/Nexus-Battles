@@ -15,6 +15,7 @@ local WhackSound = Handle:WaitForChild("WhackSound")
 
 local RemoteEventCreator = require(Tool:WaitForChild("RemoteEventCreator"))
 local PlayerDamager = require(Tool:WaitForChild("PlayerDamager"))
+local Modifiers = require(Tool:WaitForChild("Modifiers"))
 local Configuration = require(Tool:WaitForChild("Configuration"))
 
 local WALK_SPEED_BUFF = Configuration.WALK_SPEED_BUFF
@@ -113,8 +114,7 @@ Tool.Equipped:Connect(function()
         CurrentCharacter = Tool.Parent
         CurrentHumanoid = CurrentCharacter:FindFirstChildOfClass("Humanoid")
         CurrentPlayer = Players:GetPlayerFromCharacter(CurrentCharacter)
-
-        CurrentHumanoid.WalkSpeed = CurrentHumanoid.WalkSpeed + WALK_SPEED_BUFF
+        Modifiers:Add("BroomSpeed","Speed",WALK_SPEED_BUFF)
     end
 end)
 
@@ -123,7 +123,7 @@ Tool.Unequipped:Connect(function()
         Equipped = false
 
         --Reset current player and reset walkspeed buff.
-        CurrentHumanoid.WalkSpeed = CurrentHumanoid.WalkSpeed - WALK_SPEED_BUFF
+        Modifiers:Remove("BroomSpeed")
         CurrentCharacter = nil
         CurrentHumanoid = nil
         CurrentPlayer = nil
