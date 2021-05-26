@@ -55,6 +55,11 @@ local DEFAULT_STATS = {
         ValueType = "IntValue",
         DefaultValue = 0,
     },
+    {
+        Name = "RankScore",
+        ValueType = "NumberValue",
+        DefaultValue = 0,
+    },
 }
 
 
