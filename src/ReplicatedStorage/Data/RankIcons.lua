@@ -4,7 +4,7 @@ TheNexusAvenger
 Data for the rank icons.
 --]]
 
-local RANK_ICONS_IMAGE = "http://www.roblox.com/asset/?id=6864239195"
+local RANK_ICONS_IMAGE = "rbxassetid://6866145490"
 local RANK_ICON_SIZE = Vector2.new(512,512)
 local RANK_ICON_POSITIONS = {
     Vector2.new(0,0),

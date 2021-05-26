@@ -19,6 +19,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local NexusInstance = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance")
+local RankIcon = ReplicatedStorageProject:GetResource("UI.Icon.RankIcon")
 
 local BaseEntry = NexusInstance:Extend()
 BaseEntry:SetClassName("BaseEntry")
@@ -75,6 +76,17 @@ function BaseEntry:__new()
     CenterFillFrame.Parent = AdornFrame
     self.CenterFillFrame = CenterFillFrame
     self.StatLabels = {}
+
+    local PlayerRankIconImage = Instance.new("ImageLabel")
+    PlayerRankIconImage.BackgroundTransparency = 1
+    PlayerRankIconImage.Image = ""
+    PlayerRankIconImage.Size = UDim2.new(0.8,0,0.8,0)
+    PlayerRankIconImage.SizeConstraint = Enum.SizeConstraint.RelativeYY
+    PlayerRankIconImage.Parent = self.CenterFillFrame
+    self.PlayerRankIconImage = PlayerRankIconImage
+
+    local PlayerRankIcon = RankIcon.new(PlayerRankIconImage)
+    self.PlayerRankIcon = PlayerRankIcon
 
     local MainText = Instance.new("TextLabel")
     MainText.BackgroundTransparency = 1
@@ -185,8 +197,10 @@ function BaseEntry:UpdateTextSize()
     end
 
     --Update the size of the main text.
-    self.MainText.Size = UDim2.new(0,StatStartPositionX,0,FillSizeY)
+    self.MainText.Size = UDim2.new(0,StatStartPositionX - FillSizeY,0,FillSizeY)
+    self.MainText.Position = UDim2.new(0,FillSizeY,0,0)
     self.MainText.TextSize = FillSizeY * TEXT_SIZE_MULTIPLIER
+    self.PlayerRankIconImage.Position = UDim2.new(0,FillSizeY * 0.1,0,FillSizeY * 0.1)
 end
 
 --[[
@@ -195,6 +209,7 @@ Destroys the base entry.
 function BaseEntry:Destroy()
     self.super:Destroy()
     self.AdornFrame:Destroy()
+    self.PlayerRankIcon:Destroy()
 end
 
 

@@ -7,7 +7,7 @@ Tests the RankIcon class.
 local NexusUnitTesting = require("NexusUnitTesting")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local RankIcon = require(ReplicatedStorage:WaitForChild("UI"):WaitForChild("RankIcon"))
+local RankIcon = require(ReplicatedStorage:WaitForChild("UI"):WaitForChild("Icon"):WaitForChild("RankIcon"))
 local RankIconTest = NexusUnitTesting.UnitTest:Extend()
 
 
@@ -65,7 +65,7 @@ NexusUnitTesting:RegisterUnitTest(RankIconTest.new("Update"):SetRun(function(sel
     --Set a player and assert the image is set to the initial state.
     self.CuT.Player = self.MockPlayer1
     wait()
-    self:AssertEquals(self.ImageLabel.Image,"http://www.roblox.com/asset/?id=6864239195")
+    self:AssertEquals(self.ImageLabel.Image,"rbxassetid://6866145490")
     self:AssertEquals(self.ImageLabel.ImageRectOffset,Vector2.new(512,0))
     self:AssertEquals(self.ImageLabel.ImageRectSize,Vector2.new(512,512))
     self:AssertEquals(self.ImageLabel.ImageColor3,Color3.new(230/255,230/255,230/255))
@@ -73,7 +73,7 @@ NexusUnitTesting:RegisterUnitTest(RankIconTest.new("Update"):SetRun(function(sel
     --Update the rank score and assert the values are correct.
     self.MockRankScore.Value = 1632
     wait()
-    self:AssertEquals(self.ImageLabel.Image,"http://www.roblox.com/asset/?id=6864239195")
+    self:AssertEquals(self.ImageLabel.Image,"rbxassetid://6866145490")
     self:AssertEquals(self.ImageLabel.ImageRectOffset,Vector2.new(0,512))
     self:AssertEquals(self.ImageLabel.ImageRectSize,Vector2.new(512,512))
     self:AssertEquals(self.ImageLabel.ImageColor3,Color3.new(235/255,200/255,0))
@@ -85,7 +85,7 @@ NexusUnitTesting:RegisterUnitTest(RankIconTest.new("Update"):SetRun(function(sel
     self:AssertEquals(self.ImageLabel.ImageColor3,Color3.new(1,1,1))
     self.MockRankScore.Value = 0
     wait()
-    self:AssertEquals(self.ImageLabel.Image,"http://www.roblox.com/asset/?id=6864239195")
+    self:AssertEquals(self.ImageLabel.Image,"rbxassetid://6866145490")
     self:AssertEquals(self.ImageLabel.ImageRectOffset,Vector2.new(0,0))
     self:AssertEquals(self.ImageLabel.ImageRectSize,Vector2.new(512,512))
     self:AssertEquals(self.ImageLabel.ImageColor3,Color3.new(180/255,110/255,0))
@@ -94,14 +94,14 @@ NexusUnitTesting:RegisterUnitTest(RankIconTest.new("Update"):SetRun(function(sel
     self.MockPlayer1AdminLevel = 1
     self.MockAdminLevelChangedEvent:Fire(self.MockPlayer1)
     wait()
-    self:AssertEquals(self.ImageLabel.Image,"http://www.roblox.com/asset/?id=6864239195")
+    self:AssertEquals(self.ImageLabel.Image,"rbxassetid://6866145490")
     self:AssertEquals(self.ImageLabel.ImageRectOffset,Vector2.new(0,0))
     self:AssertEquals(self.ImageLabel.ImageRectSize,Vector2.new(512,512))
     self:AssertEquals(self.ImageLabel.ImageColor3,Color3.new(255/255,0,0))
     self.MockPlayer1AdminLevel = 6
     self.MockAdminLevelChangedEvent:Fire(self.MockPlayer1)
     wait()
-    self:AssertEquals(self.ImageLabel.Image,"http://www.roblox.com/asset/?id=6864239195")
+    self:AssertEquals(self.ImageLabel.Image,"rbxassetid://6866145490")
     self:AssertEquals(self.ImageLabel.ImageRectOffset,Vector2.new(512,512))
     self:AssertEquals(self.ImageLabel.ImageRectSize,Vector2.new(512,512))
     self:AssertEquals(self.ImageLabel.ImageColor3,Color3.new(255/255,0,0))
@@ -109,7 +109,7 @@ NexusUnitTesting:RegisterUnitTest(RankIconTest.new("Update"):SetRun(function(sel
     --Change the rank score and assert the value doesn't change.
     self.MockAdminLevelChangedEvent:Fire(self.MockPlayer2)
     wait()
-    self:AssertEquals(self.ImageLabel.Image,"http://www.roblox.com/asset/?id=6864239195")
+    self:AssertEquals(self.ImageLabel.Image,"rbxassetid://6866145490")
     self:AssertEquals(self.ImageLabel.ImageRectOffset,Vector2.new(512,512))
     self:AssertEquals(self.ImageLabel.ImageRectSize,Vector2.new(512,512))
     self:AssertEquals(self.ImageLabel.ImageColor3,Color3.new(255/255,0,0))
@@ -117,7 +117,7 @@ NexusUnitTesting:RegisterUnitTest(RankIconTest.new("Update"):SetRun(function(sel
     --Change the admin level of another player and assert the icon doesn't change.
     self.MockRankScore.Value = 1632
     wait()
-    self:AssertEquals(self.ImageLabel.Image,"http://www.roblox.com/asset/?id=6864239195")
+    self:AssertEquals(self.ImageLabel.Image,"rbxassetid://6866145490")
     self:AssertEquals(self.ImageLabel.ImageRectOffset,Vector2.new(512,512))
     self:AssertEquals(self.ImageLabel.ImageRectSize,Vector2.new(512,512))
     self:AssertEquals(self.ImageLabel.ImageColor3,Color3.new(255/255,0,0))
@@ -126,7 +126,7 @@ NexusUnitTesting:RegisterUnitTest(RankIconTest.new("Update"):SetRun(function(sel
     self.MockPlayer1AdminLevel = 0
     self.MockAdminLevelChangedEvent:Fire(self.MockPlayer1)
     wait()
-    self:AssertEquals(self.ImageLabel.Image,"http://www.roblox.com/asset/?id=6864239195")
+    self:AssertEquals(self.ImageLabel.Image,"rbxassetid://6866145490")
     self:AssertEquals(self.ImageLabel.ImageRectOffset,Vector2.new(0,512))
     self:AssertEquals(self.ImageLabel.ImageRectSize,Vector2.new(512,512))
     self:AssertEquals(self.ImageLabel.ImageColor3,Color3.new(235/255,200/255,0))

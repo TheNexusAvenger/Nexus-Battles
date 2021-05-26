@@ -122,6 +122,7 @@ function RoundEndPlayerlist:UpdatePlayers()
     --Update the player list.
     for i,PlayerEntry in pairs(self.PlayerEntries) do
         local Player = SortedPlayers[i]
+        PlayerEntry.PlayerRankIcon.Player = Player
         PlayerEntry.MainText.Text = Player.DisplayName
         PlayerEntry.MainText.TextColor3 = (self.EliminatedPlayersMap[Player] and Color3.new(0.6,0.6,0.6) or Color3.new(1,1,1))
         PlayerEntry.BorderColor3 = (self.StaticTeamColors[Player] and self.StaticTeamColors[Player].Color or Color3.new(1,1,1))

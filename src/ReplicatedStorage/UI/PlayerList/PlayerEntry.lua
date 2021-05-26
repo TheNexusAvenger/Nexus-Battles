@@ -35,6 +35,7 @@ function PlayerEntry:__new()
         else
             self.MainText.Text = ""
         end
+        self.PlayerRankIcon.Player = self.Player
         self.TextColor3 = (self.Player == Players.LocalPlayer and SAME_PLAYER_COLOR_TEXT or DIFFERENT_PLAYER_COLOR_TEXT)
         self:UpdateStatEvents()
     end)
