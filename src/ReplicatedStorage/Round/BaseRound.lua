@@ -17,6 +17,7 @@ local ServerStorage = game:GetService("ServerStorage")
 
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 local StatsSorter
+local RankScoreBonuses
 
 local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
 local ObjectReplication = NexusRoundSystem:GetObjectReplicator()
@@ -243,6 +244,11 @@ function BaseRound:End()
         self.MVPs = Sorter:GetMVPs(self.Players:GetAll())
     end
 
+    --Increase the rank scores.
+    for _,Player in pairs(self.Players:GetAll()) do
+        self:AddRankScore(Player)
+    end
+
     --Stop the round.
     self.Timer:Stop()
     self.State = "ENDED"
@@ -389,6 +395,32 @@ function BaseRound:RemoveCurrentPlayer(Player)
 end
 
 --[[
+Awards the rank score to the given player.
+--]]
+function BaseRound:AddRankScore(Player)
+    --Load the bonuses class.
+    if not RankScoreBonuses then
+        local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+        RankScoreBonuses = ReplicatedStorageProject:GetResource("State.RankScoreBonuses")
+    end
+
+    --Calculate the bonuses.
+    local Multiplier = 1
+    for _,Bonus in pairs(RankScoreBonuses(Player)) do
+        Multiplier = Multiplier + Bonus.Multiplier
+    end
+
+    --Add the rank bonuses.
+    local StatService = self:GetService("StatService")
+    local PlayerTemproaryStats = StatService:GetTemporaryStats(Player)
+    local PlayerPersistentStats = StatService:GetPersistentStats(Player)
+    local KOs = PlayerTemproaryStats:Get("KOs"):Get()
+    if KOs > 0 then
+        PlayerPersistentStats:Get("RankScore"):Increment(KOs * Multiplier)
+    end
+end
+
+--[[
 Eliminates a player from the existing round
 and makes them a spectator.
 --]]
@@ -396,6 +428,7 @@ function BaseRound:EliminatePlayer(Player)
     if self.Players:Contains(Player) and not self.Spectators:Contains(Player) and self.State ~= "ENDED" then
         --Despawn the player.
         self:DespawnPlayer(Player)
+        self:AddRankScore(Player)
 
         --Store the temporary stats.
         local PlayerData = {

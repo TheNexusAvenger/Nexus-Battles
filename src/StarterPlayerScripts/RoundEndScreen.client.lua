@@ -17,8 +17,10 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 
 local LeaveRound = ReplicatedStorageProject:GetResource("Replication.Round.LeaveRound")
 local CurrentRoundState = ReplicatedStorageProject:GetResource("State.CurrentRound")
+local RankScoreBonuses = ReplicatedStorageProject:GetResource("State.RankScoreBonuses")
 local ContinueTextButtonFactory = ReplicatedStorageProject:GetResource("UI.AudibleTextButtonFactory").CreateDefault(Color3.new(0,170/255,0))
 local RoundEndPlayerlist = ReplicatedStorageProject:GetResource("UI.PlayerList.RoundEndPlayerlist")
+local RoundEndRank = ReplicatedStorageProject:GetResource("UI.RoundEndRank")
 
 
 
@@ -30,6 +32,10 @@ local function CurrentRoundChanged(CurrentRound)
     if not CurrentRound then
         return
     end
+
+    --Get the rank score value and initial rank score.
+    local RankScoreValue = Players.LocalPlayer:WaitForChild("PersistentStats"):WaitForChild("RankScore")
+    local InitialRankScore = RankScoreValue.Value
 
     --Wait for the round to end.
     while CurrentRoundState.CurrentRound == CurrentRound and CurrentRound.State ~= "ENDED" do
@@ -51,10 +57,11 @@ local function CurrentRoundChanged(CurrentRound)
     EndScreeenContainer.ResetOnSpawn = false
     EndScreeenContainer.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
 
-    --TODO: Implement later
-    local Placeholder = Instance.new("Frame")
-    Placeholder.BackgroundTransparency = 0.5
-    Placeholder.Parent = EndScreeenContainer
+    local PlayerRoundEndRankContainer = Instance.new("Frame")
+    PlayerRoundEndRankContainer.BackgroundTransparency = 1
+    PlayerRoundEndRankContainer.Parent = EndScreeenContainer
+    local PlayerRoundEndRankDisplay = RoundEndRank.new(PlayerRoundEndRankContainer,InitialRankScore,RankScoreValue.Value,RankScoreBonuses(Players.LocalPlayer))
+    PlayerRoundEndRankDisplay:Animate()
 
     local PlayerListAdorn = Instance.new("Frame")
     PlayerListAdorn.BackgroundTransparency = 1
@@ -83,8 +90,8 @@ local function CurrentRoundChanged(CurrentRound)
             local LeaderstatsHeight = 0.6 * ScreenSize.Y
             local UsableLeaderstatsArea = math.min(ScreenSize.X - LeaderstatsHeight,TotalLeaderstatsWidth)
 
-            Placeholder.Position = UDim2.new(0.5,(-UsableLeaderstatsArea/2) - (LeaderstatsHeight/2),0.15,0)
-            Placeholder.Size = UDim2.new(0,LeaderstatsHeight,0,LeaderstatsHeight)
+            PlayerRoundEndRankContainer.Position = UDim2.new(0.5,(-UsableLeaderstatsArea/2) - (LeaderstatsHeight/2),0.15,0)
+            PlayerRoundEndRankContainer.Size = UDim2.new(0,LeaderstatsHeight,0,LeaderstatsHeight)
             PlayerListAdorn.Position = UDim2.new(0.5,(-UsableLeaderstatsArea/2) + (LeaderstatsHeight/2),0.15,0)
             PlayerListAdorn.Size = UDim2.new(0,UsableLeaderstatsArea,0,LeaderstatsEntrySizeY)
             Playerlist.MaxEntries = math.floor(LeaderstatsHeight/LeaderstatsEntrySizeY) - 1
@@ -95,12 +102,12 @@ local function CurrentRoundChanged(CurrentRound)
         else
             --Update the user interface for landscape mode.
             local ButtonStartPosition = 0.9 * ScreenSize.Y - (ScreenSize.X * (0.4 * (0.065/0.3) * 1.3))
-            local PlaceholderStartPosition = ButtonStartPosition - (0.625 * ScreenSize.X)-- TODO: Rename variable
-            local LeaderstatsHeight = PlaceholderStartPosition - (0.15 * ScreenSize.Y)
+            local RoundEndRankStartPosition = ButtonStartPosition - (0.625 * ScreenSize.X)
+            local LeaderstatsHeight = RoundEndRankStartPosition - (0.15 * ScreenSize.Y)
             local LeaderstatsEntrySizeY = 0.8 * ScreenSize.X * (1 / (USERNAME_SIZE_ASPECT_RATIO + (#Stats * STAT_TEXT_ASPECT_RATIO)))
 
-            Placeholder.Position = UDim2.new(0.5,-(ScreenSize.X * 0.6)/2,0,PlaceholderStartPosition)
-            Placeholder.Size = UDim2.new(0,ScreenSize.X * 0.6,0,ScreenSize.X * 0.6)
+            PlayerRoundEndRankContainer.Position = UDim2.new(0.5,-(ScreenSize.X * 0.6)/2,0,RoundEndRankStartPosition)
+            PlayerRoundEndRankContainer.Size = UDim2.new(0,ScreenSize.X * 0.6,0,ScreenSize.X * 0.6)
             PlayerListAdorn.Position = UDim2.new(0.1,0,0.125,0)
             PlayerListAdorn.Size = UDim2.new(0.8,0,0,LeaderstatsEntrySizeY)
             Playerlist.MaxEntries = math.floor(LeaderstatsHeight/LeaderstatsEntrySizeY) - 1
@@ -126,6 +133,8 @@ local function CurrentRoundChanged(CurrentRound)
 
     --Clear the end screen.
     EndScreeenContainer:Destroy()
+    Playerlist:Destroy()
+    PlayerRoundEndRankDisplay:Destroy()
 end
 
 
