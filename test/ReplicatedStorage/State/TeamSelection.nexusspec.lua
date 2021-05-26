@@ -8,8 +8,9 @@ local NexusUnitTesting = require("NexusUnitTesting")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Teams = game:GetService("Teams")
 
-local NexusEventCreator = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusInstance"):WaitForChild("Event"):WaitForChild("NexusEventCreator"))
-local TeamSelection = require(ReplicatedStorage:WaitForChild("State"):WaitForChild("TeamSelection"))
+local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
+local TeamSelection = ReplicatedStorageProject:GetResource("State.TeamSelection")
 local TeamSelectionTest = NexusUnitTesting.UnitTest:Extend()
 
 
@@ -77,6 +78,7 @@ Tears down the test.
 function TeamSelectionTest:Teardown()
     self.ReplicationContainer:Destroy()
     Teams:ClearAllChildren()
+    ReplicatedStorageProject:Clear()
 end
 
 --[[

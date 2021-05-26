@@ -7,7 +7,8 @@ Tests the RankIcon class.
 local NexusUnitTesting = require("NexusUnitTesting")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local RankIcon = require(ReplicatedStorage:WaitForChild("UI"):WaitForChild("Icon"):WaitForChild("RankIcon"))
+local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+local RankIcon = ReplicatedStorageProject:GetResource("UI.Icon.RankIcon")
 local RankIconTest = NexusUnitTesting.UnitTest:Extend()
 
 
@@ -55,6 +56,7 @@ function RankIconTest:Teardown()
     self.MockPlayer1:Destroy()
     self.MockPlayer2:Destroy()
     self.MockAdminLevelChangedEvent:Destroy()
+    ReplicatedStorageProject:Clear()
 end
 
 

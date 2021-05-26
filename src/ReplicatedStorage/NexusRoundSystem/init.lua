@@ -97,9 +97,7 @@ function NexusRoundSystem:ClearInstances()
         end
     end
     NexusRoundSystem.SingletonInstances = {}
-    delay(1,function()
-        NexusRoundSystemReplication:Destroy()
-    end)
+    NexusRoundSystemReplication:Destroy()
 end
 
 --[[

@@ -7,7 +7,8 @@ Tests the Stat class.
 local NexusUnitTesting = require("NexusUnitTesting")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local Stat = require(ReplicatedStorage:WaitForChild("State"):WaitForChild("Stats"):WaitForChild("Stat"))
+local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+local Stat = ReplicatedStorageProject:GetResource("State.Stats.Stat")
 local StatTest = NexusUnitTesting.UnitTest:Extend()
 
 
@@ -25,6 +26,13 @@ function StatTest:Setup()
     self.CuT.StatChanged:Connect(function(NewValue)
         table.insert(self.FiredEvents,NewValue)
     end)
+end
+
+--[[
+Tears down the test.
+--]]
+function StatTest:Teardown()
+    ReplicatedStorageProject:Clear()
 end
 
 --[[

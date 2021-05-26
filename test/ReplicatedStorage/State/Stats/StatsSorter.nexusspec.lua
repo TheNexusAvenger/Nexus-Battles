@@ -7,7 +7,8 @@ Tests the StatsSorter class.
 local NexusUnitTesting = require("NexusUnitTesting")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local StatsSorter = require(ReplicatedStorage:WaitForChild("State"):WaitForChild("Stats"):WaitForChild("StatsSorter"))
+local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+local StatsSorter = ReplicatedStorageProject:GetResource("State.Stats.StatsSorter")
 local StatsSorterTest = NexusUnitTesting.UnitTest:Extend()
 
 
@@ -83,6 +84,13 @@ function StatsSorterTest:Setup()
             DefaultValue = 0,
         },
     })
+end
+
+--[[
+Tears down the test.
+--]]
+function StatsSorterTest:Teardown()
+    ReplicatedStorageProject:Clear()
 end
 
 --[[

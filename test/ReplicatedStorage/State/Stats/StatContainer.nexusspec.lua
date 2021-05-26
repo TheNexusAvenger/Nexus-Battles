@@ -7,7 +7,8 @@ Tests the StatContainer class.
 local NexusUnitTesting = require("NexusUnitTesting")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local StatContainer = require(ReplicatedStorage:WaitForChild("State"):WaitForChild("Stats"):WaitForChild("StatContainer"))
+local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+local StatContainer = ReplicatedStorageProject:GetResource("State.Stats.StatContainer")
 local StatContainerTest = NexusUnitTesting.UnitTest:Extend()
 
 
@@ -27,6 +28,14 @@ function StatContainerTest:Setup()
     --Create the event and component under testing.
     self.TestValue = Instance.new("NumberValue")
     self.CuT = StatContainer.new(self.Container)
+end
+
+--[[
+Tears down the test.
+--]]
+function StatContainerTest:Teardown()
+    self.CuT:Destroy()
+    ReplicatedStorageProject:Clear()
 end
 
 --[[

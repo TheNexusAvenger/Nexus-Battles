@@ -18,7 +18,19 @@ for _,RoundData in pairs(Project:GetResource("Data.GameTypes")) do
 end
 
 --Initialize Nexus Round System's global container.
-Project:GetResource("NexusRoundSystem"):GetObjectReplicator():GetGlobalContainer()
+local NexusRoundSystem = Project:GetResource("NexusRoundSystem")
+NexusRoundSystem:GetObjectReplicator():GetGlobalContainer()
+
+
+
+--[[
+Clears the project after testing.
+--]]
+function Project:Clear()
+    NexusRoundSystem:ClearInstances()
+end
+
+
 
 --Return the project.
 return Project

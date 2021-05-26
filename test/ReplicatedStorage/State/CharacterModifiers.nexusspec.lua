@@ -7,7 +7,8 @@ Tests the CharacterModifiers class.
 local NexusUnitTesting = require("NexusUnitTesting")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local CharacterModifiers = require(ReplicatedStorage:WaitForChild("State"):WaitForChild("CharacterModifiers"))
+local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+local CharacterModifiers = ReplicatedStorageProject:GetResource("State.CharacterModifiers")
 local CharacterModifiersTest = NexusUnitTesting.UnitTest:Extend()
 
 
@@ -27,6 +28,7 @@ Tears down the test.
 function CharacterModifiersTest:Teardown()
     self.TestContainer:Destroy()
     self.CuT:Destroy()
+    ReplicatedStorageProject:Clear()
 end
 
 --[[
