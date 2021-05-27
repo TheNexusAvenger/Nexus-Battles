@@ -68,7 +68,7 @@ return {
         Cost = 250,
         MaxHealth = 900,
         Modifiers = {
-            Regeneration = 3, --TODO: Modifier not implemented
+            Regeneration = 3,
         },
     },
     ReactiveBody = {
