@@ -23,6 +23,7 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
 local CoinService = ServerScriptServiceProject:GetResource("Service.CoinService")
 local LocalEffectService = ServerScriptServiceProject:GetResource("Service.LocalEffectService")
+local ModifierService = ServerScriptServiceProject:GetResource("Service.ModifierService")
 local RoundService = ServerScriptServiceProject:GetResource("Service.RoundService")
 local StatService = ServerScriptServiceProject:GetResource("Service.StatService")
 
@@ -182,7 +183,6 @@ Damages a humanoid.
 function DamageService:DamageHumanoid(Humanoid,Damage,DamagingPlayer,DamagingToolName)
     if not Humanoid.Parent then return end
     if Humanoid.Health == 0 then return end
-    Damage = math.min(Damage,Humanoid.Health)
 
     --Set up the humanoid.
     local Player = Players:GetPlayerFromCharacter(Humanoid.Parent)
@@ -192,6 +192,14 @@ function DamageService:DamageHumanoid(Humanoid,Damage,DamagingPlayer,DamagingToo
             self.PlayersToHumanoids[Player] = Humanoid
         end
     end
+
+    --Determine the damage.
+    local Modifiers = ModifierService:GetModifiers(Player)
+    --TODO: Damage armor based on initial math.min(Damage,Humanoid.Health)
+    if Modifiers then
+        Damage = Damage * (1 - Modifiers:Get("AbsorbDamage"))
+    end
+    Damage = math.min(Damage,Humanoid.Health)
 
     --Add the tag.
     if DamagingPlayer and DamagingPlayer ~= Player then

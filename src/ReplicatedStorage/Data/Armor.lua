@@ -46,7 +46,7 @@ return {
         Cost = 100,
         MaxHealth = 300,
         Modifiers = {
-            AbsorbDamage = 0.1, --TODO: Modifier not implemented
+            AbsorbDamage = 0.1,
         },
     },
     MediumBodyArmor = {
@@ -57,7 +57,7 @@ return {
         Cost = 250,
         MaxHealth = 660,
         Modifiers = {
-            AbsorbDamage = 0.2, --TODO: Modifier not implemented
+            AbsorbDamage = 0.2,
         },
     },
     RegenGauntlet = {
@@ -102,7 +102,7 @@ return {
         Cost = 500,
         MaxHealth = 1050,
         Modifiers = {
-            AbsorbDamage = 0.3, --TODO: Modifier not implemented
+            AbsorbDamage = 0.3,
         },
     },
     ShardBody = {
@@ -122,7 +122,7 @@ return {
         Cost = 75,
         MaxHealth = 150,
         Modifiers = {
-            AbsorbDamage = 0.05, --TODO: Modifier not implemented
+            AbsorbDamage = 0.05,
         },
     },
     SpeedBoots = {
