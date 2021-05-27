@@ -139,6 +139,11 @@ local function CharacterAdded(Character)
                 if KillStreak >= MINIMUM_KILLS_FOR_INCREASED_COINS then
                     TotalCoins = TotalCoins + (KillStreak - MINIMUM_KILLS_FOR_INCREASED_COINS + 1)
                 end
+                local Modifiers = ModifierService:GetModifiers(Player)
+                if Modifiers then
+                    --TODO: Damage armor based on additional coins.
+                    TotalCoins = TotalCoins + Modifiers:Get("ExtraCoins")
+                end
                 for _ = 1,TotalCoins do
                     CoinService:DropCoin(HumanoidRootPart.Position,RoundService:GetPlayerRoundContainer(Player))
                 end

@@ -15,7 +15,7 @@ return {
         Cost = 50,
         MaxHealth = 150,
         Modifiers = {
-            ExtraCoins = 2, --TODO: Modifier not implemented
+            ExtraCoins = 2,
         },
     },
     SpeedHelmet = {
