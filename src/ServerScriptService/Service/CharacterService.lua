@@ -8,6 +8,9 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
+
+local ArmorService = ServerScriptServiceProject:GetResource("Service.ArmorService")
 
 local CharacterService = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
 CharacterService:SetClassName("CharacterService")
@@ -40,7 +43,10 @@ function CharacterService:SpawnCharacter(Player)
     BodyColors.Parent = Character
 
     --Add the armor.
-    --TODO
+    --TODO: Hardcoded armor, replace with InventoryService
+    ArmorService:Equip(Player,"HeavyBodyArmor")
+    ArmorService:Equip(Player,"SpeedHelmet")
+    ArmorService:Equip(Player,"SpeedBoots")
 
     --Add the team indicator.
     local TeamIndicator = Instance.new("Part")
