@@ -6,8 +6,9 @@ Maps that can be used.
 
 return {
     Bloxburg = {
+        DisplayName = "Bloxburg",
         GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordElimination","TeamDeathmatch","TeamSwap","CaptureTheFlag",},
-        ImageId = 116668979, --TODO: Update image
+        ImageId = 6870148067,
         Lighting = {
             Ambient = Color3.new(70/255,70/255,70/255),
             FogColor = Color3.new(159/255,159/255,159/255),
@@ -16,8 +17,9 @@ return {
         },
     },
     Crossroads = {
+        DisplayName = "Crossroads",
         GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordElimination","TeamDeathmatch","TeamSwap",},
-        ImageId = 116669007, --TODO: Update image
+        ImageId = 6870148792,
         Lighting = {
             Ambient = Color3.new(75/255,75/255,75/255),
             FogColor = Color3.new(212/255,250/255,255/255),
@@ -27,8 +29,9 @@ return {
         },
     },
     RavenRock = {
+        DisplayName = "Raven Rock",
         GameTypes = {"FreeForAll","OneWeaponSword","OneWeaponBomb","OneWeaponSuperball","OneWeaponRocketLauncher","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordElimination","TeamDeathmatch","TeamSwap",},
-        ImageId = 116669027, --TODO: Update image
+        ImageId = 6870151969,
         Lighting = {
             Ambient = Color3.new(75/255,75/255,75/255),
             FogColor = Color3.new(212/255,250/255,255/255),
@@ -38,8 +41,9 @@ return {
         },
     },
     Skylands = {
+        DisplayName = "Skylands",
         GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordSwept","TeamDeathmatch","TeamSwap","CaptureTheFlag",},
-        ImageId = 119699444, --TODO: Update image
+        ImageId = 6870157692,
         Lighting = {
             Ambient = Color3.new(80/255,80/255,80/255),
             FogColor = Color3.new(147/255,207/255,227/255),
@@ -50,8 +54,9 @@ return {
         },
     },
     TheDepths = {
+        DisplayName = "The Depths",
         GameTypes = {"OneWeaponBomb","BurnDown",},
-        ImageId = 122085514, --TODO: Update image
+        ImageId = 6870158310,
         Lighting = {
             Ambient = Color3.new(127/255,127/255,127/255),
             OutdoorAmbient = Color3.new(127/255,127/255,127/255),
@@ -60,8 +65,9 @@ return {
         },
     },
     TheShard = {
+        DisplayName = "The Shard",
         GameTypes = {"FreeForAll","OneWeaponSuperball","OneWeaponMadness","Juggernaut","TeamDeathmatch","TeamSwap",},
-        ImageId = 117446222, --TODO: Update image
+        ImageId = 6870158866,
         Lighting = {
             Ambient = Color3.new(75/255,75/255,75/255),
             FogColor = Color3.new(212/255,250/255,255/255),
@@ -71,8 +77,9 @@ return {
         },
     },
     DodgeballArena = {
+        DisplayName = "Dodgeball Arena",
         GameTypes = {"Dodgeball",},
-        ImageId = 122328784, --TODO: Update image
+        ImageId = 6870149743,
         Lighting = {
             Ambient = Color3.new(33/255,33/255,33/255),
             FogColor = Color3.new(0,0,0),
@@ -84,8 +91,9 @@ return {
         },
     },
     RocketRace = {
+        DisplayName = "Rocket Race",
         GameTypes = {"RocketRace",},
-        ImageId = 3040728324, --TODO: Update image
+        ImageId = 6870154222,
         Lighting = {
             Ambient = Color3.new(0,0,0),
             FogColor = Color3.new(0,0,0),
@@ -97,8 +105,9 @@ return {
         },
     },
     KingOfTheHill = {
+        DisplayName = "King Of The Hill",
         GameTypes = {"KingOfTheHill",},
-        ImageId = 300084452, --TODO: Update image
+        ImageId = 6870150969,
         Lighting = {
             Ambient = Color3.new(128/255,128/255,128/255),
             FogEnd = 1000,
@@ -108,8 +117,9 @@ return {
         }
     },
     Doomspires = {
+        DisplayName = "Doomspires",
         GameTypes = {"TeamDestruction",},
-        ImageId = 0, --TODO: Update image
+        ImageId = 6870150529,
         Lighting = {
             Ambient = Color3.new(128/255,128/255,128/255),
             FogEnd = 100000,

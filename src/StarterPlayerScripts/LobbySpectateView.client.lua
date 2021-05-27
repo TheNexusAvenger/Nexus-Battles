@@ -41,6 +41,18 @@ for _,SpectatePart in pairs(SpectateParts) do
     MapImage.Size = UDim2.new(1,0,1,0)
     MapImage.Parent = DisplayGui
 
+    local MapTypeText = Instance.new("TextLabel")
+    MapTypeText.BackgroundTransparency = 1
+    MapTypeText.Size = UDim2.new(0.9,0,0.075,0)
+    MapTypeText.Position = UDim2.new(0.01,0,0.01,0)
+    MapTypeText.Font = Enum.Font.SourceSansBold
+    MapTypeText.TextScaled = true
+    MapTypeText.TextColor3 = Color3.new(1,1,1)
+    MapTypeText.TextStrokeColor3 = Color3.new(0,0,0)
+    MapTypeText.TextStrokeTransparency = 0
+    MapTypeText.TextXAlignment = Enum.TextXAlignment.Left
+    MapTypeText.Parent = MapImage
+
     local RoundTypeText = Instance.new("TextLabel")
     RoundTypeText.BackgroundTransparency = 1
     RoundTypeText.Size = UDim2.new(0.9,0,0.15,0)
@@ -67,6 +79,7 @@ for _,SpectatePart in pairs(SpectateParts) do
         Part = SpectatePart,
         Container = DisplayGui,
         MapImage = MapImage,
+        MapTypeText = MapTypeText,
         RoundTypeText = RoundTypeText,
         PlayersText = PlayersText,
     })
@@ -107,6 +120,7 @@ local function UpdateDisplayedRounds()
             --Set up the initial display.
             SpectateGui.Container.Enabled = true
             SpectateGui.MapImage.Image = "rbxassetid://"..tostring(MapTypes[Round.MapName].ImageId)
+            SpectateGui.MapTypeText.Text = MapTypes[Round.MapName].DisplayName or Round.MapName
             SpectateGui.RoundTypeText.Text = tostring(GameTypes[Round.Name].DisplayName)
             SpectateGui.PlayersText.Text = GetPlayersText(#Round.Players:GetAll())
 
