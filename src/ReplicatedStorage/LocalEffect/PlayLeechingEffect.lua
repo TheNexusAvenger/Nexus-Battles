@@ -1,7 +1,7 @@
 --[[
 TheNexusAvenger
 
-Displays a reactive effect.
+Displays a leeching effect.
 --]]
 
 local Workspace = game:GetService("Workspace")
@@ -11,7 +11,7 @@ return function(StartPart,EndPart)
     if StartPart and StartPart.Parent and EndPart and EndPart.Parent then
         local Effect = Instance.new("Part")
         Effect.Material = Enum.Material.Neon
-        Effect.BrickColor = BrickColor.new("Really red")
+        Effect.BrickColor = BrickColor.new("Lime green")
         Effect.CFrame = StartPart.CFrame
         Effect.Transparency = 0
         Effect.Name = "Effect"

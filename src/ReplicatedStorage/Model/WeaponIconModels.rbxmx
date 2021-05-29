@@ -2,7 +2,7 @@
 	<Meta name="ExplicitAutoJoints">true</Meta>
 	<External>null</External>
 	<External>nil</External>
-	<Item class="Model" referent="RBX2750193E295C4A249BC8881BCDD9869F">
+	<Item class="Model" referent="RBXEA121EDB497F4DB49EF24DC6F1852D70">
 		<Properties>
 			<BinaryString name="AttributesSerialize"></BinaryString>
 			<token name="LevelOfDetail">0</token>
@@ -45,9 +45,24 @@
 			<Ref name="PrimaryPart">null</Ref>
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
-			<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
+			<OptionalCoordinateFrame name="WorldPivotData">
+				<CFrame>
+					<X>0</X>
+					<Y>4.00001097</Y>
+					<Z>16.0499992</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CFrame>
+			</OptionalCoordinateFrame>
 		</Properties>
-		<Item class="Part" referent="RBXB2B49B802D244E49BDB0D8265FA20AF7">
+		<Item class="Part" referent="RBXDDF891C9997E447B865D2D73C3E4B550">
 			<Properties>
 				<bool name="Anchored">true</bool>
 				<BinaryString name="AttributesSerialize"></BinaryString>
@@ -138,7 +153,7 @@
 					<Z>0.400000006</Z>
 				</Vector3>
 			</Properties>
-			<Item class="SpecialMesh" referent="RBXCEA0F1FC6C324389B0A02D8E60027D62">
+			<Item class="SpecialMesh" referent="RBX82781FB73A804A2284C740CF448FE883">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<token name="LODX">2</token>
@@ -167,7 +182,7 @@
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="Part" referent="RBXCC15CBBCDDAE48FCA24AE11585755277">
+		<Item class="Part" referent="RBXAC8A0721A928487E948D301C4CE7D97B">
 			<Properties>
 				<bool name="Anchored">true</bool>
 				<BinaryString name="AttributesSerialize"></BinaryString>
@@ -263,7 +278,7 @@
 					<Z>2</Z>
 				</Vector3>
 			</Properties>
-			<Item class="SpecialMesh" referent="RBX1874C0C498C8444F98B92D402DB94660">
+			<Item class="SpecialMesh" referent="RBXD807A51C61904A7CBEA1331E2546817C">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<token name="LODX">2</token>
@@ -292,7 +307,7 @@
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="Part" referent="RBX65776FBC6DAF48A8AB523346689E1726">
+		<Item class="Part" referent="RBX16BD68D47FB142BF8A076FFC4451F1DC">
 			<Properties>
 				<bool name="Anchored">true</bool>
 				<BinaryString name="AttributesSerialize"></BinaryString>
@@ -383,7 +398,7 @@
 					<Z>0.400000036</Z>
 				</Vector3>
 			</Properties>
-			<Item class="SpecialMesh" referent="RBX3084D819DE3A4D01B639EB18F253E9B8">
+			<Item class="SpecialMesh" referent="RBX3BBF819419D94A3FA5B5641C76AB5F6B">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<token name="LODX">2</token>
@@ -412,7 +427,7 @@
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="Part" referent="RBX117ED32E1A954FD9AC600FA7EABF6ABB">
+		<Item class="Part" referent="RBX3933900012EA411C861D54305F176FF9">
 			<Properties>
 				<bool name="Anchored">true</bool>
 				<BinaryString name="AttributesSerialize"></BinaryString>
@@ -503,7 +518,7 @@
 					<Z>0.400000006</Z>
 				</Vector3>
 			</Properties>
-			<Item class="SpecialMesh" referent="RBX531F4849999B47809DFAB031FE42CD53">
+			<Item class="SpecialMesh" referent="RBX13C4A364CB254D4297A2912E5B29C6C8">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<token name="LODX">2</token>
@@ -532,7 +547,7 @@
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="Part" referent="RBX90A4DC04C7EA4B6AB31CF386D755827A">
+		<Item class="Part" referent="RBX5984ECCEFEF04E77BA962192A54D9DEC">
 			<Properties>
 				<bool name="Anchored">true</bool>
 				<BinaryString name="AttributesSerialize"></BinaryString>
@@ -623,7 +638,7 @@
 					<Z>0.600000024</Z>
 				</Vector3>
 			</Properties>
-			<Item class="SpecialMesh" referent="RBXBFF3051840D247A396B64A97EAC7537D">
+			<Item class="SpecialMesh" referent="RBX269206EC3783452DA3C250E6D3F9A614">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<token name="LODX">2</token>
@@ -652,7 +667,7 @@
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="Part" referent="RBX86B1152D78254D7492332A0F6242E58E">
+		<Item class="Part" referent="RBX63040D0B993A404B8B2EFEB65E4F8575">
 			<Properties>
 				<bool name="Anchored">true</bool>
 				<BinaryString name="AttributesSerialize"></BinaryString>
@@ -743,7 +758,7 @@
 					<Z>2</Z>
 				</Vector3>
 			</Properties>
-			<Item class="SpecialMesh" referent="RBX5B920C9E5DFE4D55A005CD0657DDF3AF">
+			<Item class="SpecialMesh" referent="RBXA21C1769B9BC4A3C8D5B82AA8ED7B2BE">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<token name="LODX">2</token>
@@ -772,7 +787,7 @@
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="Part" referent="RBXD18A19F1BA084C949D98A9C744A76EB4">
+		<Item class="Part" referent="RBX7187FDA9BA674503BB96CAFAB6BC279C">
 			<Properties>
 				<bool name="Anchored">true</bool>
 				<BinaryString name="AttributesSerialize"></BinaryString>
@@ -863,7 +878,7 @@
 					<Z>2</Z>
 				</Vector3>
 			</Properties>
-			<Item class="SpecialMesh" referent="RBXEA3FBED17DD943B7AF158191F2BB8547">
+			<Item class="SpecialMesh" referent="RBX23151C517F3F4BB8BA33DDF706CFE83C">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<token name="LODX">2</token>
@@ -892,7 +907,7 @@
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="Model" referent="RBXB674525CB40F4B5CA0A5C73C86703EE1">
+		<Item class="Model" referent="RBX9D5103FEADA445E68D707BC97C3420E2">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<token name="LevelOfDetail">0</token>
@@ -932,12 +947,12 @@
 				</Vector3>
 				<string name="Name">Reactance</string>
 				<bool name="NeedsPivotMigration">true</bool>
-				<Ref name="PrimaryPart">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
+				<Ref name="PrimaryPart">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
 			</Properties>
-			<Item class="Part" referent="RBXA460581635F64EC6B444FE2EF879D64D">
+			<Item class="Part" referent="RBXD85F39DE724D4AA6933AD30B9E2D23A5">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1020,7 +1035,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>0.93000102</X>
@@ -1029,7 +1044,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXD4EA4264B5C64CFC860E2A756B656BA0">
+			<Item class="Part" referent="RBX92BBD4DA28D0494BBFAB1B39DF2351F7">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1112,7 +1127,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>0.93000102</X>
@@ -1121,7 +1136,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXBADBE2CB9745434C8A6CF8C89A55F6B2">
+			<Item class="Part" referent="RBX6212358D7E6042339D9238BC2E099317">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1204,7 +1219,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>0.93000102</X>
@@ -1213,7 +1228,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX5FF15BF0304245B39CC69686D17D70A0">
+			<Item class="Part" referent="RBX253B1780BB974F00AF1C76596F6DF3C2">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1296,7 +1311,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>1.33000112</X>
@@ -1305,7 +1320,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX3A9B77ED4DAC422284E042F4B5AA3154">
+			<Item class="Part" referent="RBX83564F52BD5E44ED9B699AFE4145AF9A">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1388,7 +1403,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>1.33000112</X>
@@ -1397,7 +1412,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX833516CDB6AA4875AAB7348E535822F8">
+			<Item class="Part" referent="RBX2920804E62DB400899EFE58AD2D5E955">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1480,7 +1495,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>0.93000102</X>
@@ -1489,7 +1504,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX16BA83AA3DF049C2B658C3CEE86DF8CC">
+			<Item class="Part" referent="RBX215FB6932B2A44A9A005483E1BC0D458">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1572,7 +1587,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>0.93000102</X>
@@ -1581,7 +1596,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX6809B4459FD841E1BB06067B3AAE9AB1">
+			<Item class="Part" referent="RBXE15F3F0A75AF444B9BF015E6679F3818">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1664,7 +1679,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>0.93000102</X>
@@ -1673,7 +1688,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX3DF6DC4FEFD4434EBCD657C24732AE78">
+			<Item class="Part" referent="RBXE5EE461D2BDA4BAEA4DA9D9F3E4E4D15">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1756,7 +1771,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>0.93000102</X>
@@ -1765,7 +1780,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXFF2FD5F9A3024FCF9533D676486995E9">
+			<Item class="Part" referent="RBX07053C82A84B46C5A38F06A95144A916">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1848,7 +1863,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>0.93000102</X>
@@ -1857,7 +1872,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX060AA2315AC34EA196A5A543402ED0AF">
+			<Item class="Part" referent="RBX2982C12DD91845A0825AAA9E04D911FE">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1940,7 +1955,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>0.93000102</X>
@@ -1949,7 +1964,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXC6D87C5CFA8C4869AD868466E76B27DE">
+			<Item class="Part" referent="RBX837D6E9A24164494BED62FA735065517">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2032,7 +2047,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>0.93000102</X>
@@ -2041,7 +2056,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXB97A4DFB59CA4D2FB03FA9B112B65660">
+			<Item class="Part" referent="RBXF3B2068D768C4595AC5F5E639FF520EA">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2124,7 +2139,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>0.93000102</X>
@@ -2133,7 +2148,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX311518C728034982A30E7F4D6E2F48D2">
+			<Item class="Part" referent="RBX80705DC3B4FE4ACE8047D80F105D8218">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2216,7 +2231,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">0</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>2</X>
@@ -2224,7 +2239,7 @@
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="Motor6D" referent="RBXA385E63D3EFA48808D3C7FD367C5FAC5">
+				<Item class="Motor6D" referent="RBX14DF9E2BB7B44840A44271CC0406C78D">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2259,13 +2274,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBXA460581635F64EC6B444FE2EF879D64D</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBXD85F39DE724D4AA6933AD30B9E2D23A5</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXADA1461825B049D6BD4A327D14867BDC">
+				<Item class="Motor6D" referent="RBX7C5D767A89EE41C9A52D84E489779ADA">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2300,13 +2315,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBXD4EA4264B5C64CFC860E2A756B656BA0</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBX92BBD4DA28D0494BBFAB1B39DF2351F7</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXBEDFEA84CCE246F3863F2333663A270C">
+				<Item class="Motor6D" referent="RBX2698E20878AC4369847125615B9D424A">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2341,13 +2356,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBXBADBE2CB9745434C8A6CF8C89A55F6B2</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBX6212358D7E6042339D9238BC2E099317</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX0AC1698D6667455899E8E6CA6EE0F28F">
+				<Item class="Motor6D" referent="RBX5BF83F0199E4404EA53CCD2FAF9A097E">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2382,13 +2397,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBX5FF15BF0304245B39CC69686D17D70A0</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBX253B1780BB974F00AF1C76596F6DF3C2</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX7E145538F6BB4550907B858C7B25D808">
+				<Item class="Motor6D" referent="RBX24A7311251494B07832A7F667EE26123">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2423,13 +2438,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBX3A9B77ED4DAC422284E042F4B5AA3154</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBX83564F52BD5E44ED9B699AFE4145AF9A</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXFD3A3C9F179C4F71B080D3C415A72A7A">
+				<Item class="Motor6D" referent="RBXA9BF16FAD3164671AF9228A519AE5176">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2464,13 +2479,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBX833516CDB6AA4875AAB7348E535822F8</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBX2920804E62DB400899EFE58AD2D5E955</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX092EE9C6C9CA4F609C57CE12CF37953B">
+				<Item class="Motor6D" referent="RBX7DCBB86B19854B7BB66454CD024060C7">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2505,13 +2520,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBX16BA83AA3DF049C2B658C3CEE86DF8CC</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBX215FB6932B2A44A9A005483E1BC0D458</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX1FB224CE7B5247E7A2BFB310F5B75629">
+				<Item class="Motor6D" referent="RBX02A58E5685F34AF1B3157E0F92F6BA18">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2546,13 +2561,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBX6809B4459FD841E1BB06067B3AAE9AB1</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBXE15F3F0A75AF444B9BF015E6679F3818</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXB95613FA3F7849E3BF631F9158EF1522">
+				<Item class="Motor6D" referent="RBX1CE73767BE1A406BBE9BC88ED81B3AF0">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2587,13 +2602,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBX3DF6DC4FEFD4434EBCD657C24732AE78</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBXE5EE461D2BDA4BAEA4DA9D9F3E4E4D15</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX21E9669239BD44C29568C034C86DB7CA">
+				<Item class="Motor6D" referent="RBXC5C7072640994BE29ED6EEBAD9D6DC05">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2628,13 +2643,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBXFF2FD5F9A3024FCF9533D676486995E9</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBX07053C82A84B46C5A38F06A95144A916</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX472F25C6166D485F81D302BE97715F1D">
+				<Item class="Motor6D" referent="RBX0103F16EC0A44EC992830F9476E90A9B">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2669,13 +2684,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBX060AA2315AC34EA196A5A543402ED0AF</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBX2982C12DD91845A0825AAA9E04D911FE</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXB3B4E11230494125865C09B3B2BE0A84">
+				<Item class="Motor6D" referent="RBX93886882D3AF48DD8ABA0B1DD8CF775E">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2710,13 +2725,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBXC6D87C5CFA8C4869AD868466E76B27DE</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBX837D6E9A24164494BED62FA735065517</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX1A0505B4CC484DFBAE02CF14A661F1D4">
+				<Item class="Motor6D" referent="RBX95FBFE8E364345EBA6996790CB814EB6">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2751,13 +2766,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBXB97A4DFB59CA4D2FB03FA9B112B65660</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBXF3B2068D768C4595AC5F5E639FF520EA</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXB5FAC10D61004ACE846742344DC06828">
+				<Item class="Motor6D" referent="RBX3BEC4D8B654F457781A841F9536EA078">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2792,13 +2807,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBXCECF8027EA1E4B59A680C0BEF6453C4B</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBX68447C8CC43D4FDD8AD30E31776925C5</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX8D70B07F7F6642589430A184ED8A052C">
+				<Item class="Motor6D" referent="RBX27534B4805AC4522AB5AFB0DE0E62B57">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2833,13 +2848,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBX0373DF8C01554ABEA86B3B9ADE18D5DB</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBX0F5DFB6092814D87B9FD06C58667D51D</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXEA34FBD2394A44F5B83A253F458BF3D6">
+				<Item class="Motor6D" referent="RBXC0C309C17E074B439693A4D225CAB153">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -2874,14 +2889,14 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Torso_to_Effect</string>
-						<Ref name="Part0">RBX311518C728034982A30E7F4D6E2F48D2</Ref>
-						<Ref name="Part1">RBX92E93AE11A8F4B1C88007F367687F4D4</Ref>
+						<Ref name="Part0">RBX80705DC3B4FE4ACE8047D80F105D8218</Ref>
+						<Ref name="Part1">RBX7F48C5078BF54D3E9163F8BA9B6FE423</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXCECF8027EA1E4B59A680C0BEF6453C4B">
+			<Item class="Part" referent="RBX68447C8CC43D4FDD8AD30E31776925C5">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2964,7 +2979,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>0.93000102</X>
@@ -2973,7 +2988,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX0373DF8C01554ABEA86B3B9ADE18D5DB">
+			<Item class="Part" referent="RBX0F5DFB6092814D87B9FD06C58667D51D">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3056,7 +3071,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>0.93000102</X>
@@ -3065,7 +3080,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX92E93AE11A8F4B1C88007F367687F4D4">
+			<Item class="Part" referent="RBX7F48C5078BF54D3E9163F8BA9B6FE423">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3148,12 +3163,2189 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
-					<token name="formFactorRaw">3</token>
+					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>0.93000102</X>
 						<Y>0.309999973</Y>
 						<Z>0.390001237</Z>
+					</Vector3>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="Model" referent="RBX49AD1A4443A24BC6A7FDD74A344FB772">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<token name="LevelOfDetail">0</token>
+				<CoordinateFrame name="ModelInPrimary">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<CoordinateFrame name="ModelMeshCFrame">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
+				<Vector3 name="ModelMeshSize">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<string name="Name">Leeching</string>
+				<bool name="NeedsPivotMigration">true</bool>
+				<Ref name="PrimaryPart">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
+			</Properties>
+			<Item class="Part" referent="RBX37211927F21245E1AED8E62EA86038EC">
+				<Properties>
+					<bool name="Anchored">true</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>1</X>
+						<Y>2.80002022</Y>
+						<Z>28</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4291677645</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">0</float>
+					<float name="LeftParamB">0</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Torso</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">0</float>
+					<float name="RightParamB">0</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">0</token>
+					<token name="shape">1</token>
+					<Vector3 name="size">
+						<X>2</X>
+						<Y>2</Y>
+						<Z>1</Z>
+					</Vector3>
+				</Properties>
+				<Item class="Weld" referent="RBXEF6EE5509B254355BB68581F93B39405">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>-16.934864</X>
+							<Y>76.2573929</Y>
+							<Z>27.8500748</Z>
+							<R00>2.6460969e-09</R00>
+							<R01>9.26708026e-08</R01>
+							<R02>0.999991417</R02>
+							<R10>0.108705409</R10>
+							<R11>-0.994073987</R11>
+							<R12>9.18333285e-08</R12>
+							<R20>0.994065404</R20>
+							<R21>0.108706333</R21>
+							<R22>-1.27041648e-08</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBX9B4928C295574F8B93BD2171AD409380</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBXC138B5CF3024408B9F824C347F0B2257">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>72.4419937</X>
+							<Y>36.0269089</Y>
+							<Z>14.341198</Z>
+							<R00>-1.2006214e-07</R00>
+							<R01>-1</R01>
+							<R02>-8.96468251e-08</R02>
+							<R10>0.663413286</R10>
+							<R11>-1.25750148e-08</R11>
+							<R12>-0.748241723</R12>
+							<R20>0.748241663</R20>
+							<R21>-1.49312825e-07</R21>
+							<R22>0.663413286</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBX60563B70AF904070829A068FEFA77D69</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBX8844604226F04E41B98229B2230573C8">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>78.6100464</X>
+							<Y>3.50949001</Y>
+							<Z>-24.8542519</Z>
+							<R00>0.594929993</R00>
+							<R01>-0.803177416</R01>
+							<R02>0.030954035</R02>
+							<R10>0.573462546</R10>
+							<R11>0.397168517</R11>
+							<R12>-0.716507792</R12>
+							<R20>0.56318891</R20>
+							<R21>0.444030613</R21>
+							<R22>0.696879685</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBXA71FE084ECCB482C9CA5172E9C8D0191</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBX54673D41953F418C89D796C0F7E6A5A9">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>-80.8403854</X>
+							<Y>16.9452057</Y>
+							<Z>0.196067497</Z>
+							<R00>-0.431855172</R00>
+							<R01>0.901941121</R01>
+							<R02>-7.86284945e-05</R02>
+							<R10>5.30327598e-05</R10>
+							<R11>-6.17848491e-05</R11>
+							<R12>-0.999991357</R12>
+							<R20>-0.901933432</R20>
+							<R21>-0.431858897</R21>
+							<R22>-2.11503211e-05</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBX6127EA4A8A3243019E9371B188982FE6</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBX46A58ACE6C8A486D8AE6BD6FF83D5A54">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>37.7704391</X>
+							<Y>61.0591888</Y>
+							<Z>39.4857483</Z>
+							<R00>-0.594929278</R00>
+							<R01>-0.803178072</R01>
+							<R02>-0.0309539605</R02>
+							<R10>0.573463023</R10>
+							<R11>-0.39716804</R11>
+							<R12>-0.716507614</R12>
+							<R20>0.563189328</R20>
+							<R21>-0.444029927</R21>
+							<R22>0.696879864</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBX343B98FC65384516B91FAA4DF97D36D5</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBX503B266E83E54467A42CAD0F8FD74DC8">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>16.9358635</X>
+							<Y>68.6156998</Y>
+							<Z>-42.0297852</Z>
+							<R00>2.64562083e-09</R00>
+							<R01>-9.26708026e-08</R01>
+							<R02>-0.999991417</R02>
+							<R10>-0.10870599</R10>
+							<R11>-0.994073868</R11>
+							<R12>9.18333427e-08</R12>
+							<R20>-0.994065285</R20>
+							<R21>0.108706914</R21>
+							<R22>-1.27039037e-08</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBXC5D9A4960BFA4966BE820AB25AAEC6D8</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBXD4287856BD8E4556B2525D4BA0211187">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>17.5988388</X>
+							<Y>-72.445015</Y>
+							<Z>35.148674</Z>
+							<R00>1.78812357e-07</R00>
+							<R01>2.30978614e-07</R01>
+							<R02>-0.999991417</R02>
+							<R10>-2.98987828e-07</R10>
+							<R11>1</R11>
+							<R12>2.30976454e-07</R12>
+							<R20>0.999991417</R20>
+							<R21>2.9898797e-07</R21>
+							<R22>1.78812513e-07</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBX6653387320314985A1C1DD3B7AE693E6</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBX36C9E0222E0B4CDFA2FD4743721C802D">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>-35.1486816</X>
+							<Y>-72.4500122</Y>
+							<Z>17.3088379</Z>
+							<R00>-0.999991417</R00>
+							<R01>-2.46398514e-07</R01>
+							<R02>-1.29471656e-13</R02>
+							<R10>-2.4639877e-07</R10>
+							<R11>1</R11>
+							<R12>1.76929916e-07</R12>
+							<R20>6.74315645e-15</R20>
+							<R21>1.7693155e-07</R21>
+							<R22>-0.999991417</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBX24D05ACDC87F40EE9FCD549A8C6D0286</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBX3B61C31DC50543F6B3180A063D6EDE9F">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>-35.1446724</X>
+							<Y>58.8041229</Y>
+							<Z>44.6656723</Z>
+							<R00>-0.999991417</R00>
+							<R01>-3.19338142e-07</R01>
+							<R02>-1.48134205e-07</R02>
+							<R10>3.16446403e-07</R10>
+							<R11>-0.63112247</R11>
+							<R12>-0.775676608</R12>
+							<R20>1.54214177e-07</R20>
+							<R21>-0.775683224</R21>
+							<R22>0.631117046</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBXEBEDA7D9AA8B4B0193139660790614A0</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBXDC14D92913834AB69200CEE10CC6B528">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>35.1456757</X>
+							<Y>-7.04202461</Y>
+							<Z>-74.7322464</Z>
+							<R00>0.999991417</R00>
+							<R01>2.79160957e-07</R01>
+							<R02>1.25451223e-07</R02>
+							<R10>2.83996329e-08</R10>
+							<R11>0.323491395</R11>
+							<R12>-0.94622308</R12>
+							<R20>-3.04733135e-07</R20>
+							<R21>0.946231127</R21>
+							<R22>0.323488623</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBXCD538F44D7C6476E81F48D4340A37ABF</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBX42DF2F70EE4445C788A3D5D672E916EA">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>-79.5913086</X>
+							<Y>20.7463055</Y>
+							<Z>-0.104951859</Z>
+							<R00>-0.594932497</R00>
+							<R01>0.803175569</R01>
+							<R02>0.0309536885</R02>
+							<R10>-0.573460162</R10>
+							<R11>-0.39716965</R11>
+							<R12>-0.716509044</R12>
+							<R20>-0.563188732</R20>
+							<R21>-0.444032907</R21>
+							<R22>0.696878433</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBXEB1AD540AAA6463985D51A73E6884123</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBX709485C4778B4ADD807ABA347BA723CC">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>-36.7873421</X>
+							<Y>-36.8027382</Y>
+							<Z>-64.444397</Z>
+							<R00>0.594931424</R00>
+							<R01>0.803176522</R01>
+							<R02>-0.0309535526</R02>
+							<R10>-0.573460519</R10>
+							<R11>0.397168875</R11>
+							<R12>-0.716509163</R12>
+							<R20>-0.563189507</R20>
+							<R21>0.444032043</R21>
+							<R22>0.696878254</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBX4233667A7DBA4799B13C82335CEA08A4</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBXD134054C28E7439F9B24A95A4B4C2DA0">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>50.483078</X>
+							<Y>16.9414787</Y>
+							<Z>63.5997849</Z>
+							<R00>-0.431856483</R00>
+							<R01>-0.901940584</R01>
+							<R02>7.86283927e-05</R02>
+							<R10>-5.30324105e-05</R10>
+							<R11>-6.17848636e-05</R11>
+							<R12>-0.999991357</R12>
+							<R20>0.901932836</R20>
+							<R21>-0.431860179</R21>
+							<R22>-2.114989e-05</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBX7B3E9B54BE5E4004A6A8A4CEC1CEAB4F</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBX26947AFF5F2C48CF9D0B31E11FBF83BE">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>-35.1399841</X>
+							<Y>-72.4600143</Y>
+							<Z>16.4599876</Z>
+							<R00>-1</R00>
+							<R01>-2.46401555e-07</R01>
+							<R02>9.9519446e-14</R02>
+							<R10>-2.46401555e-07</R10>
+							<R11>1</R11>
+							<R12>1.76934563e-07</R12>
+							<R20>-1.43116394e-13</R20>
+							<R21>1.76934563e-07</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBXD5AF73E0CB9E444C85EE78ABECE53843</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Weld" referent="RBXA5CA29F5BEB94190B0E3FC3DABFCFBBD">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>-35.1500015</X>
+							<Y>-72.2300034</Y>
+							<Z>16.9400005</Z>
+							<R00>-1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>-1</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>-72.4400253</X>
+							<Y>-10.6089067</Y>
+							<Z>-38.2596893</Z>
+							<R00>-7.18031629e-07</R00>
+							<R01>1</R01>
+							<R02>8.96421923e-08</R02>
+							<R10>-0.663416564</R10>
+							<R11>-4.09279323e-07</R11>
+							<R12>-0.748250246</R12>
+							<R20>-0.748250246</R20>
+							<R21>-5.96737493e-07</R21>
+							<R22>0.663416624</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Torso_to_Effect</string>
+						<Ref name="Part0">RBX37211927F21245E1AED8E62EA86038EC</Ref>
+						<Ref name="Part1">RBXF120C8F1BE9841759F1B36459CF70C13</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="WedgePart" referent="RBX9B4928C295574F8B93BD2171AD409380">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>1.8243866</X>
+						<Y>3.34802437</Y>
+						<Z>28.0052891</Z>
+						<R00>-2.6460969e-09</R00>
+						<R01>-0.108705409</R01>
+						<R02>-0.994065404</R02>
+						<R10>9.26708026e-08</R10>
+						<R11>-0.994073987</R11>
+						<R12>0.108706333</R12>
+						<R20>-0.999991417</R20>
+						<R21>-9.18333285e-08</R21>
+						<R22>1.27041648e-08</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4289331370</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<Vector3 name="size">
+						<X>1.04999959</X>
+						<Y>1.10999954</Y>
+						<Z>0.509999812</Z>
+					</Vector3>
+				</Properties>
+			</Item>
+			<Item class="WedgePart" referent="RBX60563B70AF904070829A068FEFA77D69">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>0.481399536</X>
+						<Y>3.01201057</Y>
+						<Z>27.4972992</Z>
+						<R00>1.2006214e-07</R00>
+						<R01>-0.663413286</R01>
+						<R02>-0.748241663</R02>
+						<R10>-1</R10>
+						<R11>-1.25750148e-08</R11>
+						<R12>-1.49312825e-07</R12>
+						<R20>8.96468251e-08</R20>
+						<R21>0.748241723</R21>
+						<R22>-0.663413286</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4289331370</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<Vector3 name="size">
+						<X>0.249999627</X>
+						<Y>0.630001307</Y>
+						<Z>0.609999895</Z>
+					</Vector3>
+				</Properties>
+			</Item>
+			<Item class="WedgePart" referent="RBXA71FE084ECCB482C9CA5172E9C8D0191">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>0.632396698</X>
+						<Y>3.35001564</Y>
+						<Z>27.5382977</Z>
+						<R00>-0.594929993</R00>
+						<R01>-0.573462546</R01>
+						<R02>-0.56318891</R02>
+						<R10>-0.803177416</R10>
+						<R11>0.397168517</R11>
+						<R12>0.444030613</R12>
+						<R20>-0.030954035</R20>
+						<R21>0.716507792</R21>
+						<R22>-0.696879685</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4289331370</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<Vector3 name="size">
+						<X>0.249999627</X>
+						<Y>0.610000908</Y>
+						<Z>0.609999895</Z>
+					</Vector3>
+				</Properties>
+			</Item>
+			<Item class="Part" referent="RBX6127EA4A8A3243019E9371B188982FE6">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>0.585395813</X>
+						<Y>3.56900215</Y>
+						<Z>28.0012951</Z>
+						<R00>0.431855172</R00>
+						<R01>-5.30327598e-05</R01>
+						<R02>0.901933432</R02>
+						<R10>0.901941121</R10>
+						<R11>-6.17848491e-05</R11>
+						<R12>-0.431858897</R12>
+						<R20>7.86284945e-05</R20>
+						<R21>0.999991357</R21>
+						<R22>2.11503211e-05</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4289331370</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<token name="shape">1</token>
+					<Vector3 name="size">
+						<X>0.470000058</X>
+						<Y>1.0399996</Y>
+						<Z>0.699999571</Z>
+					</Vector3>
+				</Properties>
+			</Item>
+			<Item class="WedgePart" referent="RBX343B98FC65384516B91FAA4DF97D36D5">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>0.632396698</X>
+						<Y>2.69001961</Y>
+						<Z>27.5383053</Z>
+						<R00>0.594929278</R00>
+						<R01>-0.573463023</R01>
+						<R02>-0.563189328</R02>
+						<R10>-0.803178072</R10>
+						<R11>-0.39716804</R11>
+						<R12>-0.444029927</R12>
+						<R20>0.0309539605</R20>
+						<R21>0.716507614</R21>
+						<R22>-0.696879864</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4289331370</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<Vector3 name="size">
+						<X>0.249999627</X>
+						<Y>0.610000908</Y>
+						<Z>0.609999895</Z>
+					</Vector3>
+				</Properties>
+			</Item>
+			<Item class="WedgePart" referent="RBXC5D9A4960BFA4966BE820AB25AAEC6D8">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>0.171409607</X>
+						<Y>3.34802437</Y>
+						<Z>28.0042877</Z>
+						<R00>-2.64562083e-09</R00>
+						<R01>0.10870599</R01>
+						<R02>0.994065285</R02>
+						<R10>-9.26708026e-08</R10>
+						<R11>-0.994073868</R11>
+						<R12>0.108706914</R12>
+						<R20>0.999991417</R20>
+						<R21>-9.18333427e-08</R21>
+						<R22>1.27039037e-08</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4289331370</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<Vector3 name="size">
+						<X>1.04999959</X>
+						<Y>1.10999954</Y>
+						<Z>0.509999812</Z>
+					</Vector3>
+				</Properties>
+			</Item>
+			<Item class="Part" referent="RBX6653387320314985A1C1DD3B7AE693E6">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">4</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>0.998397827</X>
+						<Y>3.01501656</Y>
+						<Z>27.341301</Z>
+						<R00>-1.78812357e-07</R00>
+						<R01>2.98987828e-07</R01>
+						<R02>-0.999991417</R02>
+						<R10>2.30978614e-07</R10>
+						<R11>1</R11>
+						<R12>2.9898797e-07</R12>
+						<R20>0.999991417</R20>
+						<R21>-2.30976454e-07</R21>
+						<R22>-1.78812513e-07</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4278255360</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0.200000003</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<token name="shape">1</token>
+					<Vector3 name="size">
+						<X>0.360001773</X>
+						<Y>0.830000043</Y>
+						<Z>0.78000021</Z>
+					</Vector3>
+				</Properties>
+				<Item class="SpecialMesh" referent="RBXA906348A5C0D40389F5676D4D353BDE1">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<token name="LODX">2</token>
+						<token name="LODY">2</token>
+						<Content name="MeshId"><null></null></Content>
+						<token name="MeshType">3</token>
+						<string name="Name">Mesh</string>
+						<Vector3 name="Offset">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+						</Vector3>
+						<Vector3 name="Scale">
+							<X>1</X>
+							<Y>1</Y>
+							<Z>1</Z>
+						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<Content name="TextureId"><null></null></Content>
+						<Vector3 name="VertexColor">
+							<X>1</X>
+							<Y>1</Y>
+							<Z>1</Z>
+						</Vector3>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="Part" referent="RBX24D05ACDC87F40EE9FCD549A8C6D0286">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">4</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>0.998397827</X>
+						<Y>3.02002144</Y>
+						<Z>27.6312981</Z>
+						<R00>0.999991417</R00>
+						<R01>2.4639877e-07</R01>
+						<R02>-6.74315645e-15</R02>
+						<R10>-2.46398514e-07</R10>
+						<R11>1</R11>
+						<R12>1.7693155e-07</R12>
+						<R20>1.29471656e-13</R20>
+						<R21>-1.76929916e-07</R21>
+						<R22>0.999991417</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4289331370</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<token name="shape">1</token>
+					<Vector3 name="size">
+						<X>1.5</X>
+						<Y>1.5</Y>
+						<Z>0.78000021</Z>
+					</Vector3>
+				</Properties>
+				<Item class="SpecialMesh" referent="RBXE2A59CE6315E472A8CAA3D9732F9281A">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<token name="LODX">2</token>
+						<token name="LODY">2</token>
+						<Content name="MeshId"><null></null></Content>
+						<token name="MeshType">3</token>
+						<string name="Name">Mesh</string>
+						<Vector3 name="Offset">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+						</Vector3>
+						<Vector3 name="Scale">
+							<X>1</X>
+							<Y>1</Y>
+							<Z>1</Z>
+						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<Content name="TextureId"><null></null></Content>
+						<Vector3 name="VertexColor">
+							<X>1</X>
+							<Y>1</Y>
+							<Z>1</Z>
+						</Vector3>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="WedgePart" referent="RBXEBEDA7D9AA8B4B0193139660790614A0">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>0.99439621</X>
+						<Y>2.32901955</Y>
+						<Z>27.5162868</Z>
+						<R00>0.999991417</R00>
+						<R01>-3.16446403e-07</R01>
+						<R02>-1.54214177e-07</R02>
+						<R10>-3.19338142e-07</R10>
+						<R11>-0.63112247</R11>
+						<R12>-0.775683224</R12>
+						<R20>1.48134205e-07</R20>
+						<R21>0.775676608</R21>
+						<R22>-0.631117046</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4289331370</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<Vector3 name="size">
+						<X>0.249999627</X>
+						<Y>0.790001631</Y>
+						<Z>0.389999896</Z>
+					</Vector3>
+				</Properties>
+			</Item>
+			<Item class="WedgePart" referent="RBXCD538F44D7C6476E81F48D4340A37ABF">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>0.99539566</X>
+						<Y>3.56201363</Y>
+						<Z>27.428299</Z>
+						<R00>-0.999991417</R00>
+						<R01>-2.83996329e-08</R01>
+						<R02>3.04733135e-07</R02>
+						<R10>2.79160957e-07</R10>
+						<R11>0.323491395</R11>
+						<R12>0.946231127</R12>
+						<R20>-1.25451223e-07</R20>
+						<R21>0.94622308</R21>
+						<R22>-0.323488623</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4289331370</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<Vector3 name="size">
+						<X>0.249999627</X>
+						<Y>0.40000096</Y>
+						<Z>0.289999992</Z>
+					</Vector3>
+				</Properties>
+			</Item>
+			<Item class="WedgePart" referent="RBXEB1AD540AAA6463985D51A73E6884123">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>1.36338425</X>
+						<Y>2.68901253</Y>
+						<Z>27.5383015</Z>
+						<R00>0.594932497</R00>
+						<R01>0.573460162</R01>
+						<R02>0.563188732</R02>
+						<R10>0.803175569</R10>
+						<R11>-0.39716965</R11>
+						<R12>-0.444032907</R12>
+						<R20>-0.0309536885</R20>
+						<R21>0.716509044</R21>
+						<R22>-0.696878433</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4289331370</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<Vector3 name="size">
+						<X>0.249999627</X>
+						<Y>0.610000908</Y>
+						<Z>0.609999895</Z>
+					</Vector3>
+				</Properties>
+			</Item>
+			<Item class="WedgePart" referent="RBX4233667A7DBA4799B13C82335CEA08A4">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>1.36337662</X>
+						<Y>3.34902382</Y>
+						<Z>27.5382977</Z>
+						<R00>-0.594931424</R00>
+						<R01>0.573460519</R01>
+						<R02>0.563189507</R02>
+						<R10>0.803176522</R10>
+						<R11>0.397168875</R11>
+						<R12>0.444032043</R12>
+						<R20>0.0309535526</R20>
+						<R21>0.716509163</R21>
+						<R22>-0.696878254</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4289331370</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<Vector3 name="size">
+						<X>0.249999627</X>
+						<Y>0.610000908</Y>
+						<Z>0.609999895</Z>
+					</Vector3>
+				</Properties>
+			</Item>
+			<Item class="Part" referent="RBX7B3E9B54BE5E4004A6A8A4CEC1CEAB4F">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>1.41039276</X>
+						<Y>3.57001686</Y>
+						<Z>28.0012932</Z>
+						<R00>0.431856483</R00>
+						<R01>5.30324105e-05</R01>
+						<R02>-0.901932836</R02>
+						<R10>-0.901940584</R10>
+						<R11>-6.17848636e-05</R11>
+						<R12>-0.431860179</R12>
+						<R20>-7.86283927e-05</R20>
+						<R21>0.999991357</R21>
+						<R22>2.114989e-05</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4289331370</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<token name="shape">1</token>
+					<Vector3 name="size">
+						<X>0.470000058</X>
+						<Y>1.0399996</Y>
+						<Z>0.699999571</Z>
+					</Vector3>
+				</Properties>
+			</Item>
+			<Item class="Part" referent="RBXD5AF73E0CB9E444C85EE78ABECE53843">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">4</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>0.990001678</X>
+						<Y>3.03002357</Y>
+						<Z>28.4799995</Z>
+						<R00>1</R00>
+						<R01>2.46401555e-07</R01>
+						<R02>1.43116394e-13</R02>
+						<R10>-2.46401555e-07</R10>
+						<R11>1</R11>
+						<R12>1.76934563e-07</R12>
+						<R20>-9.9519446e-14</R20>
+						<R21>-1.76934563e-07</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4289331370</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<token name="shape">1</token>
+					<Vector3 name="size">
+						<X>1.5</X>
+						<Y>1.5</Y>
+						<Z>0.320000648</Z>
+					</Vector3>
+				</Properties>
+				<Item class="SpecialMesh" referent="RBXDDAF8ACAE9A74931823AF8523A6BB7B9">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<token name="LODX">2</token>
+						<token name="LODY">2</token>
+						<Content name="MeshId"><null></null></Content>
+						<token name="MeshType">3</token>
+						<string name="Name">Mesh</string>
+						<Vector3 name="Offset">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+						</Vector3>
+						<Vector3 name="Scale">
+							<X>1</X>
+							<Y>1</Y>
+							<Z>1</Z>
+						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<Content name="TextureId"><null></null></Content>
+						<Vector3 name="VertexColor">
+							<X>1</X>
+							<Y>1</Y>
+							<Z>1</Z>
+						</Vector3>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="WedgePart" referent="RBXF120C8F1BE9841759F1B36459CF70C13">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>1.51599884</X>
+						<Y>3.01001167</Y>
+						<Z>27.4959965</Z>
+						<R00>7.18031629e-07</R00>
+						<R01>0.663416564</R01>
+						<R02>0.748250246</R02>
+						<R10>1</R10>
+						<R11>-4.09279323e-07</R11>
+						<R12>-5.96737493e-07</R12>
+						<R20>-8.96421923e-08</R20>
+						<R21>0.748250246</R21>
+						<R22>-0.663416624</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">false</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4289331370</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">272</token>
+					<string name="Name">Effect</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<token name="formFactorRaw">3</token>
+					<Vector3 name="size">
+						<X>0.249999627</X>
+						<Y>0.630001307</Y>
+						<Z>0.609999895</Z>
 					</Vector3>
 				</Properties>
 			</Item>

@@ -91,7 +91,7 @@ return {
         Cost = 400,
         MaxHealth = 700,
         Modifiers = {
-            Leeching = 8, --TODO: Modifier not implemented
+            Leeching = 8,
         },
     },
     HeavyBodyArmor = {
