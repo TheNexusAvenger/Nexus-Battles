@@ -4,6 +4,7 @@ TheNexusAvenger
 Service for damaging players.
 --]]
 
+local REACTANCE_RADIUS = 15
 local TAG_EXPIRE_TIME_SECONDS = 10
 local MINIMUM_KILLS_FOR_INCREASED_COINS = 3
 local KILLSTREAK_MESSAGES = {
@@ -205,6 +206,25 @@ function DamageService:DamageHumanoid(Humanoid,Damage,DamagingPlayer,DamagingToo
         Damage = Damage * (1 - Modifiers:Get("AbsorbDamage"))
     end
     Damage = math.min(Damage,Humanoid.Health)
+
+    --Apply the reactance back at the damaging player.
+    if Modifiers and DamagingPlayer and DamagingToolName ~= "Reactance" then
+        local Reactance = Modifiers:Get("Reactance")
+        if Reactance > 0 then
+            local DamagingCharacter = DamagingPlayer.Character
+            if DamagingCharacter then
+                local DamagingHumanoid = DamagingCharacter:FindFirstChild("Humanoid")
+                local DamagingHumanoidRootPart = DamagingCharacter:FindFirstChild("HumanoidRootPart")
+                local DamagedHumanoidRootPart = Humanoid.Parent:FindFirstChild("HumanoidRootPart")
+                if DamagingHumanoid and DamagingHumanoidRootPart and DamagedHumanoidRootPart and (DamagedHumanoidRootPart.Position - DamagingHumanoidRootPart.Position).Magnitude <= REACTANCE_RADIUS then
+                    local DamageToReflect = math.min(Damage * math.min(0.5,Reactance/6),DamagingHumanoid.Health)
+                    LocalEffectService:BroadcastLocalEffect(Player,"PlayReactiveEffect",DamagedHumanoidRootPart,DamagingHumanoidRootPart)
+                    self:DamageHumanoid(DamagingHumanoid,DamageToReflect,Player,"Reactance")
+                    --TODO: Damage the armor.
+                end
+            end
+        end
+    end
 
     --Add the tag.
     if DamagingPlayer and DamagingPlayer ~= Player then

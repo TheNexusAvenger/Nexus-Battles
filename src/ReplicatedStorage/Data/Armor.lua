@@ -79,7 +79,7 @@ return {
         Cost = 300,
         MaxHealth = 800,
         Modifiers = {
-            Reactance = 2, --TODO: Modifier not implemented
+            Reactance = 2,
             Speed = -1,
         },
     },
@@ -144,7 +144,7 @@ return {
         Cost = 200,
         MaxHealth = 550,
         Modifiers = {
-            Reactance = 1, --TODO: Modifier not implemented
+            Reactance = 1,
             Speed = -1,
         },
     },
