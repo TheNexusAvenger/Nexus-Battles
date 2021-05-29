@@ -19,6 +19,11 @@ ArmorService:SetClassName("StatService")
 ArmorService.PlayerToCharacter = {}
 ArmorService.CharacterArmor = {}
 
+local IdToType = {}
+for Name,ItemData in pairs(ArmorData) do
+    IdToType[ItemData.Id] = Name
+end
+
 
 
 --[[
@@ -48,6 +53,8 @@ end
 Equips an armor item of a given type.
 --]]
 function ArmorService:Equip(Player,ArmorType)
+    ArmorType = IdToType[ArmorType] or ArmorType
+
     --Get the character armor data.
     local CharacterData = GetCharacterAmorData(Player)
     if not CharacterData then return end
@@ -58,11 +65,17 @@ function ArmorService:Equip(Player,ArmorType)
     local Slot = ArmorTypeData.Slot
     if not Slot then return end
 
+    --Return if the slot didn't change.
+    if CharacterData[Slot] and CharacterData[Slot].Type == ArmorType then
+        return
+    end
+
     --Unequip the armor in the existing slot.
     self:Unequip(Player,Slot)
 
     --Add the armor model to the player.
     local EquippedArmorData = {
+        Type = ArmorType,
         Parts = {},
         ModifierKeys = {},
     }
@@ -129,41 +142,6 @@ function ArmorService:Unequip(Player,Slot)
         end
     end
 end
-
-
---[[
-Returns the modifiers for the given player.
---]]
---[[
-function ModifierService:GetModifiers(Player)
-    --Destroy the old modifiers if the player has a different character.
-    local NewCharacter = Player.Character
-    if not NewCharacter then return end
-    local OldCharacter = self.PlayerToCharacter[Player]
-    if OldCharacter and OldCharacter ~= NewCharacter then
-        self.CharacterModifiers[OldCharacter]:Destroy()
-        self.CharacterModifiers[OldCharacter] = nil
-    end
-
-    --Create the new modifiers if they don't exist.
-    if not self.CharacterModifiers[NewCharacter] then
-        --Create and store the modifiers.
-        local NewModifiers = CharacterModifiers.new(NewCharacter)
-        self.CharacterModifiers[NewCharacter] = NewModifiers
-        self.PlayerToCharacter[Player] = NewCharacter
-
-        --Connect the modifiers changing.
-        NewModifiers.ModifierChanged:Connect(function(Name,Value)
-            if not NewCharacter.Parent then return end
-            local UpdateModule = Modifiers:FindFirstChild(Name)
-            if not UpdateModule then return end
-            require(UpdateModule)(NewCharacter,Value)
-        end)
-    end
-
-    --Return the modifiers.
-    return self.CharacterModifiers[NewCharacter]
-end]]
 
 
 

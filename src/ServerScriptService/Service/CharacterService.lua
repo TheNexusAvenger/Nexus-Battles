@@ -4,6 +4,14 @@ TheNexusAvenger
 Service for managing character loading.
 --]]
 
+local CHARACTER_ARMOR_SLOTS = {
+    "Head",
+    "Body",
+    "Legs",
+}
+
+
+
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
@@ -11,6 +19,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
 local ArmorService = ServerScriptServiceProject:GetResource("Service.ArmorService")
+local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 
 local CharacterService = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
 CharacterService:SetClassName("CharacterService")
@@ -43,10 +52,34 @@ function CharacterService:SpawnCharacter(Player)
     BodyColors.Parent = Character
 
     --Add the armor.
-    --TODO: Hardcoded armor, replace with InventoryService
-    ArmorService:Equip(Player,"HeavyBodyArmor")
-    ArmorService:Equip(Player,"SpeedHelmet")
-    ArmorService:Equip(Player,"SpeedBoots")
+    local Inventory = InventoryService:GetInventory(Player)
+    for _,Slot in pairs(CHARACTER_ARMOR_SLOTS) do
+        local Item = Inventory:GetItemAtSlot(Slot)
+        if Item then
+            ArmorService:Equip(Player,Item.Id)
+        end
+    end
+
+    --Connect the inventory changing.
+    local InventoryChangedEvent
+    InventoryChangedEvent = Inventory.InventoryChanged:Connect(function()
+        --Disconnect the event if the character changed.
+        if Player.Character ~= Character then
+            InventoryChangedEvent:Disconnect()
+            InventoryChangedEvent = nil
+            return
+        end
+
+        --Update the armor.
+        for _,Slot in pairs(CHARACTER_ARMOR_SLOTS) do
+            local Item = Inventory:GetItemAtSlot(Slot)
+            if Item then
+                ArmorService:Equip(Player,Item.Id)
+            else
+                ArmorService:Unequip(Player,Slot)
+            end
+        end
+    end)
 
     --Add the team indicator.
     local TeamIndicator = Instance.new("Part")
