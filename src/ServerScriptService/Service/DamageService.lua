@@ -23,6 +23,7 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 
 local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
 local CoinService = ServerScriptServiceProject:GetResource("Service.CoinService")
+local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 local LocalEffectService = ServerScriptServiceProject:GetResource("Service.LocalEffectService")
 local ModifierService = ServerScriptServiceProject:GetResource("Service.ModifierService")
 local RoundService = ServerScriptServiceProject:GetResource("Service.RoundService")
@@ -140,10 +141,13 @@ local function CharacterAdded(Character)
                 if KillStreak >= MINIMUM_KILLS_FOR_INCREASED_COINS then
                     TotalCoins = TotalCoins + (KillStreak - MINIMUM_KILLS_FOR_INCREASED_COINS + 1)
                 end
-                local Modifiers = ModifierService:GetModifiers(Player)
+                local Modifiers = ModifierService:GetModifiers(MostDamagePlayer)
                 if Modifiers then
-                    --TODO: Damage armor based on additional coins.
-                    TotalCoins = TotalCoins + Modifiers:Get("ExtraCoins")
+                    local ExtraCoins = Modifiers:Get("ExtraCoins")
+                    TotalCoins = TotalCoins + ExtraCoins
+                    if ExtraCoins then
+                        InventoryService:DamageArmor(MostDamagePlayer,"ExtraCoins")
+                    end
                 end
                 for _ = 1,TotalCoins do
                     CoinService:DropCoin(HumanoidRootPart.Position,RoundService:GetPlayerRoundContainer(Player))
@@ -201,7 +205,7 @@ function DamageService:DamageHumanoid(Humanoid,Damage,DamagingPlayer,DamagingToo
 
     --Determine the damage.
     local Modifiers = ModifierService:GetModifiers(Player)
-    --TODO: Damage armor based on initial math.min(Damage,Humanoid.Health)
+    InventoryService:DamageArmor(Player,"AbsorbDamage",math.min(Damage,Humanoid.Health))
     if Modifiers then
         Damage = Damage * (1 - Modifiers:Get("AbsorbDamage"))
     end
@@ -220,7 +224,7 @@ function DamageService:DamageHumanoid(Humanoid,Damage,DamagingPlayer,DamagingToo
                     local DamageToReflect = math.min(Damage * math.min(0.5,Reactance/6),DamagingHumanoid.Health)
                     LocalEffectService:BroadcastLocalEffect(Player,"PlayReactiveEffect",DamagedHumanoidRootPart,DamagingHumanoidRootPart)
                     self:DamageHumanoid(DamagingHumanoid,DamageToReflect,Player,"Reactance")
-                    --TODO: Damage the armor.
+                    InventoryService:DamageArmor(Player,"Reactance")
                 end
             end
         end
