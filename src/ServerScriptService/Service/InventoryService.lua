@@ -32,7 +32,7 @@ Returns the persistent stat container for the player.
 function InventoryService:GetInventory(Player)
     --Create the inventory if it doesn't exist.
     if not InventoryService.PlayerInventories[Player] then
-        InventoryService.PlayerInventories[Player] = Inventory.new(Player:WaitForChild("PersistentStats"):WaitForChild("Inventory"))
+        InventoryService.PlayerInventories[Player] = Player:WaitForChild("PersistentStats"):WaitForChild("Inventory"))
     end
 
     --Return the inventory.
