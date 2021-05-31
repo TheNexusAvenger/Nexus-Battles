@@ -10,6 +10,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
 local Armor = ReplicatedStorageProject:GetResource("Data.Armor")
+local FeatureFlagService = ServerScriptServiceProject:GetResource("Service.FeatureFlagService")
 local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 local LocalEffectService = ServerScriptServiceProject:GetResource("Service.LocalEffectService")
 local StatService = ServerScriptServiceProject:GetResource("Service.StatService")
@@ -36,14 +37,16 @@ Attempts to purchase an item.
 function ShopService:PurchaseItem(Player,Id)
     --Get the item and return if the item doesn't exist or isn't for sale.
     local ArmorData
-    for _,ArmorItem in pairs(Armor) do
+    local Name
+    for ArmorName,ArmorItem in pairs(Armor) do
         if ArmorItem.Id == Id and ArmorItem.Cost then
+            Name = ArmorName
             ArmorData = ArmorItem
             break
         end
     end
     if not ArmorData then return false end
-    --TODO: Check feature flag for item being for sale
+    if not FeatureFlagService:ItemPurchaseEnabled(Name) then return false end
 
     --Return if the player doesn't have enough coins.
     local Stats = StatService:GetPersistentStats(Player)

@@ -11,8 +11,10 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 
 local GameTypes = ReplicatedStorageProject:GetResource("Data.GameTypes")
 local MapTypes = ReplicatedStorageProject:GetResource("Data.MapTypes")
+local WaitAny = ReplicatedStorageProject:GetResource("State.Event.WaitAny")
 local NexusRoundSystem = ReplicatedStorageProject:GetResource("NexusRoundSystem")
 local ObjectReplicator = NexusRoundSystem:GetObjectReplicator()
+local FeatureFlagService = ServerScriptServiceProject:GetResource("Service.FeatureFlagService")
 local RoundService = ServerScriptServiceProject:GetResource("Service.RoundService")
 
 local LobbySelectionService = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
@@ -101,7 +103,7 @@ function LobbySelectionService:InitializePart(Part,RoundValidationFunction)
     while true do
         --Select a random round type.
         local SelectedRound = LobbySelectionService.RoundOptions[math.random(1,#LobbySelectionService.RoundOptions)]
-        while RoundValidationFunction and not RoundValidationFunction(GameTypes[SelectedRound.Type],GameTypes[SelectedRound.Type]) do
+        while (RoundValidationFunction and not RoundValidationFunction(GameTypes[SelectedRound.Type])) or not FeatureFlagService:RoundEnabled(SelectedRound.Type,SelectedRound.Map) do
             SelectedRound = LobbySelectionService.RoundOptions[math.random(1,#LobbySelectionService.RoundOptions)]
         end
         local MapType = MapTypes[SelectedRound.Map]
@@ -117,6 +119,8 @@ function LobbySelectionService:InitializePart(Part,RoundValidationFunction)
         if RoundType.DisplayName then LobbySelectionRound.RoundName = RoundType.DisplayName end
         if RoundType.RequiredPlayers then LobbySelectionRound.RequiredPlayers = RoundType.RequiredPlayers end
         if RoundType.MaxPlayers then LobbySelectionRound.MaxPlayers = RoundType.MaxPlayers end
+        LobbySelectionRound.RoundTypeName = SelectedRound.Type
+        LobbySelectionRound.MapTypeName = SelectedRound.Map
         LobbySelectionRound.SelectionPart = Part
         LobbySelectionRound.Parent = LobbySelectionRounds
 
@@ -135,16 +139,18 @@ function LobbySelectionService:InitializePart(Part,RoundValidationFunction)
         end)
 
         --Wait for the round to complete.
-        while LobbySelectionRound.Timer.State ~= "COMPLETE" do
-            LobbySelectionRound.Timer:GetPropertyChangedSignal("State"):Wait()
+        while LobbySelectionRound.Timer.State ~= "COMPLETE" and LobbySelectionRound.Parent do
+            WaitAny(LobbySelectionRound.Timer:GetPropertyChangedSignal("State"),LobbySelectionRound:GetPropertyChangedSignal("Parent"))
         end
 
-        --Start the round.
-        RoundService:StartRound(SelectedRound.Type,SelectedRound.Map,LobbySelectionRound.Players:GetAll())
+        if LobbySelectionRound.Parent then
+            --Start the round.
+            RoundService:StartRound(SelectedRound.Type,SelectedRound.Map,LobbySelectionRound.Players:GetAll())
 
-        --Clear the lobby round and prepare to restart.
-        wait(3)
-        LobbySelectionRound:Destroy()
+            --Clear the lobby round and prepare to restart.
+            wait(3)
+            LobbySelectionRound:Destroy()
+        end
     end
 end
 
@@ -198,6 +204,16 @@ function LobbySelectionService:SetPlayerReady(Player)
 end
 
 
+
+--Connect the enabled maps and rounds changing.
+FeatureFlagService.RoundFeatureFlagChanged:Connect(function()
+    --Destroy the rounds that are no longer enabled.
+    for _,LobbyRound in pairs(LobbySelectionRounds:GetChildren()) do
+        if not FeatureFlagService:RoundEnabled(LobbyRound.RoundTypeName,LobbyRound.MapTypeName) then
+            LobbyRound:Destroy()
+        end
+    end
+end)
 
 --Connect the remote events.
 SetReady.OnServerEvent:Connect(function(Player)
