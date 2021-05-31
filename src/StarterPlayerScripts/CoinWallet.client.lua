@@ -16,8 +16,10 @@ local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
 
+local LoadingScreenCompleteValue = Players.LocalPlayer:WaitForChild("LoadingScreenComplete")
 local PersistentStats = Players.LocalPlayer:WaitForChild("PersistentStats")
 local CoinsValue = PersistentStats:WaitForChild("Coins")
+while not LoadingScreenCompleteValue.Value do LoadingScreenCompleteValue:GetPropertyChangedSignal("Value"):Wait() end
 
 
 
