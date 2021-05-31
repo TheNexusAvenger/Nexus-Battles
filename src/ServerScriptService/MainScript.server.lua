@@ -23,6 +23,7 @@ local LobbySelectionService = ServerScriptServiceProject:GetResource("Service.Lo
 
 --Load the services that don't load immediately.
 ServerScriptServiceProject:GetResource("Service.DamageService")
+ServerScriptServiceProject:GetResource("Service.ShopService")
 
 --Determine if there are any rounds that require 4 or more players.
 local RoundWith4PlayersExists = false

@@ -21,6 +21,10 @@ local CoinsValue = PersistentStats:WaitForChild("Coins")
 
 
 
+local UpdateCoinsEvent = Instance.new("BindableEvent")
+UpdateCoinsEvent.Name = "UpdateCoins"
+UpdateCoinsEvent.Parent = script
+
 local DisplayCoinsUpdateEvent = Instance.new("BindableEvent")
 DisplayCoinsUpdateEvent.Name = "DisplayCoinsUpdate"
 DisplayCoinsUpdateEvent.Parent = script
@@ -192,6 +196,9 @@ end
 
 
 --Connect the events.
+UpdateCoinsEvent.Event:Connect(function(AddedCoins)
+    FlashCoins(AddedCoins)
+end)
 DisplayCoinsUpdateEvent.Event:Connect(function(AddedCoins)
     local ScreenSize = CoinWalletContainer.AbsoluteSize
     ShowLocalCoin(AddedCoins,ScreenSize.X/2,ScreenSize.Y/2,ScreenSize.Y * 0.075)
