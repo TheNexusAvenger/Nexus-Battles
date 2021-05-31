@@ -5,6 +5,11 @@ Applies regeneration buff to a player.
 --]]
 
 local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
+
+local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 
 local LastCharacterUpdates = {}
 
@@ -31,7 +36,7 @@ return function(Character,Value)
             local AmountToHeal = math.min(Humanoid.MaxHealth - Humanoid.Health,Value)
             if AmountToHeal > 0 then
                 Humanoid.Health = Humanoid.Health + AmountToHeal
-                --TODO: Damage armor.
+                InventoryService:DamageArmor(Player,"Regeneration",AmountToHeal/Value)
             end
 
             --Wait 1 second to continue.

@@ -11,6 +11,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 local DamageService = ServerScriptServiceProject:GetResource("Service.DamageService")
+local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 local LocalEffectService = ServerScriptServiceProject:GetResource("Service.LocalEffectService")
 
 local LastCharacterUpdates = {}
@@ -62,7 +63,7 @@ return function(Character,Value)
 
             --Damage the armor.
             if TotalHealthLeeched > 0 then
-                --TODO: Damage armor
+                InventoryService:DamageArmor(Player,"Leeching",TotalHealthLeeched/Value)
             end
 
             --Wait 1 second to continue.
