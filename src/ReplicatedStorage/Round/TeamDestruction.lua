@@ -122,8 +122,8 @@ function TeamDestruction:RoundStarted()
         --Connect eliminated players.
         table.insert(RoundEvents,DamageService:GetWOEvent(Player):Connect(function()
             --Eliminate the player if the team is eliminated.
-            if not EliminatedTeams[Player.TeamColor.Name] then return end
             wait(DEFAULT_RESPAWN_TIME)
+            if not EliminatedTeams[Player.TeamColor.Name] then return end
             if self.State == "ENDED" then return end
             self:EliminatePlayer(Player)
         end))
