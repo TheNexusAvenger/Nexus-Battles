@@ -44,8 +44,10 @@ function SwordElimination:RoundStarted()
         self:SpawnPlayer(Player)
 
         --Connect the player being killed.
+        local PendingEliminationPlayers = 0
         table.insert(RoundEvents,DamageService:GetWOEvent(Player):Connect(function()
             --End the round if there is only 1 player left (2 with killing player).
+            PendingEliminationPlayers = PendingEliminationPlayers + 1
             if #self.Players:GetAll() <= 2 then
                 --Set the MVP to the last player.
                 --The WO event is not used because the player can reset.
@@ -60,13 +62,14 @@ function SwordElimination:RoundStarted()
                 self.Timer:Stop()
                 self.Timer.State = "COMPLETE"
             else
-                self:BroadcastLocalEffect("DisplayAlert",Player.DisplayName.." eliminated! "..tostring(#self.Players:GetAll() - 1).." players left!")
+                self:BroadcastLocalEffect("DisplayAlert",Player.DisplayName.." eliminated! "..tostring(#self.Players:GetAll() - PendingEliminationPlayers).." players left!")
             end
 
             --Eliminate the player.
             wait(DEFAULT_RESPAWN_TIME)
             if self.State == "ENDED" then return end
             self:EliminatePlayer(Player)
+            PendingEliminationPlayers = PendingEliminationPlayers - 1
         end))
     end
 
