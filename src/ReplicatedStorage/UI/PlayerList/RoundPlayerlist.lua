@@ -270,7 +270,11 @@ function RoundPlayerlist:RemovePlayer(Player)
     if not self.PlayerEntries[Player] then return end
 
     --Remove the player entry.
-    self.PlayerEntries[Player]:Destroy()
+    local Entry = self.PlayerEntries[Player]
+    if Entry.CurrentTeamHeader then
+        Entry.CurrentTeamHeader:RemovePlayerEntry(Entry)
+    end
+    Entry:Destroy()
     self.PlayerEntries[Player] = nil
 
     --Update the order.
