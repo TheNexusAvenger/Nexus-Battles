@@ -87,6 +87,7 @@ local function CurrentSpectatorRoundChanged(CurrentRound)
     SpectateLeftButton.Size = UDim2.new(1,0,1,0)
     SpectateLeftButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
     SpectateLeftButton.Parent = CurrentPlayerText
+    SpectateLeftButton:MapKey(Enum.KeyCode.Q,Enum.UserInputType.MouseButton1)
     SpectateLeftText.Text = "<"
 
     local SpectateRightButton,SpectateRightText = ToggleTextButtonFactory:Create()
@@ -94,6 +95,7 @@ local function CurrentSpectatorRoundChanged(CurrentRound)
     SpectateRightButton.Size = UDim2.new(1,0,1,0)
     SpectateRightButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
     SpectateRightButton.Parent = CurrentPlayerText
+    SpectateRightButton:MapKey(Enum.KeyCode.E,Enum.UserInputType.MouseButton1)
     SpectateRightText.Text = ">"
 
     local ContinueButton,ContinueText = ContinueTextButtonFactory:Create()
