@@ -23,7 +23,9 @@ FeatureFlagService.RoundFeatureFlagChanged = NexusEventCreator:CreateEvent()
 
 coroutine.wrap(function()
     --Get Nexus Admin's Feature Flag service.
-    NexusAdminFeatureFlags = ServerScriptServiceProject:GetResource("NexusAdmin").FeatureFlags
+    local NexusAdmin = ServerScriptServiceProject:GetResource("NexusAdmin")
+    while not NexusAdmin:GetAdminLoaded() do wait() end
+    NexusAdminFeatureFlags = NexusAdmin.FeatureFlags
 
     --Add the feature flags for the rounds and maps.
     for RoundTypeName,_ in pairs(GameTypes) do
