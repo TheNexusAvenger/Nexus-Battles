@@ -30,6 +30,7 @@ Starts the round.
 function Juggernaut:RoundStarted()
     local RoundEvents = {}
     local CurrentJuggernaut
+    local LocalEffectService = self:GetService("LocalEffectService")
 
     --Create the initial teams to prevent team-killing.
     local TeamService = self:GetService("TeamService")
@@ -87,7 +88,6 @@ function Juggernaut:RoundStarted()
         local Character = CurrentJuggernaut.Character
         local Head = Character:WaitForChild("Head")
         local Humanoid = Character:WaitForChild("Humanoid")
-        local LocalEffectService = self:GetService("LocalEffectService")
         for _,Player in pairs(self.Players:GetAll()) do
             if Player == CurrentJuggernaut then
                 LocalEffectService:PlayLocalEffect(Player,"DisplayAlert","YOU ARE THE JUGGERNAUT!")
@@ -153,6 +153,26 @@ function Juggernaut:RoundStarted()
 
     --Assign an initial Juggernaut.
     SetJuggernaut()
+
+    --Connect players being added.
+    self.Players.ItemAdded:Connect(function(Player)
+        local CurrentJuggernautCharacter = CurrentJuggernaut.Character
+        if CurrentJuggernautCharacter then
+            local Head = CurrentJuggernautCharacter:FindFirstChild("Head")
+            if Head then
+                LocalEffectService:PlayLocalEffect(Player,"CreateJuggernautArrow",Head)
+            end
+        end
+    end)
+    self.Spectators.ItemAdded:Connect(function(Player)
+        local CurrentJuggernautCharacter = CurrentJuggernaut.Character
+        if CurrentJuggernautCharacter then
+            local Head = CurrentJuggernautCharacter:FindFirstChild("Head")
+            if Head then
+                LocalEffectService:PlayLocalEffect(Player,"CreateJuggernautArrow",Head)
+            end
+        end
+    end)
 
     --Connect the Juggernaut leaving.
     self.Players.ItemRemoved:Connect(function(Player)

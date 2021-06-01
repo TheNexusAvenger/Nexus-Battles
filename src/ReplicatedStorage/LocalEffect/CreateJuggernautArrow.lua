@@ -15,7 +15,8 @@ local LastJuggernautArrow
 
 
 --Connect clearing the arrow on round end (such as ending spectating).
-CurrentRoundState.CurrentRoundChanged:Connect(function()
+CurrentRoundState.CurrentRoundChanged:Connect(function(Round)
+    if Round then return end
     if not LastJuggernautArrow then return end
     LastJuggernautArrow:Destroy()
     LastJuggernautArrow = nil
