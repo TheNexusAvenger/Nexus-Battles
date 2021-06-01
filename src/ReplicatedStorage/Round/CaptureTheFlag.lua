@@ -177,6 +177,21 @@ function CaptureTheFlag:CreateFlag(FlagBase,FlagTeamColor)
     Flag.BottomSurface = "Smooth"
     Flag.Parent = Post
 
+    local IndicatorBillboardGui = Instance.new("BillboardGui")
+    IndicatorBillboardGui.AlwaysOnTop = true
+    IndicatorBillboardGui.LightInfluence = 0
+    IndicatorBillboardGui.Size = UDim2.new(2,0,2,0)
+    IndicatorBillboardGui.StudsOffset = Vector3.new(0,7,0)
+    IndicatorBillboardGui.Adornee = Post
+    IndicatorBillboardGui.Parent = Post
+
+    local IndicatorFrame = Instance.new("Frame")
+    IndicatorFrame.BorderSizePixel = 0
+    IndicatorFrame.BackgroundColor3 = FlagTeamColor.Color
+    IndicatorFrame.Size = UDim2.new(1,0,1,0)
+    IndicatorFrame.Rotation = 45
+    IndicatorFrame.Parent = IndicatorBillboardGui
+
     --[[
     Creates a new weld.
     --]]
