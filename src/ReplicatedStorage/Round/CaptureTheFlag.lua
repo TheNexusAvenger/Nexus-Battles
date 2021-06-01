@@ -311,6 +311,9 @@ function CaptureTheFlag:CreateFlag(FlagBase,FlagTeamColor)
             if FlagObject.State ~= "BASE" then
                 self:BroadcastLocalEffect("DisplayAlert","The "..FlagTeamName.." flag has been returned!")
             end
+            if FlagObject.Player then
+                self.PlayersToFlags[FlagObject.Player] = nil
+            end
             self:CreateFlag(FlagBase,FlagTeamColor)
         end
     end)
