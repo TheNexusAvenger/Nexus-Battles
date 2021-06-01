@@ -225,6 +225,13 @@ function RoundPlayerlist:UpdateEntries()
         for _,Entry in pairs(Group.Entries) do
             self:MoveEntry(Entry,CurrentSpot + ((CurrentSpot + 1) * ENTRY_SPACING))
             CurrentSpot = CurrentSpot + 1
+            if Entry.CurrentTeamHeader then
+                Entry.CurrentTeamHeader:RemovePlayerEntry(Entry)
+            end
+            Entry.CurrentTeamHeader = Group.TeamHeader
+            if Group.TeamHeader then
+                Group.TeamHeader:AddPlayerEntry(Entry)
+            end
         end
     end
 end
