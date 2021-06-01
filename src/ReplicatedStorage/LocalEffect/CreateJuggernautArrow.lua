@@ -4,7 +4,22 @@ TheNexusAvenger
 Creates an arrow for the Juggernaut.
 --]]
 
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+
+local CurrentRoundState = ReplicatedStorageProject:GetResource("State.CurrentRound")
 local LastJuggernautArrow
+
+
+
+--Connect clearing the arrow on round end (such as ending spectating).
+CurrentRoundState.CurrentRoundChanged:Connect(function()
+    if not LastJuggernautArrow then return end
+    LastJuggernautArrow:Destroy()
+    LastJuggernautArrow = nil
+end)
 
 
 
