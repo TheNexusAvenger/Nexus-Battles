@@ -289,6 +289,7 @@ function RoundPlayerlist:AddPlayerFromData(PlayerData)
     Entry.StatValues = PlayerData.Stats
     Entry.TeamColor = PlayerData.TeamColor
     Entry.TotalStats = #self.Stats
+    Entry.PlayerRankIcon.Player = PlayerData.Player
     Entry.Parent = self.EntryAdorn
     self.DataPlayerEntries[PlayerData.Player] = Entry
 
