@@ -280,6 +280,8 @@ function CaptureTheFlag:CreateFlag(FlagBase,FlagTeamColor)
         Post.Parent = FlagBase
         Post.Anchored = true
         Post.CFrame = PostCFrame * CFrame.Angles(2 * math.pi * math.random(),0,0)
+        Post.AssemblyLinearVelocity = Vector3.new(0,0,0)
+        Post.AssemblyAngularVelocity = Vector3.new(0,0,0)
         Flag.CanCollide = false
     end
 
