@@ -4,8 +4,6 @@ TheNexusAvenger
 Displays the coins of the player.
 --]]
 
---TODO: Add coin collect sound?
-
 local COIN_WIDTH = 1.5
 local COIN_TRAVEL_TIME_SCREEN_WIDTH_MULTIPLIER = 0.5
 local MAX_COIN_SCREEN_HEIGHT = 0.3
@@ -14,11 +12,15 @@ local MAX_COIN_SCREEN_HEIGHT = 0.3
 
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local TweenService = game:GetService("TweenService")
+
+local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local LoadingScreenCompleteValue = Players.LocalPlayer:WaitForChild("LoadingScreenComplete")
 local PersistentStats = Players.LocalPlayer:WaitForChild("PersistentStats")
 local CoinsValue = PersistentStats:WaitForChild("Coins")
+local CoinPurchasePrompt = ReplicatedStorageProject:GetResource("UI.Prompt.CoinPurchasePrompt").GetPrompt()
 while not LoadingScreenCompleteValue.Value do LoadingScreenCompleteValue:GetPropertyChangedSignal("Value"):Wait() end
 
 
@@ -40,7 +42,7 @@ CoinWalletContainer.Name = "CoinWallet"
 CoinWalletContainer.ResetOnSpawn = false
 CoinWalletContainer.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
 
-local CoinImage = Instance.new("ImageLabel")
+local CoinImage = Instance.new("ImageButton")
 CoinImage.BackgroundTransparency = 1
 CoinImage.SizeConstraint = Enum.SizeConstraint.RelativeYY
 CoinImage.Size = UDim2.new(0.1,0,0.1,0)
@@ -198,6 +200,7 @@ end
 
 
 --Connect the events.
+local DB = true
 UpdateCoinsEvent.Event:Connect(function(AddedCoins)
     FlashCoins(AddedCoins)
 end)
@@ -207,4 +210,12 @@ DisplayCoinsUpdateEvent.Event:Connect(function(AddedCoins)
 end)
 DisplayWorldSpaceCoinEvent.Event:Connect(function(AddedCoins,WorldPosition)
     ShowWorldCoin(AddedCoins,WorldPosition)
+end)
+CoinImage.MouseButton1Down:Connect(function()
+    if DB then
+        DB = false
+        CoinPurchasePrompt:Toggle()
+        wait()
+        DB = true
+    end
 end)
