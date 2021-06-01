@@ -82,6 +82,13 @@ function FeatureFlagService:ItemPurchaseEnabled(ItemName)
     return self:GetFeatureFlag("ShopEnabled") and self:GetFeatureFlag("Armor"..tostring(ItemName).."PurchaseEnabled")
 end
 
+--[[
+Returns if a Robux purchase is enabled.
+--]]
+function FeatureFlagService:RobuxPurchaseEnabled(RobuxItemName)
+    return self:GetFeatureFlag("RobuxPurchasesEnabled") and self:GetFeatureFlag("RobuxPurchase"..tostring(RobuxItemName).."Enabled")
+end
+
 
 
 return FeatureFlagService

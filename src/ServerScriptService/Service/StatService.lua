@@ -60,6 +60,11 @@ local DEFAULT_STATS = {
         ValueType = "NumberValue",
         DefaultValue = 0,
     },
+    {
+        Name = "PurchaseHistory",
+        ValueType = "StringValue",
+        DefaultValue = "[]"
+    },
 }
 
 
