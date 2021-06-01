@@ -12,6 +12,7 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 local Armor = ReplicatedStorageProject:GetResource("Data.Armor")
 local GameTypes = ReplicatedStorageProject:GetResource("Data.GameTypes")
 local MapTypes = ReplicatedStorageProject:GetResource("Data.MapTypes")
+local RobuxItems = ReplicatedStorageProject:GetResource("Data.RobuxItems")
 local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
 local NexusAdminFeatureFlags
 
@@ -46,6 +47,12 @@ coroutine.wrap(function()
     NexusAdminFeatureFlags:AddFeatureFlag("ShopEnabled",true)
     for ArmorName,_ in pairs(Armor) do
         NexusAdminFeatureFlags:AddFeatureFlag("Armor"..tostring(ArmorName).."PurchaseEnabled",true)
+    end
+
+    --Add the feature flags for Robux items.
+    NexusAdminFeatureFlags:AddFeatureFlag("RobuxPurchasesEnabled",true)
+    for _,RobuxData in pairs(RobuxItems) do
+        NexusAdminFeatureFlags:AddFeatureFlag("RobuxPurchase"..tostring(RobuxData.Name).."Enabled",true)
     end
 end)()
 

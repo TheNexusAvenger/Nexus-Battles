@@ -131,11 +131,12 @@ function CoinPurchasePrompt:__new()
         --[[
         Updates the state of the button.
         --]]
+        local NexusAdminFeatureFlags
         local PurchaseEnabled = false
         local function UpdateButton()
             --Get the Robux cost.
             local RobuxCost = nil
-            if PurchaseOption.ProductId ~= 0 and DataLoadSuccessfulValue.Value then --TODO: Check feature flag.
+            if PurchaseOption.ProductId ~= 0 and DataLoadSuccessfulValue.Value and NexusAdminFeatureFlags and NexusAdminFeatureFlags:GetFeatureFlag("RobuxPurchasesEnabled") and NexusAdminFeatureFlags:GetFeatureFlag("RobuxPurchase"..tostring(PurchaseOption.Name).."Enabled") then
                 local Worked,Return = pcall(function()
                     return MarketplaceService:GetProductInfo(PurchaseOption.ProductId,Enum.InfoType.Product).PriceInRobux
                 end)
@@ -157,12 +158,17 @@ function CoinPurchasePrompt:__new()
 
         --Start updating the button.
         coroutine.wrap(function()
+            --Load Nexus Admin Feature Flags.
+            NexusAdminFeatureFlags = ReplicatedStorageProject:GetResource("NexusAdminClient").FeatureFlags
+            NexusAdminFeatureFlags:GetFeatureFlagChangedEvent("RobuxPurchase"..tostring(PurchaseOption.Name).."Enabled"):Connect(UpdateButton)
+            NexusAdminFeatureFlags:GetFeatureFlagChangedEvent("RobuxPurchasesEnabled"):Connect(UpdateButton)
+
+            --Run the loop.
             while true do
                 UpdateButton()
                 wait(10)
             end
         end)()
-        --TODO: Connect feature flag changes.
 
         --Set up purchasing.
         BuyButton.MouseButton1Down:Connect(function()
