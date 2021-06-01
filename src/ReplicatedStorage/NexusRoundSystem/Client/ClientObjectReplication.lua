@@ -37,6 +37,7 @@ function ClientObjectReplication:__new()
     self.ObjectLoaded = NexusEventCreator:CreateEvent()
     self.InitialObjectsLoading = 0
     self.InitialIds = nil --Set in LoadServerObjects
+    self.QueuedSignals = {}
 
     --Connect loading new objects.
     ObjectCreated.OnClientEvent:Connect(function(ObjectData)
@@ -58,6 +59,11 @@ function ClientObjectReplication:__new()
         local Object = self.ObjectRegistry[Id] or self.DisposeObjectRegistry[Id]
         if Object then
             Object:OnSignal(...)
+        elseif Id then
+            if not self.QueuedSignals[Id] then
+                self.QueuedSignals[Id] = {}
+            end
+            table.insert(self.QueuedSignals[Id],{...})
         end
     end)
 
@@ -135,7 +141,19 @@ end
 Loads an object from serialization data.
 --]]
 function ClientObjectReplication:LoadObject(ObjectData)
-    return self:GetClass(ObjectData.Type).FromSerializedData(ObjectData.Object,ObjectData.Id)
+    --Create the object.
+    local Object = self:GetClass(ObjectData.Type).FromSerializedData(ObjectData.Object,ObjectData.Id)
+
+    --Run the queued signals.
+    if self.QueuedSignals[ObjectData.Id] then
+        for _,SignalData in pairs(self.QueuedSignals[ObjectData.Id]) do
+            Object:OnSignal(unpack(SignalData))
+        end
+        self.QueuedSignals[ObjectData.Id] = nil
+    end
+
+    --Return the object.
+    return Object
 end
 
 --[[
