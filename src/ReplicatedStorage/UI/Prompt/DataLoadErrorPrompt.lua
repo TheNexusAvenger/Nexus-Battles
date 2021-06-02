@@ -4,15 +4,11 @@ TheNexusAvenger
 Prompt for alerting the player their data didn't load.
 --]]
 
-local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local MarketplaceService = game:GetService("MarketplaceService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
-local DataLoadSuccessfulValue = Players.LocalPlayer:WaitForChild("DataLoadSuccessful")
 local CutFrame = ReplicatedStorageProject:GetResource("External.NexusButton.Gui.CutFrame")
-local GreenTextButtonFactory = ReplicatedStorageProject:GetResource("UI.AudibleTextButtonFactory").CreateDefault(Color3.new(0,170/255,0))
 local RedTextButtonFactory = ReplicatedStorageProject:GetResource("UI.AudibleTextButtonFactory").CreateDefault(Color3.new(170/255,0,0))
 
 local DataLoadErorPrompt = ReplicatedStorageProject:GetResource("UI.Prompt.BasePrompt"):Extend()
