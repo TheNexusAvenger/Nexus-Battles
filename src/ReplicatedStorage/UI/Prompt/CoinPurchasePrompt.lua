@@ -98,6 +98,24 @@ function CoinPurchasePrompt:__new()
         CoinCount.ZIndex = 5
         CoinCount.Parent = CoinImage
 
+        if PurchaseOption.BonusText then
+            local BonusText = Instance.new("TextLabel")
+            BonusText.BackgroundTransparency = 1
+            BonusText.AnchorPoint = Vector2.new(0.5,0.5)
+            BonusText.Position = UDim2.new(0.8,0,0.1,0)
+            BonusText.Rotation = 10
+            BonusText.Size = UDim2.new(0.8,0,0.2,0)
+            BonusText.ZIndex = 5
+            BonusText.Font = Enum.Font.ArialBold
+            BonusText.Text = PurchaseOption.BonusText
+            BonusText.TextScaled = true
+            BonusText.TextColor3 = Color3.new(231/255,193/255,0)
+            BonusText.TextStrokeColor3 = Color3.new(0,0,0)
+            BonusText.TextStrokeTransparency = 0
+            BonusText.ZIndex = 5
+            BonusText.Parent = CoinImage
+        end
+
         local BuyButton,BuyText = GreenTextButtonFactory:Create()
         BuyButton.Size = UDim2.new(0.8,0,0.175,0)
         BuyButton.Position = UDim2.new(0.1,0,0.75,0)

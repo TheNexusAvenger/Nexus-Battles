@@ -23,14 +23,14 @@ if game.GameId == 2346548105 then
             Name = "1050Coins",
             ProductId = 1179032932,
             Coins = 1050,
-            Text = "5% MORE",
+            BonusText = "5% MORE",
             DisplayInCoinPurchase = true,
         },
         {
             Name = "2750Coins",
             ProductId = 1179032993,
             Coins = 2750,
-            Text = "10% MORE",
+            BonusText = "10% MORE",
             DisplayInCoinPurchase = true,
         },
         {
