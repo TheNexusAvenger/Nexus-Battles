@@ -66,6 +66,7 @@ Saves the inventory.
 function Inventory:Save()
     self.LastInventoryString = HttpService:JSONEncode(self.Inventory)
     self.InventoryStringValue.Value = self.LastInventoryString
+    self.InventoryChanged:Fire()
 end
 
 --[[
@@ -117,12 +118,14 @@ Adds an item to the inventory.
 function Inventory:AddItem(Id)
     local ArmorData = GetArmorData(Id)
     if ArmorData then
+        local Slot = self:GetNextSlot()
         table.insert(self.Inventory,{
             Id = Id,
-            Slot = self:GetNextSlot(),
+            Slot = Slot,
             Health = ArmorData.MaxHealth,
         })
         self:Save()
+        return Slot
     end
 end
 

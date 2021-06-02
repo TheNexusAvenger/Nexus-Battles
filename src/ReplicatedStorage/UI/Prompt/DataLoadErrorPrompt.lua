@@ -44,8 +44,8 @@ function DataLoadErorPrompt:__new()
     PromptText.Font = Enum.Font.SourceSansBold
     PromptText.Text = "Your data failed to load. You can still play, but any progress you make won't save. Rejoining the game may fix this."
     PromptText.TextScaled = true
-    PromptText.TextColor3 = Color3.new(1,1,1)
-    PromptText.TextStrokeColor3 = Color3.new(0,0,0)
+    PromptText.TextColor3 = Color3.new(0,0,0)
+    PromptText.TextStrokeColor3 = Color3.new(1,1,1)
     PromptText.TextStrokeTransparency = 0
     PromptText.ZIndex = 5
     PromptText.Parent = PromptBackground

@@ -40,6 +40,30 @@ function InventoryService:GetInventory(Player)
 end
 
 --[[
+Awards an armor item to the given player.
+Attempts to equip the armor if the slot is empty.
+--]]
+function InventoryService:AwardItem(Player,Id)
+    --Get the armor data.
+    local ArmorData = nil
+    for _,ArmorItem in pairs(Armor) do
+        if ArmorItem.Id == Id and ArmorItem.Cost then
+            ArmorData = ArmorItem
+            break
+        end
+    end
+    if not ArmorData then return end
+
+    --Add the item and equip it if the player's slot is empty.
+    local PlayerInventory = self:GetInventory(Player)
+    local Slot = ArmorData.Slot
+    local NewSlot = PlayerInventory:AddItem(Id)
+    if Slot and PlayerInventory:GetItemAtSlot(Slot) == nil then
+        PlayerInventory:SwapItems(Slot,NewSlot)
+    end
+end
+
+--[[
 Damages the equipped armor with the given tag.
 --]]
 function InventoryService:DamageArmor(Player,Tag,Multiplier)

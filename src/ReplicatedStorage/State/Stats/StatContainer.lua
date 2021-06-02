@@ -47,6 +47,8 @@ Creates a stat with the given name, type,
 and default value.
 --]]
 function StatContainer:Create(Name,ValueType,DefaultValue)
+    if DefaultValue == nil then DefaultValue = 0 end
+
     --Return if the value already exists.
     if self.Container:FindFirstChild(Name) then
         return
@@ -55,7 +57,7 @@ function StatContainer:Create(Name,ValueType,DefaultValue)
     --Create the value.
     local ValueObject = Instance.new(ValueType or "NumberValue")
     ValueObject.Name = Name
-    ValueObject.Value = DefaultValue or 0
+    ValueObject.Value = DefaultValue
     ValueObject.Parent = self.Container
 end
 

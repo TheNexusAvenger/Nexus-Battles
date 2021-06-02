@@ -19,10 +19,22 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 local RobuxItems = ReplicatedStorageProject:GetResource("Data.RobuxItems")
 local CoinService = ServerScriptServiceProject:GetResource("Service.CoinService")
 local FeatureFlagService = ServerScriptServiceProject:GetResource("Service.FeatureFlagService")
+local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 local StatService = ServerScriptServiceProject:GetResource("Service.StatService")
 
 local RobuxService = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
 RobuxService:SetClassName("RobuxService")
+
+
+
+--Set up the replicaiton.
+local RobuxReplication = Instance.new("Folder")
+RobuxReplication.Name = "Robux"
+RobuxReplication.Parent = ReplicatedStorageProject:GetResource("Replication")
+
+local RejectArmorBundle = Instance.new("RemoteEvent")
+RejectArmorBundle.Name = "RejectArmorBundle"
+RejectArmorBundle.Parent = RobuxReplication
 
 
 
@@ -51,7 +63,8 @@ function MarketplaceService.ProcessReceipt(ReceiptInfo)
     end
 
     --Add the purchase history record.
-    local PurchaseHistoryStat = StatService:GetPersistentStats(Player):Get("PurchaseHistory")
+    local PersistentStats = StatService:GetPersistentStats(Player)
+    local PurchaseHistoryStat = PersistentStats:Get("PurchaseHistory")
     local PurchaseHistory = HttpService:JSONDecode(PurchaseHistoryStat:Get())
     table.insert(PurchaseHistory,{
         Name = RobuxItem.Name,
@@ -69,10 +82,28 @@ function MarketplaceService.ProcessReceipt(ReceiptInfo)
         end
         CoinService:GiveCoins(Player,RobuxItem.Coins - ((TOTAL_COINS_TO_ANIMATE - 1) * math.floor(RobuxItem.Coins/TOTAL_COINS_TO_ANIMATE)))
     end
+    if RobuxItem.Armor then
+        for _,Id in pairs(RobuxItem.Armor) do
+            InventoryService:AwardItem(Player,Id)
+        end
+    end
+    if RobuxItem.RankScore then
+        PersistentStats:Get("RankScore"):Increment(RobuxItem.RankScore)
+    end
+    if RobuxItem.Name == "FirstArmorBundle" then
+        PersistentStats:Get("FirstTimeBundleClosed"):Set(true)
+    end
 
     --Return processed.
     return Enum.ProductPurchaseDecision.PurchaseGranted
 end
+
+
+
+--Connect the replication.
+RejectArmorBundle.OnServerEvent:Connect(function(Player)
+    StatService:GetPersistentStats(Player):Get("FirstTimeBundleClosed"):Set(true)
+end)
 
 
 

@@ -55,8 +55,7 @@ function ShopService:PurchaseItem(Player,Id)
     if CurrentCoins < ArmorData.Cost then return false end
 
     --Add the item to the inventory, subtract the coins, and return.
-    local Inventory = InventoryService:GetInventory(Player)
-    Inventory:AddItem(Id)
+    InventoryService:AwardItem(Player,Id)
     CoinsStat:Increment(-ArmorData.Cost)
     LocalEffectService:PlayLocalEffect(Player,"UpdateCoins")
     return true

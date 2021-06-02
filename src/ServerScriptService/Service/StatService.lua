@@ -65,6 +65,11 @@ local DEFAULT_STATS = {
         ValueType = "StringValue",
         DefaultValue = "[]"
     },
+    {
+        Name = "FirstTimeBundleClosed",
+        ValueType = "BoolValue",
+        DefaultValue = false,
+    },
 }
 
 

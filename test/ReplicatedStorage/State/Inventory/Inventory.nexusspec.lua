@@ -175,7 +175,7 @@ Tests the AddItem method.
 --]]
 NexusUnitTesting:RegisterUnitTest(InventoryTest.new("AddItem"):SetRun(function(self)
     --Test adding valid items.
-    self.CuT:AddItem(102)
+    self:AssertEquals(self.CuT:AddItem(102),2)
     self:AssertEquals(self.InventoryValue.Value,HttpService:JSONEncode({
         {
             Id = 1,
@@ -203,7 +203,7 @@ NexusUnitTesting:RegisterUnitTest(InventoryTest.new("AddItem"):SetRun(function(s
             Slot = 2,
         },
     }))
-    self.CuT:AddItem(107)
+    self:AssertEquals(self.CuT:AddItem(107),3)
     self:AssertEquals(self.InventoryValue.Value,HttpService:JSONEncode({
         {
             Id = 1,
@@ -237,7 +237,7 @@ NexusUnitTesting:RegisterUnitTest(InventoryTest.new("AddItem"):SetRun(function(s
     }))
 
     --Test adding a non-existent item.
-    self.CuT:AddItem(299)
+    self:AssertNil(self.CuT:AddItem(299))
     self:AssertEquals(self.InventoryValue.Value,HttpService:JSONEncode({
         {
             Id = 1,

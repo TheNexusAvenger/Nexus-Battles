@@ -111,10 +111,12 @@ Destroys the prompt.
 --]]
 function BasePrompt:Destroy()
     self.super:Destroy()
+    if self.Destroyed then return end
+    self.Destroyed = true
 
     if self:IsOpen() then
         coroutine.wrap(function()
-            self:Close()
+            self.object:Close()
             wait(PROMPT_TRANSITION_TIME)
             self.Container:Destroy()
         end)()
