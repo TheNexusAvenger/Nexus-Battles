@@ -2,14 +2,14 @@
 	<Meta name="ExplicitAutoJoints">true</Meta>
 	<External>null</External>
 	<External>nil</External>
-	<Item class="Folder" referent="RBX95C878AACFFE48FFBD910D1D9FD2D248">
+	<Item class="Folder" referent="RBXDB82E0B2C20D48FA8506199111AFE9FB">
 		<Properties>
 			<BinaryString name="AttributesSerialize"></BinaryString>
 			<string name="Name">ArmorModels</string>
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
-		<Item class="Model" referent="RBX2DDA058A3BE64075B6EE8783A00247D4">
+		<Item class="Model" referent="RBXF547A4AD0A174F088C5C37F8FEE053A4">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<token name="LevelOfDetail">0</token>
@@ -48,28 +48,13 @@
 					<Z>0</Z>
 				</Vector3>
 				<string name="Name">CrownOfWealth</string>
-				<bool name="NeedsPivotMigration">false</bool>
-				<Ref name="PrimaryPart">RBXD47B1B0B6F364D2EA0F74AE93A4A45EB</Ref>
+				<bool name="NeedsPivotMigration">true</bool>
+				<Ref name="PrimaryPart">RBXB75EC086B4EA4F59959D3CB8F9E1EF2F</Ref>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<OptionalCoordinateFrame name="WorldPivotData">
-					<CFrame>
-						<X>-14</X>
-						<Y>4.64867496</Y>
-						<Z>-0.00291287876</Z>
-						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>0.999999881</R11>
-						<R12>0</R12>
-						<R20>0</R20>
-						<R21>0</R21>
-						<R22>0.999999881</R22>
-					</CFrame>
-				</OptionalCoordinateFrame>
+				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
 			</Properties>
-			<Item class="Part" referent="RBXD47B1B0B6F364D2EA0F74AE93A4A45EB">
+			<Item class="Part" referent="RBXB75EC086B4EA4F59959D3CB8F9E1EF2F">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -160,7 +145,7 @@
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX5C63E14F4DE146929F65728BA1874E0F">
+				<Item class="SpecialMesh" referent="RBX43DF09FCDAA34A369A5B9E345F251C40">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -188,7 +173,7 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX358343D5E98846508162FDBBF1091CEF">
+				<Item class="Motor6D" referent="RBX23A6A56DA4EE4178983497A67DAEF02D">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -223,13 +208,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBXD47B1B0B6F364D2EA0F74AE93A4A45EB</Ref>
-						<Ref name="Part1">RBXA9DAE056D8F14C24947FD35D7DF6BA79</Ref>
+						<Ref name="Part0">RBXB75EC086B4EA4F59959D3CB8F9E1EF2F</Ref>
+						<Ref name="Part1">RBX6570ECE917E34278B9CA0CCFFA34E237</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX355BC003175349C492F522ADFD4255B5">
+				<Item class="Motor6D" referent="RBXD9E3FBA9BFFB488C81165A512FC89D85">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -264,13 +249,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBXD47B1B0B6F364D2EA0F74AE93A4A45EB</Ref>
-						<Ref name="Part1">RBXD3CC02BC81BD4409B8A1F947C92AD420</Ref>
+						<Ref name="Part0">RBXB75EC086B4EA4F59959D3CB8F9E1EF2F</Ref>
+						<Ref name="Part1">RBXBFA2A90758AC465E81FF5E28FDC7CFA7</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX1E758B28DA0848D09E0C1377F09EA2EE">
+				<Item class="Motor6D" referent="RBXFA8ABEAE240D49BAA778B4700B8C431B">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -305,13 +290,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBXD47B1B0B6F364D2EA0F74AE93A4A45EB</Ref>
-						<Ref name="Part1">RBXB438411D58C843D79C74000BC2F0F21F</Ref>
+						<Ref name="Part0">RBXB75EC086B4EA4F59959D3CB8F9E1EF2F</Ref>
+						<Ref name="Part1">RBX4A86C8E77F724DD5902FCC52E0954D2C</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX8B2E2CB1B650416D9AF7D4F251FEADBB">
+				<Item class="Motor6D" referent="RBXBB90CF6E43F840DCA9A185EEDA814F45">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -346,13 +331,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBXD47B1B0B6F364D2EA0F74AE93A4A45EB</Ref>
-						<Ref name="Part1">RBX78AB7931EE29445CBBDA8FF0CC145051</Ref>
+						<Ref name="Part0">RBXB75EC086B4EA4F59959D3CB8F9E1EF2F</Ref>
+						<Ref name="Part1">RBX20EBC74CAAA54C439129358DD9AA6055</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX492CCE3291454CAEB5780FEAA871D041">
+				<Item class="Motor6D" referent="RBX8E6509DF27A741FAACBABA25AD96AEF8">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -387,13 +372,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBXD47B1B0B6F364D2EA0F74AE93A4A45EB</Ref>
-						<Ref name="Part1">RBX22B1EBF88CB04B8DA1BAC961F8888B6D</Ref>
+						<Ref name="Part0">RBXB75EC086B4EA4F59959D3CB8F9E1EF2F</Ref>
+						<Ref name="Part1">RBX4FC5F3F01C2646FC8947676A5C5BBAE7</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX609797AE327444A3845CAAAB374CBA6C">
+				<Item class="Motor6D" referent="RBXAE28D844A3F245F3B105B191B97ADBA9">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -428,13 +413,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBXD47B1B0B6F364D2EA0F74AE93A4A45EB</Ref>
-						<Ref name="Part1">RBX13811DFCD5E94EF9A4F81BBF88E0327F</Ref>
+						<Ref name="Part0">RBXB75EC086B4EA4F59959D3CB8F9E1EF2F</Ref>
+						<Ref name="Part1">RBX23552D3EB1094A36B19D83AB56EC3A7C</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXAD8ED7ADC0514D1097144B42650792B5">
+				<Item class="Motor6D" referent="RBXDF4AFC532A8749D99FF74751AC2ECF9C">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -469,13 +454,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBXD47B1B0B6F364D2EA0F74AE93A4A45EB</Ref>
-						<Ref name="Part1">RBX9E22B04C87344CF8998B290E100981E6</Ref>
+						<Ref name="Part0">RBXB75EC086B4EA4F59959D3CB8F9E1EF2F</Ref>
+						<Ref name="Part1">RBXB23F9F7B336A4E97ABD807928D48883E</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXD83A5D82FCEC40EE8D050536DF368B6D">
+				<Item class="Motor6D" referent="RBX9AA3482899AE4C70B0150306EF4AE80C">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -510,13 +495,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBXD47B1B0B6F364D2EA0F74AE93A4A45EB</Ref>
-						<Ref name="Part1">RBXD86E1358736445DF97F871094520AC9A</Ref>
+						<Ref name="Part0">RBXB75EC086B4EA4F59959D3CB8F9E1EF2F</Ref>
+						<Ref name="Part1">RBXCD4A88E389F4494DB90DE06602BCE211</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX61ABE4E9E1EC4743BA5BA42EFC3E277E">
+				<Item class="Motor6D" referent="RBXA8136572E2EA4AD5B76CBB5C5C554AB5">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -551,13 +536,13 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBXD47B1B0B6F364D2EA0F74AE93A4A45EB</Ref>
-						<Ref name="Part1">RBXAC5715BC3E614250AC15BFAE1108A1D0</Ref>
+						<Ref name="Part0">RBXB75EC086B4EA4F59959D3CB8F9E1EF2F</Ref>
+						<Ref name="Part1">RBXFA84EAD799624EAEA1BD78E225B9CFB6</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXBE6AD8BE527444FE839BEE5D14923DF4">
+				<Item class="Motor6D" referent="RBX1C1AC68F03B144C28D929E69849D7371">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -592,14 +577,14 @@
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBXD47B1B0B6F364D2EA0F74AE93A4A45EB</Ref>
-						<Ref name="Part1">RBXA90D0F0517C54F7B9424C31AF751753D</Ref>
+						<Ref name="Part0">RBXB75EC086B4EA4F59959D3CB8F9E1EF2F</Ref>
+						<Ref name="Part1">RBX9C54E10741A94D02B44B166A1708A5A8</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXA9DAE056D8F14C24947FD35D7DF6BA79">
+			<Item class="Part" referent="RBX6570ECE917E34278B9CA0CCFFA34E237">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -691,7 +676,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXD3CC02BC81BD4409B8A1F947C92AD420">
+			<Item class="Part" referent="RBXBFA2A90758AC465E81FF5E28FDC7CFA7">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -783,7 +768,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXB438411D58C843D79C74000BC2F0F21F">
+			<Item class="Part" referent="RBX4A86C8E77F724DD5902FCC52E0954D2C">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -875,7 +860,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX78AB7931EE29445CBBDA8FF0CC145051">
+			<Item class="Part" referent="RBX20EBC74CAAA54C439129358DD9AA6055">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -967,7 +952,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX22B1EBF88CB04B8DA1BAC961F8888B6D">
+			<Item class="Part" referent="RBX4FC5F3F01C2646FC8947676A5C5BBAE7">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1059,7 +1044,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX13811DFCD5E94EF9A4F81BBF88E0327F">
+			<Item class="Part" referent="RBX23552D3EB1094A36B19D83AB56EC3A7C">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1151,7 +1136,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX9E22B04C87344CF8998B290E100981E6">
+			<Item class="Part" referent="RBXB23F9F7B336A4E97ABD807928D48883E">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1243,7 +1228,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXD86E1358736445DF97F871094520AC9A">
+			<Item class="Part" referent="RBXCD4A88E389F4494DB90DE06602BCE211">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1334,7 +1319,7 @@
 						<Z>1.39999998</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX79E13BBEDCB94EA98739C0C06C537306">
+				<Item class="SpecialMesh" referent="RBXF2C6AD821CC443689E0F11BDB2DC8C91">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -1363,7 +1348,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXAC5715BC3E614250AC15BFAE1108A1D0">
+			<Item class="Part" referent="RBXFA84EAD799624EAEA1BD78E225B9CFB6">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1455,7 +1440,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXA90D0F0517C54F7B9424C31AF751753D">
+			<Item class="Part" referent="RBX9C54E10741A94D02B44B166A1708A5A8">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1548,7 +1533,7 @@
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="Model" referent="RBX57974928114B4032809B1873DAAEA571">
+		<Item class="Model" referent="RBX214FCAFE9F87429BBD13A7E367AF04C2">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<token name="LevelOfDetail">0</token>
@@ -1587,28 +1572,13 @@
 					<Z>0</Z>
 				</Vector3>
 				<string name="Name">ShardHead</string>
-				<bool name="NeedsPivotMigration">false</bool>
+				<bool name="NeedsPivotMigration">true</bool>
 				<Ref name="PrimaryPart">null</Ref>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<OptionalCoordinateFrame name="WorldPivotData">
-					<CFrame>
-						<X>11.000001</X>
-						<Y>23.5317841</Y>
-						<Z>165.381104</Z>
-						<R00>-1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>1</R11>
-						<R12>0</R12>
-						<R20>0</R20>
-						<R21>0</R21>
-						<R22>-1</R22>
-					</CFrame>
-				</OptionalCoordinateFrame>
+				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
 			</Properties>
-			<Item class="Part" referent="RBX4E35E0A56B364C93BB00434D401EE2EC">
+			<Item class="Part" referent="RBX869490467E1C46CBA55BAC76C0509B9E">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1623,8 +1593,8 @@
 					<CoordinateFrame name="CFrame">
 						<X>11.000001</X>
 						<Y>23.1000004</Y>
-						<Z>165.500015</Z>
-						<R00>-1</R00>
+						<Z>165.262161</Z>
+						<R00>1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
 						<R10>0</R10>
@@ -1632,13 +1602,13 @@
 						<R12>0</R12>
 						<R20>0</R20>
 						<R21>0</R21>
-						<R22>-1</R22>
+						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
 					<bool name="CanTouch">true</bool>
 					<bool name="CastShadow">true</bool>
 					<int name="CollisionGroupId">0</int>
-					<Color3uint8 name="Color3uint8">4294298928</Color3uint8>
+					<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
 					<PhysicalProperties name="CustomPhysicalProperties">
 						<CustomPhysics>false</CustomPhysics>
 					</PhysicalProperties>
@@ -1699,7 +1669,7 @@
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX474A70E681B94C038EDCA21D0526E90A">
+				<Item class="SpecialMesh" referent="RBXCD666A36A380481BAEEF67D743B5C254">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -1727,23 +1697,7 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Decal" referent="RBX1C29BAF38C764FBDABE03B4A73E49084">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Color3 name="Color3">
-							<R>1</R>
-							<G>1</G>
-							<B>1</B>
-						</Color3>
-						<token name="Face">5</token>
-						<string name="Name">face</string>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<Content name="Texture"><url>rbxasset://textures/face.png</url></Content>
-						<float name="Transparency">0</float>
-					</Properties>
-				</Item>
-				<Item class="Weld" referent="RBX04691DA3F65741F5A159E636FF4A67EC">
+				<Item class="Weld" referent="RBX7A717176314C49D79A9142DA489D39A9">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -1776,13 +1730,13 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX4E35E0A56B364C93BB00434D401EE2EC</Ref>
-						<Ref name="Part1">RBX7723CE6AB2A64C2586A06B7ED4963F15</Ref>
+						<Ref name="Part0">RBX869490467E1C46CBA55BAC76C0509B9E</Ref>
+						<Ref name="Part1">RBX2A9BA06890D246D4BF7716BA418701D1</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBXEA82D8FCC2B74B7B8949C0F3E8AAA34D">
+				<Item class="Weld" referent="RBXE3390E66CF3045E785701DC731E4792B">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -1815,13 +1769,13 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX4E35E0A56B364C93BB00434D401EE2EC</Ref>
-						<Ref name="Part1">RBX240AEDE74FA043FD96B000FADADE39AA</Ref>
+						<Ref name="Part0">RBX869490467E1C46CBA55BAC76C0509B9E</Ref>
+						<Ref name="Part1">RBX0C1E4C22FBDB459C8CFF8A71387CB30A</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBX8672CAA7647841AC81894B101AFBFEF6">
+				<Item class="Weld" referent="RBXF81BEDA04A7E4451B2312F11E33E5E55">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -1854,13 +1808,13 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX4E35E0A56B364C93BB00434D401EE2EC</Ref>
-						<Ref name="Part1">RBX96E35E7CD65446789EF886D1E7194C5F</Ref>
+						<Ref name="Part0">RBX869490467E1C46CBA55BAC76C0509B9E</Ref>
+						<Ref name="Part1">RBXD295BCF67CBE41A8BFE6F623EDA97B42</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBX7BB115635E8F4FD4B51AFE62B144396E">
+				<Item class="Weld" referent="RBX9E4646A01C834805B9ABC1490F30037A">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -1893,14 +1847,14 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX4E35E0A56B364C93BB00434D401EE2EC</Ref>
-						<Ref name="Part1">RBX4E0DE897D39040CC9579EFF8EB060578</Ref>
+						<Ref name="Part0">RBX869490467E1C46CBA55BAC76C0509B9E</Ref>
+						<Ref name="Part1">RBX7AD330C199C24E58B84C04EBDC202C76</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX96E35E7CD65446789EF886D1E7194C5F">
+			<Item class="Part" referent="RBXD295BCF67CBE41A8BFE6F623EDA97B42">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1915,8 +1869,8 @@
 					<CoordinateFrame name="CFrame">
 						<X>11.000001</X>
 						<Y>23.3999996</Y>
-						<Z>165.500015</Z>
-						<R00>-1</R00>
+						<Z>165.262161</Z>
+						<R00>1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
 						<R10>0</R10>
@@ -1924,7 +1878,7 @@
 						<R12>0</R12>
 						<R20>0</R20>
 						<R21>0</R21>
-						<R22>-1</R22>
+						<R22>1</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
 					<bool name="CanTouch">true</bool>
@@ -1991,7 +1945,7 @@
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBXAF6EF784400E4B84BB861427D9AB4BE8">
+				<Item class="SpecialMesh" referent="RBXD90B3F67A2A54ECAB02F67F80676625A">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -2020,7 +1974,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX240AEDE74FA043FD96B000FADADE39AA">
+			<Item class="Part" referent="RBX0C1E4C22FBDB459C8CFF8A71387CB30A">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2033,18 +1987,18 @@
 					<token name="BottomSurface">4</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>11.8000011</X>
+						<X>10.2000008</X>
 						<Y>23.5</Y>
-						<Z>165.300018</Z>
-						<R00>-0.960530519</R00>
-						<R01>0.194709167</R01>
-						<R02>0.198669329</R02>
+						<Z>165.462158</Z>
+						<R00>0.960530519</R00>
+						<R01>-0.194709167</R01>
+						<R02>-0.198669329</R02>
 						<R10>0.156026423</R10>
 						<R11>0.968371928</R11>
 						<R12>-0.194709167</R12>
-						<R20>-0.230297446</R20>
-						<R21>-0.156026423</R21>
-						<R22>-0.960530519</R22>
+						<R20>0.230297446</R20>
+						<R21>0.156026423</R21>
+						<R22>0.960530519</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
 					<bool name="CanTouch">true</bool>
@@ -2111,7 +2065,7 @@
 						<Z>0.800000012</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBXD09286EB5639419D9FA65701C27CB76E">
+				<Item class="SpecialMesh" referent="RBXA6DA62E6032D4B96A4A5F918C4041C31">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -2140,7 +2094,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX4E0DE897D39040CC9579EFF8EB060578">
+			<Item class="Part" referent="RBX7AD330C199C24E58B84C04EBDC202C76">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2155,16 +2109,16 @@
 					<CoordinateFrame name="CFrame">
 						<X>11.000001</X>
 						<Y>24</Y>
-						<Z>165.400009</Z>
-						<R00>-1</R00>
+						<Z>165.362167</Z>
+						<R00>1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
 						<R10>0</R10>
 						<R11>0.955336511</R11>
 						<R12>-0.295520216</R12>
 						<R20>0</R20>
-						<R21>-0.295520216</R21>
-						<R22>-0.955336511</R22>
+						<R21>0.295520216</R21>
+						<R22>0.955336511</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
 					<bool name="CanTouch">true</bool>
@@ -2231,7 +2185,7 @@
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX90C6B24965C84DD5A8359189FEBB668B">
+				<Item class="SpecialMesh" referent="RBX79DC2387E59A48D8872540928E8623B4">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -2260,7 +2214,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX7723CE6AB2A64C2586A06B7ED4963F15">
+			<Item class="Part" referent="RBX2A9BA06890D246D4BF7716BA418701D1">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2273,18 +2227,18 @@
 					<token name="BottomSurface">4</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>10.2000008</X>
+						<X>11.8000011</X>
 						<Y>23.5</Y>
-						<Z>165.300018</Z>
-						<R00>-0.960530519</R00>
-						<R01>-0.194709167</R01>
-						<R02>-0.198669329</R02>
+						<Z>165.462158</Z>
+						<R00>0.960530519</R00>
+						<R01>0.194709167</R01>
+						<R02>0.198669329</R02>
 						<R10>-0.156026423</R10>
 						<R11>0.968371928</R11>
 						<R12>-0.194709167</R12>
-						<R20>0.230297446</R20>
-						<R21>-0.156026423</R21>
-						<R22>-0.960530519</R22>
+						<R20>-0.230297446</R20>
+						<R21>0.156026423</R21>
+						<R22>0.960530519</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
 					<bool name="CanTouch">true</bool>
@@ -2351,7 +2305,7 @@
 						<Z>0.800000012</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX178A9DF5B92E4C1AA31D900D347908A4">
+				<Item class="SpecialMesh" referent="RBXF1DE04FF607E45929FCE9C5E1BF42351">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -2381,7 +2335,7 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Model" referent="RBXC0C2E9502A2E46CF84F122216F9B5B29">
+		<Item class="Model" referent="RBX7C968EE51F114020B00F80034157737C">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<token name="LevelOfDetail">0</token>
@@ -2420,28 +2374,13 @@
 					<Z>0</Z>
 				</Vector3>
 				<string name="Name">SpeedBoots</string>
-				<bool name="NeedsPivotMigration">false</bool>
+				<bool name="NeedsPivotMigration">true</bool>
 				<Ref name="PrimaryPart">null</Ref>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<OptionalCoordinateFrame name="WorldPivotData">
-					<CFrame>
-						<X>27.9999866</X>
-						<Y>1.18777561</Y>
-						<Z>0.235785812</Z>
-						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>1</R11>
-						<R12>0</R12>
-						<R20>0</R20>
-						<R21>0</R21>
-						<R22>1</R22>
-					</CFrame>
-				</OptionalCoordinateFrame>
+				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
 			</Properties>
-			<Item class="Part" referent="RBX4ECAA4AEEA2D4007AAF2FE451557C11E">
+			<Item class="Part" referent="RBX3776CAB91D8249E3AB2B24DE8B34E927">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2532,7 +2471,7 @@
 						<Z>0.200000003</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX03F008EF08C942B7A290718DD8E67EDF">
+				<Item class="StringValue" referent="RBX0BF79D83A30C4377B0BACC3EB114C187">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -2542,7 +2481,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="WedgePart" referent="RBXBD9CB50CF85447919D7840DAB951A1D8">
+			<Item class="WedgePart" referent="RBXFCDA305828FE411FBE93225ABB874F02">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2633,7 +2572,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="WedgePart" referent="RBX10B9A6FD9D57495AB5829D2BAEB2E789">
+			<Item class="WedgePart" referent="RBX2087137BB12045328C166517CB40357A">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2724,7 +2663,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXA6B9F7587D7D438B9CD40CC2DC773BE2">
+			<Item class="Part" referent="RBX2AF5130FB0954BF095C0544A97C329E1">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2815,7 +2754,7 @@
 						<Z>0.200000003</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX27FB8E2688F34F7BAC03C1805F230E77">
+				<Item class="StringValue" referent="RBX74B7C207FD9B4CC98ADB82252D0D6875">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -2825,7 +2764,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXD3FCF3F8EF934C95ABFC919A78002B90">
+			<Item class="Part" referent="RBXFF3CC70CDC7E4E7998157E0E6CF3119F">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2916,7 +2855,7 @@
 						<Z>0.200000003</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX5B46656E71F44F14935A9B1CD6B45B15">
+				<Item class="StringValue" referent="RBX9204FCCB2C71414E846D968447D8A845">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -2926,7 +2865,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX8100F0A006C24199838B351A546416A2">
+			<Item class="Part" referent="RBX297DA42FF2694073B67EEF7B19F80C92">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3017,7 +2956,7 @@
 						<Z>0.200000003</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBXCA30C9FEE1184F67B49A5C518E2E9E83">
+				<Item class="StringValue" referent="RBX6C8D6FF375AF4A18B8625442E8461BA2">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -3027,7 +2966,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="WedgePart" referent="RBX6A4310880EBF4EDA964A8DC9FC1C3FF3">
+			<Item class="WedgePart" referent="RBXBACA6EC6F4A241B0B2894290604A80E4">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3118,7 +3057,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX7E3EE76346B2438592FB8B5C7EDDDA5B">
+			<Item class="Part" referent="RBX25E43ABE8B7D434FA9D6491051C0BE02">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3209,7 +3148,7 @@
 						<Z>0.200000003</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBXF7221B6C830346CF9415BDCBB5D67C16">
+				<Item class="StringValue" referent="RBXC8DD19A7190A43A8BCF21BB2888EE07D">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -3219,7 +3158,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX238CB3DEE6934A9CA1A5E43D362E731A">
+			<Item class="Part" referent="RBX0DFB45FCEE0D439091CA79C1B28B99A7">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3310,7 +3249,7 @@
 						<Z>0.200000003</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX2D839123C6A0418F9A64AE4AE847F064">
+				<Item class="StringValue" referent="RBX37E681A36862499CA0C3F9AFE0B5CDE6">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -3320,7 +3259,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="WedgePart" referent="RBXA8E74F6EEA5C4E53B02526CA643364E0">
+			<Item class="WedgePart" referent="RBXE84F6E9DBD17416183865CCFFE751B72">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3411,7 +3350,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX8D3CEEBD7779497F814589705D7DE9A7">
+			<Item class="Part" referent="RBXDE5166A0D5E344B3B2FE7B6AE5B1B5BF">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3502,7 +3441,7 @@
 						<Z>0.200000003</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX5B8E8B17CBF9448C88DD6022A82487DB">
+				<Item class="StringValue" referent="RBX1D09AB1D33BC40F7AD5671E7BFEA43AC">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -3512,7 +3451,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXD49DC095A342453A9E388343BE28CA03">
+			<Item class="Part" referent="RBXFC8F99AB3342477695ACF3049D14531B">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3603,7 +3542,7 @@
 						<Z>0.200000003</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBXF171ACC896CE4FB6BF2372029CE0EE95">
+				<Item class="StringValue" referent="RBX2684D78A81D142E28F9B5373CE887FA0">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -3613,7 +3552,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXF6568BAC3E02451F95B40DA735C1D974">
+			<Item class="Part" referent="RBXF6ED2BDC88254B288A395B80CAFFB2A5">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3704,7 +3643,7 @@
 						<Z>0.200000003</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBXD6B6388E384B4625AA23DE561B4E530F">
+				<Item class="StringValue" referent="RBXE49C9C0E4B3C4BBBB213234CAB66263C">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -3714,7 +3653,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX3A2749EB504E4045A2C264C79E004EC5">
+			<Item class="Part" referent="RBXDD9B09E238744099BEFE638155E3810F">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3805,7 +3744,7 @@
 						<Z>0.200000003</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX961CFEBEA76D4178913D711B2F5220E1">
+				<Item class="StringValue" referent="RBXD8275B62AE754519A91F8436EF3232D2">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -3815,7 +3754,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX9CEA4840FA664DC294EBDEE1CD42EAED">
+			<Item class="Part" referent="RBXC358D2B8458344D68D58BD825F64BD44">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -3906,7 +3845,7 @@
 						<Z>0.200000003</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX9165FB85BBD442D28066B4F14016AB58">
+				<Item class="StringValue" referent="RBX24F39FA72DD1454D97E4B1A8E2856408">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -3916,7 +3855,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXEDA5FCD47355466688A2910CBCD4230D">
+			<Item class="Part" referent="RBXC4D1520AA6FA41A7B5223D0788C68C0E">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -4007,7 +3946,7 @@
 						<Z>0.200000003</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX61220361EBF84D35B44BEFC94398848E">
+				<Item class="StringValue" referent="RBXD6793704DB834B62AF30FE7632642D32">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -4017,7 +3956,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX2BD935FF74BE42A18E425D7C32739FBA">
+			<Item class="MeshPart" referent="RBX7185E8712DCF4BE5B9511947408DB962">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -4126,7 +4065,7 @@
 						<Z>0.999999523</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBX690099C1FAE640C99E03C6E3472FBCB8">
+				<Item class="ManualWeld" referent="RBXA1B2132BC6DA4E1DA3128F272DDC6E4F">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -4159,15 +4098,15 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX2BD935FF74BE42A18E425D7C32739FBA</Ref>
-						<Ref name="Part1">RBXA8E74F6EEA5C4E53B02526CA643364E0</Ref>
+						<Ref name="Part0">RBX7185E8712DCF4BE5B9511947408DB962</Ref>
+						<Ref name="Part1">RBXE84F6E9DBD17416183865CCFFE751B72</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX3286047048044611BE3DB72B46ADE7E9">
+				<Item class="ManualWeld" referent="RBXDFA83A9A04E44C89B28BF6C09903DF8A">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -4200,15 +4139,15 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX2BD935FF74BE42A18E425D7C32739FBA</Ref>
-						<Ref name="Part1">RBX6A4310880EBF4EDA964A8DC9FC1C3FF3</Ref>
+						<Ref name="Part0">RBX7185E8712DCF4BE5B9511947408DB962</Ref>
+						<Ref name="Part1">RBXBACA6EC6F4A241B0B2894290604A80E4</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXE527FC3F7B584172B11BA2B063CB5120">
+				<Item class="ManualWeld" referent="RBX8335075EEDF64487A7E77C505FEA6D33">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -4241,15 +4180,15 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX2BD935FF74BE42A18E425D7C32739FBA</Ref>
-						<Ref name="Part1">RBXEDA5FCD47355466688A2910CBCD4230D</Ref>
+						<Ref name="Part0">RBX7185E8712DCF4BE5B9511947408DB962</Ref>
+						<Ref name="Part1">RBXC4D1520AA6FA41A7B5223D0788C68C0E</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX0A656B9146BD447C902F9F88F3AB95B5">
+				<Item class="ManualWeld" referent="RBXDE0EFAC7E4EC404285ACFD28CBBF59AB">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -4282,15 +4221,15 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX2BD935FF74BE42A18E425D7C32739FBA</Ref>
-						<Ref name="Part1">RBX9CEA4840FA664DC294EBDEE1CD42EAED</Ref>
+						<Ref name="Part0">RBX7185E8712DCF4BE5B9511947408DB962</Ref>
+						<Ref name="Part1">RBXC358D2B8458344D68D58BD825F64BD44</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX96CDE8DB45B445818360EF71EDF56942">
+				<Item class="ManualWeld" referent="RBX3D00EEA7CCDB40499EF30BBA2AAB9F80">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -4323,8 +4262,8 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX2BD935FF74BE42A18E425D7C32739FBA</Ref>
-						<Ref name="Part1">RBX3A2749EB504E4045A2C264C79E004EC5</Ref>
+						<Ref name="Part0">RBX7185E8712DCF4BE5B9511947408DB962</Ref>
+						<Ref name="Part1">RBXDD9B09E238744099BEFE638155E3810F</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -4332,7 +4271,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX71C69751D98C40428483FF5B11335BDC">
+			<Item class="MeshPart" referent="RBX17F185CC28144099A2311D57354B4913">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -4441,7 +4380,7 @@
 						<Z>0.999999881</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBX859CC1D8A0A642E78267EF44D8E90960">
+				<Item class="ManualWeld" referent="RBXB82A1DDEC142409B91153A5324940CD8">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -4474,15 +4413,15 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX71C69751D98C40428483FF5B11335BDC</Ref>
-						<Ref name="Part1">RBX8100F0A006C24199838B351A546416A2</Ref>
+						<Ref name="Part0">RBX17F185CC28144099A2311D57354B4913</Ref>
+						<Ref name="Part1">RBX297DA42FF2694073B67EEF7B19F80C92</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX2F259245C8C14F4291F72CA1D9D51C0D">
+				<Item class="ManualWeld" referent="RBXA87D4319C8194986A36BF4F6F56346D2">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -4515,15 +4454,15 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX71C69751D98C40428483FF5B11335BDC</Ref>
-						<Ref name="Part1">RBX7E3EE76346B2438592FB8B5C7EDDDA5B</Ref>
+						<Ref name="Part0">RBX17F185CC28144099A2311D57354B4913</Ref>
+						<Ref name="Part1">RBX25E43ABE8B7D434FA9D6491051C0BE02</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX2B0FBEE486B24FFEAA254C03B498B049">
+				<Item class="ManualWeld" referent="RBX9FF38B6C259745B7B9400143E637EC06">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -4556,8 +4495,8 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX71C69751D98C40428483FF5B11335BDC</Ref>
-						<Ref name="Part1">RBX238CB3DEE6934A9CA1A5E43D362E731A</Ref>
+						<Ref name="Part0">RBX17F185CC28144099A2311D57354B4913</Ref>
+						<Ref name="Part1">RBX0DFB45FCEE0D439091CA79C1B28B99A7</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -4565,7 +4504,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBXF501228CF620403CA006F1D79B2A2345">
+			<Item class="MeshPart" referent="RBX876E54626FF343CA943FFAE8F0319B36">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -4674,7 +4613,7 @@
 						<Z>1.00000012</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBX08E513717924479A901EC5CC5B5D4DE9">
+				<Item class="ManualWeld" referent="RBXAC46FB07B0C7415CAB2EC516DC0E82F1">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -4707,15 +4646,15 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXF501228CF620403CA006F1D79B2A2345</Ref>
-						<Ref name="Part1">RBX10B9A6FD9D57495AB5829D2BAEB2E789</Ref>
+						<Ref name="Part0">RBX876E54626FF343CA943FFAE8F0319B36</Ref>
+						<Ref name="Part1">RBX2087137BB12045328C166517CB40357A</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXBF454DD7E24A4A84A1ED950ECD476BF0">
+				<Item class="ManualWeld" referent="RBX85DFD6DF3E45481380D88F9B3A38BABB">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -4748,15 +4687,15 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXF501228CF620403CA006F1D79B2A2345</Ref>
-						<Ref name="Part1">RBXBD9CB50CF85447919D7840DAB951A1D8</Ref>
+						<Ref name="Part0">RBX876E54626FF343CA943FFAE8F0319B36</Ref>
+						<Ref name="Part1">RBXFCDA305828FE411FBE93225ABB874F02</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX32C6474251504164918CA5A0112653F7">
+				<Item class="ManualWeld" referent="RBXB231EDAD19504BB7A241F6D8808DD78B">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -4789,15 +4728,15 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXF501228CF620403CA006F1D79B2A2345</Ref>
-						<Ref name="Part1">RBX8D3CEEBD7779497F814589705D7DE9A7</Ref>
+						<Ref name="Part0">RBX876E54626FF343CA943FFAE8F0319B36</Ref>
+						<Ref name="Part1">RBXDE5166A0D5E344B3B2FE7B6AE5B1B5BF</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXD521CD56D4A343DA80346DC4A92B8E0A">
+				<Item class="ManualWeld" referent="RBX2D76F316C0134EAFB2E6F44D50483D4A">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -4830,15 +4769,15 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXF501228CF620403CA006F1D79B2A2345</Ref>
-						<Ref name="Part1">RBXD49DC095A342453A9E388343BE28CA03</Ref>
+						<Ref name="Part0">RBX876E54626FF343CA943FFAE8F0319B36</Ref>
+						<Ref name="Part1">RBXFC8F99AB3342477695ACF3049D14531B</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX134ED87006104F9D8ACAA770E66B3592">
+				<Item class="ManualWeld" referent="RBX4F84D75308CF470389EF1CC6C6586216">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -4871,8 +4810,8 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXF501228CF620403CA006F1D79B2A2345</Ref>
-						<Ref name="Part1">RBXF6568BAC3E02451F95B40DA735C1D974</Ref>
+						<Ref name="Part0">RBX876E54626FF343CA943FFAE8F0319B36</Ref>
+						<Ref name="Part1">RBXF6ED2BDC88254B288A395B80CAFFB2A5</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -4880,7 +4819,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX39D8B925ED7B4A239BDF84FFE86DA8FA">
+			<Item class="MeshPart" referent="RBX22A58FB5D77F4E73AFC3B992121C23FE">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -4989,7 +4928,7 @@
 						<Z>0.99996686</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBXD99B3FD228CF4894BAB1B12EBD508CE6">
+				<Item class="ManualWeld" referent="RBXC7CB7B86C75E42C68CC733BA7C608C74">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -5022,15 +4961,15 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX39D8B925ED7B4A239BDF84FFE86DA8FA</Ref>
-						<Ref name="Part1">RBX4ECAA4AEEA2D4007AAF2FE451557C11E</Ref>
+						<Ref name="Part0">RBX22A58FB5D77F4E73AFC3B992121C23FE</Ref>
+						<Ref name="Part1">RBX3776CAB91D8249E3AB2B24DE8B34E927</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX9A5309CF76E54C37B5AA557AE60C35F6">
+				<Item class="ManualWeld" referent="RBXB2916AF98AED460FBBDD3CC1840554B0">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -5063,15 +5002,15 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX39D8B925ED7B4A239BDF84FFE86DA8FA</Ref>
-						<Ref name="Part1">RBXA6B9F7587D7D438B9CD40CC2DC773BE2</Ref>
+						<Ref name="Part0">RBX22A58FB5D77F4E73AFC3B992121C23FE</Ref>
+						<Ref name="Part1">RBX2AF5130FB0954BF095C0544A97C329E1</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX0BAEBE8D55FD4E8F91F57D13A6094C87">
+				<Item class="ManualWeld" referent="RBX8D5DD3708624466FB26CEB0F64D9D37F">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -5104,8 +5043,8 @@
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX39D8B925ED7B4A239BDF84FFE86DA8FA</Ref>
-						<Ref name="Part1">RBXD3FCF3F8EF934C95ABFC919A78002B90</Ref>
+						<Ref name="Part0">RBX22A58FB5D77F4E73AFC3B992121C23FE</Ref>
+						<Ref name="Part1">RBXFF3CC70CDC7E4E7998157E0E6CF3119F</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -5113,7 +5052,7 @@
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBX0F382AB5BA2E40FB9A342735F0D91931">
+			<Item class="ModuleScript" referent="RBXA4CD21B38E864AC4931CB517673B56A4">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
@@ -5206,7 +5145,7 @@ return {
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="Model" referent="RBXBE9FAD455B49422CB8210767304D471A">
+		<Item class="Model" referent="RBX7FEFF7C594E94D8EBB8ACB0C2BCC0B16">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<token name="LevelOfDetail">0</token>
@@ -5245,28 +5184,13 @@ return {
 					<Z>0</Z>
 				</Vector3>
 				<string name="Name">HeavyBodyArmor</string>
-				<bool name="NeedsPivotMigration">false</bool>
+				<bool name="NeedsPivotMigration">true</bool>
 				<Ref name="PrimaryPart">null</Ref>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<OptionalCoordinateFrame name="WorldPivotData">
-					<CFrame>
-						<X>-13.0000019</X>
-						<Y>3.13822842</Y>
-						<Z>1.25169629e-06</Z>
-						<R00>0.999999225</R00>
-						<R01>-1.41363893e-27</R01>
-						<R02>0</R02>
-						<R10>-1.51461294e-27</R10>
-						<R11>1</R11>
-						<R12>1.21169035e-27</R12>
-						<R20>0</R20>
-						<R21>1.61558733e-27</R21>
-						<R22>0.999999225</R22>
-					</CFrame>
-				</OptionalCoordinateFrame>
+				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
 			</Properties>
-			<Item class="Part" referent="RBX8C1DDC789D154D1C8B414E496B4884C0">
+			<Item class="Part" referent="RBX351A3163EF7F425C91F0BE8F15A684D5">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -5358,7 +5282,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX954075E2E4E8444B890035BE818227F5">
+			<Item class="Part" referent="RBX3664334405F340CC8D4E2CBE58CB9AB8">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -5450,7 +5374,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX7C66439FD347413398568EE950905635">
+			<Item class="Part" referent="RBX9C78814E469943869C895DD111C596B1">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -5542,7 +5466,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX5003612D9D2D4F29A2D98BF97F18C9A7">
+			<Item class="Part" referent="RBX647FAA43E9FC4C83B86BDEA72210A212">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -5634,7 +5558,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXEB5BAAD89FAB4EA5955B0E9D5D410CAC">
+			<Item class="Part" referent="RBX2A908C15EE254EC686FCE1242B3D9F77">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -5726,7 +5650,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXED056F06C7B542349B7FD3706067E591">
+			<Item class="Part" referent="RBX7439F87767A74BD4B0D884FA387D8C11">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -5818,7 +5742,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX6B64C65092E44A65BBC0ECAB1DF6B6E9">
+			<Item class="Part" referent="RBX5C345212867E4DF9A716985D6A64CEB0">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -5910,7 +5834,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="MeshPart" referent="RBX7E67FF2009214363A13FAAA84439AFC4">
+			<Item class="MeshPart" referent="RBXED7C7918A2A84F63B49FD86291915F93">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -6019,7 +5943,7 @@ return {
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBX26B5C80AE01D47B9A73776B6DF56B335">
+				<Item class="ManualWeld" referent="RBXC80C8E14B6BA46D0AD03C680D69767B8">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -6052,8 +5976,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX7E67FF2009214363A13FAAA84439AFC4</Ref>
-						<Ref name="Part1">RBX954075E2E4E8444B890035BE818227F5</Ref>
+						<Ref name="Part0">RBXED7C7918A2A84F63B49FD86291915F93</Ref>
+						<Ref name="Part1">RBX3664334405F340CC8D4E2CBE58CB9AB8</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -6061,7 +5985,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBXCF9122DDE7FD44C3B1F9B9290A7BD148">
+			<Item class="MeshPart" referent="RBX8B094FC36788423CAD159EB4CD725841">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -6170,7 +6094,7 @@ return {
 						<Z>0.99999994</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBXAB38DB02DCAC4611856810FC2FA840AD">
+				<Item class="ManualWeld" referent="RBXBA2E4F77201F44D688FD1B9402FCFAB8">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -6203,8 +6127,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXCF9122DDE7FD44C3B1F9B9290A7BD148</Ref>
-						<Ref name="Part1">RBXEB5BAAD89FAB4EA5955B0E9D5D410CAC</Ref>
+						<Ref name="Part0">RBX8B094FC36788423CAD159EB4CD725841</Ref>
+						<Ref name="Part1">RBX2A908C15EE254EC686FCE1242B3D9F77</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -6212,7 +6136,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBXBBFED3D8F6A8482D8E86B07522160D13">
+			<Item class="MeshPart" referent="RBX717CEE86AAAE44758AADB7F4668E0F68">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -6321,7 +6245,7 @@ return {
 						<Z>1.00000012</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBX3A922B7688DD4887AC3830A2A9EFA537">
+				<Item class="ManualWeld" referent="RBX7E1FF52336E5448FAB8F4FDE1BAFD9FA">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -6354,8 +6278,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXBBFED3D8F6A8482D8E86B07522160D13</Ref>
-						<Ref name="Part1">RBX6B64C65092E44A65BBC0ECAB1DF6B6E9</Ref>
+						<Ref name="Part0">RBX717CEE86AAAE44758AADB7F4668E0F68</Ref>
+						<Ref name="Part1">RBX5C345212867E4DF9A716985D6A64CEB0</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -6363,7 +6287,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX8736F34821524B339A87AE9C12003F36">
+			<Item class="MeshPart" referent="RBX2AA08D2EC39540B0A55247084B27D666">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -6472,7 +6396,7 @@ return {
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBXE5BDDCA335CB419DB91C333103CABBC5">
+				<Item class="ManualWeld" referent="RBX72111889A1454E69A017FFA893E93BDE">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -6505,8 +6429,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX8736F34821524B339A87AE9C12003F36</Ref>
-						<Ref name="Part1">RBX5003612D9D2D4F29A2D98BF97F18C9A7</Ref>
+						<Ref name="Part0">RBX2AA08D2EC39540B0A55247084B27D666</Ref>
+						<Ref name="Part1">RBX647FAA43E9FC4C83B86BDEA72210A212</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -6514,7 +6438,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX4411A9BDA4B047109F30A90A2EA2A15E">
+			<Item class="MeshPart" referent="RBX4BA3A72C11D448F9AEA395E1EB8DDC72">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -6623,7 +6547,7 @@ return {
 						<Z>0.99999994</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBXCDA821CF21D04D05BFEE32E4450C580B">
+				<Item class="ManualWeld" referent="RBX5278675F748C4F9C8756A4ECE60ACD8E">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -6656,8 +6580,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX4411A9BDA4B047109F30A90A2EA2A15E</Ref>
-						<Ref name="Part1">RBX7C66439FD347413398568EE950905635</Ref>
+						<Ref name="Part0">RBX4BA3A72C11D448F9AEA395E1EB8DDC72</Ref>
+						<Ref name="Part1">RBX9C78814E469943869C895DD111C596B1</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -6665,7 +6589,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBXD20F6471EA81475AAB209A06894D3712">
+			<Item class="MeshPart" referent="RBX3685D8480B76498B9FE25067B40BF689">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -6774,7 +6698,7 @@ return {
 						<Z>1.00000036</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBX97D06B0AA98145D4A52C7D88A31276A5">
+				<Item class="ManualWeld" referent="RBX1C11D8915D5141CEBCFBC9E0DE639FB6">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -6807,15 +6731,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXD20F6471EA81475AAB209A06894D3712</Ref>
-						<Ref name="Part1">RBX8C1DDC789D154D1C8B414E496B4884C0</Ref>
+						<Ref name="Part0">RBX3685D8480B76498B9FE25067B40BF689</Ref>
+						<Ref name="Part1">RBX351A3163EF7F425C91F0BE8F15A684D5</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX7721B9A322CF4C718AF0EC6E26CF0E3B">
+				<Item class="ManualWeld" referent="RBX1801BFEB093741EFB17C8E2A38141768">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -6848,8 +6772,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXD20F6471EA81475AAB209A06894D3712</Ref>
-						<Ref name="Part1">RBXED056F06C7B542349B7FD3706067E591</Ref>
+						<Ref name="Part0">RBX3685D8480B76498B9FE25067B40BF689</Ref>
+						<Ref name="Part1">RBX7439F87767A74BD4B0D884FA387D8C11</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -6858,7 +6782,7 @@ return {
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Model" referent="RBXB23B60AAE36C47F6B31EEF6A0B894571">
+		<Item class="Model" referent="RBX180C3A1B37684F118BAF7A492756A955">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<token name="LevelOfDetail">0</token>
@@ -6897,28 +6821,13 @@ return {
 					<Z>0</Z>
 				</Vector3>
 				<string name="Name">LeechingBody</string>
-				<bool name="NeedsPivotMigration">false</bool>
+				<bool name="NeedsPivotMigration">true</bool>
 				<Ref name="PrimaryPart">null</Ref>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<OptionalCoordinateFrame name="WorldPivotData">
-					<CFrame>
-						<X>12.9985008</X>
-						<Y>3.13079119</Y>
-						<Z>-0.151017725</Z>
-						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>1</R11>
-						<R12>0</R12>
-						<R20>0</R20>
-						<R21>0</R21>
-						<R22>1</R22>
-					</CFrame>
-				</OptionalCoordinateFrame>
+				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
 			</Properties>
-			<Item class="WedgePart" referent="RBX725118FE700E4FC383502D030D6D3CD5">
+			<Item class="WedgePart" referent="RBXC6703329F9204D6CA7590AC3838E1150">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -7009,7 +6918,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="WedgePart" referent="RBX6D13EB0DAAFC4161A8B72B82D65CCEA2">
+			<Item class="WedgePart" referent="RBXBD51E79AB98644729B3BE93C2DCC0D26">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -7100,7 +7009,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="WedgePart" referent="RBX213B19D6F6EA499C9C30D7A67F37900C">
+			<Item class="WedgePart" referent="RBXA058D561C6E242BE93CFB332911CC9FB">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -7191,7 +7100,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX6BA922DA72834AC78B1714A0520A390C">
+			<Item class="Part" referent="RBX50E4AC431C3149A1A0C8E87AFB696861">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -7283,7 +7192,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="WedgePart" referent="RBXA8CE967317BC4484B0641861CD9FF6B2">
+			<Item class="WedgePart" referent="RBX1B8A321D88AE4FDD8A7682CB530C735C">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -7374,7 +7283,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="WedgePart" referent="RBXC6FF4525967243B19988EED2DA7D9AA7">
+			<Item class="WedgePart" referent="RBXFAD11C647E14413ABDE0BBB7572A441C">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -7465,7 +7374,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX1A12FA33023F432EBE583DCFAED32FDE">
+			<Item class="Part" referent="RBX79D93AF43FD54D3C8C2548A2EB324FDC">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -7556,7 +7465,7 @@ return {
 						<Z>0.78000021</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBXB155B0CBB48A4E9292DA2744756071C2">
+				<Item class="SpecialMesh" referent="RBX91397BB32DC049C3B9A66A8F91CF6B05">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -7585,7 +7494,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX94988B1143F4443CA9BEBA2F69A5C5D2">
+			<Item class="Part" referent="RBXD368EFE02B3C431BA14965A06612F349">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -7676,7 +7585,7 @@ return {
 						<Z>0.78000021</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX1A400B2784944D049DCE62B7D9DDE6E6">
+				<Item class="SpecialMesh" referent="RBX9934A556B2AE4845BF75355BEF0294BA">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -7705,7 +7614,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="WedgePart" referent="RBX4B54F0F330824E9584D7AB67C44AEB4C">
+			<Item class="WedgePart" referent="RBX557E5C1C8B144F628D48E538AF885BBD">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -7796,7 +7705,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="WedgePart" referent="RBX8A69790412C447B18DD41CDF4B51B3A4">
+			<Item class="WedgePart" referent="RBXB00A1185988644699C393A6340404419">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -7887,7 +7796,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="WedgePart" referent="RBX60D13C7AB42D45C99055ABB8CC4844A2">
+			<Item class="WedgePart" referent="RBX6D1D1517385C4FDCB5173325693D13A2">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -7978,7 +7887,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="WedgePart" referent="RBX86AA2AD0614F4CECA073D6BC3CE561FD">
+			<Item class="WedgePart" referent="RBX0CB0F58F15824E999C3CC9A06C0E1F6A">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -8069,7 +7978,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX8BDFEE53AC384D76A701997D006B6ACB">
+			<Item class="Part" referent="RBXF564BE57636E4F048C225682B20A6AE9">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -8161,7 +8070,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX76516692B1124F2B97C7D643DF5E9620">
+			<Item class="Part" referent="RBXC973C51D53554B93A48420F466CFE5D6">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -8252,7 +8161,7 @@ return {
 						<Z>0.320000648</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBXD60CD6DB7E7B44359EA21A9B25DC99C6">
+				<Item class="SpecialMesh" referent="RBX3E7C17B0507548C0BCE821F462894E9B">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -8281,7 +8190,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="WedgePart" referent="RBXD9C530A14F8A4469898B79DA443B789D">
+			<Item class="WedgePart" referent="RBX7186AFF5168940348604553F67167B83">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -8372,7 +8281,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="MeshPart" referent="RBXB2615D99D80E4CCCB77144DBD55A6EC6">
+			<Item class="MeshPart" referent="RBX1F066D075D3043BBB1E0115B491D5F18">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -8481,7 +8390,7 @@ return {
 						<Z>1.00000036</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBXDEDB3D74189C4B9787EA4D083216466A">
+				<Item class="ManualWeld" referent="RBXA0E45B2289E2417DA5664EDFB31704CD">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -8514,15 +8423,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBX8BDFEE53AC384D76A701997D006B6ACB</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBXF564BE57636E4F048C225682B20A6AE9</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX21ADA83AB1A9476B9095F8462305DE7B">
+				<Item class="ManualWeld" referent="RBX88AC6F308B904130A7D57CB8BAB59C07">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -8555,15 +8464,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBX1A12FA33023F432EBE583DCFAED32FDE</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBX79D93AF43FD54D3C8C2548A2EB324FDC</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXB4D2ABC9C5F443E1B884EC45245C32E7">
+				<Item class="ManualWeld" referent="RBX5E05B5F5E36449E2A4F7B873821CC4B4">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -8596,15 +8505,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBX6BA922DA72834AC78B1714A0520A390C</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBX50E4AC431C3149A1A0C8E87AFB696861</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXF7E612D4CC2E41479DE07A98C0869A37">
+				<Item class="ManualWeld" referent="RBXC4200C6299474096A8A05A5F21D28924">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -8637,15 +8546,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBX94988B1143F4443CA9BEBA2F69A5C5D2</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBXD368EFE02B3C431BA14965A06612F349</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX3FE779FF382A4B2D8CE0D2E181E335CC">
+				<Item class="ManualWeld" referent="RBX4D5F8C2C6F7A4E8B9DED0B12C3939041">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -8678,15 +8587,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBX76516692B1124F2B97C7D643DF5E9620</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBXC973C51D53554B93A48420F466CFE5D6</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX5557E0CFF4C944B18F68A8A9246956FA">
+				<Item class="ManualWeld" referent="RBXF1FB2CE15D82456B9B77AA1FDDE7F48B">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -8719,15 +8628,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBX725118FE700E4FC383502D030D6D3CD5</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBXC6703329F9204D6CA7590AC3838E1150</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX145FF84565114BE5B78AE6CD17DC9028">
+				<Item class="ManualWeld" referent="RBX3CAEC11568134479828204C9DD9FBEE0">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -8760,15 +8669,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBX6D13EB0DAAFC4161A8B72B82D65CCEA2</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBXBD51E79AB98644729B3BE93C2DCC0D26</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX8AACA9BE6B1C4E468C5713A54213ACE6">
+				<Item class="ManualWeld" referent="RBX53FADF85FF5C487A92B91F294E0E5D50">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -8801,15 +8710,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBX213B19D6F6EA499C9C30D7A67F37900C</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBXA058D561C6E242BE93CFB332911CC9FB</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX4301696760DD40E1B964FFDFEB37001B">
+				<Item class="ManualWeld" referent="RBX242635AB7797457D87865EE5D5485E50">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -8842,15 +8751,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBXA8CE967317BC4484B0641861CD9FF6B2</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBX1B8A321D88AE4FDD8A7682CB530C735C</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX776731DC0D61475DB1588E08069963F7">
+				<Item class="ManualWeld" referent="RBX337EBE6A27584286B26508E45D800F0E">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -8883,15 +8792,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBXC6FF4525967243B19988EED2DA7D9AA7</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBXFAD11C647E14413ABDE0BBB7572A441C</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX200C992C008448659E321FEC6A9D8C65">
+				<Item class="ManualWeld" referent="RBX2226B0E5532D4224A18B53ECA6A1C491">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -8924,15 +8833,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBX4B54F0F330824E9584D7AB67C44AEB4C</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBX557E5C1C8B144F628D48E538AF885BBD</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX4FD82A9C4DF640B2A8017233FA992E4A">
+				<Item class="ManualWeld" referent="RBX0BF6AEF3BB5D4B0096C2490DE9978377">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -8965,15 +8874,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBX86AA2AD0614F4CECA073D6BC3CE561FD</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBX0CB0F58F15824E999C3CC9A06C0E1F6A</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXEEBBD7469A534D10A07328A1A102C9D2">
+				<Item class="ManualWeld" referent="RBX16FE13928FAA4C088889EC54DD777E2A">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -9006,15 +8915,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBX8A69790412C447B18DD41CDF4B51B3A4</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBXB00A1185988644699C393A6340404419</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXA2ED90B7195E4AD59426E83653B9F4B0">
+				<Item class="ManualWeld" referent="RBXE334B975C06E420DA38D43BC7F911C1D">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -9047,15 +8956,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBXD9C530A14F8A4469898B79DA443B789D</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBX7186AFF5168940348604553F67167B83</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXD3AA35651BE4464693D79329975A5BB7">
+				<Item class="ManualWeld" referent="RBX57705EA35DC44296BD117AA8FEAA7FD0">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -9088,8 +8997,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXB2615D99D80E4CCCB77144DBD55A6EC6</Ref>
-						<Ref name="Part1">RBX60D13C7AB42D45C99055ABB8CC4844A2</Ref>
+						<Ref name="Part0">RBX1F066D075D3043BBB1E0115B491D5F18</Ref>
+						<Ref name="Part1">RBX6D1D1517385C4FDCB5173325693D13A2</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -9098,7 +9007,7 @@ return {
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Model" referent="RBX0CA4536E647048D9AD93D8E286161F6F">
+		<Item class="Model" referent="RBXB12BA61828AE45C48EF12558244EBE44">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<token name="LevelOfDetail">0</token>
@@ -9137,28 +9046,13 @@ return {
 					<Z>0</Z>
 				</Vector3>
 				<string name="Name">MediumBodyArmor</string>
-				<bool name="NeedsPivotMigration">false</bool>
+				<bool name="NeedsPivotMigration">true</bool>
 				<Ref name="PrimaryPart">null</Ref>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<OptionalCoordinateFrame name="WorldPivotData">
-					<CFrame>
-						<X>18</X>
-						<Y>3</Y>
-						<Z>-1.84741111e-13</Z>
-						<R00>0.999999225</R00>
-						<R01>-1.41363893e-27</R01>
-						<R02>0</R02>
-						<R10>-1.51461294e-27</R10>
-						<R11>1</R11>
-						<R12>1.21169035e-27</R12>
-						<R20>0</R20>
-						<R21>1.61558733e-27</R21>
-						<R22>0.999999225</R22>
-					</CFrame>
-				</OptionalCoordinateFrame>
+				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
 			</Properties>
-			<Item class="Part" referent="RBX4979E41A034F46A1A2B017E7D4117F41">
+			<Item class="Part" referent="RBXA24BDF2544E942F0817EFBCDD80D48B8">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -9250,7 +9144,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX98EF9F05241C406299575E997D25328B">
+			<Item class="Part" referent="RBX203700D4644F4E7688416FE3D63B48E6">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -9342,7 +9236,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX6D31526655AB4582A8A8551749F1F96E">
+			<Item class="Part" referent="RBX6DD121CF179242F089C09633314FB0DA">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -9434,7 +9328,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="MeshPart" referent="RBXFD6D19905E684ED38F2744CC9CCAE3F8">
+			<Item class="MeshPart" referent="RBXB26A6A76195F4344B86618FF82460C7D">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -9543,7 +9437,7 @@ return {
 						<Z>1.00000012</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBX381BD5976B704C40A63D1AB35265BF80">
+				<Item class="ManualWeld" referent="RBX1FD14A37754442389CED6E426BF1033B">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -9576,8 +9470,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXFD6D19905E684ED38F2744CC9CCAE3F8</Ref>
-						<Ref name="Part1">RBX6D31526655AB4582A8A8551749F1F96E</Ref>
+						<Ref name="Part0">RBXB26A6A76195F4344B86618FF82460C7D</Ref>
+						<Ref name="Part1">RBX6DD121CF179242F089C09633314FB0DA</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -9585,7 +9479,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBXF27EF2E8CFC641A6AD165C60AA5AED88">
+			<Item class="MeshPart" referent="RBX82899D7A874645B6A18EB24BF44756D8">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -9694,7 +9588,7 @@ return {
 						<Z>1.00000036</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBXAE17C4C5DAA5487AA64E156DF95F779B">
+				<Item class="ManualWeld" referent="RBXB9DF3BC56B4F41C1A48D26BA5ABF1089">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -9727,15 +9621,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXF27EF2E8CFC641A6AD165C60AA5AED88</Ref>
-						<Ref name="Part1">RBX4979E41A034F46A1A2B017E7D4117F41</Ref>
+						<Ref name="Part0">RBX82899D7A874645B6A18EB24BF44756D8</Ref>
+						<Ref name="Part1">RBXA24BDF2544E942F0817EFBCDD80D48B8</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXE8C9FDE212C340AF9517529F058DCAE9">
+				<Item class="ManualWeld" referent="RBXD967457C94ED4AE2A9EE97A236435E59">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -9768,8 +9662,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXF27EF2E8CFC641A6AD165C60AA5AED88</Ref>
-						<Ref name="Part1">RBX98EF9F05241C406299575E997D25328B</Ref>
+						<Ref name="Part0">RBX82899D7A874645B6A18EB24BF44756D8</Ref>
+						<Ref name="Part1">RBX203700D4644F4E7688416FE3D63B48E6</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -9778,7 +9672,7 @@ return {
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Model" referent="RBXF2FD303A12D948BBB9C685046DAEB3A1">
+		<Item class="Model" referent="RBX6DFDE9B8B43A4489B5FF5C5158C27AF6">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<token name="LevelOfDetail">0</token>
@@ -9817,28 +9711,13 @@ return {
 					<Z>0</Z>
 				</Vector3>
 				<string name="Name">LightLegArmor</string>
-				<bool name="NeedsPivotMigration">false</bool>
+				<bool name="NeedsPivotMigration">true</bool>
 				<Ref name="PrimaryPart">null</Ref>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<OptionalCoordinateFrame name="WorldPivotData">
-					<CFrame>
-						<X>23</X>
-						<Y>0.799096823</Y>
-						<Z>-0.064470917</Z>
-						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>1</R11>
-						<R12>0</R12>
-						<R20>0</R20>
-						<R21>0</R21>
-						<R22>1</R22>
-					</CFrame>
-				</OptionalCoordinateFrame>
+				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
 			</Properties>
-			<Item class="Part" referent="RBXCE59F58B54FD47AEA52245A9CFBE5260">
+			<Item class="Part" referent="RBXFEAFC0C5E4EE4556A3801F187FB43BD2">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -9930,7 +9809,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX6582928A9B42431BAABF9B48CBC52287">
+			<Item class="Part" referent="RBX917305E412BB43BA86A6424F32F826D9">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -10022,7 +9901,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="MeshPart" referent="RBX62DA3F5FC2E646AF965E728B6025C059">
+			<Item class="MeshPart" referent="RBX9D5FCDC581BD47A09B1430EDFC0830FC">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -10131,7 +10010,7 @@ return {
 						<Z>1.00000012</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBXF2CCFD05EFA1412FB693E59C83B96B2D">
+				<Item class="ManualWeld" referent="RBXAB2B64962E9545BDA37DF814C68E1DBC">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -10164,8 +10043,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX62DA3F5FC2E646AF965E728B6025C059</Ref>
-						<Ref name="Part1">RBXCE59F58B54FD47AEA52245A9CFBE5260</Ref>
+						<Ref name="Part0">RBX9D5FCDC581BD47A09B1430EDFC0830FC</Ref>
+						<Ref name="Part1">RBXFEAFC0C5E4EE4556A3801F187FB43BD2</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -10173,7 +10052,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX7D7295A23FF54644818FF0B57561CD13">
+			<Item class="MeshPart" referent="RBX1189753FB39E48089EDFF072DF5180E7">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -10282,7 +10161,7 @@ return {
 						<Z>0.999999523</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBXA3FB819B3CC742E6853B3E2E9DCBA093">
+				<Item class="ManualWeld" referent="RBXF0A391C79DDD42A08D4C93F1486B16D5">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -10315,8 +10194,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX7D7295A23FF54644818FF0B57561CD13</Ref>
-						<Ref name="Part1">RBX6582928A9B42431BAABF9B48CBC52287</Ref>
+						<Ref name="Part0">RBX1189753FB39E48089EDFF072DF5180E7</Ref>
+						<Ref name="Part1">RBX917305E412BB43BA86A6424F32F826D9</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -10325,7 +10204,7 @@ return {
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Model" referent="RBXDD6DF9FEF47D42D19A4F039B54627C0E">
+		<Item class="Model" referent="RBX36AD9D9B448E4577B430EB0A498B826F">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<token name="LevelOfDetail">0</token>
@@ -10364,28 +10243,13 @@ return {
 					<Z>0</Z>
 				</Vector3>
 				<string name="Name">ShardBody</string>
-				<bool name="NeedsPivotMigration">false</bool>
+				<bool name="NeedsPivotMigration">true</bool>
 				<Ref name="PrimaryPart">null</Ref>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<OptionalCoordinateFrame name="WorldPivotData">
-					<CFrame>
-						<X>-2.08634949</X>
-						<Y>3.77546453</Y>
-						<Z>0.0247735083</Z>
-						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>1</R11>
-						<R12>0</R12>
-						<R20>0</R20>
-						<R21>0</R21>
-						<R22>1</R22>
-					</CFrame>
-				</OptionalCoordinateFrame>
+				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
 			</Properties>
-			<Item class="Part" referent="RBXEC74F0E676DB478DB579022FC5CC5043">
+			<Item class="Part" referent="RBX7066791635BA476383A1DE0E59F6A9D1">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -10476,7 +10340,7 @@ return {
 						<Z>1.29999995</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX49375B64D46948039449E13F48105EB7">
+				<Item class="SpecialMesh" referent="RBX48A33B1FDBAD41E8942BBDBDDE635CFC">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -10505,7 +10369,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX2770F9EAEFBA4298805EF046A7E9FE21">
+			<Item class="Part" referent="RBX227F9E82661546748C573428FF4CBE02">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -10596,7 +10460,7 @@ return {
 						<Z>1.10000002</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX4E6E7411B0904B8D86857AF127236860">
+				<Item class="SpecialMesh" referent="RBX3D9B05A16B054F8CAE99E2E167E5D4EF">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -10625,7 +10489,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX58C57FC26EF1474197DD53D324FFFD79">
+			<Item class="Part" referent="RBX087DF11FED584E669383012DEE774166">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -10716,7 +10580,7 @@ return {
 						<Z>0.600000024</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX7B26DBD2E61B4F6388D0141C8D07A857">
+				<Item class="SpecialMesh" referent="RBX40D77B9DF62D4B589FD00366BB9975EB">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -10745,7 +10609,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX7803C80F9E294FA7A66EEDC6F0E64CDC">
+			<Item class="Part" referent="RBX9EADD200029949059E4DB6AA7E7E8F29">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -10836,7 +10700,7 @@ return {
 						<Z>0.600000024</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX7696D23D0EF0400D93F9F5B015F4D086">
+				<Item class="SpecialMesh" referent="RBX7ABD4635FD0F44789C620B8064763D7C">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -10865,7 +10729,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX3A4E4EC9517C4FC28257F9AE4DFDB9E8">
+			<Item class="Part" referent="RBX3303E6B3747B4751A717FFEE0D167FC2">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -10956,7 +10820,7 @@ return {
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX711E1583D83B4ADABE16BD84034EF7F5">
+				<Item class="SpecialMesh" referent="RBX66E0B85C839440A39E1C34E5C007ACDA">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -10985,7 +10849,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX72781B4D7264452DBAE894D51055F99E">
+			<Item class="Part" referent="RBXF6BEAA04E4C243A5919C9C9AF5EC1CE1">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -11076,7 +10940,7 @@ return {
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX6202AD27521A4DFB879537D8728E9916">
+				<Item class="SpecialMesh" referent="RBX9C42A3A611374E92A361275569CBC2FF">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -11105,7 +10969,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX9ECC5B64305F48C19230EB16F5D87AE8">
+			<Item class="Part" referent="RBXBBA5943600D1474D8F6846349D232A37">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -11196,7 +11060,7 @@ return {
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX20306DBC81F64BD092526FA2BC8FB211">
+				<Item class="SpecialMesh" referent="RBX41EBC68ACEBD41B18720AB6DCAAB19E3">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -11225,7 +11089,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX4E34FCC127134DF8B5D6C4C9B381A93F">
+			<Item class="MeshPart" referent="RBXDEFEEFF6B129499CB91D424B891639B0">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -11334,7 +11198,7 @@ return {
 						<Z>0.99999994</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBX83F11934512144C998C61F1F67483AA3">
+				<Item class="ManualWeld" referent="RBX8BFEA97D44B74CE0BB01D20BA8EFE3A4">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -11367,8 +11231,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX4E34FCC127134DF8B5D6C4C9B381A93F</Ref>
-						<Ref name="Part1">RBXEC74F0E676DB478DB579022FC5CC5043</Ref>
+						<Ref name="Part0">RBXDEFEEFF6B129499CB91D424B891639B0</Ref>
+						<Ref name="Part1">RBX7066791635BA476383A1DE0E59F6A9D1</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -11376,7 +11240,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX9E631CC8393E42D9B440BC89F9DBCB41">
+			<Item class="MeshPart" referent="RBXDEF9758517504157AFA89FD9A36E4B63">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -11485,7 +11349,7 @@ return {
 						<Z>0.99999994</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBX785C76D824B44E1AA36C3B112D36149F">
+				<Item class="ManualWeld" referent="RBXBCB365FB1AB3441BBB593AABA53042F5">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -11518,15 +11382,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX9E631CC8393E42D9B440BC89F9DBCB41</Ref>
-						<Ref name="Part1">RBX2770F9EAEFBA4298805EF046A7E9FE21</Ref>
+						<Ref name="Part0">RBXDEF9758517504157AFA89FD9A36E4B63</Ref>
+						<Ref name="Part1">RBX227F9E82661546748C573428FF4CBE02</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX8405E15B6EF645E0989741042EBB0FEE">
+				<Item class="ManualWeld" referent="RBX582CED254A0941F2A73D2A751A791D7C">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -11559,15 +11423,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX9E631CC8393E42D9B440BC89F9DBCB41</Ref>
-						<Ref name="Part1">RBX7803C80F9E294FA7A66EEDC6F0E64CDC</Ref>
+						<Ref name="Part0">RBXDEF9758517504157AFA89FD9A36E4B63</Ref>
+						<Ref name="Part1">RBX9EADD200029949059E4DB6AA7E7E8F29</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX68BE76F81BDA44AEA1F21CF995462985">
+				<Item class="ManualWeld" referent="RBX57E7B0B82B894DB6BCAA662C16E93D61">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -11600,8 +11464,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX9E631CC8393E42D9B440BC89F9DBCB41</Ref>
-						<Ref name="Part1">RBX58C57FC26EF1474197DD53D324FFFD79</Ref>
+						<Ref name="Part0">RBXDEF9758517504157AFA89FD9A36E4B63</Ref>
+						<Ref name="Part1">RBX087DF11FED584E669383012DEE774166</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -11609,7 +11473,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX9C8681A13EFB4005B4C9595C368DD30D">
+			<Item class="MeshPart" referent="RBX318874E3403A4BF9AB9BF15F184108A9">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -11718,7 +11582,7 @@ return {
 						<Z>1.00000036</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBX4A4B32178CC442E2B9356511F37F59B4">
+				<Item class="ManualWeld" referent="RBXEBBC2E35F1E34B3E9462F8C1993C9D56">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -11751,15 +11615,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX9C8681A13EFB4005B4C9595C368DD30D</Ref>
-						<Ref name="Part1">RBX9ECC5B64305F48C19230EB16F5D87AE8</Ref>
+						<Ref name="Part0">RBX318874E3403A4BF9AB9BF15F184108A9</Ref>
+						<Ref name="Part1">RBXBBA5943600D1474D8F6846349D232A37</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX320AA19AADBD4BE9852A969C3F45AFCB">
+				<Item class="ManualWeld" referent="RBXEF1C7FAC41104BC1A80AA7549896A0AE">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -11792,15 +11656,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX9C8681A13EFB4005B4C9595C368DD30D</Ref>
-						<Ref name="Part1">RBX3A4E4EC9517C4FC28257F9AE4DFDB9E8</Ref>
+						<Ref name="Part0">RBX318874E3403A4BF9AB9BF15F184108A9</Ref>
+						<Ref name="Part1">RBX3303E6B3747B4751A717FFEE0D167FC2</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX6B0EEE3822E34DC1A5640A7987C02C9B">
+				<Item class="ManualWeld" referent="RBXA5E075C59585403AB88F0EA43FBCA024">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -11833,8 +11697,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX9C8681A13EFB4005B4C9595C368DD30D</Ref>
-						<Ref name="Part1">RBX72781B4D7264452DBAE894D51055F99E</Ref>
+						<Ref name="Part0">RBX318874E3403A4BF9AB9BF15F184108A9</Ref>
+						<Ref name="Part1">RBXF6BEAA04E4C243A5919C9C9AF5EC1CE1</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -11843,7 +11707,7 @@ return {
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Model" referent="RBXAC3993DB091248D2A06E56A3F6581BD1">
+		<Item class="Model" referent="RBX36F31409E05342818581DA31C68E2B48">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<token name="LevelOfDetail">0</token>
@@ -11882,28 +11746,13 @@ return {
 					<Z>0</Z>
 				</Vector3>
 				<string name="Name">LightBodyArmor</string>
-				<bool name="NeedsPivotMigration">false</bool>
+				<bool name="NeedsPivotMigration">true</bool>
 				<Ref name="PrimaryPart">null</Ref>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<OptionalCoordinateFrame name="WorldPivotData">
-					<CFrame>
-						<X>3</X>
-						<Y>3.20000005</Y>
-						<Z>0</Z>
-						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>1</R11>
-						<R12>0</R12>
-						<R20>0</R20>
-						<R21>0</R21>
-						<R22>1</R22>
-					</CFrame>
-				</OptionalCoordinateFrame>
+				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
 			</Properties>
-			<Item class="Part" referent="RBXE4D4BDF4D31C495D9CE2D3C9FC962214">
+			<Item class="Part" referent="RBX591C561623B94ABDA027510645E097FF">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -11995,7 +11844,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX89BEAB694BCD43A6A934A6E02A2EE651">
+			<Item class="Part" referent="RBXF95991C6310B4B36B076BBCE1F7D7D6D">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -12087,7 +11936,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX8CB4E5CD15F24F88A6F28E5D62A89122">
+			<Item class="Part" referent="RBXB905DAC7FA0E4E539875840963FD2112">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -12179,7 +12028,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="MeshPart" referent="RBXAA1BB172E1EE4C59AB4FF824B589505D">
+			<Item class="MeshPart" referent="RBXB34721488DB4477195481270E21C4C37">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -12288,7 +12137,7 @@ return {
 						<Z>1.00000036</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBXF220793AABCA425E98BA4DE587FD23B2">
+				<Item class="ManualWeld" referent="RBX241E05432EFF4B639E2AA27C19D28813">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -12321,15 +12170,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXAA1BB172E1EE4C59AB4FF824B589505D</Ref>
-						<Ref name="Part1">RBXE4D4BDF4D31C495D9CE2D3C9FC962214</Ref>
+						<Ref name="Part0">RBXB34721488DB4477195481270E21C4C37</Ref>
+						<Ref name="Part1">RBX591C561623B94ABDA027510645E097FF</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX89130DC9270B46F1AAB244145F2FC73B">
+				<Item class="ManualWeld" referent="RBXE398D0B61F8D4A619D5F24854583984E">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -12362,15 +12211,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXAA1BB172E1EE4C59AB4FF824B589505D</Ref>
-						<Ref name="Part1">RBX8CB4E5CD15F24F88A6F28E5D62A89122</Ref>
+						<Ref name="Part0">RBXB34721488DB4477195481270E21C4C37</Ref>
+						<Ref name="Part1">RBXB905DAC7FA0E4E539875840963FD2112</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXA28FAB267C0C41669BB784E4B5701B84">
+				<Item class="ManualWeld" referent="RBXF29994EB2DAF446093A297B51819ECA3">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -12403,8 +12252,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXAA1BB172E1EE4C59AB4FF824B589505D</Ref>
-						<Ref name="Part1">RBX89BEAB694BCD43A6A934A6E02A2EE651</Ref>
+						<Ref name="Part0">RBXB34721488DB4477195481270E21C4C37</Ref>
+						<Ref name="Part1">RBXF95991C6310B4B36B076BBCE1F7D7D6D</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -12413,7 +12262,7 @@ return {
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Model" referent="RBXB7FAF4C473A449B6A05A43DD942EC76A">
+		<Item class="Model" referent="RBX77AC95A3A1AF444F94482B32C7F6B10D">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<token name="LevelOfDetail">0</token>
@@ -12452,28 +12301,13 @@ return {
 					<Z>0</Z>
 				</Vector3>
 				<string name="Name">ReactiveBody</string>
-				<bool name="NeedsPivotMigration">false</bool>
+				<bool name="NeedsPivotMigration">true</bool>
 				<Ref name="PrimaryPart">null</Ref>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<OptionalCoordinateFrame name="WorldPivotData">
-					<CFrame>
-						<X>8.01458549</X>
-						<Y>3.26899385</Y>
-						<Z>-0.00277370214</Z>
-						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>1</R11>
-						<R12>0</R12>
-						<R20>0</R20>
-						<R21>0</R21>
-						<R22>1</R22>
-					</CFrame>
-				</OptionalCoordinateFrame>
+				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
 			</Properties>
-			<Item class="Part" referent="RBXB583ECB9C7BF4C5584BA60F0FAE81828">
+			<Item class="Part" referent="RBX4C466F191D6C412DB1C6600AD483BB10">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -12565,7 +12399,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX2B60BA874F07486789B4B3420D070F76">
+			<Item class="Part" referent="RBX6A42F9163AD74DB2ACC199D9F5449EC7">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -12657,7 +12491,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX6017EA5CE7B34950A1D34AA0AF1DBADA">
+			<Item class="Part" referent="RBXEFF3C1AEB28742EC8AF5F6ED6838E7D3">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -12749,7 +12583,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX56B5315FE56941B4B58B8C7D6775F821">
+			<Item class="Part" referent="RBXB2CA787F976A47B389FBA29FEE99117A">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -12841,7 +12675,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX0AA8759882AB4B4BB4D4E630B3E775A9">
+			<Item class="Part" referent="RBX80C4634FE066430D94A10E269AF6BF12">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -12933,7 +12767,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXFE37BA19F28C485484C56193CBF88963">
+			<Item class="Part" referent="RBXEAA8BA5166A44AB28A89530A9A2572F8">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -13025,7 +12859,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXA9844B644E684B699F07B1922C5AEC48">
+			<Item class="Part" referent="RBXF7D21329D9AF410ABD11783EB0B07368">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -13117,7 +12951,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX9AD0BBF2862F42879645549EF036505D">
+			<Item class="Part" referent="RBX8194155C8AB54AC08055AA25F5520C0E">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -13209,7 +13043,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX98E500B3BC7E4A4F97F9E97B67133B8E">
+			<Item class="Part" referent="RBX15CEBB1E602947E0AECEF2FF12F08015">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -13301,7 +13135,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX438095DAB58542A79C0232525B33D27A">
+			<Item class="Part" referent="RBX4526FDCE4A564EA090D1E7F2F67993E2">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -13393,7 +13227,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXA35167F7C8E04B869DEE000737D38BFB">
+			<Item class="Part" referent="RBX10154AF6F64843A6BCDA0E57E1F4E35C">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -13485,7 +13319,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXA4C6C03C1C8B4E4F899397918B2496FE">
+			<Item class="Part" referent="RBXF38C02ED223B4A1CBA69589D632ADEB9">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -13577,7 +13411,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX9B365FD600AC442F8C1CD0EC9AC71657">
+			<Item class="Part" referent="RBX9C260E00AAAF46CB8CA2877F80DD8FB1">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -13669,7 +13503,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXFCE209EE8EB0496EA5377F17A9E008E1">
+			<Item class="Part" referent="RBX8B0856C98BB542FC88CF485840366835">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -13761,7 +13595,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX1F6CBCC21571432A84A83C276A02008F">
+			<Item class="Part" referent="RBX200A0A813FFC47A7B8B074778A23402C">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -13853,7 +13687,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX13734336A7204355966459C1A0FF7B55">
+			<Item class="Part" referent="RBXE2A238C427594E43AE26F6F3BB108094">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -13945,7 +13779,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="MeshPart" referent="RBX42C2D463E95C44E8A6F41039314B92E6">
+			<Item class="MeshPart" referent="RBX6DA6B426248D4B989B7ADF07C2E58B65">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -14054,7 +13888,7 @@ return {
 						<Z>1.00000036</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBXE7FAD045B2DA4C15957A7717ECD538B2">
+				<Item class="ManualWeld" referent="RBXE5B773566DD24598BD2492FC38B45199">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14087,15 +13921,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBXA9844B644E684B699F07B1922C5AEC48</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBXF7D21329D9AF410ABD11783EB0B07368</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXCF66578D6C6045B99C669D75352EE6A0">
+				<Item class="ManualWeld" referent="RBXE738380D72C64F49BA84666568B46AF9">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14128,15 +13962,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBX9B365FD600AC442F8C1CD0EC9AC71657</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBX9C260E00AAAF46CB8CA2877F80DD8FB1</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX84664070DF1C4A26B4AFD71EDFADB163">
+				<Item class="ManualWeld" referent="RBX68B5B1EE98BB4FBD9ADF49AE071F9CDF">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14169,15 +14003,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBX0AA8759882AB4B4BB4D4E630B3E775A9</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBX80C4634FE066430D94A10E269AF6BF12</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX3C3EAC7B282A4F9986EEA67277036F9C">
+				<Item class="ManualWeld" referent="RBX27E45B711CF34AB884AF528A8494656B">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14210,15 +14044,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBX56B5315FE56941B4B58B8C7D6775F821</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBXB2CA787F976A47B389FBA29FEE99117A</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX87750C5700ED43F3871652EDBD130ED8">
+				<Item class="ManualWeld" referent="RBX0B5906133425415DB49019F58B846F0D">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14251,15 +14085,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBXB583ECB9C7BF4C5584BA60F0FAE81828</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBX4C466F191D6C412DB1C6600AD483BB10</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX6C6E525186B44CB38D864AAFD1C083A8">
+				<Item class="ManualWeld" referent="RBXC6E3316D589B4180B2AF7B778B7EB199">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14292,15 +14126,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBXFCE209EE8EB0496EA5377F17A9E008E1</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBX8B0856C98BB542FC88CF485840366835</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXD0C162D1D5754C028E76B061185B6F16">
+				<Item class="ManualWeld" referent="RBX762F769304B8473F85EE3F40C13FEE08">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14333,15 +14167,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBX438095DAB58542A79C0232525B33D27A</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBX4526FDCE4A564EA090D1E7F2F67993E2</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX37AE23794E524A83AB747D38D1F9A8FC">
+				<Item class="ManualWeld" referent="RBX1A1C42548EB9417B9F5FB15F136701C2">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14374,15 +14208,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBX98E500B3BC7E4A4F97F9E97B67133B8E</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBX15CEBB1E602947E0AECEF2FF12F08015</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX8D64AB91EB964A3CA265E198EFA102A8">
+				<Item class="ManualWeld" referent="RBX63D290A6AB7C457F802C0788A43AE33D">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14415,15 +14249,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBX9AD0BBF2862F42879645549EF036505D</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBX8194155C8AB54AC08055AA25F5520C0E</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXFE2F145B465F48BEB98788F4A6EABB72">
+				<Item class="ManualWeld" referent="RBXDC818A6892FE4B62AE2D3C3BF16FA7FC">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14456,15 +14290,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBXA35167F7C8E04B869DEE000737D38BFB</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBX10154AF6F64843A6BCDA0E57E1F4E35C</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXF662FB0FB96E4D2A8300EE20CB57DF97">
+				<Item class="ManualWeld" referent="RBX90876D65E7A04E0CBF8DDE242501B346">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14497,15 +14331,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBXA4C6C03C1C8B4E4F899397918B2496FE</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBXF38C02ED223B4A1CBA69589D632ADEB9</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX6BC86CF1B0CB402EBE882B86D64DC338">
+				<Item class="ManualWeld" referent="RBX386B09C4A00246279A62CCD167CB05BD">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14538,15 +14372,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBX13734336A7204355966459C1A0FF7B55</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBXE2A238C427594E43AE26F6F3BB108094</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXAF3EE69ACE8045689756EA59CA9D117B">
+				<Item class="ManualWeld" referent="RBXEE1F076357E44D129D9E1D7590B03BB9">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14579,15 +14413,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBX2B60BA874F07486789B4B3420D070F76</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBX6A42F9163AD74DB2ACC199D9F5449EC7</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX5F0BE7BA3A544B2CBB21D713348EA6FF">
+				<Item class="ManualWeld" referent="RBX5502D507E25646429DAE4336DAA0100E">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14620,15 +14454,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBXFE37BA19F28C485484C56193CBF88963</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBXEAA8BA5166A44AB28A89530A9A2572F8</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX2AC72AE549704ACBBBE1D6729CF10799">
+				<Item class="ManualWeld" referent="RBX98590E217A414F3586CFA5A0BBEE916B">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14661,15 +14495,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBX1F6CBCC21571432A84A83C276A02008F</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBX200A0A813FFC47A7B8B074778A23402C</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXA6E8B96BF61E4C25B974341E4E96AFF5">
+				<Item class="ManualWeld" referent="RBXD4019DD6F048450A8E53CD1C4D1E7904">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14702,8 +14536,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX42C2D463E95C44E8A6F41039314B92E6</Ref>
-						<Ref name="Part1">RBX6017EA5CE7B34950A1D34AA0AF1DBADA</Ref>
+						<Ref name="Part0">RBX6DA6B426248D4B989B7ADF07C2E58B65</Ref>
+						<Ref name="Part1">RBXEFF3C1AEB28742EC8AF5F6ED6838E7D3</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -14712,7 +14546,7 @@ return {
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Model" referent="RBX1A823371B162458D968C6E4C807C6F64">
+		<Item class="Model" referent="RBXBD457967FEB24E3894C56E6D74D75BF3">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<token name="LevelOfDetail">0</token>
@@ -14751,28 +14585,13 @@ return {
 					<Z>0</Z>
 				</Vector3>
 				<string name="Name">SpeedHelmet</string>
-				<bool name="NeedsPivotMigration">false</bool>
-				<Ref name="PrimaryPart">RBX71C7CC358203440F99964AFAC187C727</Ref>
+				<bool name="NeedsPivotMigration">true</bool>
+				<Ref name="PrimaryPart">RBXBE13306FCEF849C9B2C012B06DBF1321</Ref>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<OptionalCoordinateFrame name="WorldPivotData">
-					<CFrame>
-						<X>-53</X>
-						<Y>4.69022226</Y>
-						<Z>0.0308493935</Z>
-						<R00>0.999998927</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>1</R11>
-						<R12>0</R12>
-						<R20>0</R20>
-						<R21>0</R21>
-						<R22>0.999998927</R22>
-					</CFrame>
-				</OptionalCoordinateFrame>
+				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
 			</Properties>
-			<Item class="Part" referent="RBX71C7CC358203440F99964AFAC187C727">
+			<Item class="Part" referent="RBXBE13306FCEF849C9B2C012B06DBF1321">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -14863,7 +14682,7 @@ return {
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX5260E616F8234E07891DCDC79E019C67">
+				<Item class="SpecialMesh" referent="RBX1562D1D6BF2647B195494A8CE4553DBD">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -14891,7 +14710,7 @@ return {
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX5A13C33624304F599F34328CD09C0158">
+				<Item class="Motor6D" referent="RBX8F02AC0E689F44DE95B332F7111C70BC">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14926,13 +14745,13 @@ return {
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBX71C7CC358203440F99964AFAC187C727</Ref>
-						<Ref name="Part1">RBXF04C6AC800384175BFF42F12311FE6E9</Ref>
+						<Ref name="Part0">RBXBE13306FCEF849C9B2C012B06DBF1321</Ref>
+						<Ref name="Part1">RBX2C80795BA4AF411DBC3E6CE837E52D26</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXA9CA0885CC314EF0B38AFF5562759BB3">
+				<Item class="Motor6D" referent="RBX714E779770A642DE90308A15AA263794">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -14967,13 +14786,13 @@ return {
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBX71C7CC358203440F99964AFAC187C727</Ref>
-						<Ref name="Part1">RBXB8845ED3F9D8469F9F4787082951411B</Ref>
+						<Ref name="Part0">RBXBE13306FCEF849C9B2C012B06DBF1321</Ref>
+						<Ref name="Part1">RBX465E5877E544426A9DE1A40003B458B9</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXB9BE84F325304D78B257106028634836">
+				<Item class="Motor6D" referent="RBX30A65A0BF80D4E2D9E7613EDA1EA6605">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -15008,13 +14827,13 @@ return {
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBX71C7CC358203440F99964AFAC187C727</Ref>
-						<Ref name="Part1">RBXCC3C6944CE6944CAA4A2D83E76DCDD91</Ref>
+						<Ref name="Part0">RBXBE13306FCEF849C9B2C012B06DBF1321</Ref>
+						<Ref name="Part1">RBX85227B04B31F4FF0A23E7D32F0047E96</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXE277D74B9D184EF691ED0910B1223166">
+				<Item class="Motor6D" referent="RBXB181D98CBA434CBFA58F5C918D8ECDBF">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -15049,13 +14868,13 @@ return {
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBX71C7CC358203440F99964AFAC187C727</Ref>
-						<Ref name="Part1">RBXA91E0AF76F5142E3925EFFD1D4AFCBAD</Ref>
+						<Ref name="Part0">RBXBE13306FCEF849C9B2C012B06DBF1321</Ref>
+						<Ref name="Part1">RBXECFC0B996CA74E87A53368D17E7BCD54</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXF0D0F1D041944CFEAC2A46194F099630">
+				<Item class="Motor6D" referent="RBXD2F16A5E8B044825A56F1F57B5BFF5FC">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -15090,13 +14909,13 @@ return {
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBX71C7CC358203440F99964AFAC187C727</Ref>
-						<Ref name="Part1">RBXAF7968501E9144CBB36CD480936FFB8B</Ref>
+						<Ref name="Part0">RBXBE13306FCEF849C9B2C012B06DBF1321</Ref>
+						<Ref name="Part1">RBXD2CE9222E0C04F78A72621344982CE44</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXEE7BF2F1476C4766851BBDFFDFB62852">
+				<Item class="Motor6D" referent="RBX4473118DBCD94BDDACABF5C92ED05B92">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -15131,13 +14950,13 @@ return {
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBX71C7CC358203440F99964AFAC187C727</Ref>
-						<Ref name="Part1">RBXF895E7137C6644EEAFBAECE8391BB03F</Ref>
+						<Ref name="Part0">RBXBE13306FCEF849C9B2C012B06DBF1321</Ref>
+						<Ref name="Part1">RBX175C2529440349BD8DD056799AF4E5D9</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXF4266720C5124642AC87ED3B96C0F327">
+				<Item class="Motor6D" referent="RBX91BC72E290F145D9A838CFAD05D7352F">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -15172,14 +14991,14 @@ return {
 						<bool name="Enabled">true</bool>
 						<float name="MaxVelocity">0</float>
 						<string name="Name">Head_to_Effect</string>
-						<Ref name="Part0">RBX71C7CC358203440F99964AFAC187C727</Ref>
-						<Ref name="Part1">RBX0724D42389A447C8889AE862D772065B</Ref>
+						<Ref name="Part0">RBXBE13306FCEF849C9B2C012B06DBF1321</Ref>
+						<Ref name="Part1">RBXAEFF1CAFE31E4411808D05050766519A</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXF04C6AC800384175BFF42F12311FE6E9">
+			<Item class="Part" referent="RBX2C80795BA4AF411DBC3E6CE837E52D26">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -15271,7 +15090,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXB8845ED3F9D8469F9F4787082951411B">
+			<Item class="Part" referent="RBX465E5877E544426A9DE1A40003B458B9">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -15363,7 +15182,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXCC3C6944CE6944CAA4A2D83E76DCDD91">
+			<Item class="Part" referent="RBX85227B04B31F4FF0A23E7D32F0047E96">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -15455,7 +15274,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXA91E0AF76F5142E3925EFFD1D4AFCBAD">
+			<Item class="Part" referent="RBXECFC0B996CA74E87A53368D17E7BCD54">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -15547,7 +15366,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXAF7968501E9144CBB36CD480936FFB8B">
+			<Item class="Part" referent="RBXD2CE9222E0C04F78A72621344982CE44">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -15638,7 +15457,7 @@ return {
 						<Z>1.12000084</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX277D843128104084BE41B2CB451434A9">
+				<Item class="SpecialMesh" referent="RBX476AED8DB0694AEABC37DEA76B74571A">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -15667,7 +15486,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXF895E7137C6644EEAFBAECE8391BB03F">
+			<Item class="Part" referent="RBX175C2529440349BD8DD056799AF4E5D9">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -15758,7 +15577,7 @@ return {
 						<Z>1.12000084</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX0646E07A263746B0BF41294FF1BB40C1">
+				<Item class="SpecialMesh" referent="RBXD9E2A389F332443BBB2CEC8A39748A7C">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -15787,7 +15606,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX0724D42389A447C8889AE862D772065B">
+			<Item class="Part" referent="RBXAEFF1CAFE31E4411808D05050766519A">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -15878,7 +15697,7 @@ return {
 						<Z>1.12000084</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX3B726DD4A46B47C29FBDA9993100F4E9">
+				<Item class="SpecialMesh" referent="RBXBB8C0B0FB4AB4F5C90B11E87B8F90845">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -15908,7 +15727,7 @@ return {
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Model" referent="RBXE46F03D2F21643388499EA234A03FE4A">
+		<Item class="Model" referent="RBXAD4154B21CFD44D6A2E0A34116987C95">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<token name="LevelOfDetail">0</token>
@@ -15947,28 +15766,13 @@ return {
 					<Z>0</Z>
 				</Vector3>
 				<string name="Name">ReactiveLegs</string>
-				<bool name="NeedsPivotMigration">false</bool>
+				<bool name="NeedsPivotMigration">true</bool>
 				<Ref name="PrimaryPart">null</Ref>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<OptionalCoordinateFrame name="WorldPivotData">
-					<CFrame>
-						<X>32.9998245</X>
-						<Y>1.19502616</Y>
-						<Z>0.00511488318</Z>
-						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>1</R11>
-						<R12>0</R12>
-						<R20>0</R20>
-						<R21>0</R21>
-						<R22>1</R22>
-					</CFrame>
-				</OptionalCoordinateFrame>
+				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
 			</Properties>
-			<Item class="Part" referent="RBX276902206E554208AF73A6EF9EFC7A54">
+			<Item class="Part" referent="RBXA4B9B296A2984745A22000F046E4D0C6">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -16060,7 +15864,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX78D2E6D0D9EB4B4390E4BD937EDDA0E8">
+			<Item class="Part" referent="RBX4091900EBED24048AE493265C731E4B2">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -16152,7 +15956,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX2F22E9CE4F924C528D357FE6E6D278B8">
+			<Item class="Part" referent="RBX9491CCDD656549E39254F8CD70C49A92">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -16244,7 +16048,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX22DB0DC2A46240B886C6DE998EB24D03">
+			<Item class="Part" referent="RBX6BF874DD119B40F4B061A12240A3B51F">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -16335,7 +16139,7 @@ return {
 						<Z>0.470001191</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX1DBAF45431C743A39EF55D8E26378F72">
+				<Item class="StringValue" referent="RBX829433C511D14EB9BFB6D70D3664FC9A">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -16345,7 +16149,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXA8C9B220520E40FF920987896F482178">
+			<Item class="Part" referent="RBX90DE0519322F416C9D848793F3528D2B">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -16436,7 +16240,7 @@ return {
 						<Z>0.4600012</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX4D7BD8D9D54B41D18C907168A1E397E4">
+				<Item class="StringValue" referent="RBX4BFB88F9DA234F1980DAF7E7D32F1174">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -16446,7 +16250,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXD1411432FE744BBC862631ACC8040915">
+			<Item class="Part" referent="RBXF07F7C7ABF37439CB0095104C23E3D76">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -16537,7 +16341,7 @@ return {
 						<Z>0.46000129</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX7D97253C8A494DF48D8AD1BC6EC0F30D">
+				<Item class="StringValue" referent="RBXF93DC91FE0C84841B48A37A00552CE35">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -16547,7 +16351,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX21067337F60D4847A1D56FAB655FD786">
+			<Item class="Part" referent="RBX7736CABCFD34424B8A9A33F08CFE0034">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -16639,7 +16443,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX9FBC6F450AEE4F18B460BDC61A32AFA0">
+			<Item class="Part" referent="RBXD3ABE23A99C749CA8AF292C76C326497">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -16731,7 +16535,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX7472045160DA4C22A6CE6E81134F3A77">
+			<Item class="Part" referent="RBXA9FA14EDC368472DA5E40DF6B831C5A0">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -16822,7 +16626,7 @@ return {
 						<Z>0.470001191</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX7D695FA10F2D4DAB84A5D1981B763768">
+				<Item class="StringValue" referent="RBX99E8BE1537CE459FB0D85D970B2DD1F7">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -16832,7 +16636,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX18DF94EEA38647D59E7F97D6B4897F21">
+			<Item class="Part" referent="RBXC491D72C27D8453D92785C43BC55B129">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -16924,7 +16728,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBXDF92C3AB276B4221B91615437EA1CF58">
+			<Item class="Part" referent="RBXEC32D713466F4348BAA49378B731F0B2">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -17015,7 +16819,7 @@ return {
 						<Z>0.4600012</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBXDE8928B53CAE4449B9D0F5A51403E0FC">
+				<Item class="StringValue" referent="RBX95C13336008847ADAA49714E434A16CD">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -17025,7 +16829,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXD4EE42ADC007490689D27293420EB6D0">
+			<Item class="Part" referent="RBX2CC8C4FD8A934D25AB24BDF09F144568">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -17116,7 +16920,7 @@ return {
 						<Z>0.46000129</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX5B1E74597D044AD38D9E040EDD07513B">
+				<Item class="StringValue" referent="RBXF10180049E7A48E0BC0706DC1C286F86">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -17126,7 +16930,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX3026B15861E7463890CDC4C0EEA054FF">
+			<Item class="Part" referent="RBXBEEEBF2735C44D5F960D25C3E54E92DE">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -17217,7 +17021,7 @@ return {
 						<Z>0.470001191</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBXDFB08B8B993A449FB7178A3A28E76C77">
+				<Item class="StringValue" referent="RBX13E5935724724FABB475F738822E4B36">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -17227,7 +17031,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX04DA23052EB742CBB6A76799A33A5DA0">
+			<Item class="Part" referent="RBXEA632024CD804E4CB8FB6C499300884F">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -17318,7 +17122,7 @@ return {
 						<Z>0.470001191</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX2BCD940670E04FB28E0A0B5675BCD0FD">
+				<Item class="StringValue" referent="RBXC3D3A66DD1524E2484B45C7AD523144E">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -17328,7 +17132,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX8A2B930BFD59424CB05A74BED9962E90">
+			<Item class="MeshPart" referent="RBX9239D04FA9644CE09777C6D626B8F39B">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -17437,7 +17241,7 @@ return {
 						<Z>0.999999523</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBX4C6B9E9937804B0AB1741BB0EC613D34">
+				<Item class="ManualWeld" referent="RBXC2C7F29DA34240F2A02EF5D36F0E758B">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -17470,15 +17274,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX8A2B930BFD59424CB05A74BED9962E90</Ref>
-						<Ref name="Part1">RBX276902206E554208AF73A6EF9EFC7A54</Ref>
+						<Ref name="Part0">RBX9239D04FA9644CE09777C6D626B8F39B</Ref>
+						<Ref name="Part1">RBXA4B9B296A2984745A22000F046E4D0C6</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXFA886435761845F3A4B2A4D9BEC10F20">
+				<Item class="ManualWeld" referent="RBX83531CA178F64E37819A5310CF1CC3CE">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -17511,15 +17315,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX8A2B930BFD59424CB05A74BED9962E90</Ref>
-						<Ref name="Part1">RBX3026B15861E7463890CDC4C0EEA054FF</Ref>
+						<Ref name="Part0">RBX9239D04FA9644CE09777C6D626B8F39B</Ref>
+						<Ref name="Part1">RBXBEEEBF2735C44D5F960D25C3E54E92DE</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX7F2684BD38064F9690181F2C8504DE42">
+				<Item class="ManualWeld" referent="RBXE99F0A001AD8496188BFE2E74F01065A">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -17552,8 +17356,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX8A2B930BFD59424CB05A74BED9962E90</Ref>
-						<Ref name="Part1">RBXDF92C3AB276B4221B91615437EA1CF58</Ref>
+						<Ref name="Part0">RBX9239D04FA9644CE09777C6D626B8F39B</Ref>
+						<Ref name="Part1">RBXEC32D713466F4348BAA49378B731F0B2</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -17561,7 +17365,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX8F43FC572E6945BDA704468E4C1A4F48">
+			<Item class="MeshPart" referent="RBX1DF2B2588E614E76A32E8973465DC943">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -17670,7 +17474,7 @@ return {
 						<Z>0.999999881</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBX35B71D37F4D544B688ECFFF121D90AAC">
+				<Item class="ManualWeld" referent="RBXD5989EE554104F7EB8BD28FBB9F71038">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -17703,15 +17507,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX8F43FC572E6945BDA704468E4C1A4F48</Ref>
-						<Ref name="Part1">RBX22DB0DC2A46240B886C6DE998EB24D03</Ref>
+						<Ref name="Part0">RBX1DF2B2588E614E76A32E8973465DC943</Ref>
+						<Ref name="Part1">RBX6BF874DD119B40F4B061A12240A3B51F</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX486246588B1C456F82BA6BB8873CA33C">
+				<Item class="ManualWeld" referent="RBX1293CBB25B3D401D9AC1AE06A7FFC308">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -17744,15 +17548,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX8F43FC572E6945BDA704468E4C1A4F48</Ref>
-						<Ref name="Part1">RBX2F22E9CE4F924C528D357FE6E6D278B8</Ref>
+						<Ref name="Part0">RBX1DF2B2588E614E76A32E8973465DC943</Ref>
+						<Ref name="Part1">RBX9491CCDD656549E39254F8CD70C49A92</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXF1D020FF50C048268C77F725AE7ACF28">
+				<Item class="ManualWeld" referent="RBXB4047571E022497A986D1AB8C6A0C3AE">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -17785,15 +17589,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX8F43FC572E6945BDA704468E4C1A4F48</Ref>
-						<Ref name="Part1">RBX78D2E6D0D9EB4B4390E4BD937EDDA0E8</Ref>
+						<Ref name="Part0">RBX1DF2B2588E614E76A32E8973465DC943</Ref>
+						<Ref name="Part1">RBX4091900EBED24048AE493265C731E4B2</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX18E585399C894F7B88DABF9966CC8C39">
+				<Item class="ManualWeld" referent="RBX28DBFA7A955645078A95C146D38C2450">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -17826,8 +17630,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX8F43FC572E6945BDA704468E4C1A4F48</Ref>
-						<Ref name="Part1">RBXA8C9B220520E40FF920987896F482178</Ref>
+						<Ref name="Part0">RBX1DF2B2588E614E76A32E8973465DC943</Ref>
+						<Ref name="Part1">RBX90DE0519322F416C9D848793F3528D2B</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -17835,7 +17639,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX0E3CDBAE3E8847AC82FFA45EE508C94B">
+			<Item class="MeshPart" referent="RBX8C093E4726494F92968E88C2332D0E42">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -17944,7 +17748,7 @@ return {
 						<Z>1.00000012</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBX413908C6956C4AB8A052E3AAF5A1F212">
+				<Item class="ManualWeld" referent="RBXD77896E44AF04E84A222FD08C1022E13">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -17977,15 +17781,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX0E3CDBAE3E8847AC82FFA45EE508C94B</Ref>
-						<Ref name="Part1">RBX04DA23052EB742CBB6A76799A33A5DA0</Ref>
+						<Ref name="Part0">RBX8C093E4726494F92968E88C2332D0E42</Ref>
+						<Ref name="Part1">RBXEA632024CD804E4CB8FB6C499300884F</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX4E21F5C10EFD45AFBBB46B519655BAD2">
+				<Item class="ManualWeld" referent="RBXA493ED04D4A946BF8AB0F8A555C1486B">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -18018,15 +17822,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX0E3CDBAE3E8847AC82FFA45EE508C94B</Ref>
-						<Ref name="Part1">RBX9FBC6F450AEE4F18B460BDC61A32AFA0</Ref>
+						<Ref name="Part0">RBX8C093E4726494F92968E88C2332D0E42</Ref>
+						<Ref name="Part1">RBXD3ABE23A99C749CA8AF292C76C326497</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX0A074FF81B234F57941DE72B6A1CC505">
+				<Item class="ManualWeld" referent="RBX17859A6A496E4E398D2111A98A21D312">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -18059,8 +17863,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX0E3CDBAE3E8847AC82FFA45EE508C94B</Ref>
-						<Ref name="Part1">RBXD4EE42ADC007490689D27293420EB6D0</Ref>
+						<Ref name="Part0">RBX8C093E4726494F92968E88C2332D0E42</Ref>
+						<Ref name="Part1">RBX2CC8C4FD8A934D25AB24BDF09F144568</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -18068,7 +17872,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX339AC703DEA84ACCBB6BD2C9C98FA89A">
+			<Item class="MeshPart" referent="RBX98EE7C9BEEFD49CA8DE45A5F5F79A8CF">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -18177,7 +17981,7 @@ return {
 						<Z>0.99996686</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBXA8823D9A4C2A42E0BE3C1BB38F835560">
+				<Item class="ManualWeld" referent="RBXE1EA65CC1BFF46349DC64E467C953B21">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -18210,15 +18014,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX339AC703DEA84ACCBB6BD2C9C98FA89A</Ref>
-						<Ref name="Part1">RBX7472045160DA4C22A6CE6E81134F3A77</Ref>
+						<Ref name="Part0">RBX98EE7C9BEEFD49CA8DE45A5F5F79A8CF</Ref>
+						<Ref name="Part1">RBXA9FA14EDC368472DA5E40DF6B831C5A0</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX5FBF5F96626C4D5DACC96BDAD34DD551">
+				<Item class="ManualWeld" referent="RBXDBAD5FD077A049258B8138A5691A7BB6">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -18251,15 +18055,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX339AC703DEA84ACCBB6BD2C9C98FA89A</Ref>
-						<Ref name="Part1">RBX21067337F60D4847A1D56FAB655FD786</Ref>
+						<Ref name="Part0">RBX98EE7C9BEEFD49CA8DE45A5F5F79A8CF</Ref>
+						<Ref name="Part1">RBX7736CABCFD34424B8A9A33F08CFE0034</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX86D656ADAFB44D748350F6EE3122FCDF">
+				<Item class="ManualWeld" referent="RBXE9B9C0A3A4D0471EA42459C8D8A7119F">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -18292,15 +18096,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX339AC703DEA84ACCBB6BD2C9C98FA89A</Ref>
-						<Ref name="Part1">RBX18DF94EEA38647D59E7F97D6B4897F21</Ref>
+						<Ref name="Part0">RBX98EE7C9BEEFD49CA8DE45A5F5F79A8CF</Ref>
+						<Ref name="Part1">RBXC491D72C27D8453D92785C43BC55B129</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXCFCD1F76ABDE4038B75A0C10F3794B8F">
+				<Item class="ManualWeld" referent="RBXF15E4BAE2C6C437998527C0DAB392A61">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -18333,8 +18137,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX339AC703DEA84ACCBB6BD2C9C98FA89A</Ref>
-						<Ref name="Part1">RBXD1411432FE744BBC862631ACC8040915</Ref>
+						<Ref name="Part0">RBX98EE7C9BEEFD49CA8DE45A5F5F79A8CF</Ref>
+						<Ref name="Part1">RBXF07F7C7ABF37439CB0095104C23E3D76</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -18342,7 +18146,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBX6B0971948BBC464990716A707B544DC0">
+			<Item class="ModuleScript" referent="RBX9FC2BD8E54F243C0B967ACEE4464A112">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
@@ -18419,7 +18223,7 @@ return {
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="Model" referent="RBX1E563DAA82624E14BCA457FCD70FC08C">
+		<Item class="Model" referent="RBX037C337E767746A2AB9290775E5E490F">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<token name="LevelOfDetail">0</token>
@@ -18458,28 +18262,13 @@ return {
 					<Z>0</Z>
 				</Vector3>
 				<string name="Name">RegenGauntlet</string>
-				<bool name="NeedsPivotMigration">false</bool>
+				<bool name="NeedsPivotMigration">true</bool>
 				<Ref name="PrimaryPart">null</Ref>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<OptionalCoordinateFrame name="WorldPivotData">
-					<CFrame>
-						<X>-7.62375975</X>
-						<Y>3.20167542</Y>
-						<Z>-0.00291624665</Z>
-						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>1</R11>
-						<R12>0</R12>
-						<R20>0</R20>
-						<R21>0</R21>
-						<R22>1</R22>
-					</CFrame>
-				</OptionalCoordinateFrame>
+				<OptionalCoordinateFrame name="WorldPivotData"></OptionalCoordinateFrame>
 			</Properties>
-			<Item class="Part" referent="RBXA3627B05FC5D4813B0173F7B7E4F5014">
+			<Item class="Part" referent="RBXD40CB41F69604DAFBF92A98200962A90">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -18571,7 +18360,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX92A24DF6217042768AD1CDCE6DE9630F">
+			<Item class="Part" referent="RBX1EF96D4756274B7BBEFF1863654624A7">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -18662,7 +18451,7 @@ return {
 						<Z>0.380000025</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX7FFFDBE374F04FC89365023939F32A90">
+				<Item class="StringValue" referent="RBX6AFB8814E1D24F08A64B0577A2D9C96D">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -18672,7 +18461,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXDEAD864A9E674EE9A1317CC42A671D78">
+			<Item class="Part" referent="RBXFC1BFE9EC0AE4E329F2D6D6F540C7548">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -18763,7 +18552,7 @@ return {
 						<Z>0.490000248</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBXC839AE378D964E1183A517AA3A25865A">
+				<Item class="StringValue" referent="RBX3A2AB7214B1247849B58F624371EC8FE">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -18773,7 +18562,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX50D92955A13A44B5BE0CCA3820B4B271">
+			<Item class="Part" referent="RBX53CFAAAE08FA4C48B93D5AC91CD28A53">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -18864,7 +18653,7 @@ return {
 						<Z>0.380000025</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX125249C1E73D4C82A8BD0A8F94301704">
+				<Item class="StringValue" referent="RBX20C8BB226482403796697A7ED143D6C8">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -18874,7 +18663,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXDE37073DF1B04A2C8433A91EF8DB6186">
+			<Item class="Part" referent="RBX8A8CF5EDE92A4993B05A0FB405FCFFA4">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -18966,7 +18755,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX2F13B14EF8434278B56CBE23E9CEAEDC">
+			<Item class="Part" referent="RBX9274D464BD8F483DA69CEC3FE4196B11">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -19058,7 +18847,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX52C28DFFBAF044808F480DFDE6F3D7BD">
+			<Item class="Part" referent="RBX1DB946F059904AB98777514E4C078BD1">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -19150,7 +18939,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX7B88FB5FA84345B58CA3C9B825CE8DCA">
+			<Item class="Part" referent="RBX37074CD703DF45B79D32CCE9CB4D16E4">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -19242,7 +19031,7 @@ return {
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Part" referent="RBX9F39B8FF1740404F986CBFC048811454">
+			<Item class="Part" referent="RBX1711B0C7BBC44E62A10754AE6F1C034D">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -19333,7 +19122,7 @@ return {
 						<Z>0.380000025</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBXA6E547EAB9FE44E8A511CA40FA6DB16E">
+				<Item class="StringValue" referent="RBX5198E6C04A794D338B1C630669D68DC3">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -19343,7 +19132,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBXE35C94A8C29745ABB36FCDA740DC56B8">
+			<Item class="Part" referent="RBX6125E7ACAA9647F7836A2567B8DA646D">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -19434,7 +19223,7 @@ return {
 						<Z>0.490000248</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBX371A9AE5F69B4F849B96AED93E260572">
+				<Item class="StringValue" referent="RBX3FF3BE7F87A749628A2ECF662719EF96">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -19444,7 +19233,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX1831724E21C14F13B23E7FC482ABEC98">
+			<Item class="Part" referent="RBXFF7F23301C84414DAFEB00CEEFC97581">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -19535,7 +19324,7 @@ return {
 						<Z>0.380000025</Z>
 					</Vector3>
 				</Properties>
-				<Item class="StringValue" referent="RBXA70660200F3F40CFB18D8C240E526953">
+				<Item class="StringValue" referent="RBX7BAE575DEA6749B0846905205BEFC4ED">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">PostProcessingPartName</string>
@@ -19545,7 +19334,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBXBB04B9A8180648C9AB747DD1109ECF4E">
+			<Item class="MeshPart" referent="RBXD7CD8381BA9448979C0F6549B14906A5">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -19654,7 +19443,7 @@ return {
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBXF1CCEEAE9FF54B5C90D75AAB2E8463B4">
+				<Item class="ManualWeld" referent="RBXA78957F22B51409EB5B9835F6B609936">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -19687,15 +19476,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXBB04B9A8180648C9AB747DD1109ECF4E</Ref>
-						<Ref name="Part1">RBX1831724E21C14F13B23E7FC482ABEC98</Ref>
+						<Ref name="Part0">RBXD7CD8381BA9448979C0F6549B14906A5</Ref>
+						<Ref name="Part1">RBXFF7F23301C84414DAFEB00CEEFC97581</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXD2209E3F844043FEBA46083253A497DC">
+				<Item class="ManualWeld" referent="RBX0017FECC93AD43EA955B94BEABC9DEB4">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -19728,15 +19517,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXBB04B9A8180648C9AB747DD1109ECF4E</Ref>
-						<Ref name="Part1">RBXE35C94A8C29745ABB36FCDA740DC56B8</Ref>
+						<Ref name="Part0">RBXD7CD8381BA9448979C0F6549B14906A5</Ref>
+						<Ref name="Part1">RBX6125E7ACAA9647F7836A2567B8DA646D</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX9D60CBD15DF04D588D3B2E177F7397C2">
+				<Item class="ManualWeld" referent="RBX6AC5BC5E1C0840EA8E3908A4A615774A">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -19769,8 +19558,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXBB04B9A8180648C9AB747DD1109ECF4E</Ref>
-						<Ref name="Part1">RBX9F39B8FF1740404F986CBFC048811454</Ref>
+						<Ref name="Part0">RBXD7CD8381BA9448979C0F6549B14906A5</Ref>
+						<Ref name="Part1">RBX1711B0C7BBC44E62A10754AE6F1C034D</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -19778,7 +19567,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX0123B8883FCE4F87A88144BE37DA7C48">
+			<Item class="MeshPart" referent="RBX6CD15252D13C407FBE8C88506901D621">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -19887,7 +19676,7 @@ return {
 						<Z>0.99999994</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBXA3E11F4620DE4EAAA69C2DE3B27310F0">
+				<Item class="ManualWeld" referent="RBX5A846EB2EB02484DB709EA673FBFF322">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -19920,15 +19709,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX0123B8883FCE4F87A88144BE37DA7C48</Ref>
-						<Ref name="Part1">RBX52C28DFFBAF044808F480DFDE6F3D7BD</Ref>
+						<Ref name="Part0">RBX6CD15252D13C407FBE8C88506901D621</Ref>
+						<Ref name="Part1">RBX1DB946F059904AB98777514E4C078BD1</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXF7C158C5955948DA887C1D76659D996C">
+				<Item class="ManualWeld" referent="RBXED2FBA6B386D44BA994F8DAF3E270417">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -19961,15 +19750,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX0123B8883FCE4F87A88144BE37DA7C48</Ref>
-						<Ref name="Part1">RBX7B88FB5FA84345B58CA3C9B825CE8DCA</Ref>
+						<Ref name="Part0">RBX6CD15252D13C407FBE8C88506901D621</Ref>
+						<Ref name="Part1">RBX37074CD703DF45B79D32CCE9CB4D16E4</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX350E9DE83BEE42F58D0F6EB2BBE074EB">
+				<Item class="ManualWeld" referent="RBX87C92935EF6643EDAD04DACEF5EF9B97">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -20002,15 +19791,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX0123B8883FCE4F87A88144BE37DA7C48</Ref>
-						<Ref name="Part1">RBXDEAD864A9E674EE9A1317CC42A671D78</Ref>
+						<Ref name="Part0">RBX6CD15252D13C407FBE8C88506901D621</Ref>
+						<Ref name="Part1">RBXFC1BFE9EC0AE4E329F2D6D6F540C7548</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXBCA781C961994995BF5295B6440D8A40">
+				<Item class="ManualWeld" referent="RBX811DE9C81D2C438AA5D534A8DBBFB5B2">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -20043,15 +19832,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX0123B8883FCE4F87A88144BE37DA7C48</Ref>
-						<Ref name="Part1">RBX92A24DF6217042768AD1CDCE6DE9630F</Ref>
+						<Ref name="Part0">RBX6CD15252D13C407FBE8C88506901D621</Ref>
+						<Ref name="Part1">RBX1EF96D4756274B7BBEFF1863654624A7</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBXB42E264B922A4009AEAE9C7FB67F81CC">
+				<Item class="ManualWeld" referent="RBX7C5DD776BE564F0E887F91C6AB5793C9">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -20084,8 +19873,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX0123B8883FCE4F87A88144BE37DA7C48</Ref>
-						<Ref name="Part1">RBX50D92955A13A44B5BE0CCA3820B4B271</Ref>
+						<Ref name="Part0">RBX6CD15252D13C407FBE8C88506901D621</Ref>
+						<Ref name="Part1">RBX53CFAAAE08FA4C48B93D5AC91CD28A53</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -20093,7 +19882,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="MeshPart" referent="RBX0991BAEE9DFC4AA1A830C9C82E0FF06B">
+			<Item class="MeshPart" referent="RBX5B32C53CA54E48AE9829B78803819E1D">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -20202,7 +19991,7 @@ return {
 						<Z>1.00000036</Z>
 					</Vector3>
 				</Properties>
-				<Item class="ManualWeld" referent="RBX5E9A70D597BD46A5828BA36BB8B410F5">
+				<Item class="ManualWeld" referent="RBXD36B0F6BD0A64975BB558480701CD035">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -20235,15 +20024,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX0991BAEE9DFC4AA1A830C9C82E0FF06B</Ref>
-						<Ref name="Part1">RBXDE37073DF1B04A2C8433A91EF8DB6186</Ref>
+						<Ref name="Part0">RBX5B32C53CA54E48AE9829B78803819E1D</Ref>
+						<Ref name="Part1">RBX8A8CF5EDE92A4993B05A0FB405FCFFA4</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX5324E86C01CC4DC6A695F744C7B8B5BC">
+				<Item class="ManualWeld" referent="RBX6CFBF932CD064494AEEE5006DF3C276A">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -20276,15 +20065,15 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX0991BAEE9DFC4AA1A830C9C82E0FF06B</Ref>
-						<Ref name="Part1">RBXA3627B05FC5D4813B0173F7B7E4F5014</Ref>
+						<Ref name="Part0">RBX5B32C53CA54E48AE9829B78803819E1D</Ref>
+						<Ref name="Part1">RBXD40CB41F69604DAFBF92A98200962A90</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ManualWeld" referent="RBX790045129387488D8751C785C9A720BF">
+				<Item class="ManualWeld" referent="RBX34D16A43A19849CEA9FA40F8138EC60F">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -20317,8 +20106,8 @@ return {
 						</CoordinateFrame>
 						<bool name="Enabled">true</bool>
 						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX0991BAEE9DFC4AA1A830C9C82E0FF06B</Ref>
-						<Ref name="Part1">RBX2F13B14EF8434278B56CBE23E9CEAEDC</Ref>
+						<Ref name="Part0">RBX5B32C53CA54E48AE9829B78803819E1D</Ref>
+						<Ref name="Part1">RBX9274D464BD8F483DA69CEC3FE4196B11</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<int name="Surface0">-1</int>
 						<int name="Surface1">-1</int>
@@ -20326,7 +20115,7 @@ return {
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBXBCE648A972A349E8B0F47A4FF9940424">
+			<Item class="ModuleScript" referent="RBX93E4D87FE84D486180B95123FC171A3D">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>

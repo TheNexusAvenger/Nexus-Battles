@@ -71,6 +71,7 @@ Destroys the icon.
 --]]
 function Base3DIcon:Destroy()
     self.super:Destroy()
+    self.Module3DFrame:Destroy()
     if self.UpdateRotationEvent then
         self.UpdateRotationEvent:Disconnect()
         self.UpdateRotationEvent = nil
