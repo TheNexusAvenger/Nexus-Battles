@@ -198,6 +198,20 @@ function StorePrompt:__new()
     CloseText.Text = "X"
 
     --[[
+    Updates the size of the store.
+    --]]
+    local function UpdateSize()
+        local ScreenSize = self.AdornFrame.AbsoluteSize
+        if ScreenSize.Y * 0.8 * (3/2) > ScreenSize.X * 0.9 then
+            StoreAdorn.Size = UDim2.new(0.9,0,0.9 * (2/3),0)
+            StoreAdorn.SizeConstraint = Enum.SizeConstraint.RelativeXX
+        else
+            StoreAdorn.Size = UDim2.new(0.8 * (3/2),0,0.8,0)
+            StoreAdorn.SizeConstraint = Enum.SizeConstraint.RelativeYY
+        end
+    end
+
+    --[[
     Updates the displayed armor.
     --]]
     local function OpenArmor(Id)
@@ -289,6 +303,8 @@ function StorePrompt:__new()
         self:Close()
     end)
     OpenArmor(1)
+    self.AdornFrame:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateSize)
+    UpdateSize()
 end
 
 
