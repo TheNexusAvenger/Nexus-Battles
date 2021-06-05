@@ -30,7 +30,7 @@ return function(Character,Value)
 
         --Damage the armor until they leave or die.
         local LastPosition = HumanoidRootPart.Position
-        while Humanoid.Health > 0 and Character.Parent and Player.Parent and Player.Character == Player.Character do
+        while LastCharacterUpdates[Character] == StartTime and Humanoid.Health > 0 and Character.Parent and Player.Parent and Player.Character == Player.Character do
             --Damage the armor.
             local CurrentPosition = HumanoidRootPart.Position
             local Magnitude = (CurrentPosition - LastPosition).Magnitude

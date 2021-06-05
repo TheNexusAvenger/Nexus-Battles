@@ -31,7 +31,7 @@ return function(Character,Value)
         LastCharacterUpdates[Character] = StartTime
 
         --Heal the player until they leave or die.
-        while Humanoid.Health > 0 and Character.Parent and Player.Parent and Player.Character == Player.Character do
+        while LastCharacterUpdates[Character] == StartTime and Humanoid.Health > 0 and Character.Parent and Player.Parent and Player.Character == Player.Character do
             --Heal the player.
             local AmountToHeal = math.min(Humanoid.MaxHealth - Humanoid.Health,Value)
             if AmountToHeal > 0 then

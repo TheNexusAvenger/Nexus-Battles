@@ -38,7 +38,7 @@ return function(Character,Value)
         LastCharacterUpdates[Character] = StartTime
 
         --Leech from other players until they leave or die.
-        while Humanoid.Health > 0 and Character.Parent and Player.Parent and Player.Character == Player.Character do
+        while LastCharacterUpdates[Character] == StartTime and Humanoid.Health > 0 and Character.Parent and Player.Parent and Player.Character == Player.Character do
             --Leech health from enemy players.
             local RemainingHealthToLeech = Humanoid.MaxHealth - Humanoid.Health
             local TotalHealthLeeched = 0
