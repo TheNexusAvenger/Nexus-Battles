@@ -9,6 +9,19 @@
                 "CharacterAutoLoads": false
             }
         },
+        "Lighting": {
+            "$className": "Lighting",
+            "$properties": {
+                "Ambient": [0.5,0.5,0.5],
+                "OutdoorAmbient": [0.5,0.5,0.5],
+                "Brightness": 2,
+                "GlobalShaddows": true,
+                "Technology": {
+                    "Type": "Enum",
+                    "Value": 4
+                }
+            }
+        },
         "ReplicatedFirst": {
             "$className": "ReplicatedFirst",
             "$path": "src/ReplicatedFirst"
