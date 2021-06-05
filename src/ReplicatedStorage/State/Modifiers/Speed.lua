@@ -33,7 +33,10 @@ return function(Character,Value)
         while Humanoid.Health > 0 and Character.Parent and Player.Parent and Player.Character == Player.Character do
             --Damage the armor.
             local CurrentPosition = HumanoidRootPart.Position
-            InventoryService:DamageArmor(Player,"Speed",(CurrentPosition - LastPosition).Magnitude)
+            local Magnitude = (CurrentPosition - LastPosition).Magnitude
+            if Magnitude <= Humanoid.WalkSpeed * 2 then
+                InventoryService:DamageArmor(Player,"Speed",Magnitude)
+            end
             LastPosition = CurrentPosition
 
             --Wait 1 second to continue.
