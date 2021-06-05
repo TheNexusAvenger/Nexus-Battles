@@ -87,11 +87,14 @@ function LeaderboardService:FlushPlayerStats(StatName)
         local DataStore = DataStoreService:GetOrderedDataStore("Leaderboard_"..StatName)
         for _,Player in pairs(Players:GetPlayers()) do
             coroutine.wrap(function()
-                local Worked,Return = pcall(function()
-                    DataStore:SetAsync(tostring(Player.UserId),StatService:GetPersistentStats(Player):Get(StatName):Get())
-                end)
-                if not Worked then
-                    warn("Failed to update stat for "..tostring(Player).." for "..tostring(StatName).." because "..tostring(Return))
+                local StatValue = StatService:GetPersistentStats(Player):Get(StatName):Get()
+                if StatValue > 0 and Player.UserId > 0 then
+                    local Worked,Return = pcall(function()
+                        DataStore:SetAsync(tostring(Player.UserId),StatValue)
+                    end)
+                    if not Worked then
+                        warn("Failed to update stat for "..tostring(Player).." for "..tostring(StatName).." because "..tostring(Return))
+                    end
                 end
             end)()
         end
