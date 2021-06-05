@@ -305,13 +305,10 @@ function BaseRound:SpawnPlayer(Player)
 
         --Teleport the player.
         local CharacterService = self:GetService("CharacterService")
-        local Character = CharacterService:SpawnCharacter(Player)
+        local Character = CharacterService:SpawnCharacter(Player,SpawnPart)
         CharacterService:AddForceField(Player)
         if not Character then return end
         local Humanoid = Character:WaitForChild("Humanoid")
-        local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
-        local BaseSpawnCFrame = SpawnPart.CFrame * CFrame.new(SpawnPart.Size.X * (math.random() - 0.5),(SpawnPart.Size.Y/2) + Humanoid.HipHeight + (HumanoidRootPart.Size.Y/2),SpawnPart.Size.Z * (math.random() - 0.5))
-        HumanoidRootPart.CFrame = CFrame.new(BaseSpawnCFrame.Position) * CFrame.Angles(0,math.pi + math.atan2(BaseSpawnCFrame.LookVector.X,BaseSpawnCFrame.LookVector.Z),0)
 
         --Connect the character dieing.
         Humanoid.Died:Connect(function()

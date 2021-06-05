@@ -18,6 +18,7 @@ local PhysicsService = game:GetService("PhysicsService")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
+local LobbySpawnLocation = Workspace:WaitForChild("LobbySpawnLocation") --TODO: Replace with actual lobby part
 local NexusRoundSystem = ReplicatedStorageProject:GetResource("NexusRoundSystem")
 local ObjectReplicator = NexusRoundSystem:GetObjectReplicator()
 local Maps = ServerStorage:WaitForChild("Maps")
@@ -88,12 +89,12 @@ local function InitializePlayer(Player)
                     return
                 end
             end
-            CharacterService:SpawnCharacter(Player)
+            CharacterService:SpawnCharacter(Player,LobbySpawnLocation)
         end)
     end)
 
-    --Load thee character.
-    CharacterService:SpawnCharacter(Player)
+    --Load the character.
+    CharacterService:SpawnCharacter(Player,LobbySpawnLocation)
 end
 
 --[[
@@ -255,7 +256,7 @@ LeaveRound.OnServerEvent:Connect(function(Player)
             Player.Neutral = true
 
             --Respawn the player.
-            CharacterService:SpawnCharacter(Player)
+            CharacterService:SpawnCharacter(Player,LobbySpawnLocation)
             break
         end
     end

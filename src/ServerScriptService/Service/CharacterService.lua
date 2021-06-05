@@ -12,12 +12,14 @@ local CHARACTER_ARMOR_SLOTS = {
 
 
 
+local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
+local LobbySpawnLocation = Workspace:WaitForChild("LobbySpawnLocation") --TODO: Replace with actual lobby part
 local ArmorService = ServerScriptServiceProject:GetResource("Service.ArmorService")
 local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 
@@ -32,7 +34,7 @@ CharacterService.LastCFrames = {}
 Spawns a character for the given player.
 Returns the character that was spawned in.
 --]]
-function CharacterService:SpawnCharacter(Player)
+function CharacterService:SpawnCharacter(Player,SpawnPart)
     --Return if the player is not in the game.
     if not Player or not Player.Parent then return end
 
@@ -133,11 +135,14 @@ function CharacterService:SpawnCharacter(Player)
         Humanoid:EquipTool(Tool)
     end)
 
-    --Set the last CFrame.
-    if self.LastCFrames[Player] then
+    --Set the last CFrame or the spawn CFrame.
+    if SpawnPart and (SpawnPart ~= LobbySpawnLocation or not self.LastCFrames[Player]) then
+        local BaseSpawnCFrame = SpawnPart.CFrame * CFrame.new(SpawnPart.Size.X * (math.random() - 0.5),(SpawnPart.Size.Y/2) + Humanoid.HipHeight + (HumanoidRootPart.Size.Y/2),SpawnPart.Size.Z * (math.random() - 0.5))
+        HumanoidRootPart.CFrame = CFrame.new(BaseSpawnCFrame.Position) * CFrame.Angles(0,math.pi + math.atan2(BaseSpawnCFrame.LookVector.X,BaseSpawnCFrame.LookVector.Z),0)
+    elseif self.LastCFrames[Player] then
         HumanoidRootPart.CFrame = self.LastCFrames[Player]
-        self.LastCFrames[Player] = nil
     end
+    self.LastCFrames[Player] = nil
 
     --Return the character.
     return Character
