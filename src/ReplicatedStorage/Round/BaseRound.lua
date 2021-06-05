@@ -262,6 +262,7 @@ function BaseRound:End()
     --Award the MVP coins.
     local MVPCoins = math.ceil(MVP_COINS/#self.MVPs)
     for _,Player in pairs(self.MVPs) do
+        self:GetService("StatService"):GetPersistentStats(Player):Get("TimesMVP"):Increment()
         coroutine.wrap(function()
             for _ = 1,MVPCoins do
                 if not Player.Parent then return end

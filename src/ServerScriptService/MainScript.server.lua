@@ -23,6 +23,7 @@ local LobbySelectionService = ServerScriptServiceProject:GetResource("Service.Lo
 
 --Load the services that don't load immediately.
 ServerScriptServiceProject:GetResource("Service.DamageService")
+ServerScriptServiceProject:GetResource("Service.LeaderboardService")
 ServerScriptServiceProject:GetResource("Service.ShopService")
 ServerScriptServiceProject:GetResource("Service.RobuxService")
 

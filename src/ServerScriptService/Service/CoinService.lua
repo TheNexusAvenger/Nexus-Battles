@@ -47,6 +47,7 @@ function CoinService:GiveCoins(Player,Total,WorldPosition)
 
     --Add the coins.
     Stats:Get("Coins"):Increment(Total)
+    Stats:Get("TotalCoins"):Increment(Total)
 
     --Play the animation on the client.
     if WorldPosition then
