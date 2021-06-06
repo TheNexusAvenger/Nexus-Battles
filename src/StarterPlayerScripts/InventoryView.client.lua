@@ -18,8 +18,10 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
+local LoadingScreenCompleteValue = Players.LocalPlayer:WaitForChild("LoadingScreenComplete")
 local Armor = ReplicatedStorageProject:GetResource("Data.Armor")
 local PlayerInventoryIcon = ReplicatedStorageProject:GetResource("UI.Icon.PlayerInventoryIcon")
+while not LoadingScreenCompleteValue.Value do LoadingScreenCompleteValue:GetPropertyChangedSignal("Value"):Wait() end
 
 
 
