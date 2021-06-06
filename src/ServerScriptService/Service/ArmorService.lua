@@ -12,6 +12,7 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 
 local ArmorData = ReplicatedStorageProject:GetResource("Data.Armor")
 local ArmorModels = ReplicatedStorageProject:GetResource("Model.ArmorModels")
+local MeshDeformationArmorModels = ReplicatedStorageProject:GetResource("Model.MeshDeformationArmorModels")
 local ModifierService = ServerScriptServiceProject:GetResource("Service.ModifierService")
 
 local ArmorService = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
@@ -73,6 +74,13 @@ function ArmorService:Equip(Player,ArmorType)
     --Unequip the armor in the existing slot.
     self:Unequip(Player,Slot)
 
+    --Determine if the character uses the mesh deformation rig.
+    local IsMeshDeformation = false
+    local IsMeshDeformationValue = Player.Character:FindFirstChild("IsMeshDeformation")
+    if IsMeshDeformationValue then
+        IsMeshDeformation = IsMeshDeformationValue.Value
+    end
+
     --Add the armor model to the player.
     local EquippedArmorData = {
         Type = ArmorType,
@@ -80,7 +88,7 @@ function ArmorService:Equip(Player,ArmorType)
         ModifierKeys = {},
     }
     CharacterData[Slot] = EquippedArmorData
-    local ArmorModel = ArmorModels:WaitForChild(ArmorType):Clone()
+    local ArmorModel = (IsMeshDeformation and MeshDeformationArmorModels or ArmorModels):WaitForChild(ArmorType):Clone()
     for _,CharacterPart in pairs(Player.Character:GetChildren()) do
         if CharacterPart:IsA("BasePart") then
             local ArmorBasePart = ArmorModel:FindFirstChild(CharacterPart.Name)

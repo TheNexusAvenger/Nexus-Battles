@@ -10,7 +10,13 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 
 local Armor = ReplicatedStorageProject:GetResource("Data.Armor")
 local ArmorModels = ReplicatedStorageProject:GetResource("Model.ArmorModels")
+local MeshDeformationArmorModels = ReplicatedStorageProject:GetResource("Model.MeshDeformationArmorModels")
 local BaseCharacter = ReplicatedStorageProject:GetResource("Model.BaseCharacter")
+local BaseDeformationCharacter = ReplicatedStorageProject:GetResource("Model.BaseDeformationCharacter")
+local NexusAdminFeatureFlags
+coroutine.wrap(function()
+    NexusAdminFeatureFlags = ReplicatedStorageProject:GetResource("NexusAdminClient").FeatureFlags
+end)()
 
 local PlayerIcon = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
 PlayerIcon:SetClassName("PlayerIcon")
@@ -38,8 +44,18 @@ function PlayerIcon:__new()
     ViewportFrame.CurrentCamera = Camera
     self.Camera = Camera
 
-    local Character = BaseCharacter:Clone()
-    Character:WaitForChild("HumanoidRootPart").Anchored = true
+    local Character = nil
+    if NexusAdminFeatureFlags and NexusAdminFeatureFlags:GetFeatureFlag("UseMeshDeformation") then
+        Character = BaseDeformationCharacter:Clone()
+        self.ArmorModels = MeshDeformationArmorModels
+    else
+        Character = BaseCharacter:Clone()
+        self.ArmorModels = ArmorModels
+    end
+    Character:WaitForChild("Humanoid").DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
+    local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
+    HumanoidRootPart.Anchored = true
+    HumanoidRootPart.CFrame = CFrame.new(0,0,0)
     Character.Parent = CharacterWorldModel
     self.Character = Character
     self.CharacterArmor = {}
@@ -115,7 +131,7 @@ function PlayerIcon:SetArmor(Slot,Id)
         Parts = {},
     }
     self.CharacterArmor[Slot] = EquippedArmorData
-    local ArmorModel = ArmorModels:WaitForChild(ArmorModelName):Clone()
+    local ArmorModel = self.ArmorModels:WaitForChild(ArmorModelName):Clone()
     for _,CharacterPart in pairs(self.Character:GetChildren()) do
         if CharacterPart:IsA("BasePart") then
             local ArmorBasePart = ArmorModel:FindFirstChild(CharacterPart.Name)

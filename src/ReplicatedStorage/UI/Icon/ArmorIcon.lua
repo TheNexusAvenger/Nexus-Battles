@@ -17,7 +17,7 @@ ArmorIcon:SetClassName("WeaponIcon")
 Creates the armor icon.
 --]]
 function ArmorIcon:__new(WeaponName)
-    self:InitializeSuper(ReplicatedStorageProject:GetResource("Model.ArmorModels."..tostring(WeaponName)):Clone())
+    self:InitializeSuper(ReplicatedStorageProject:GetResource("Model.MeshDeformationArmorModels."..tostring(WeaponName)):Clone())
     self.RotationOffset = CFrame.Angles(0,0,math.rad(20))
 end
 

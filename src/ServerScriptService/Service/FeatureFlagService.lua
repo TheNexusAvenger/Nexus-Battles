@@ -19,6 +19,7 @@ local NexusAdminFeatureFlags
 local FeatureFlagService = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
 FeatureFlagService:SetClassName("FeatureFlagService")
 FeatureFlagService.RoundFeatureFlagChanged = NexusEventCreator:CreateEvent()
+FeatureFlagService.MeshDeformationFeatureFlagChanged = NexusEventCreator:CreateEvent()
 
 
 
@@ -54,6 +55,13 @@ coroutine.wrap(function()
     for _,RobuxData in pairs(RobuxItems) do
         NexusAdminFeatureFlags:AddFeatureFlag("RobuxPurchase"..tostring(RobuxData.Name).."Enabled",true)
     end
+
+    --Add the feature flag for mesh deformation.
+    NexusAdminFeatureFlags:AddFeatureFlag("UseMeshDeformation",true)
+    NexusAdminFeatureFlags:GetFeatureFlagChangedEvent("UseMeshDeformation"):Connect(function()
+        FeatureFlagService.MeshDeformationFeatureFlagChanged:Fire()
+    end)
+    FeatureFlagService.MeshDeformationFeatureFlagChanged:Fire()
 end)()
 
 

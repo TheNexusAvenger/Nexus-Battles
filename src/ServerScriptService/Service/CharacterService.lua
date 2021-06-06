@@ -15,13 +15,16 @@ local CHARACTER_ARMOR_SLOTS = {
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local StarterPlayer = game:GetService("StarterPlayer")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
 local LobbySpawnLocation = Workspace:WaitForChild("LobbySpawnLocation") --TODO: Replace with actual lobby part
 local ArmorService = ServerScriptServiceProject:GetResource("Service.ArmorService")
+local FeatureFlagService = ServerScriptServiceProject:GetResource("Service.FeatureFlagService")
 local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
+local BaseDeformationCharacter = ReplicatedStorageProject:GetResource("Model.BaseDeformationCharacter")
 
 local CharacterService = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
 CharacterService:SetClassName("CharacterService")
@@ -29,6 +32,30 @@ CharacterService.LastTools = {}
 CharacterService.LastCFrames = {}
 
 
+
+--[[
+Updates the StarterCharacter to use mesh deformation.
+--]]
+function CharacterService:UpdateStarterCharacter()
+    local UseMeshDeformation = FeatureFlagService:GetFeatureFlag("UseMeshDeformation")
+    local StarterCharacter = StarterPlayer:FindFirstChild("StarterCharacter")
+    if UseMeshDeformation then
+        if not StarterCharacter then
+            StarterCharacter = BaseDeformationCharacter:Clone()
+            StarterCharacter.Name = "StarterCharacter"
+            StarterCharacter.Parent = StarterPlayer
+
+            local IsMeshDeformationValue = Instance.new("BoolValue")
+            IsMeshDeformationValue.Name = "IsMeshDeformation"
+            IsMeshDeformationValue.Value = true
+            IsMeshDeformationValue.Parent = StarterCharacter
+        end
+    else
+        if StarterCharacter then
+            StarterCharacter:Destroy()
+        end
+    end
+end
 
 --[[
 Spawns a character for the given player.
@@ -211,6 +238,12 @@ end
 Players.PlayerRemoving:Connect(function(Player)
     CharacterService.LastTools[Player] = nil
     CharacterService.LastCFrames[Player] = nil
+end)
+
+--Set up mesh deformation with a feature flag.
+CharacterService:UpdateStarterCharacter()
+FeatureFlagService.MeshDeformationFeatureFlagChanged:Connect(function()
+    CharacterService:UpdateStarterCharacter()
 end)
 
 
