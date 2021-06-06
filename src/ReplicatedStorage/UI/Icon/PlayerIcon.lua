@@ -95,7 +95,7 @@ Clears the apperance of the character.
 --]]
 function PlayerIcon:ClearAppearance()
     for _,Ins in pairs(self.Character:GetDescendants()) do
-        if Ins:IsA("BasePart") then
+        if Ins:IsA("BasePart") and Ins.Parent == self.Character then
             Ins.BrickColor = BrickColor.new("Medium stone grey")
         elseif Ins:IsA("Decal") then
             Ins:Destroy()
