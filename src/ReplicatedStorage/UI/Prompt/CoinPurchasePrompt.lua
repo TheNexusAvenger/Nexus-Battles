@@ -61,6 +61,7 @@ function CoinPurchasePrompt:__new()
     end)
 
     --Create the purchase options.
+    local PurchaseButtonFrames = {}
     for i,PurchaseOption in pairs(CoinPurchaseOptions) do
         local PurchaseBackgroundAdorn = Instance.new("Frame")
         PurchaseBackgroundAdorn.BackgroundTransparency = 1
@@ -124,6 +125,7 @@ function CoinPurchasePrompt:__new()
         BuyButton.Visible = false
         BuyText.Text = "0"
         BuyButton.Parent = PurchaseBackgroundAdorn
+        table.insert(PurchaseButtonFrames,BuyButton.AdornFrame)
 
         local RobuxIcon = Instance.new("ImageLabel")
         RobuxIcon.BackgroundTransparency = 1
@@ -213,6 +215,16 @@ function CoinPurchasePrompt:__new()
             CoinPurchaseContainer.Size = UDim2.new((1/1.2) * 0.3,0,0.3,0)
             CoinPurchaseContainer.SizeConstraint = Enum.SizeConstraint.RelativeYY
         end
+    end
+
+    --Set up the button selection.
+    for i,ButtonFrame in pairs(PurchaseButtonFrames) do
+        ButtonFrame.Selectable = true
+        ButtonFrame.NextSelectionUp = ButtonFrame
+        ButtonFrame.NextSelectionDown = ButtonFrame
+        ButtonFrame.NextSelectionLeft = PurchaseButtonFrames[i - 1] or ButtonFrame
+        ButtonFrame.NextSelectionRight = PurchaseButtonFrames[i + 1] or ButtonFrame
+        self.SelectionGroup:AddFrame(ButtonFrame)
     end
 
     --Connect updating the size.

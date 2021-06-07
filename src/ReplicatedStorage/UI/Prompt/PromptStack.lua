@@ -14,6 +14,8 @@ local TweenService = game:GetService("TweenService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
+local SelectionGroups = ReplicatedStorageProject:GetResource("State.Controller.SelectionGroups")
+
 local PromptStack = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusObject"):Extend()
 PromptStack:SetClassName("PromptStack")
 PromptStack.Prompts = {}
@@ -43,6 +45,7 @@ function PromptStack:Add(Prompt)
     --Add the prompt and show it.
     table.insert(self.Prompts,Prompt)
     Prompt:Show("BELOW")
+    SelectionGroups:Add(Prompt.SelectionGroup)
 end
 
 --[[
@@ -65,6 +68,7 @@ function PromptStack:Remove(Prompt)
     end
     Prompt:HideDownward()
     table.remove(self.Prompts,Index)
+    SelectionGroups:Remove(Prompt.SelectionGroup)
 
     --Hide the blur if there is no more prompts.
     if #self.Prompts == 0 and self.Blur then

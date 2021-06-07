@@ -13,6 +13,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
+local SelectionGroup = ReplicatedStorageProject:GetResource("State.Controller.SelectionGroup")
 local PromptStack = ReplicatedStorageProject:GetResource("UI.Prompt.PromptStack")
 
 local BasePrompt = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
@@ -25,6 +26,9 @@ Creates the base prompt.
 --]]
 function BasePrompt:__new(Name)
     self:InitializeSuper()
+
+    --Create the selection group.
+    self.SelectionGroup = SelectionGroup.new()
 
     --Create the adorn frame.
     local Container = Instance.new("ScreenGui")
