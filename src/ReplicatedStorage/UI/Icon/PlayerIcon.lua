@@ -38,19 +38,19 @@ function PlayerIcon:__new()
     CharacterWorldModel.Parent = ViewportFrame
 
     local Camera = Instance.new("Camera")
-    Camera.CFrame = CFrame.new(0,-0.5,-11) * CFrame.Angles(0,math.pi,0)
+    Camera.CFrame = CFrame.new(0,-0.5,-13) * CFrame.Angles(0,math.pi,0)
     Camera.FieldOfView = 30
     Camera.Parent = ViewportFrame
     ViewportFrame.CurrentCamera = Camera
     self.Camera = Camera
 
     local Character = nil
-    if NexusAdminFeatureFlags and NexusAdminFeatureFlags:GetFeatureFlag("UseMeshDeformation") then
-        Character = BaseDeformationCharacter:Clone()
-        self.ArmorModels = MeshDeformationArmorModels
-    else
+    if NexusAdminFeatureFlags and not NexusAdminFeatureFlags:GetFeatureFlag("UseMeshDeformation") then
         Character = BaseCharacter:Clone()
         self.ArmorModels = ArmorModels
+    else
+        Character = BaseDeformationCharacter:Clone()
+        self.ArmorModels = MeshDeformationArmorModels
     end
     Character:WaitForChild("Humanoid").DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
     local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
@@ -63,6 +63,9 @@ function PlayerIcon:__new()
     --Connect changing the properties.
     self:GetPropertyChangedSignal("Parent"):Connect(function()
         ViewportFrame.Parent = self.Parent
+    end)
+    self:GetPropertyChangedSignal("AnchorPoint"):Connect(function()
+        ViewportFrame.AnchorPoint = self.AnchorPoint
     end)
     self:GetPropertyChangedSignal("Size"):Connect(function()
         ViewportFrame.Size = self.Size

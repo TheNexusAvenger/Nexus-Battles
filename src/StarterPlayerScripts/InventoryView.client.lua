@@ -20,7 +20,9 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 
 local LoadingScreenCompleteValue = Players.LocalPlayer:WaitForChild("LoadingScreenComplete")
 local Armor = ReplicatedStorageProject:GetResource("Data.Armor")
+local TextButtonFactory = ReplicatedStorageProject:GetResource("UI.AudibleTextButtonFactory").CreateDefault(Color3.new(1,1,1))
 local PlayerInventoryIcon = ReplicatedStorageProject:GetResource("UI.Icon.PlayerInventoryIcon")
+local InventoryPrompt = ReplicatedStorageProject:GetResource("UI.Prompt.InventoryPrompt").new()
 while not LoadingScreenCompleteValue.Value do LoadingScreenCompleteValue:GetPropertyChangedSignal("Value"):Wait() end
 
 
@@ -45,7 +47,13 @@ InventoryIcon.Parent = InventoryButtonContainer
 InventoryIcon:ClearAppearance()
 InventoryIcon:PlayAnimation("rbxassetid://507766388")
 
---TODO: Create button.
+local InventoryButton,InventoryButtonText = TextButtonFactory:Create()
+InventoryButton.BackgroundTransparency = 0.99
+InventoryButton.BorderTransparency = 1
+InventoryButton.Size = UDim2.new(1,0,1,0)
+InventoryButton:MapKey(Enum.KeyCode.ButtonR3,Enum.UserInputType.MouseButton1)
+InventoryButton.Parent = InventoryIcon.ViewportFrame
+InventoryButtonText:Destroy()
 
 --Create the health bars.
 local Inventory = InventoryIcon.Inventory
@@ -91,4 +99,7 @@ for i,SlotName in pairs(PLAYER_INVENTORY_SLOTS) do
     UpdateHealthBar()
 end
 
---TODO: Connect button
+--Connect toggling the inventory.
+InventoryButton.MouseButton1Down:Connect(function()
+    InventoryPrompt:Toggle()
+end)
