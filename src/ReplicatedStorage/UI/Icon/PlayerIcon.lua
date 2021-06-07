@@ -111,7 +111,8 @@ Sets the armor for a given slot.
 --]]
 function PlayerIcon:SetArmor(Slot,Id)
     --Remove the existing armor.
-    if self.CharacterArmor[Slot] and self.CharacterArmor[Slot].Id ~= Id then
+    if self.CharacterArmor[Slot] and self.CharacterArmor[Slot].Id == Id then return end
+    if self.CharacterArmor[Slot] then
         for _,Part in pairs(self.CharacterArmor[Slot].Parts) do
             Part:Destroy()
         end

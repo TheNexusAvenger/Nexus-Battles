@@ -234,7 +234,7 @@ function InventoryPrompt:__new()
         --[[
         Hides the slot.
         --]]
-        function SlotFrameData:Show()
+        function SlotFrameData:Hide()
             self.Visible = false
             self:Update()
         end
@@ -291,7 +291,9 @@ function InventoryPrompt:__new()
     end
 
     --Connect the mouse events.
-    local CurrentHoveringSlotFrame
+    local CurrentHoveringSlotFrame = nil
+    local InitialDragFrame = nil
+    local MovingItemFrame = nil
     UserInputService.InputChanged:Connect(function(Input)
         if Input.UserInputType ~= Enum.UserInputType.MouseMovement then return end
 
@@ -313,6 +315,55 @@ function InventoryPrompt:__new()
             ItemNameText.Text = ""
             ItemDescriptionText.Text = ""
         end
+
+        --Update the drag frame.
+        if MovingItemFrame then
+            MovingItemFrame.Position = UDim2.new(0,Input.Position.X,0,Input.Position.Y)
+        end
+    end)
+    UserInputService.InputBegan:Connect(function(Input,Processed)
+        if Processed then return end
+        if Input.UserInputType ~= Enum.UserInputType.MouseButton1 then return end
+
+        --End the existing drag if one exists.
+        if InitialDragFrame then
+            InitialDragFrame:Show()
+            InitialDragFrame = nil
+        end
+        if MovingItemFrame then
+            MovingItemFrame:Destroy()
+            MovingItemFrame = nil
+        end
+        if not CurrentHoveringSlotFrame or not CurrentHoveringSlotFrame.CurrentItemId then return end
+
+        --Start dragging.
+        InitialDragFrame = CurrentHoveringSlotFrame
+        CurrentHoveringSlotFrame:Hide()
+        MovingItemFrame = ArmorIcon.new(ArmorModelNames[CurrentHoveringSlotFrame.CurrentItemId])
+        MovingItemFrame.AnchorPoint = Vector2.new(0.5,0.5)
+        MovingItemFrame.Size = UDim2.new(0,CurrentHoveringSlotFrame.SlotFrame.AbsoluteSize.X,0,CurrentHoveringSlotFrame.SlotFrame.AbsoluteSize.Y)
+        MovingItemFrame.Position = UDim2.new(0,Input.Position.X,0,Input.Position.Y)
+        MovingItemFrame.Parent = self.AdornFrame
+    end)
+    UserInputService.InputEnded:Connect(function(Input)
+        if Input.UserInputType ~= Enum.UserInputType.MouseButton1 then return end
+
+        --End the existing drag if one exists.
+        if InitialDragFrame then
+            InitialDragFrame:Show()
+        end
+        if MovingItemFrame then
+            MovingItemFrame:Destroy()
+            MovingItemFrame = nil
+        end
+        if not CurrentHoveringSlotFrame or not InitialDragFrame then
+            InitialDragFrame = nil
+            return
+        end
+
+        --Attempt to swap the slots.
+        PlayerInventory:SwapItems(CurrentHoveringSlotFrame.Slot,InitialDragFrame.Slot)
+        InitialDragFrame = nil
     end)
 
     --Connect closing.
