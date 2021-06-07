@@ -56,6 +56,7 @@ function CoinPurchasePrompt:__new()
 
     --Connect closing.
     CloseButton.MouseButton1Down:Connect(function()
+        if not self:IsOpen() then return end
         self:Close()
     end)
 
@@ -190,6 +191,7 @@ function CoinPurchasePrompt:__new()
 
         --Set up purchasing.
         BuyButton.MouseButton1Down:Connect(function()
+            if not self:IsOpen() then return end
             if PurchaseEnabled then
                 MarketplaceService:PromptProductPurchase(Players.LocalPlayer,PurchaseOption.ProductId)
             end

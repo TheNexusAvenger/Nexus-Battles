@@ -293,13 +293,18 @@ function StorePrompt:__new()
         end)
     end
     CoinsValue:GetPropertyChangedSignal("Value"):Connect(OpenArmor)
-    BuyButton.MouseButton1Down:Connect(BuyCurrentItem)
+    BuyButton.MouseButton1Down:Connect(function()
+        if not self:IsOpen() then return end
+        BuyCurrentItem()
+    end)
     GetCoinsButton.MouseButton1Down:Connect(function()
+        if not self:IsOpen() then return end
         if not CoinPurchasePrompt:IsOpen() then
             CoinPurchasePrompt:Open()
         end
     end)
     CloseButton.MouseButton1Down:Connect(function()
+        if not self:IsOpen() then return end
         self:Close()
     end)
     OpenArmor(1)

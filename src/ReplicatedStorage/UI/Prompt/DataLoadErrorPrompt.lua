@@ -62,6 +62,7 @@ function DataLoadErorPrompt:__new()
 
     --Connect closing.
     CloseButton.MouseButton1Down:Connect(function()
+        if not self:IsOpen() then return end
         self:Destroy()
     end)
 end

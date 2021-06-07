@@ -146,11 +146,13 @@ function FirstPlayBundlePrompt:__new()
 
     --Connect buying.
     BuyButton.MouseButton1Down:Connect(function()
+        if not self:IsOpen() then return end
         MarketplaceService:PromptProductPurchase(Players.LocalPlayer,ProductId)
     end)
 
     --Connect closing.
     CloseButton.MouseButton1Down:Connect(function()
+        if not self:IsOpen() then return end
         RejectArmorBundle:FireServer()
         self:Destroy()
     end)

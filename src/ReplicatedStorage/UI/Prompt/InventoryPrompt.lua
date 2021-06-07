@@ -420,10 +420,12 @@ function InventoryPrompt:__new()
 
     --Connect changing pages.
     PageLeftButton.MouseButton1Down:Connect(function()
+        if not self:IsOpen() then return end
         CurrentPage = CurrentPage - 1
         UpdatePages()
     end)
     PageRightButton.MouseButton1Down:Connect(function()
+        if not self:IsOpen() then return end
         CurrentPage = CurrentPage + 1
         UpdatePages()
     end)
@@ -434,6 +436,7 @@ function InventoryPrompt:__new()
 
     --Connect closing.
     CloseButton.MouseButton1Down:Connect(function()
+        if not self:IsOpen() then return end
         self:Close()
     end)
 
