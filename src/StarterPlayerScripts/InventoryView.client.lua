@@ -20,6 +20,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 
 local LoadingScreenCompleteValue = Players.LocalPlayer:WaitForChild("LoadingScreenComplete")
 local Armor = ReplicatedStorageProject:GetResource("Data.Armor")
+local ControllerIcon = ReplicatedStorageProject:GetResource("External.NexusButton.Gui.ControllerIcon")
 local TextButtonFactory = ReplicatedStorageProject:GetResource("UI.AudibleTextButtonFactory").CreateDefault(Color3.new(1,1,1))
 local PlayerInventoryIcon = ReplicatedStorageProject:GetResource("UI.Icon.PlayerInventoryIcon")
 local InventoryPrompt = ReplicatedStorageProject:GetResource("UI.Prompt.InventoryPrompt").new()
@@ -46,6 +47,12 @@ InventoryIcon.Position = UDim2.new(0.005,0,0.38,0)
 InventoryIcon.Parent = InventoryButtonContainer
 InventoryIcon:ClearAppearance()
 InventoryIcon:PlayAnimation("rbxassetid://507766388")
+
+local InventoryControllerIcon = ControllerIcon.new()
+InventoryControllerIcon.AdornFrame.Position = UDim2.new(0.4,0,0.4,0)
+InventoryControllerIcon.AdornFrame.Size = UDim2.new(0.8,0,0.8,0)
+InventoryControllerIcon.AdornFrame.Parent = InventoryIcon.ViewportFrame
+InventoryControllerIcon:SetIcon(Enum.KeyCode.ButtonL3)
 
 local InventoryButton,InventoryButtonText = TextButtonFactory:Create()
 InventoryButton.BackgroundTransparency = 0.99
