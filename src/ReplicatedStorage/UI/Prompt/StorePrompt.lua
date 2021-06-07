@@ -301,11 +301,11 @@ function StorePrompt:__new()
     end
     CoinsValue:GetPropertyChangedSignal("Value"):Connect(OpenArmor)
     BuyButton.MouseButton1Down:Connect(function()
-        if not self:IsOpen() then return end
+        if not self:IsFocused() then return end
         BuyCurrentItem()
     end)
     GetCoinsButton.MouseButton1Down:Connect(function()
-        if not self:IsOpen() then return end
+        if not self:IsFocused() then return end
         if not CoinPurchasePrompt:IsOpen() then
             CoinPurchasePrompt:Open()
         end

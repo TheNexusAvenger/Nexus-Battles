@@ -193,7 +193,7 @@ function CoinPurchasePrompt:__new()
 
         --Set up purchasing.
         BuyButton.MouseButton1Down:Connect(function()
-            if not self:IsOpen() then return end
+            if not self:IsFocused() then return end
             if PurchaseEnabled then
                 MarketplaceService:PromptProductPurchase(Players.LocalPlayer,PurchaseOption.ProductId)
             end

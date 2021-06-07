@@ -45,6 +45,7 @@ function BasePrompt:__new(Name)
     AdornFrame.Parent = Container
     self.AdornFrame = AdornFrame
     self.OpenState = "BELOW"
+    self.LastShowTime = 0
 end
 
 --[[
@@ -58,6 +59,7 @@ function BasePrompt:Show(FromPosition)
         self.AdornFrame.Position = UDim2.new(0,0,1,0)
     end
     self.OpenState = "CENTER"
+    self.LastShowTime = tick()
     self.AdornFrame:TweenPosition(UDim2.new(0,0,0,0),Enum.EasingDirection.InOut,Enum.EasingStyle.Quad,PROMPT_TRANSITION_TIME,true)
 end
 
@@ -84,6 +86,15 @@ Returns if the prompt is open.
 --]]
 function BasePrompt:IsOpen()
     return (self.OpenState == "CENTER")
+end
+
+--[[
+Returns if the prompt is focused.
+Intended to prevent inputs when the prompt
+is open but not finished moving.
+--]]
+function BasePrompt:IsFocused()
+    return self:IsOpen() and (tick() - self.LastShowTime) >= PROMPT_TRANSITION_TIME
 end
 
 --[[
