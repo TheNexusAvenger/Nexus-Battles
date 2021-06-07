@@ -13,6 +13,8 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
+local SelectionGroup = ReplicatedStorageProject:GetResource("State.Controller.SelectionGroup")
+local SelectionGroups = ReplicatedStorageProject:GetResource("State.Controller.SelectionGroups")
 local CurrentRoundState = ReplicatedStorageProject:GetResource("State.CurrentRound")
 local JoinTeamTextButtonFactory = ReplicatedStorageProject:GetResource("UI.AudibleTextButtonFactory").CreateDefault(Color3.new(1,1,1))
 JoinTeamTextButtonFactory:SetTextDefault("Text","JOIN")
@@ -112,6 +114,8 @@ local function CurrentRoundChanged(CurrentRound)
     local JoinTeamButtons = {}
     TeamSelectionGui.Enabled = true
     local TeamSelectionTimer = TextTimer.new(TeamSelectionTimerText,CurrentRound.Timer)
+    local TeamSelectionGroup = SelectionGroup.new()
+    SelectionGroups:AddBelow(TeamSelectionGroup)
 
     --[[
     Updates the player grid layout.
@@ -175,7 +179,11 @@ local function CurrentRoundChanged(CurrentRound)
         for i = #JoinTeamButtons + 1,#TeamColors do
             --Create the button.
             local JoinTeamButton,JoinTeamText = JoinTeamTextButtonFactory:Create()
+            JoinTeamButton.AdornFrame.Selectable = true
+            JoinTeamButton.AdornFrame.NextSelectionUp = JoinTeamButton.AdornFrame
+            JoinTeamButton.AdornFrame.NextSelectionDown = JoinTeamButton.AdornFrame
             JoinTeamButton.Parent = TeamButtonView
+            TeamSelectionGroup:AddFrame(JoinTeamButton.AdornFrame)
             table.insert(JoinTeamButtons,{
                 Button = JoinTeamButton,
                 Text = JoinTeamText,
@@ -195,6 +203,7 @@ local function CurrentRoundChanged(CurrentRound)
 
         --Remove extra buttons.
         for i = #JoinTeamButtons,#TeamColors + 1,-1 do
+            TeamSelectionGroup:RemoveFrame(JoinTeamButtons[i].Button.AdornFrame)
             JoinTeamButtons[i].Button:Destroy()
             JoinTeamButtons[i] = nil
         end
@@ -207,6 +216,12 @@ local function CurrentRoundChanged(CurrentRound)
             JoinButtonData.Button.BorderColor3 = AddColor3(Color.Color,BUTTON_BORDER_COLOR_OFFSET)
             JoinButtonData.Button.AutoButtonColor = not TeamFull
             JoinButtonData.Text.Text = (TeamFull and "FULL" or "JOIN")
+        end
+
+        --Update the button selections.
+        for i,ButtonData in pairs(JoinTeamButtons) do
+            ButtonData.Button.NextSelectionLeft = (JoinTeamButtons[i - 1] or ButtonData).Button.AdornFrame
+            ButtonData.Button.NextSelectionRight = (JoinTeamButtons[i + 1] or ButtonData).Button.AdornFrame
         end
     end
 
@@ -282,6 +297,7 @@ local function CurrentRoundChanged(CurrentRound)
     while CurrentRound.State == "LOADING" do
         CurrentRound:GetPropertyChangedSignal("State"):Wait()
     end
+    SelectionGroups:Remove(TeamSelectionGroup)
     for _,Event in pairs(Events) do
         Event:Disconnect()
     end
