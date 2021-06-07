@@ -16,7 +16,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 
 local Armor = ReplicatedStorageProject:GetResource("Data.Armor")
 local CutFrame = ReplicatedStorageProject:GetResource("External.NexusButton.Gui.CutFrame")
-local Inventory = ReplicatedStorageProject:GetResource("State.Inventory.Inventory")
+local ClientInventory = ReplicatedStorageProject:GetResource("State.Inventory.ClientInventory")
 local BlueTextButtonFactory = ReplicatedStorageProject:GetResource("UI.AudibleTextButtonFactory").CreateDefault(Color3.new(0,170/255,255/255))
 local RedTextButtonFactory = ReplicatedStorageProject:GetResource("UI.AudibleTextButtonFactory").CreateDefault(Color3.new(170/255,0,0))
 local ArmorIcon = ReplicatedStorageProject:GetResource("UI.Icon.ArmorIcon")
@@ -123,7 +123,7 @@ function InventoryPrompt:__new()
 
     local SlotFrames = {}
     local CurrentPage = 1
-    local PlayerInventory = Inventory.new(Players.LocalPlayer:WaitForChild("PersistentStats"):WaitForChild("Inventory"))
+    local PlayerInventory = ClientInventory.new(Players.LocalPlayer:WaitForChild("PersistentStats"):WaitForChild("Inventory"))
 
     --[[
     Creates an item slot.

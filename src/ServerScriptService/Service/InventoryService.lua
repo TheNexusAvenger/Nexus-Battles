@@ -26,6 +26,17 @@ InventoryService.PlayerInventories = {}
 
 
 
+--Set up the replicaiton.
+local InventoryReplication = Instance.new("Folder")
+InventoryReplication.Name = "Inventory"
+InventoryReplication.Parent = ReplicatedStorageProject:GetResource("Replication")
+
+local SwapItemsEvent = Instance.new("RemoteEvent")
+SwapItemsEvent.Name = "SwapItems"
+SwapItemsEvent.Parent = InventoryReplication
+
+
+
 --[[
 Returns the persistent stat container for the player.
 --]]
@@ -95,6 +106,11 @@ function InventoryService:DamageArmor(Player,Tag,Multiplier)
 end
 
 
+
+--Connect swapping slots.
+SwapItemsEvent.OnServerEvent:Connect(function(Player,Slot1,Slot2)
+    InventoryService:GetInventory(Player):SwapItems(Slot1,Slot2)
+end)
 
 --Connect players leaving.
 Players.PlayerRemoving:Connect(function(Player)
