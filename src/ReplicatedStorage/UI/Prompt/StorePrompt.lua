@@ -14,6 +14,7 @@ local SLOTS_TO_ORDER = {
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local GuiService = game:GetService("GuiService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
@@ -82,21 +83,27 @@ function StorePrompt:__new()
 
     local GridItemSize = 1/GridSize
     local ItemButtons = {}
+    local ItemButtonsGrid = {}
+    local ItemButtonsToId = {}
     local CurrentItem = nil
     local DisplayedArmorIcon = nil
     local CurrentTextUpdateTime = nil
     local CurrentlyPurchasing = false
     for i,ArmorItem in pairs(ArmorItems) do
+        local GridX,GridY = (i - 1) % GridSize,math.floor((i - 1)/GridSize)
         local ItemButton,ItemText = WhiteTextButtonFactory:Create()
         ItemButton.BackgroundTransparency = 0.25
         ItemButton.BorderTransparency = 1
         ItemButton.BorderSizeScale = 0
         ItemButton.AnchorPoint = Vector2.new(0.5,0.5)
-        ItemButton.Position = UDim2.new(GridItemSize * (((i - 1) % GridSize) + 0.5),0,GridItemSize * (math.floor((i - 1)/GridSize) + 0.5),0)
+        ItemButton.Position = UDim2.new(GridItemSize * (GridX + 0.5),0,GridItemSize * (GridY + 0.5),0)
         ItemButton.Size = UDim2.new(GridItemSize * 0.95,0,GridItemSize * 0.95,0)
         ItemButton.Parent = ItemGridAdorn
         ItemText:Destroy()
         table.insert(ItemButtons,ItemButton)
+        if not ItemButtonsGrid[GridX] then ItemButtonsGrid[GridX] = {} end
+        ItemButtonsGrid[GridX][GridY] = ItemButton.AdornFrame
+        ItemButtonsToId[ItemButton.AdornFrame] = i
 
         local Icon = ArmorIcon.new(ArmorIdToName[ArmorItem.Id])
         Icon.Size = UDim2.new(0.9,0,0.9,0)
@@ -310,6 +317,24 @@ function StorePrompt:__new()
     OpenArmor(1)
     self.AdornFrame:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateSize)
     UpdateSize()
+
+    --Set up the selection.
+    for X,Row in pairs(ItemButtonsGrid) do
+        for Y,Frame in pairs(Row) do
+            Frame.Selectable = true
+            Frame.NextSelectionUp = Row[Y - 1] or Frame
+            Frame.NextSelectionDown = Row[Y + 1] or Frame
+            Frame.NextSelectionLeft = ItemButtonsGrid[X - 1] and ItemButtonsGrid[X - 1][Y] or Frame
+            Frame.NextSelectionRight = ItemButtonsGrid[X + 1] and ItemButtonsGrid[X + 1][Y] or Frame
+            self.SelectionGroup:AddFrame(Frame)
+        end
+    end
+    self.SelectionGroup:SetFirstFrame(ItemButtons[1].AdornFrame)
+    GuiService:GetPropertyChangedSignal("SelectedObject"):Connect(function()
+        if GuiService.SelectedObject and ItemButtonsToId[GuiService.SelectedObject] then
+            OpenArmor(ItemButtonsToId[GuiService.SelectedObject])
+        end
+    end)
 end
 
 
