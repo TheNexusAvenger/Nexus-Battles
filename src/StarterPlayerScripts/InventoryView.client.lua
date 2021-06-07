@@ -72,7 +72,6 @@ for i,SlotName in pairs(PLAYER_INVENTORY_SLOTS) do
     HealthBackground.AnchorPoint = Vector2.new(0.5,0.5)
     HealthBackground.Size = UDim2.new(0.9,0,0.05,0)
     HealthBackground.Position = UDim2.new(0.5,0,i / (#PLAYER_INVENTORY_SLOTS + 1),0)
-    HealthBackground.ClipsDescendants = true
     HealthBackground.Parent = InventoryIcon.ViewportFrame
 
     local HealthBackgroundUICorner = Instance.new("UICorner")
