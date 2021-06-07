@@ -69,6 +69,8 @@ local function CurrentRoundChanged(CurrentRound)
 
     local ContinueButton,ContinueText = ContinueTextButtonFactory:Create()
     ContinueButton.AnchorPoint = Vector2.new(0.5,0)
+    ContinueButton:SetControllerIcon(Enum.KeyCode.ButtonX)
+    ContinueButton:MapKey(Enum.KeyCode.ButtonX,Enum.UserInputType.MouseButton1)
     ContinueButton.Parent = EndScreeenContainer
     ContinueText.Text = "CONTINUE"
 
