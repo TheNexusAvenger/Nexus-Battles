@@ -187,9 +187,11 @@ function InventoryPrompt:__new()
         SlotFrame.BackgroundTransparency = 0.5
         SlotFrame.BackgroundColor3 = Color3.new(1,1,1)
         SlotFrame.SizeConstraint = Enum.SizeConstraint.RelativeYY
+        SlotFrame.Selectable = true
         for Name,Value in pairs(FrameProperties) do
             SlotFrame[Name] = Value
         end
+        self.SelectionGroup:AddFrame(SlotFrame)
 
         local SlotFrameUICorner = Instance.new("UICorner")
         SlotFrameUICorner.CornerRadius = UDim.new(0.1,0)
@@ -296,6 +298,9 @@ function InventoryPrompt:__new()
         PlayerInventory.InventoryChanged:Connect(function()
             SlotFrameData:Update()
         end)
+
+        --Return the slot frame.
+        return SlotFrame
     end
 
     --[[
@@ -313,27 +318,11 @@ function InventoryPrompt:__new()
     end
 
     --Create the slots.
-    CreateItemSlot("Head",{
-        AnchorPoint = Vector2.new(1,0),
-        Size = UDim2.new(0.15,0,0.15,0),
-        Position = UDim2.new(1,0,0.025,0),
-        Parent = CharacterAdorn,
-    })
-    CreateItemSlot("Body",{
-        AnchorPoint = Vector2.new(1,0),
-        Size = UDim2.new(0.15,0,0.15,0),
-        Position = UDim2.new(1,0,0.225,0),
-        Parent = CharacterAdorn,
-    })
-    CreateItemSlot("Legs",{
-        AnchorPoint = Vector2.new(1,0),
-        Size = UDim2.new(0.15,0,0.15,0),
-        Position = UDim2.new(1,0,0.425,0),
-        Parent = CharacterAdorn,
-    })
+    local SlotFramesGrid = {}
     for Y = 1,INVENTORY_GRID_SIZE do
+        SlotFramesGrid[Y] = {}
         for X = 1,INVENTORY_GRID_SIZE do
-            CreateItemSlot(((Y - 1) * INVENTORY_GRID_SIZE) + X,{
+            SlotFramesGrid[Y][X] = CreateItemSlot(((Y - 1) * INVENTORY_GRID_SIZE) + X,{
                 AnchorPoint = Vector2.new(0.5,0.5),
                 Size = UDim2.new(0.9 * (1/INVENTORY_GRID_SIZE),0,0.9 * (1/INVENTORY_GRID_SIZE),0),
                 Position = UDim2.new((X - 0.5) * (1/INVENTORY_GRID_SIZE),0,(Y - 0.5) * (1/INVENTORY_GRID_SIZE),0),
@@ -341,6 +330,48 @@ function InventoryPrompt:__new()
             })
         end
     end
+    local HeadSlotFrame = CreateItemSlot("Head",{
+        AnchorPoint = Vector2.new(1,0),
+        Size = UDim2.new(0.15,0,0.15,0),
+        Position = UDim2.new(1,0,0.025,0),
+        Parent = CharacterAdorn,
+    })
+    local BodySlotFrame = CreateItemSlot("Body",{
+        AnchorPoint = Vector2.new(1,0),
+        Size = UDim2.new(0.15,0,0.15,0),
+        Position = UDim2.new(1,0,0.225,0),
+        Parent = CharacterAdorn,
+    })
+    local LegsSlotFrame = CreateItemSlot("Legs",{
+        AnchorPoint = Vector2.new(1,0),
+        Size = UDim2.new(0.15,0,0.15,0),
+        Position = UDim2.new(1,0,0.425,0),
+        Parent = CharacterAdorn,
+    })
+
+    --Set up the selection order.
+    for Y,Column in pairs(SlotFramesGrid) do
+        for X,Frame in pairs(Column) do
+            Frame.NextSelectionUp = (SlotFramesGrid[Y - 1] and SlotFramesGrid[Y - 1][X]) or Frame
+            Frame.NextSelectionDown = (SlotFramesGrid[Y + 1] and SlotFramesGrid[Y + 1][X]) or Frame
+            Frame.NextSelectionLeft = Column[X - 1] or LegsSlotFrame
+            Frame.NextSelectionRight = Column[X + 1] or Frame
+        end
+    end
+    SlotFramesGrid[1][1].NextSelectionLeft = HeadSlotFrame
+    SlotFramesGrid[2][1].NextSelectionLeft = BodySlotFrame
+    HeadSlotFrame.NextSelectionUp = HeadSlotFrame
+    HeadSlotFrame.NextSelectionDown = BodySlotFrame
+    HeadSlotFrame.NextSelectionLeft = HeadSlotFrame
+    HeadSlotFrame.NextSelectionRight = SlotFramesGrid[1][1]
+    BodySlotFrame.NextSelectionUp = HeadSlotFrame
+    BodySlotFrame.NextSelectionDown = LegsSlotFrame
+    BodySlotFrame.NextSelectionLeft = BodySlotFrame
+    BodySlotFrame.NextSelectionRight = SlotFramesGrid[2][1]
+    LegsSlotFrame.NextSelectionUp = BodySlotFrame
+    LegsSlotFrame.NextSelectionDown = LegsSlotFrame
+    LegsSlotFrame.NextSelectionLeft = LegsSlotFrame
+    LegsSlotFrame.NextSelectionRight = SlotFramesGrid[3][1]
 
     --Connect the mouse events.
     local CurrentHoveringSlotFrame = nil
