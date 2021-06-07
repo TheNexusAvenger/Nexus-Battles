@@ -10,7 +10,7 @@ local INVENTORY_GRID_SIZE = 5
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local MarketplaceService = game:GetService("MarketplaceService")
+local UserInputService = game:GetService("UserInputService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
@@ -30,7 +30,9 @@ InventoryPrompt:SetClassName("InventoryPrompt")
 --Create a dictionary of the armor ids to max health and model names.
 local ArmorMaxHealth = {}
 local ArmorModelNames = {}
+local ArmorDataLookup = {}
 for ArmorName,ArmorData in pairs(Armor) do
+    ArmorDataLookup[ArmorData.Id] = ArmorData
     ArmorMaxHealth[ArmorData.Id] = ArmorData.MaxHealth
     ArmorModelNames[ArmorData.Id] = ArmorName
 end
@@ -168,6 +170,7 @@ function InventoryPrompt:__new()
 
         --Set up the slot data.
         local SlotFrameData = {
+            Slot = SlotId,
             SlotFrame = SlotFrame,
             HealthBackground = HealthBackground,
             HealthFill = HealthFill,
@@ -184,6 +187,7 @@ function InventoryPrompt:__new()
             if typeof(Slot) == "number" then
                 Slot = Slot + (INVENTORY_GRID_SIZE * INVENTORY_GRID_SIZE * (CurrentPage - 1))
             end
+            self.Slot = Slot
             local Item = PlayerInventory:GetItemAtSlot(Slot)
 
             --Update the display.
@@ -285,6 +289,31 @@ function InventoryPrompt:__new()
             })
         end
     end
+
+    --Connect the mouse events.
+    local CurrentHoveringSlotFrame
+    UserInputService.InputChanged:Connect(function(Input)
+        if Input.UserInputType ~= Enum.UserInputType.MouseMovement then return end
+
+        --Update the current hovering frame.
+        CurrentHoveringSlotFrame = nil
+        for _,SlotFrame in pairs(SlotFrames) do
+            local FramePosition,FrameSize = SlotFrame.SlotFrame.AbsolutePosition,SlotFrame.SlotFrame.AbsoluteSize
+            if Input.Position.X >= FramePosition.X and Input.Position.X <= FramePosition.X + FrameSize.X and Input.Position.Y >= FramePosition.Y and Input.Position.Y <= FramePosition.Y + FrameSize.Y then
+                CurrentHoveringSlotFrame = SlotFrame
+            end
+        end
+
+        --Update the item information.
+        if CurrentHoveringSlotFrame and CurrentHoveringSlotFrame.CurrentItemId then
+            local ArmorData = ArmorDataLookup[CurrentHoveringSlotFrame.CurrentItemId]
+            ItemNameText.Text = ArmorData.Name
+            ItemDescriptionText.Text = ArmorData.Description
+        else
+            ItemNameText.Text = ""
+            ItemDescriptionText.Text = ""
+        end
+    end)
 
     --Connect closing.
     CloseButton.MouseButton1Down:Connect(function()
