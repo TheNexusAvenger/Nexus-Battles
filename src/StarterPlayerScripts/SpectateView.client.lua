@@ -87,6 +87,7 @@ local function CurrentSpectatorRoundChanged(CurrentRound)
     SpectateLeftButton.Size = UDim2.new(1,0,1,0)
     SpectateLeftButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
     SpectateLeftButton.Parent = CurrentPlayerText
+    SpectateLeftButton:MapKey(Enum.KeyCode.ButtonL1,Enum.UserInputType.MouseButton1)
     SpectateLeftButton:MapKey(Enum.KeyCode.Q,Enum.UserInputType.MouseButton1)
     SpectateLeftText.Text = "<"
 
@@ -95,6 +96,7 @@ local function CurrentSpectatorRoundChanged(CurrentRound)
     SpectateRightButton.Size = UDim2.new(1,0,1,0)
     SpectateRightButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
     SpectateRightButton.Parent = CurrentPlayerText
+    SpectateRightButton:MapKey(Enum.KeyCode.ButtonR1,Enum.UserInputType.MouseButton1)
     SpectateRightButton:MapKey(Enum.KeyCode.E,Enum.UserInputType.MouseButton1)
     SpectateRightText.Text = ">"
 
@@ -103,6 +105,8 @@ local function CurrentSpectatorRoundChanged(CurrentRound)
     ContinueButton.AnchorPoint = Vector2.new(0.5,0)
     ContinueButton.Size = UDim2.new(0.9 * (0.3 / 0.065),0,0.9,0)
     ContinueButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
+    ContinueButton:SetControllerIcon(Enum.KeyCode.ButtonB)
+    ContinueButton:MapKey(Enum.KeyCode.ButtonB,Enum.UserInputType.MouseButton1)
     ContinueButton.Parent = CurrentPlayerText
     ContinueText.Text = "EXIT"
 
