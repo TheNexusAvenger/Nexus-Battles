@@ -51,7 +51,7 @@ local InventoryButton,InventoryButtonText = TextButtonFactory:Create()
 InventoryButton.BackgroundTransparency = 0.99
 InventoryButton.BorderTransparency = 1
 InventoryButton.Size = UDim2.new(1,0,1,0)
-InventoryButton:MapKey(Enum.KeyCode.ButtonR3,Enum.UserInputType.MouseButton1)
+InventoryButton:MapKey(Enum.KeyCode.ButtonL3,Enum.UserInputType.MouseButton1)
 InventoryButton.Parent = InventoryIcon.ViewportFrame
 InventoryButtonText:Destroy()
 
