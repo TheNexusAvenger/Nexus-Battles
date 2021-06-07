@@ -173,7 +173,7 @@ function InventoryPrompt:__new()
         local MaxPage = math.ceil(MaxSlot / (INVENTORY_GRID_SIZE * INVENTORY_GRID_SIZE))
 
         --Clamp the current page and update the display.
-        CurrentPage = math.clamp(CurrentPage,0,MaxPage)
+        CurrentPage = math.clamp(CurrentPage,1,MaxPage)
         PageLeftButton.Visible = (CurrentPage ~= 1)
         PageRightButton.Visible = (CurrentPage ~= MaxPage)
         CurrentPageText.Visible = (MaxPage ~= 1)
