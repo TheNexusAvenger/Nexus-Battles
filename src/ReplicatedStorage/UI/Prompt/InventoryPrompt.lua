@@ -138,14 +138,14 @@ function InventoryPrompt:__new()
     local PageLeftButton,PageLeftText = BlueTextButtonFactory:Create()
     PageLeftButton.Size = UDim2.new(0.1,0,0.075,0)
     PageLeftButton.Position = UDim2.new(0.35,0,1,0)
-    PageLeftButton:MapKey(Enum.KeyCode.ButtonL2,Enum.UserInputType.MouseButton1)
+    PageLeftButton:MapKey(Enum.KeyCode.ButtonL1,Enum.UserInputType.MouseButton1)
     PageLeftButton.Parent = GridAdorn
     PageLeftText.Text = "<"
 
     local PageRightButton,PageRightText = BlueTextButtonFactory:Create()
     PageRightButton.Size = UDim2.new(0.1,0,0.075,0)
     PageRightButton.Position = UDim2.new(0.55,0,1,0)
-    PageRightButton:MapKey(Enum.KeyCode.ButtonR2,Enum.UserInputType.MouseButton1)
+    PageRightButton:MapKey(Enum.KeyCode.ButtonR1,Enum.UserInputType.MouseButton1)
     PageRightButton.Parent = GridAdorn
     PageRightText.Text = ">"
 
