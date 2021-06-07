@@ -30,6 +30,7 @@ function BasePrompt:__new(Name)
     local Container = Instance.new("ScreenGui")
     Container.Name = Name
     Container.ResetOnSpawn = false
+    Container.DisplayOrder = 3
     Container.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
     self.Container = Container
 
