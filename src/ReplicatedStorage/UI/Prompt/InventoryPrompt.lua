@@ -48,7 +48,7 @@ function InventoryPrompt:__new()
     --Create the prompt.
     local InventoryAdorn = Instance.new("Frame")
     InventoryAdorn.BackgroundTransparency = 1
-    InventoryAdorn.AnchorPoint = Vector2.new(0.5,0.5)
+    InventoryAdorn.AnchorPoint = Vector2.new(0.5,0.55)
     InventoryAdorn.Position = UDim2.new(0.5,0,0.5,0)
     InventoryAdorn.Size = UDim2.new(0.8 * (3/2),0,0.8,0)
     InventoryAdorn.SizeConstraint = Enum.SizeConstraint.RelativeYY
@@ -121,9 +121,61 @@ function InventoryPrompt:__new()
     GridAdorn.Position = UDim2.new(1/3,0,0,0)
     GridAdorn.Parent = InventoryAdorn
 
+    local CurrentPageText = Instance.new("TextLabel")
+    CurrentPageText.BackgroundTransparency = 1
+    CurrentPageText.Size = UDim2.new(0.1,0,0.075,0)
+    CurrentPageText.Position = UDim2.new(0.45,0,1,0)
+    CurrentPageText.Font = Enum.Font.SourceSansBold
+    CurrentPageText.TextScaled = true
+    CurrentPageText.TextColor3 = Color3.new(0,0,0)
+    CurrentPageText.TextStrokeColor3 = Color3.new(1,1,1)
+    CurrentPageText.TextStrokeTransparency = 0
+    CurrentPageText.Text = "1"
+    CurrentPageText.ZIndex = 5
+    CurrentPageText.TextYAlignment = Enum.TextYAlignment.Top
+    CurrentPageText.Parent = GridAdorn
+
+    local PageLeftButton,PageLeftText = BlueTextButtonFactory:Create()
+    PageLeftButton.Size = UDim2.new(0.1,0,0.075,0)
+    PageLeftButton.Position = UDim2.new(0.35,0,1,0)
+    PageLeftButton:MapKey(Enum.KeyCode.ButtonL2,Enum.UserInputType.MouseButton1)
+    PageLeftButton.Parent = GridAdorn
+    PageLeftText.Text = "<"
+
+    local PageRightButton,PageRightText = BlueTextButtonFactory:Create()
+    PageRightButton.Size = UDim2.new(0.1,0,0.075,0)
+    PageRightButton.Position = UDim2.new(0.55,0,1,0)
+    PageRightButton:MapKey(Enum.KeyCode.ButtonR2,Enum.UserInputType.MouseButton1)
+    PageRightButton.Parent = GridAdorn
+    PageRightText.Text = ">"
+
     local SlotFrames = {}
     local CurrentPage = 1
     local PlayerInventory = ClientInventory.new(Players.LocalPlayer:WaitForChild("PersistentStats"):WaitForChild("Inventory"))
+
+    --[[
+    Updates the page display.
+    --]]
+    local function UpdatePages()
+        --Determine the max slot and max pages.
+        local MaxSlot = 1
+        for _,ArmorData in pairs(PlayerInventory.Inventory) do
+            if typeof(ArmorData.Slot) == "number" then
+                MaxSlot = math.max(MaxSlot,ArmorData.Slot)
+            end
+        end
+        local MaxPage = math.ceil(MaxSlot / (INVENTORY_GRID_SIZE * INVENTORY_GRID_SIZE))
+
+        --Clamp the current page and update the display.
+        CurrentPage = math.clamp(CurrentPage,0,MaxPage)
+        PageLeftButton.Visible = (CurrentPage ~= 1)
+        PageRightButton.Visible = (CurrentPage ~= MaxPage)
+        CurrentPageText.Visible = (MaxPage ~= 1)
+        CurrentPageText.Text = tostring(CurrentPage)
+        for _,SlotFrame in pairs(SlotFrames) do
+            SlotFrame:Update()
+        end
+    end
 
     --[[
     Creates an item slot.
@@ -365,6 +417,20 @@ function InventoryPrompt:__new()
         PlayerInventory:SwapItems(CurrentHoveringSlotFrame.Slot,InitialDragFrame.Slot)
         InitialDragFrame = nil
     end)
+
+    --Connect changing pages.
+    PageLeftButton.MouseButton1Down:Connect(function()
+        CurrentPage = CurrentPage - 1
+        UpdatePages()
+    end)
+    PageRightButton.MouseButton1Down:Connect(function()
+        CurrentPage = CurrentPage + 1
+        UpdatePages()
+    end)
+    PlayerInventory.InventoryChanged:Connect(function()
+        UpdatePages()
+    end)
+    UpdatePages()
 
     --Connect closing.
     CloseButton.MouseButton1Down:Connect(function()
