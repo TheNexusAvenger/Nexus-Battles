@@ -10,6 +10,7 @@ local INVENTORY_GRID_SIZE = 5
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local GuiService = game:GetService("GuiService")
 local UserInputService = game:GetService("UserInputService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
@@ -149,7 +150,12 @@ function InventoryPrompt:__new()
     PageRightButton.Parent = GridAdorn
     PageRightText.Text = ">"
 
+    local CurrentHoveringSlotFrame = nil
+    local InitialDragFrame = nil
+    local InitialDragSlot = nil
+    local MovingItemFrame = nil
     local SlotFrames = {}
+    local SlotFrameLookup = {}
     local CurrentPage = 1
     local PlayerInventory = ClientInventory.new(Players.LocalPlayer:WaitForChild("PersistentStats"):WaitForChild("Inventory"))
 
@@ -227,9 +233,10 @@ function InventoryPrompt:__new()
             SlotFrame = SlotFrame,
             HealthBackground = HealthBackground,
             HealthFill = HealthFill,
-            Visible = true,
+            HiddenForSlotible = nil,
         }
         SlotFrames[SlotId] = SlotFrameData
+        SlotFrameLookup[SlotFrame] = SlotFrameData
 
         --[[
         Updates the displayed item.
@@ -256,11 +263,12 @@ function InventoryPrompt:__new()
                     self.ArmorIcon.Position = UDim2.new(0.05,0,0.05,0)
                     self.ArmorIcon.Parent = self.SlotFrame
                 end
-                self.ArmorIcon.Visible = self.Visible
+                local Visible = (self.HiddenForSlot ~= self.Slot)
+                self.ArmorIcon.Visible = Visible
 
                 --Update the health.
                 if Item.Health and ArmorMaxHealth[Item.Id] then
-                    self.HealthBackground.Visible = self.Visible
+                    self.HealthBackground.Visible = Visible
                     self.HealthFill.Size = UDim2.new(Item.Health/ArmorMaxHealth[Item.Id],0,1,0)
                 else
                     self.HealthBackground.Visible = false
@@ -280,7 +288,7 @@ function InventoryPrompt:__new()
         Shows the slot.
         --]]
         function SlotFrameData:Show()
-            self.Visible = true
+            self.HiddenForSlot = nil
             self:Update()
         end
 
@@ -288,7 +296,7 @@ function InventoryPrompt:__new()
         Hides the slot.
         --]]
         function SlotFrameData:Hide()
-            self.Visible = false
+            self.HiddenForSlot = self.Slot
             self:Update()
         end
 
@@ -300,6 +308,91 @@ function InventoryPrompt:__new()
 
         --Return the slot frame.
         return SlotFrame
+    end
+
+    --[[
+    Sets the hovered frame.
+    --]]
+    local function SetHoveredFrame(Frame)
+        CurrentHoveringSlotFrame = Frame
+
+        --Update the item information.
+        if CurrentHoveringSlotFrame and CurrentHoveringSlotFrame.CurrentItemId then
+            local ArmorData = ArmorDataLookup[CurrentHoveringSlotFrame.CurrentItemId]
+            ItemNameText.Text = ArmorData.Name
+            ItemDescriptionText.Text = ArmorData.Description
+        else
+            ItemNameText.Text = ""
+            ItemDescriptionText.Text = ""
+        end
+    end
+
+    --[[
+    Cancels dragging the current item.
+    --]]
+    local function CancelDragging(IgnoreCloseButton)
+        if IgnoreCloseButton ~= true then
+            --Delay showing the close button (leads to closing after pressing B).
+            delay(0,function()
+                CloseButton.Visible = true
+            end)
+        end
+
+        --End the existing drag if one exists.
+        if InitialDragFrame then
+            InitialDragFrame:Show()
+            InitialDragFrame = nil
+        end
+        if MovingItemFrame then
+            MovingItemFrame:Destroy()
+            MovingItemFrame = nil
+        end
+        InitialDragSlot = nil
+    end
+
+    --[[
+    Starts dragging an item at the starting slot.
+    --]]
+    local function StartDragging(StartX,StartY)
+        --End the existing drag if one exists.
+        CancelDragging(true)
+        if not CurrentHoveringSlotFrame or not CurrentHoveringSlotFrame.CurrentItemId then return end
+
+        --Start dragging.
+        InitialDragFrame = CurrentHoveringSlotFrame
+        InitialDragSlot = CurrentHoveringSlotFrame.Slot
+        CurrentHoveringSlotFrame:Hide()
+        MovingItemFrame = ArmorIcon.new(ArmorModelNames[CurrentHoveringSlotFrame.CurrentItemId])
+        MovingItemFrame.AnchorPoint = Vector2.new(0.5,0.5)
+        MovingItemFrame.Size = UDim2.new(0,CurrentHoveringSlotFrame.SlotFrame.AbsoluteSize.X,0,CurrentHoveringSlotFrame.SlotFrame.AbsoluteSize.Y)
+        MovingItemFrame.Position = UDim2.new(0,StartX,0,StartY)
+        MovingItemFrame.Parent = self.AdornFrame
+    end
+
+    --[[
+    Stops dragging the current item.
+    --]]
+    local function StopDragging()
+        CloseButton.Visible = true
+
+        --End the existing drag if one exists.
+        if InitialDragFrame then
+            InitialDragFrame:Show()
+        end
+        if MovingItemFrame then
+            MovingItemFrame:Destroy()
+            MovingItemFrame = nil
+        end
+        if not CurrentHoveringSlotFrame or not InitialDragFrame then
+            InitialDragFrame = nil
+            InitialDragSlot = nil
+            return
+        end
+
+        --Attempt to swap the slots.
+        PlayerInventory:SwapItems(CurrentHoveringSlotFrame.Slot,InitialDragSlot)
+        InitialDragFrame = nil
+        InitialDragSlot = nil
     end
 
     --[[
@@ -373,79 +466,74 @@ function InventoryPrompt:__new()
     LegsSlotFrame.NextSelectionRight = SlotFramesGrid[3][1]
 
     --Connect the mouse events.
-    local CurrentHoveringSlotFrame = nil
-    local InitialDragFrame = nil
-    local MovingItemFrame = nil
     UserInputService.InputChanged:Connect(function(Input)
         if Input.UserInputType ~= Enum.UserInputType.MouseMovement then return end
 
         --Update the current hovering frame.
-        CurrentHoveringSlotFrame = nil
+        local NewHoveringSlotFrame = nil
         for _,SlotFrame in pairs(SlotFrames) do
             local FramePosition,FrameSize = SlotFrame.SlotFrame.AbsolutePosition,SlotFrame.SlotFrame.AbsoluteSize
             if Input.Position.X >= FramePosition.X and Input.Position.X <= FramePosition.X + FrameSize.X and Input.Position.Y >= FramePosition.Y and Input.Position.Y <= FramePosition.Y + FrameSize.Y then
-                CurrentHoveringSlotFrame = SlotFrame
+                NewHoveringSlotFrame = SlotFrame
             end
         end
-
-        --Update the item information.
-        if CurrentHoveringSlotFrame and CurrentHoveringSlotFrame.CurrentItemId then
-            local ArmorData = ArmorDataLookup[CurrentHoveringSlotFrame.CurrentItemId]
-            ItemNameText.Text = ArmorData.Name
-            ItemDescriptionText.Text = ArmorData.Description
-        else
-            ItemNameText.Text = ""
-            ItemDescriptionText.Text = ""
-        end
+        SetHoveredFrame(NewHoveringSlotFrame)
 
         --Update the drag frame.
         if MovingItemFrame then
             MovingItemFrame.Position = UDim2.new(0,Input.Position.X,0,Input.Position.Y)
         end
+
+        --Show the close button (may override controller selection).
+        CloseButton.Visible = true
     end)
     UserInputService.InputBegan:Connect(function(Input,Processed)
         if Processed then return end
         if Input.UserInputType ~= Enum.UserInputType.MouseButton1 then return end
-
-        --End the existing drag if one exists.
-        if InitialDragFrame then
-            InitialDragFrame:Show()
-            InitialDragFrame = nil
-        end
-        if MovingItemFrame then
-            MovingItemFrame:Destroy()
-            MovingItemFrame = nil
-        end
-        if not CurrentHoveringSlotFrame or not CurrentHoveringSlotFrame.CurrentItemId then return end
-
-        --Start dragging.
-        InitialDragFrame = CurrentHoveringSlotFrame
-        CurrentHoveringSlotFrame:Hide()
-        MovingItemFrame = ArmorIcon.new(ArmorModelNames[CurrentHoveringSlotFrame.CurrentItemId])
-        MovingItemFrame.AnchorPoint = Vector2.new(0.5,0.5)
-        MovingItemFrame.Size = UDim2.new(0,CurrentHoveringSlotFrame.SlotFrame.AbsoluteSize.X,0,CurrentHoveringSlotFrame.SlotFrame.AbsoluteSize.Y)
-        MovingItemFrame.Position = UDim2.new(0,Input.Position.X,0,Input.Position.Y)
-        MovingItemFrame.Parent = self.AdornFrame
+        StartDragging(Input.Position.X,Input.Position.Y)
     end)
     UserInputService.InputEnded:Connect(function(Input)
         if Input.UserInputType ~= Enum.UserInputType.MouseButton1 then return end
+        StopDragging()
+    end)
 
-        --End the existing drag if one exists.
-        if InitialDragFrame then
-            InitialDragFrame:Show()
-        end
-        if MovingItemFrame then
-            MovingItemFrame:Destroy()
-            MovingItemFrame = nil
-        end
-        if not CurrentHoveringSlotFrame or not InitialDragFrame then
-            InitialDragFrame = nil
-            return
-        end
+    --Connect the gamepad events.
+    UserInputService.InputBegan:Connect(function(Input,Processed)
+        if not self:IsOpen() then return end
+        if Processed then return end
 
-        --Attempt to swap the slots.
-        PlayerInventory:SwapItems(CurrentHoveringSlotFrame.Slot,InitialDragFrame.Slot)
-        InitialDragFrame = nil
+        if Input.KeyCode == Enum.KeyCode.ButtonX and CurrentHoveringSlotFrame then
+            --Hide the close button.
+            CloseButton.Visible = false
+
+            if InitialDragFrame then
+                --Stop dragging the current frame.
+                StopDragging()
+            else
+                --Start dragging the current frame.
+                local SlotFrame = CurrentHoveringSlotFrame
+                if SlotFrame then
+                    local SlotFramePosition,SlotFrameSize = SlotFrame.SlotFrame.AbsolutePosition,SlotFrame.SlotFrame.AbsoluteSize
+                    StartDragging(SlotFramePosition.X + (SlotFrameSize.X/2),SlotFramePosition.Y + (SlotFrameSize.Y/2))
+                end
+            end
+        elseif Input.KeyCode == Enum.KeyCode.ButtonB then
+            --Cancel the dragging.
+            CancelDragging()
+        end
+    end)
+    GuiService:GetPropertyChangedSignal("SelectedObject"):Connect(function()
+        if GuiService.SelectedObject and SlotFrameLookup[GuiService.SelectedObject] then
+            --Set the hovered frame.
+            SetHoveredFrame(SlotFrameLookup[GuiService.SelectedObject])
+
+            --Update the dragging item position.
+            local SlotFrame = CurrentHoveringSlotFrame
+            if MovingItemFrame and SlotFrame then
+                local SlotFramePosition,SlotFrameSize = SlotFrame.SlotFrame.AbsolutePosition,SlotFrame.SlotFrame.AbsoluteSize
+                MovingItemFrame.Position = UDim2.new(0,SlotFramePosition.X + (SlotFrameSize.X/2),0,SlotFramePosition.Y + (SlotFrameSize.Y/2))
+            end
+        end
     end)
 
     --Connect changing pages.
@@ -466,7 +554,7 @@ function InventoryPrompt:__new()
 
     --Connect closing.
     CloseButton.MouseButton1Down:Connect(function()
-        if not self:IsOpen() then return end
+        if not CloseButton.Visible or not self:IsOpen() then return end
         self:Close()
     end)
 
