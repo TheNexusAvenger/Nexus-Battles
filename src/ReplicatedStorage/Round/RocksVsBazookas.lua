@@ -38,7 +38,7 @@ end
 Starts the round.
 --]]
 function RocksVsBazookas:RoundStarted()
-    --At this point, Pegboard Nerds - Swamp Thing would stop playing since it
+    --At this point, Pegboard Nerds - Swamp Thing would start playing since it
     --was the background music used as part of the initial game jam this game
     --mode came from. However, this audio is not available to video creators to
     --safely use in videos, and I can't get permission to use the audio for free.
