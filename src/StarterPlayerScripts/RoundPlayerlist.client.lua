@@ -8,6 +8,7 @@ Does not handle the end of rounds.
 local STAT_TEXT_ASPECT_RATIO = 1.8
 local USERNAME_SIZE_ASPECT_RATIO = 8
 local LEADERBOARD_ENTRY_HEIGHT_RELATIVE = 0.035
+local MINIMUM_LEADERSTAT_HEIGHT = 24
 local MAX_SCREEN_WIDTH_RELATIVE = 0.2
 local TRIANGLE_ASPECT_RATIO = 0.2
 
@@ -83,7 +84,7 @@ local function CurrentRoundChanged(CurrentRound)
         local StatsWidth,UsernameWidth = LeaderstatsEntrySizeY * CurrentPlayerlist.TotalStats * STAT_TEXT_ASPECT_RATIO,LeaderstatsEntrySizeY * USERNAME_SIZE_ASPECT_RATIO
         local TotalWidth = StatsWidth + UsernameWidth
         local MaxWidth = ScreenSize.X * MAX_SCREEN_WIDTH_RELATIVE
-        local SizeMultiplier = math.min(MaxWidth/TotalWidth,1)
+        local SizeMultiplier = math.min(MaxWidth/TotalWidth,1) * math.max(MINIMUM_LEADERSTAT_HEIGHT/LeaderstatsEntrySizeY,1)
         PlayerListAdorn.Size = UDim2.new(0,TotalWidth * SizeMultiplier,0,LeaderstatsEntrySizeY * SizeMultiplier)
         PlayerListAdorn.AnchorPoint = Vector2.new(1 - ((TRIANGLE_ASPECT_RATIO * LeaderstatsEntrySizeY)/TotalWidth),0)
     end
