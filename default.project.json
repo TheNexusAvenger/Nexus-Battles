@@ -15,7 +15,7 @@
                 "Ambient": [0.5,0.5,0.5],
                 "OutdoorAmbient": [0.5,0.5,0.5],
                 "Brightness": 2,
-                "GlobalShaddows": true,
+                "GlobalShadows": true,
                 "Technology": {
                     "Type": "Enum",
                     "Value": 4
@@ -61,6 +61,13 @@
         "ServerStorage": {
             "$className": "ServerStorage",
             "$path": "src/ServerStorage"
+        },
+        "StarterGui": {
+            "$className": "StarterGui",
+            "$path": "src/StarterGui",
+            "$properties": {
+                "ScreenOrientation": "Sensor"
+            }
         },
         "StarterPlayer": {
             "$className": "StarterPlayer",
