@@ -84,14 +84,18 @@ local function CurrentRoundChanged(CurrentRound)
         local StatsWidth,UsernameWidth = LeaderstatsEntrySizeY * CurrentPlayerlist.TotalStats * STAT_TEXT_ASPECT_RATIO,LeaderstatsEntrySizeY * USERNAME_SIZE_ASPECT_RATIO
         local TotalWidth = StatsWidth + UsernameWidth
         local MaxWidth = ScreenSize.X * MAX_SCREEN_WIDTH_RELATIVE
-        local SizeMultiplier = math.min(MaxWidth/TotalWidth,1) * math.max(MINIMUM_LEADERSTAT_HEIGHT/LeaderstatsEntrySizeY,1)
+        local SizeMultiplier = math.min(MaxWidth/TotalWidth,1)
+        if SizeMultiplier * LeaderstatsEntrySizeY < MINIMUM_LEADERSTAT_HEIGHT then
+            SizeMultiplier = MINIMUM_LEADERSTAT_HEIGHT/LeaderstatsEntrySizeY
+        end
         PlayerListAdorn.Size = UDim2.new(0,TotalWidth * SizeMultiplier,0,LeaderstatsEntrySizeY * SizeMultiplier)
         PlayerListAdorn.AnchorPoint = Vector2.new(1 - ((TRIANGLE_ASPECT_RATIO * LeaderstatsEntrySizeY)/TotalWidth),0)
+        PlayerListAdorn.Visible = (TotalWidth * SizeMultiplier <= ScreenSize.X * 2/5)
     end
 
     --Connect the size-related events.
     CurrentPlayerlist:GetPropertyChangedSignal("TotalStats"):Connect(UpdateAdornSize)
-    PlayerListAdorn:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateAdornSize)
+    PlayerListContainer:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateAdornSize)
     UpdateAdornSize()
 
     --Connect the round events.
