@@ -7,7 +7,7 @@ Maps that can be used.
 return {
     Bloxburg = {
         DisplayName = "Bloxburg",
-        GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordElimination","TeamDeathmatch","TeamSwap","CaptureTheFlag",},
+        GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordElimination","TeamDeathmatch","TeamSwap","CaptureTheFlag","RocksVsBazookas",},
         ImageId = 6870148067,
         Lighting = {
             Ambient = Color3.new(70/255,70/255,70/255),
@@ -18,7 +18,7 @@ return {
     },
     Crossroads = {
         DisplayName = "Crossroads",
-        GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordElimination","TeamDeathmatch","TeamSwap",},
+        GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordElimination","TeamDeathmatch","TeamSwap","RocksVsBazookas",},
         ImageId = 6870148792,
         Lighting = {
             Ambient = Color3.new(75/255,75/255,75/255),
@@ -30,7 +30,7 @@ return {
     },
     RavenRock = {
         DisplayName = "Raven Rock",
-        GameTypes = {"FreeForAll","OneWeaponSword","OneWeaponBomb","OneWeaponSuperball","OneWeaponRocketLauncher","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordElimination","TeamDeathmatch","TeamSwap",},
+        GameTypes = {"FreeForAll","OneWeaponSword","OneWeaponBomb","OneWeaponSuperball","OneWeaponRocketLauncher","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordElimination","TeamDeathmatch","TeamSwap","RocksVsBazookas",},
         ImageId = 6870151969,
         Lighting = {
             Ambient = Color3.new(75/255,75/255,75/255),
@@ -42,7 +42,7 @@ return {
     },
     Skylands = {
         DisplayName = "Skylands",
-        GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordSwept","TeamDeathmatch","TeamSwap","CaptureTheFlag",},
+        GameTypes = {"FreeForAll","OneWeaponRocketLauncher","OneWeaponSuperball","OneWeaponMadness","Party","BurnDown","Juggernaut","SwordSwept","TeamDeathmatch","TeamSwap","CaptureTheFlag","RocksVsBazookas",},
         ImageId = 6870157692,
         Lighting = {
             Ambient = Color3.new(80/255,80/255,80/255),

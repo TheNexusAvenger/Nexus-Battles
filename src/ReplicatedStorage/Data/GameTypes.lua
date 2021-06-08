@@ -148,4 +148,15 @@ return {
         MaxPlayers = DEFAULT_MAX_PLAYERS_4_TEAMS,
         RoundClass = "Round.TeamDestruction",
     },
+    RocksVsBazookas = {
+        --This round is an Easter Egg. This round type existed in Roblox Battle Remastered
+        --after a game jam that involved 1 team playing as David Bazooka and 1 team playing
+        --as Rock Haak. The round exists as a joke and may not be perfectly balanced.
+        DisplayName = "???",
+        Description = "Rocks vs Bazookas!",
+        RequiredPlayers = DEFAULT_REQUIRED_PLAYERS_TEAMS,
+        MaxPlayers = DEFAULT_MAX_PLAYERS_4_TEAMS,
+        RoundClass = "Round.RocksVsBazookas",
+        Hidden = true,
+    },
 }

@@ -99,6 +99,16 @@ if game.PlaceId == 6341211542 then
             [Enum.HumanoidRigType.R15] = ASSET_URL.."2960990006",
         },
 
+        --Dual Rocks
+        ["DualRocksHold"] = {
+            [Enum.HumanoidRigType.R6] = ASSET_URL.."259440107",
+            [Enum.HumanoidRigType.R15] = ASSET_URL.."6927333835",
+        },
+        ["DualRocksThrow"] = {
+            [Enum.HumanoidRigType.R6] = ASSET_URL.."259438880",
+            [Enum.HumanoidRigType.R15] = ASSET_URL.."6927337123",
+        },
+
         --Lobby Flag
         ["FlagPlant"] = {
             [Enum.HumanoidRigType.R6] = ASSET_URL.."74897796",
@@ -192,6 +202,16 @@ else
         ["SwordOverhead"] = {
             [Enum.HumanoidRigType.R6] = ASSET_URL.."94160738",
             [Enum.HumanoidRigType.R15] = ASSET_URL.."2117142586",
+        },
+
+        --Dual Rocks
+        ["DualRocksHold"] = {
+            [Enum.HumanoidRigType.R6] = ASSET_URL.."259440107",
+            [Enum.HumanoidRigType.R15] = ASSET_URL.."6927334794",
+        },
+        ["DualRocksThrow"] = {
+            [Enum.HumanoidRigType.R6] = ASSET_URL.."259438880",
+            [Enum.HumanoidRigType.R15] = ASSET_URL.."6927338148",
         },
 
         --Lobby Flag

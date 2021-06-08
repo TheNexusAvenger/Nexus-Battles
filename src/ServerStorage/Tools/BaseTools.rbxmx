@@ -2,7 +2,7 @@
 	<Meta name="ExplicitAutoJoints">true</Meta>
 	<External>null</External>
 	<External>nil</External>
-	<Item class="Model" referent="RBX0880F832CB1148E0841635D4DCF3B8C2">
+	<Item class="Model" referent="RBX42671A79DE7449EDB238455CAC93274B">
 		<Properties>
 			<BinaryString name="AttributesSerialize"></BinaryString>
 			<token name="LevelOfDetail">0</token>
@@ -41,11 +41,28 @@
 				<Z>0</Z>
 			</Vector3>
 			<string name="Name">BaseTools</string>
+			<bool name="NeedsPivotMigration">false</bool>
 			<Ref name="PrimaryPart">null</Ref>
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
+			<OptionalCoordinateFrame name="WorldPivotData">
+				<CFrame>
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CFrame>
+			</OptionalCoordinateFrame>
 		</Properties>
-		<Item class="Tool" referent="RBXB0DE6D9457BF4A96BEDA0D1D1BEFF3B0">
+		<Item class="Tool" referent="RBXBFB72AC19EC948E98CFB97569049D007">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<bool name="CanBeDropped">false</bool>
@@ -72,7 +89,7 @@
 				<Content name="TextureId"><url>http://www.roblox.com/asset/?id=94690231</url></Content>
 				<string name="ToolTip">Bomb</string>
 			</Properties>
-			<Item class="Part" referent="RBX3E21A645CA5F484ABACD826E37F3CFA4">
+			<Item class="Part" referent="RBX5C8EBA6A453F4249AF4543961AE07FCB">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -118,6 +135,20 @@
 					<bool name="Massless">false</bool>
 					<token name="Material">256</token>
 					<string name="Name">Handle</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
 					<float name="Reflectance">0</float>
 					<float name="RightParamA">-0.5</float>
 					<float name="RightParamB">0.5</float>
@@ -149,7 +180,7 @@
 						<Z>2</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX3E02AA47448041D8A41412F136BFD0E9">
+				<Item class="SpecialMesh" referent="RBX076350004E3C4DFE8FEAC55763B2994C">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -177,7 +208,7 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="PointLight" referent="RBXA3D95FB307F646B8B282D1B35B9AD3C0">
+				<Item class="PointLight" referent="RBX6A6A65BF4A1E4A269CED7B5B711B94E7">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="Brightness">1</float>
@@ -194,7 +225,7 @@
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBXE3E59E650F4044688CC204DF99A78306">
+				<Item class="Sound" referent="RBXF4628DFE1DAA449680DF77BF8F348C51">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -215,7 +246,7 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Tool" referent="RBX9B4CE1C8D58746859017EF86472B81A9">
+		<Item class="Tool" referent="RBXE23CFF400DD84FA98EF05C859C4AFDAB">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<bool name="CanBeDropped">false</bool>
@@ -242,7 +273,7 @@
 				<Content name="TextureId"><url>http://www.roblox.com/asset/?id=99865835</url></Content>
 				<string name="ToolTip">Clean Sweep</string>
 			</Properties>
-			<Item class="Part" referent="RBXF8BE810E1BB14FEDBF0909585B504726">
+			<Item class="Part" referent="RBX2C2AE6C9252C439682E6DE0DFA62D571">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -288,6 +319,20 @@
 					<bool name="Massless">false</bool>
 					<token name="Material">256</token>
 					<string name="Name">Handle</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
 					<float name="Reflectance">0</float>
 					<float name="RightParamA">-0.5</float>
 					<float name="RightParamB">0.5</float>
@@ -319,7 +364,7 @@
 						<Z>0.600000024</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBXB729EAD9FE1F4C01B6461B4F54DCA006">
+				<Item class="SpecialMesh" referent="RBXA5E5C2CD21CB40F78A6BE5B532E804EC">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -347,7 +392,7 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBX8EB1BF5826FC442EB4932EB48FA064DC">
+				<Item class="Sound" referent="RBX886C5BC8B23A4D6798BA8093CDE683F6">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -366,7 +411,7 @@
 						<float name="xmlRead_MaxDistance_3">10000</float>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBXCB27EFE2FAED45179D865EFEBE589B3A">
+				<Item class="Sound" referent="RBX194866EBDC7740408FE7DC8D64401C54">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -387,7 +432,7 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Tool" referent="RBXE710FB96B624462A9FBB0207602B172D">
+		<Item class="Tool" referent="RBX588A0343B1D94EABA30B4FF28B5A531F">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<bool name="CanBeDropped">false</bool>
@@ -414,7 +459,7 @@
 				<Content name="TextureId"><url>http://www.roblox.com/asset/?id=94878549</url></Content>
 				<string name="ToolTip">Reflector</string>
 			</Properties>
-			<Item class="Part" referent="RBX834BC15917F34690AB3112CACBDBEA76">
+			<Item class="Part" referent="RBX095BEAB85A424A048AF4AD14884C8031">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -460,6 +505,20 @@
 					<bool name="Massless">false</bool>
 					<token name="Material">256</token>
 					<string name="Name">Handle</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
 					<float name="Reflectance">0</float>
 					<float name="RightParamA">-0.5</float>
 					<float name="RightParamB">0.5</float>
@@ -491,7 +550,7 @@
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX3FFAF79295D64C0F8876AE39FE75CCC6">
+				<Item class="SpecialMesh" referent="RBXDB5B2B58FACD48BB8CA0221A6E8F6FD9">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -519,7 +578,7 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBXAFAC25AD56774C9BA959A2F665B31BDE">
+				<Item class="Sound" referent="RBX7D95A5705A604F6FB1A392C3420A54EA">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -540,7 +599,7 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Tool" referent="RBXFB0204E7413F4B16AEC3EB34B448DF81">
+		<Item class="Tool" referent="RBXC5DD4C3251CB48BBAEBCD1BFD081E5CC">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<bool name="CanBeDropped">false</bool>
@@ -567,7 +626,7 @@
 				<Content name="TextureId"><url>http://www.roblox.com/asset/?id=94689922</url></Content>
 				<string name="ToolTip">Rocket Launcher</string>
 			</Properties>
-			<Item class="Part" referent="RBX04A670BB5DAE416BBB0D93FC9E4A71CD">
+			<Item class="Part" referent="RBX2ED08CF4168D4D4383EA0C11EA9AE82F">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -613,6 +672,20 @@
 					<bool name="Massless">false</bool>
 					<token name="Material">256</token>
 					<string name="Name">Handle</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
 					<float name="Reflectance">0</float>
 					<float name="RightParamA">-0.5</float>
 					<float name="RightParamB">0.5</float>
@@ -644,7 +717,7 @@
 						<Z>3.55000019</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX2CE8C18DBD4C49F58AEC974269CE74C6">
+				<Item class="SpecialMesh" referent="RBX04A5832417444BAE8D6616619B214EA1">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -672,7 +745,7 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBX71F84AD4AD4F4F8291F829E6E3065752">
+				<Item class="Sound" referent="RBX9C25D05F2EF247A0852647CBDFE8AA70">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -691,7 +764,7 @@
 						<float name="xmlRead_MaxDistance_3">10000</float>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBX19A13F9318204E02AFE9C263E7E09634">
+				<Item class="Sound" referent="RBXEFBAC4D0C9684386975EF2EF016012D7">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -712,7 +785,7 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Tool" referent="RBXA9EEF910308C43949BE17CC52525B42D">
+		<Item class="Tool" referent="RBX8D5CD2C6BCD94C04BEA812320C55BA61">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<bool name="CanBeDropped">false</bool>
@@ -739,7 +812,7 @@
 				<Content name="TextureId"><url>http://www.roblox.com/asset/?id=94689365</url></Content>
 				<string name="ToolTip">Slingshot</string>
 			</Properties>
-			<Item class="Part" referent="RBX51CBF0471BE6485D9CB389D8319A3DC8">
+			<Item class="Part" referent="RBX6CF626C41E16465888FF296C028555E1">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -785,6 +858,20 @@
 					<bool name="Massless">false</bool>
 					<token name="Material">256</token>
 					<string name="Name">Handle</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
 					<float name="Reflectance">0</float>
 					<float name="RightParamA">-0.5</float>
 					<float name="RightParamB">0.5</float>
@@ -816,7 +903,7 @@
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX672AAC477B5749D3A470490D15F9A101">
+				<Item class="SpecialMesh" referent="RBX420CDB31D3DF4F688D6B06ED03D9E45C">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -844,7 +931,7 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBX2C6950D0704743D68249FADF28EC92A5">
+				<Item class="Sound" referent="RBXE97E6820582A4884B7A6E4135E3174EF">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -863,7 +950,7 @@
 						<float name="xmlRead_MaxDistance_3">10000</float>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBX5428431A0FE74C2CBD0A6AFDF8E39A74">
+				<Item class="Sound" referent="RBXB351021D102A4BF6B9E5973C566F5EDD">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -882,7 +969,7 @@
 						<float name="xmlRead_MaxDistance_3">10000</float>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBX39C00B9D4A65409B9C96444CD01E8C38">
+				<Item class="Sound" referent="RBX543FD5F4CFE34213BDE2CB9D75D7ADD6">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -901,7 +988,7 @@
 						<float name="xmlRead_MaxDistance_3">10000</float>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBX58BAF713C97E406AA2E9E950B3C8F518">
+				<Item class="Sound" referent="RBX007CD78438D84546961B0483D4F4DC1F">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -922,7 +1009,7 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Tool" referent="RBX37294389EABB4330BE29B095ACC44A66">
+		<Item class="Tool" referent="RBXF410793E07DF46DFB1FEDBD03D68397F">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<bool name="CanBeDropped">false</bool>
@@ -949,7 +1036,7 @@
 				<Content name="TextureId"><url>http://www.roblox.com/asset/?id=96508620</url></Content>
 				<string name="ToolTip">Superball</string>
 			</Properties>
-			<Item class="Part" referent="RBX0578AB688E8045A3B98EB3A7B612710A">
+			<Item class="Part" referent="RBX37E18CF303C04F76BDABE135550FE96E">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1000,6 +1087,20 @@
 					<bool name="Massless">false</bool>
 					<token name="Material">256</token>
 					<string name="Name">Handle</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
 					<float name="Reflectance">0.200000003</float>
 					<float name="RightParamA">-0.5</float>
 					<float name="RightParamB">0.5</float>
@@ -1031,7 +1132,7 @@
 						<Z>2</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBX31A24670D1944B4594780B626165E2C2">
+				<Item class="SpecialMesh" referent="RBX5A50161B33BE4FBE916F53A9AB937C32">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -1059,7 +1160,7 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBX2965157FA02A4C49A2A9585769181082">
+				<Item class="Sound" referent="RBX42C3F76912FA4E4A81A36281665AC15F">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -1078,7 +1179,7 @@
 						<float name="xmlRead_MaxDistance_3">10000</float>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBX4EF08696B9EE42BCB51AA5AF26EBCBB3">
+				<Item class="Sound" referent="RBX2DC645B31071450090B5D7A4317853A4">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -1099,7 +1200,7 @@
 				</Item>
 			</Item>
 		</Item>
-		<Item class="Tool" referent="RBX7D742B1F544F40C587795AA833D54C3B">
+		<Item class="Tool" referent="RBXFA118436E1E548B992AD0CF7FF89F38B">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<bool name="CanBeDropped">false</bool>
@@ -1126,7 +1227,7 @@
 				<Content name="TextureId"><url>http://www.roblox.com/asset/?id=94746192</url></Content>
 				<string name="ToolTip">Sword</string>
 			</Properties>
-			<Item class="Part" referent="RBX6AD00F9039944282972BEE7BF9EF28C8">
+			<Item class="Part" referent="RBX58D97D35A7EC49C8A004CFD843CF0C59">
 				<Properties>
 					<bool name="Anchored">false</bool>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1172,6 +1273,20 @@
 					<bool name="Massless">false</bool>
 					<token name="Material">256</token>
 					<string name="Name">Handle</string>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
 					<float name="Reflectance">1</float>
 					<float name="RightParamA">-0.5</float>
 					<float name="RightParamB">0.5</float>
@@ -1203,7 +1318,7 @@
 						<Z>0.400000036</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBXA3B84F506A66432E815165242A89745F">
+				<Item class="SpecialMesh" referent="RBXBB724AFA208D4D5A8D4457EB713F1246">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<token name="LODX">2</token>
@@ -1231,7 +1346,7 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBXEC7BC90465CF4C32BC7E8E1DB8219369">
+				<Item class="Sound" referent="RBXAAD0FF8AF87B4191947DEA41B9BD26A4">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -1250,7 +1365,7 @@
 						<float name="xmlRead_MaxDistance_3">10000</float>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBXFC2B62B4AC3B403C9EB52A704454D82E">
+				<Item class="Sound" referent="RBX051ED10BDDCA48A58D183D81AE1B8CA4">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -1269,7 +1384,7 @@
 						<float name="xmlRead_MaxDistance_3">10000</float>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBX9CE8A546B3F0487DA519D8B630857FB3">
+				<Item class="Sound" referent="RBXE20F9E259DBC4CBBB04B8B3BFBE0CCD0">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -1288,7 +1403,7 @@
 						<float name="xmlRead_MaxDistance_3">10000</float>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBXD6B2A389272947009CE860FDB611C771">
+				<Item class="Sound" referent="RBXCA72B40B5BDE413D983851F9C50856B5">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -1307,7 +1422,7 @@
 						<float name="xmlRead_MaxDistance_3">10000</float>
 					</Properties>
 				</Item>
-				<Item class="Sound" referent="RBX21DB3D741DFA45B7B80183E367C9514A">
+				<Item class="Sound" referent="RBX9F4608697A9E4638988A765619DA3ACB">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<float name="EmitterSize">10</float>
@@ -1328,8 +1443,204 @@
 				</Item>
 			</Item>
 		</Item>
+		<Item class="Tool" referent="RBX8DF3C2F4358B41319C51A175EC624400">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<bool name="CanBeDropped">false</bool>
+				<bool name="Enabled">true</bool>
+				<CoordinateFrame name="Grip">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<bool name="ManualActivationOnly">false</bool>
+				<string name="Name">DualRocks</string>
+				<bool name="RequiresHandle">true</bool>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<Content name="TextureId"><url>http://www.roblox.com/Thumbs/Asset.ashx?width=110&amp;height=110&amp;assetId=187864204 </url></Content>
+				<string name="ToolTip"></string>
+			</Properties>
+			<Item class="UnionOperation" referent="RBX665D159C3EF74E2BAA4BA95166EAFA86">
+				<Properties>
+					<bool name="Anchored">false</bool>
+					<Content name="AssetId"><url>http://www.roblox.com//asset/?id=263386674</url></Content>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<float name="BackParamA">-0.5</float>
+					<float name="BackParamB">0.5</float>
+					<token name="BackSurface">0</token>
+					<token name="BackSurfaceInput">0</token>
+					<float name="BottomParamA">-0.5</float>
+					<float name="BottomParamB">0.5</float>
+					<token name="BottomSurface">0</token>
+					<token name="BottomSurfaceInput">0</token>
+					<CoordinateFrame name="CFrame">
+						<X>-24.0292912</X>
+						<Y>2800.00024</Y>
+						<Z>22.0707092</Z>
+						<R00>-0.99999994</R00>
+						<R01>-4.58821958e-08</R01>
+						<R02>0</R02>
+						<R10>-4.58821958e-08</R10>
+						<R11>1</R11>
+						<R12>-5.0683532e-08</R12>
+						<R20>0</R20>
+						<R21>-5.06835391e-08</R21>
+						<R22>-0.99999994</R22>
+					</CoordinateFrame>
+					<bool name="CanCollide">true</bool>
+					<bool name="CanTouch">true</bool>
+					<bool name="CastShadow">true</bool>
+					<BinaryString name="ChildData"></BinaryString>
+					<SharedString name="ChildData2">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
+					<int name="CollisionGroupId">0</int>
+					<Color3uint8 name="Color3uint8">4284702562</Color3uint8>
+					<PhysicalProperties name="CustomPhysicalProperties">
+						<CustomPhysics>false</CustomPhysics>
+					</PhysicalProperties>
+					<token name="FormFactor">0</token>
+					<float name="FrontParamA">-0.5</float>
+					<float name="FrontParamB">0.5</float>
+					<token name="FrontSurface">0</token>
+					<token name="FrontSurfaceInput">0</token>
+					<Vector3 name="InitialSize">
+						<X>4.00000191</X>
+						<Y>2.0030899</Y>
+						<Z>4.00000095</Z>
+					</Vector3>
+					<BinaryString name="LODData"></BinaryString>
+					<float name="LeftParamA">-0.5</float>
+					<float name="LeftParamB">0.5</float>
+					<token name="LeftSurface">0</token>
+					<token name="LeftSurfaceInput">0</token>
+					<bool name="Locked">false</bool>
+					<bool name="Massless">false</bool>
+					<token name="Material">800</token>
+					<BinaryString name="MeshData"></BinaryString>
+					<SharedString name="MeshData2">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
+					<string name="Name">Handle</string>
+					<SharedString name="PhysicalConfigData">j4JirVf7JAWHUaY+HzKg/A==</SharedString>
+					<BinaryString name="PhysicsData"></BinaryString>
+					<CoordinateFrame name="PivotOffset">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>1</R11>
+						<R12>0</R12>
+						<R20>0</R20>
+						<R21>0</R21>
+						<R22>1</R22>
+					</CoordinateFrame>
+					<float name="Reflectance">0</float>
+					<token name="RenderFidelity">1</token>
+					<float name="RightParamA">-0.5</float>
+					<float name="RightParamB">0.5</float>
+					<token name="RightSurface">0</token>
+					<token name="RightSurfaceInput">0</token>
+					<int name="RootPriority">0</int>
+					<Vector3 name="RotVelocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<float name="SmoothingAngle">0</float>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="TopParamA">-0.5</float>
+					<float name="TopParamB">0.5</float>
+					<token name="TopSurface">0</token>
+					<token name="TopSurfaceInput">0</token>
+					<float name="Transparency">0</float>
+					<bool name="UsePartColor">true</bool>
+					<Vector3 name="Velocity">
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Vector3>
+					<Vector3 name="size">
+						<X>2.01999998</X>
+						<Y>1.00999999</Y>
+						<Z>2.01999998</Z>
+					</Vector3>
+				</Properties>
+				<Item class="Sound" referent="RBX5890AB208C48446EA8EFDE145AA80228">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<float name="EmitterSize">10</float>
+						<bool name="Looped">false</bool>
+						<string name="Name">Hit</string>
+						<bool name="PlayOnRemove">false</bool>
+						<float name="PlaybackSpeed">1</float>
+						<bool name="Playing">false</bool>
+						<token name="RollOffMode">0</token>
+						<Ref name="SoundGroup">null</Ref>
+						<Content name="SoundId"><url>http://www.roblox.com/asset/?id=120767420</url></Content>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<double name="TimePosition">0</double>
+						<float name="Volume">0.5</float>
+						<float name="xmlRead_MaxDistance_3">10000</float>
+					</Properties>
+				</Item>
+				<Item class="Sound" referent="RBXC0ABD951219F4F4489E37B046D67BD77">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<float name="EmitterSize">10</float>
+						<bool name="Looped">false</bool>
+						<string name="Name">Swish</string>
+						<bool name="PlayOnRemove">false</bool>
+						<float name="PlaybackSpeed">0.5</float>
+						<bool name="Playing">false</bool>
+						<token name="RollOffMode">0</token>
+						<Ref name="SoundGroup">null</Ref>
+						<Content name="SoundId"><url>http://www.roblox.com/asset/?id=97095069</url></Content>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<double name="TimePosition">0</double>
+						<float name="Volume">0.5</float>
+						<float name="xmlRead_MaxDistance_3">10000</float>
+					</Properties>
+				</Item>
+			</Item>
+		</Item>
 	</Item>
 	<SharedStrings>
+		<SharedString md5="j4JirVf7JAWHUaY+HzKg/A==">Q1NHUEhTBgAAAKYyAEIAAAAAAAAAAAAAAABAFKtCAAAAAAAAAAAeOwBDAAAAAEQUq0IQAAAA
+AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAIA/YAAAAAQAAAB4mNU/mzKAvy20
+578g6Yq+mzKAv/7//z9wq6u/nzKAvwIAAMDgLfU/nDKAv71X0T8AAADAnTKAv/jehT54dsW/
+nTKAv4Z0xT8AAADAnDKAv8T/4L8SmLk/yPBdP1bdtj0yko4/rT1bP9eijz+Z7ZO/QPY9PxkZ
+iL8C8bg+1BdMvgIAAMBersM+8xx8P4OMob8BAABA9fNOvtcjxz1+680+mJE6P/cMzj/QEY2/
+cRUWP+Zxmj/ghSU/OFo1vv7//z9YpsM/mzKAvwEAAEAAAABAmzKAv/XkdL/AB30/Up5sP4Id
+g78AAADA3tIVvmr52L4Bg6Y/mzKAvwMAAMDKr6C/D60UP58zij8QEcu/HIouPwQX67zzjSI/
+JDjjvBZ57r9YzKg/R/JyP3B6Rj4AAABAnDKAv43nrz8R35W/4g5RP4jvWb+g1cY/qblQv0XP
+7b+AE5m/oQopP+z3hz+wNos/tw5KP/4ioT8XCee/6/i0vgKks79wirO/nDKAv9aU1D+0AAAA
+AAAAAAEAAAACAAAAAwAAAAEAAAAAAAAABAAAAAIAAAABAAAABQAAAAQAAAABAAAABgAAAAIA
+AAAEAAAABwAAAAgAAAADAAAACQAAAAIAAAAGAAAACgAAAAIAAAAJAAAACgAAAAkAAAALAAAA
+DAAAAAAAAAAHAAAADAAAAAcAAAADAAAADQAAAA4AAAAPAAAAEAAAAA8AAAABAAAAEAAAAAEA
+AAADAAAAEQAAAAMAAAAAAAAAEQAAAAAAAAAMAAAAEgAAAAcAAAAAAAAAEwAAAAYAAAAEAAAA
+EwAAAAQAAAAFAAAAFAAAAAAAAAACAAAAFAAAAAIAAAAKAAAAFQAAABYAAAATAAAAFQAAABMA
+AAAFAAAAFQAAAAUAAAAOAAAAFwAAABQAAAAKAAAAFwAAAAoAAAALAAAAFwAAAAsAAAASAAAA
+GAAAAAcAAAASAAAAGAAAABIAAAALAAAAGAAAAAsAAAAIAAAAGAAAAAgAAAAHAAAAGQAAAAwA
+AAADAAAAGQAAAAMAAAARAAAAGQAAABEAAAAMAAAAGgAAAAsAAAAJAAAAGgAAAAkAAAAWAAAA
+GgAAAAgAAAALAAAAGwAAAAAAAAAUAAAAGwAAABQAAAAXAAAAGwAAABIAAAAAAAAAGwAAABcA
+AAASAAAAHAAAAA0AAAAIAAAAHAAAAAgAAAAaAAAAHAAAABoAAAAWAAAAHAAAABYAAAAVAAAA
+HAAAABUAAAAOAAAAHAAAAA4AAAANAAAAHQAAAAMAAAAIAAAAHQAAABAAAAADAAAAHQAAAA0A
+AAAPAAAAHQAAAA8AAAAQAAAAHQAAAAgAAAANAAAAHgAAAAkAAAAGAAAAHgAAAAYAAAATAAAA
+HgAAABYAAAAJAAAAHgAAABMAAAAWAAAAHwAAAA4AAAAFAAAAHwAAAAUAAAABAAAAHwAAAAEA
+AAAPAAAAHwAAAA8AAAAOAAAA</SharedString>
 		<SharedString md5="yuZpQdnvvUBOTYh1jqZ2cA=="></SharedString>
 	</SharedStrings>
 </roblox>

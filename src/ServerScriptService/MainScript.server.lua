@@ -45,9 +45,9 @@ for i = 1,3 do
         LobbySelectionService:InitializePart(Workspace:WaitForChild("RoundPart"..tostring(i)),function(RoundData)
             --Allow the round with the first 2 slots being non-team rounds and the last round being for teams.
             if i == 3 then
-                return not RoundWith4PlayersExists or RoundData.RequiredPlayers >= 4
+                return (not RoundWith4PlayersExists or RoundData.RequiredPlayers >= 4) and not RoundData.Hidden
             else
-               return RoundData.RequiredPlayers <= 2
+               return RoundData.RequiredPlayers <= 2 and not RoundData.Hidden
             end
         end)
     end)()
