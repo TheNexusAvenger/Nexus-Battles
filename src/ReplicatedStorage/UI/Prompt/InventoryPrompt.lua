@@ -503,16 +503,14 @@ function InventoryPrompt:__new()
         if Processed then return end
 
         if Input.KeyCode == Enum.KeyCode.ButtonX and CurrentHoveringSlotFrame then
-            --Hide the close button.
-            CloseButton.Visible = false
-
             if InitialDragFrame then
                 --Stop dragging the current frame.
                 StopDragging()
             else
                 --Start dragging the current frame.
                 local SlotFrame = CurrentHoveringSlotFrame
-                if SlotFrame then
+                if SlotFrame and SlotFrame.CurrentItemId then
+                    CloseButton.Visible = false
                     local SlotFramePosition,SlotFrameSize = SlotFrame.SlotFrame.AbsolutePosition,SlotFrame.SlotFrame.AbsoluteSize
                     StartDragging(SlotFramePosition.X + (SlotFrameSize.X/2),SlotFramePosition.Y + (SlotFrameSize.Y/2))
                 end
