@@ -17,6 +17,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 
 local Armor = ReplicatedStorageProject:GetResource("Data.Armor")
 local CutFrame = ReplicatedStorageProject:GetResource("External.NexusButton.Gui.CutFrame")
+local ControllerIcon = ReplicatedStorageProject:GetResource("External.NexusButton.Gui.ControllerIcon")
 local ClientInventory = ReplicatedStorageProject:GetResource("State.Inventory.ClientInventory")
 local BlueTextButtonFactory = ReplicatedStorageProject:GetResource("UI.AudibleTextButtonFactory").CreateDefault(Color3.new(0,170/255,255/255))
 local RedTextButtonFactory = ReplicatedStorageProject:GetResource("UI.AudibleTextButtonFactory").CreateDefault(Color3.new(170/255,0,0))
@@ -115,6 +116,53 @@ function InventoryPrompt:__new()
     ItemDescriptionText.ZIndex = 5
     ItemDescriptionText.TextYAlignment = Enum.TextYAlignment.Top
     ItemDescriptionText.Parent = ItemInfoAdorn
+
+    local ControllerInfoFrame = Instance.new("Frame")
+    ControllerInfoFrame.BackgroundTransparency = 1
+    ControllerInfoFrame.Size = UDim2.new(0.9,0,0.4,0)
+    ControllerInfoFrame.Position = UDim2.new(0.05,0,1.05,0)
+    ControllerInfoFrame.Parent = ItemInfoAdorn
+
+    local XIcon = ControllerIcon.new()
+    XIcon.AdornFrame.Position = UDim2.new(0,0,0,0)
+    XIcon.AdornFrame.Size = UDim2.new(0.5,0,0.5,0)
+    XIcon.AdornFrame.SizeConstraint = Enum.SizeConstraint.RelativeYY
+    XIcon.AdornFrame.Parent = ControllerInfoFrame
+    XIcon:SetIcon(Enum.KeyCode.ButtonX)
+
+    local XButtonText = Instance.new("TextLabel")
+    XButtonText.BackgroundTransparency = 1
+    XButtonText.Size = UDim2.new(6,0,1,0)
+    XButtonText.Position = UDim2.new(1,0,0,0)
+    XButtonText.Font = Enum.Font.SourceSansBold
+    XButtonText.TextColor3 = Color3.new(0,0,0)
+    XButtonText.TextStrokeColor3 = Color3.new(1,1,1)
+    XButtonText.TextStrokeTransparency = 0
+    XButtonText.TextScaled = true
+    XButtonText.TextXAlignment = Enum.TextXAlignment.Left
+    XButtonText.Text = "Move Item"
+    XButtonText.Parent = XIcon.AdornFrame
+
+    local BIcon = ControllerIcon.new()
+    BIcon.AdornFrame.Position = UDim2.new(0,0,0.5,0)
+    BIcon.AdornFrame.Size = UDim2.new(0.5,0,0.5,0)
+    BIcon.AdornFrame.SizeConstraint = Enum.SizeConstraint.RelativeYY
+    BIcon.AdornFrame.Visible = false
+    BIcon.AdornFrame.Parent = ControllerInfoFrame
+    BIcon:SetIcon(Enum.KeyCode.ButtonB)
+
+    local BButtonText = Instance.new("TextLabel")
+    BButtonText.BackgroundTransparency = 1
+    BButtonText.Size = UDim2.new(6,0,1,0)
+    BButtonText.Position = UDim2.new(1,0,0,0)
+    BButtonText.Font = Enum.Font.SourceSansBold
+    BButtonText.TextColor3 = Color3.new(0,0,0)
+    BButtonText.TextStrokeColor3 = Color3.new(1,1,1)
+    BButtonText.TextStrokeTransparency = 0
+    BButtonText.TextScaled = true
+    BButtonText.TextXAlignment = Enum.TextXAlignment.Left
+    BButtonText.Text = "Cancel"
+    BButtonText.Parent = BIcon.AdornFrame
 
     local GridAdorn = Instance.new("Frame")
     GridAdorn.BackgroundTransparency = 1
@@ -321,9 +369,13 @@ function InventoryPrompt:__new()
             local ArmorData = ArmorDataLookup[CurrentHoveringSlotFrame.CurrentItemId]
             ItemNameText.Text = ArmorData.Name
             ItemDescriptionText.Text = ArmorData.Description
+            ControllerInfoFrame.Visible = true
         else
             ItemNameText.Text = ""
             ItemDescriptionText.Text = ""
+            if not InitialDragFrame then
+                ControllerInfoFrame.Visible = false
+            end
         end
     end
 
@@ -348,6 +400,8 @@ function InventoryPrompt:__new()
             MovingItemFrame = nil
         end
         InitialDragSlot = nil
+        XButtonText.Text = "Move Item"
+        BIcon.AdornFrame.Visible = false
     end
 
     --[[
@@ -367,6 +421,8 @@ function InventoryPrompt:__new()
         MovingItemFrame.Size = UDim2.new(0,CurrentHoveringSlotFrame.SlotFrame.AbsoluteSize.X,0,CurrentHoveringSlotFrame.SlotFrame.AbsoluteSize.Y)
         MovingItemFrame.Position = UDim2.new(0,StartX,0,StartY)
         MovingItemFrame.Parent = self.AdornFrame
+        XButtonText.Text = "Finish"
+        BIcon.AdornFrame.Visible = true
     end
 
     --[[
@@ -386,6 +442,8 @@ function InventoryPrompt:__new()
         if not CurrentHoveringSlotFrame or not InitialDragFrame then
             InitialDragFrame = nil
             InitialDragSlot = nil
+            XButtonText.Text = "Move Item"
+            BIcon.AdornFrame.Visible = false
             return
         end
 
@@ -393,6 +451,8 @@ function InventoryPrompt:__new()
         PlayerInventory:SwapItems(CurrentHoveringSlotFrame.Slot,InitialDragSlot)
         InitialDragFrame = nil
         InitialDragSlot = nil
+        XButtonText.Text = "Move Item"
+        BIcon.AdornFrame.Visible = false
     end
 
     --[[
