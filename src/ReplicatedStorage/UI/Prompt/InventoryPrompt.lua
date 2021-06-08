@@ -208,30 +208,6 @@ function InventoryPrompt:__new()
     local PlayerInventory = ClientInventory.new(Players.LocalPlayer:WaitForChild("PersistentStats"):WaitForChild("Inventory"))
 
     --[[
-    Updates the page display.
-    --]]
-    local function UpdatePages()
-        --Determine the max slot and max pages.
-        local MaxSlot = 1
-        for _,ArmorData in pairs(PlayerInventory.Inventory) do
-            if typeof(ArmorData.Slot) == "number" then
-                MaxSlot = math.max(MaxSlot,ArmorData.Slot)
-            end
-        end
-        local MaxPage = math.ceil(MaxSlot / (INVENTORY_GRID_SIZE * INVENTORY_GRID_SIZE))
-
-        --Clamp the current page and update the display.
-        CurrentPage = math.clamp(CurrentPage,1,MaxPage)
-        PageLeftButton.Visible = (CurrentPage ~= 1)
-        PageRightButton.Visible = (CurrentPage ~= MaxPage)
-        CurrentPageText.Visible = (MaxPage ~= 1)
-        CurrentPageText.Text = tostring(CurrentPage)
-        for _,SlotFrame in pairs(SlotFrames) do
-            SlotFrame:Update()
-        end
-    end
-
-    --[[
     Creates an item slot.
     --]]
     local function CreateItemSlot(SlotId,FrameProperties)
@@ -453,6 +429,31 @@ function InventoryPrompt:__new()
         InitialDragSlot = nil
         XButtonText.Text = "Move Item"
         BIcon.AdornFrame.Visible = false
+    end
+
+    --[[
+    Updates the page display.
+    --]]
+    local function UpdatePages()
+        --Determine the max slot and max pages.
+        local MaxSlot = 1
+        for _,ArmorData in pairs(PlayerInventory.Inventory) do
+            if typeof(ArmorData.Slot) == "number" then
+                MaxSlot = math.max(MaxSlot,ArmorData.Slot)
+            end
+        end
+        local MaxPage = math.ceil(MaxSlot / (INVENTORY_GRID_SIZE * INVENTORY_GRID_SIZE))
+
+        --Clamp the current page and update the display.
+        CurrentPage = math.clamp(CurrentPage,1,MaxPage)
+        PageLeftButton.Visible = (CurrentPage ~= 1)
+        PageRightButton.Visible = (CurrentPage ~= MaxPage)
+        CurrentPageText.Visible = (MaxPage ~= 1)
+        CurrentPageText.Text = tostring(CurrentPage)
+        for _,SlotFrame in pairs(SlotFrames) do
+            SlotFrame:Update()
+        end
+        SetHoveredFrame(CurrentHoveringSlotFrame)
     end
 
     --[[
