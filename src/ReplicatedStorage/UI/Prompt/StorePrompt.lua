@@ -208,9 +208,61 @@ function StorePrompt:__new()
     Updates the size of the store.
     --]]
     local function UpdateSize()
+        --Determine how to orient the prompt.
         local ScreenSize = self.AdornFrame.AbsoluteSize
-        if ScreenSize.Y * 0.8 * (3/2) > ScreenSize.X * 0.9 then
-            StoreAdorn.Size = UDim2.new(0.9,0,0.9 * (2/3),0)
+        local UseRelativeXX = (ScreenSize.Y * 0.8 * (3/2) > ScreenSize.X * 0.9)
+        local MakeVertical = UseRelativeXX and ScreenSize.X * 0.8 * (3/2) < ScreenSize.Y * 0.9
+
+        --Move the elements.
+        if MakeVertical then
+            ItemGridAdorn.Size = UDim2.new(1,0,2/3,0)
+            ItemInfoAdorn.Position = UDim2.new(0,0,2/3,0)
+            ItemInfoAdorn.Size = UDim2.new(1,0,1/3,0)
+            ItemInfoBackground:CutCorner("Top","Left",UDim2.new(0.1,0,0.1,0),Enum.SizeConstraint.RelativeYY)
+            ItemInfoBackground:CutCorner("Bottom","Right",UDim2.new(0.1,0,0.1,0),Enum.SizeConstraint.RelativeYY)
+            if DisplayedArmorIcon then
+                DisplayedArmorIcon.Size = UDim2.new(0.9 * 0.5,0,0.9,0)
+                DisplayedArmorIcon.Position = UDim2.new(0.05 * 0.5,0,0.05,0)
+            end
+            ItemNameText.Size = UDim2.new(0.4,0,0.2,0)
+            ItemNameText.Position = UDim2.new(0.55,0,0,0)
+            ItemDescriptionText.Size = UDim2.new(0.4,0,0.4,0)
+            ItemDescriptionText.Position = UDim2.new(0.55,0,0.2,0)
+            ItemCostText.Size = UDim2.new(0.4,0,0.15,0)
+            ItemCostText.Position = UDim2.new(0.55,0,0.6,0)
+            BuyButtonOverrideText.Size = UDim2.new(0.4,0,0.12,0)
+            BuyButtonOverrideText.Position = UDim2.new(0.55,0,0.64,0)
+            BuyButton.Size = UDim2.new(0.4,0,0.12,0)
+            BuyButton.Position = UDim2.new(0.55,0,0.64,0)
+            GetCoinsButton.Size = UDim2.new(0.4,0,0.12,0)
+            GetCoinsButton.Position = UDim2.new(0.55,0,0.8,0)
+        else
+            ItemGridAdorn.Size = UDim2.new(2/3,0,1,0)
+            ItemInfoAdorn.Position = UDim2.new(2/3,0,0,0)
+            ItemInfoAdorn.Size = UDim2.new(1/3,0,1,0)
+            ItemInfoBackground:CutCorner("Top","Left",UDim2.new(0.1,0,0.1,0),Enum.SizeConstraint.RelativeXX)
+            ItemInfoBackground:CutCorner("Bottom","Right",UDim2.new(0.1,0,0.1,0),Enum.SizeConstraint.RelativeXX)
+            if DisplayedArmorIcon then
+                DisplayedArmorIcon.Size = UDim2.new(0.9,0,0.9 * 0.5,0)
+                DisplayedArmorIcon.Position = UDim2.new(0.05,0,0.05 * 0.5,0)
+            end
+            ItemNameText.Size = UDim2.new(0.9,0,0.06,0)
+            ItemNameText.Position = UDim2.new(0.05,0,0.42,0)
+            ItemDescriptionText.Size = UDim2.new(0.9,0,0.2,0)
+            ItemDescriptionText.Position = UDim2.new(0.05,0,0.48,0)
+            ItemCostText.Size = UDim2.new(0.9,0,0.08,0)
+            ItemCostText.Position = UDim2.new(0.05,0,0.7,0)
+            BuyButtonOverrideText.Size = UDim2.new(0.9,0,0.06,0)
+            BuyButtonOverrideText.Position = UDim2.new(0.05,0,0.82,0)
+            BuyButton.Size = UDim2.new(0.7,0,0.06,0)
+            BuyButton.Position = UDim2.new(0.15,0,0.82,0)
+            GetCoinsButton.Size = UDim2.new(0.7,0,0.06,0)
+            GetCoinsButton.Position = UDim2.new(0.15,0,0.9,0)
+        end
+
+        --Change the prompt size.
+        if UseRelativeXX then
+            StoreAdorn.Size = UDim2.new(0.9,0,0.9 * (MakeVertical and (3/2) or (2/3)),0)
             StoreAdorn.SizeConstraint = Enum.SizeConstraint.RelativeXX
         else
             StoreAdorn.Size = UDim2.new(0.8 * (3/2),0,0.8,0)
@@ -242,6 +294,7 @@ function StorePrompt:__new()
             DisplayedArmorIcon.Position = UDim2.new(0.05,0,0.05 * 0.5,0)
             DisplayedArmorIcon.ZIndex = 5
             DisplayedArmorIcon.Parent = ItemInfoAdorn
+            UpdateSize()
 
             --Update the armor text.
             ItemNameText.Text = ArmorData.Name

@@ -460,9 +460,37 @@ function InventoryPrompt:__new()
     Updates the size of the store.
     --]]
     local function UpdateSize()
+        --Determine how to orient the prompt.
         local ScreenSize = self.AdornFrame.AbsoluteSize
-        if ScreenSize.Y * 0.8 * (3/2) > ScreenSize.X * 0.9 then
-            InventoryAdorn.Size = UDim2.new(0.9,0,0.9 * (2/3),0)
+        local UseRelativeXX = (ScreenSize.Y * 0.8 * (3/2) > ScreenSize.X * 0.9)
+        local MakeVertical = UseRelativeXX and ScreenSize.X * 0.8 * (3/2) < ScreenSize.Y * 0.9
+
+        --Move the elements.
+        if MakeVertical then
+            CharacterAdorn.Size = UDim2.new(0.7 * 0.5,0,0.7 * 2/3,0)
+            CharacterAdorn.Position = UDim2.new(0.05,0,0.05,0)
+            ItemInfoAdorn.Size = UDim2.new(1.6,0,0.4,0)
+            ItemInfoAdorn.Position = UDim2.new(1.1,0,0.2,0)
+            GridAdorn.Size = UDim2.new(1,0,2/3,0)
+            GridAdorn.Position = UDim2.new(0,0,1/3,0)
+            CloseButton.AnchorPoint = Vector2.new(1,0)
+            CloseButton.Size = UDim2.new(0.05,0,0.05,0)
+            CloseButton.Position = UDim2.new(1,0,0.065,0)
+        else
+            CharacterAdorn.Size = UDim2.new(1/3,0,1,0)
+            CharacterAdorn.Position = UDim2.new(0,0,0,0)
+            ItemInfoAdorn.Size = UDim2.new(0.9,0,0.3,0)
+            ItemInfoAdorn.Position = UDim2.new(0.05,0,0.65,0)
+            GridAdorn.Size = UDim2.new(2/3,0,1,0)
+            GridAdorn.Position = UDim2.new(1/3,0,0,0)
+            CloseButton.AnchorPoint = Vector2.new(0,0.5)
+            CloseButton.Size = UDim2.new(0.1,0,0.1,0)
+            CloseButton.Position = UDim2.new(1.01,0,0,0)
+        end
+
+        --Change the prompt size.
+        if UseRelativeXX then
+            InventoryAdorn.Size = UDim2.new(0.9,0,0.9 * (MakeVertical and (3/2) or (2/3)),0)
             InventoryAdorn.SizeConstraint = Enum.SizeConstraint.RelativeXX
         else
             InventoryAdorn.Size = UDim2.new(0.8 * (3/2),0,0.8,0)
