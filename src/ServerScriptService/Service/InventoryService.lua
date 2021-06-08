@@ -16,6 +16,7 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
 local Armor = ReplicatedStorageProject:GetResource("Data.Armor")
 local Inventory = ReplicatedStorageProject:GetResource("State.Inventory.Inventory")
@@ -79,6 +80,13 @@ Damages the equipped armor with the given tag.
 --]]
 function InventoryService:DamageArmor(Player,Tag,Multiplier)
     Multiplier = Multiplier or 1
+    if Multiplier == 0 then return end
+
+    --Return if the player is not in a round.
+    --RoundService can't be defined above due to a recursive dependency.
+    if not ServerScriptServiceProject:GetResource("Service.RoundService"):GetPlayerRoundContainer(Player) then
+        return
+    end
 
     --Damage the armor in the slots.
     local PlayerInventory = self:GetInventory(Player)
