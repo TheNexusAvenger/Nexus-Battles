@@ -217,6 +217,7 @@ function InventoryPrompt:__new()
         SlotFrame.BackgroundTransparency = 0.5
         SlotFrame.BackgroundColor3 = Color3.new(1,1,1)
         SlotFrame.SizeConstraint = Enum.SizeConstraint.RelativeYY
+        SlotFrame.Active = true
         SlotFrame.Selectable = true
         for Name,Value in pairs(FrameProperties) do
             SlotFrame[Name] = Value
@@ -556,7 +557,7 @@ function InventoryPrompt:__new()
 
     --Connect the mouse events.
     UserInputService.InputChanged:Connect(function(Input)
-        if Input.UserInputType ~= Enum.UserInputType.MouseMovement then return end
+        if Input.UserInputType ~= Enum.UserInputType.MouseMovement and Input.UserInputType ~= Enum.UserInputType.Touch then return end
 
         --Update the current hovering frame.
         local NewHoveringSlotFrame = nil
@@ -582,9 +583,16 @@ function InventoryPrompt:__new()
         StartDragging(Input.Position.X,Input.Position.Y)
     end)
     UserInputService.InputEnded:Connect(function(Input)
-        if Input.UserInputType ~= Enum.UserInputType.MouseButton1 then return end
+        if Input.UserInputType ~= Enum.UserInputType.MouseButton1 and Input.UserInputType ~= Enum.UserInputType.Touch then return end
         StopDragging()
     end)
+    for _,SlotFrame in pairs(SlotFrames) do
+        SlotFrame.SlotFrame.InputBegan:Connect(function(Input)
+            if Input.UserInputType ~= Enum.UserInputType.Touch or InitialDragSlot then return end
+            SetHoveredFrame(SlotFrame)
+            StartDragging(Input.Position.X,Input.Position.Y)
+        end)
+    end
 
     --Connect the gamepad events.
     UserInputService.InputBegan:Connect(function(Input,Processed)
