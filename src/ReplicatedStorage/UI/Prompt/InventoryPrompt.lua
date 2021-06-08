@@ -141,7 +141,7 @@ function InventoryPrompt:__new()
     XButtonText.TextScaled = true
     XButtonText.TextXAlignment = Enum.TextXAlignment.Left
     XButtonText.Text = "Move Item"
-    XButtonText.Parent = XIcon.AdornFrame
+    XButtonText.Parent = XIcon.Icon
 
     local BIcon = ControllerIcon.new()
     BIcon.AdornFrame.Position = UDim2.new(0,0,0.5,0)
@@ -162,7 +162,7 @@ function InventoryPrompt:__new()
     BButtonText.TextScaled = true
     BButtonText.TextXAlignment = Enum.TextXAlignment.Left
     BButtonText.Text = "Cancel"
-    BButtonText.Parent = BIcon.AdornFrame
+    BButtonText.Parent = BIcon.Icon
 
     local GridAdorn = Instance.new("Frame")
     GridAdorn.BackgroundTransparency = 1
