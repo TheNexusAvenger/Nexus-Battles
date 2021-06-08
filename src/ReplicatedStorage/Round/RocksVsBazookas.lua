@@ -44,7 +44,15 @@ function RocksVsBazookas:RoundStarted()
     --safely use in videos, and I can't get permission to use the audio for free.
     --This is because it is a cover of The Grid - Swamp Thing.
 
-    --Set the starter inventories of the players.
+    --Award the badges to the players.
+    local BadgeService = self:GetService("BadgeService")
+    for _,Player in pairs(self.Players:GetAll()) do
+        coroutine.wrap(function()
+            BadgeService:AwardBadge(Player,"PlayedRocksVsBazookasRound")
+        end)()
+    end
+
+    --Set the starter inventories of the players for find the Easter Egg.
     for _,Player in pairs(self.Players:GetAll()) do
         local PlayerTeam = Player.TeamColor.Name
         if TEAM_TOOLS[PlayerTeam] then

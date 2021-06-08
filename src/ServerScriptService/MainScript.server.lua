@@ -26,6 +26,7 @@ ServerScriptServiceProject:GetResource("Service.DamageService")
 ServerScriptServiceProject:GetResource("Service.LeaderboardService")
 ServerScriptServiceProject:GetResource("Service.ShopService")
 ServerScriptServiceProject:GetResource("Service.RobuxService")
+ServerScriptServiceProject:GetResource("Service.BadgeService")
 
 --Determine if there are any rounds that require 4 or more players.
 local RoundWith4PlayersExists = false
