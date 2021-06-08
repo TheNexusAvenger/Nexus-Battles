@@ -577,18 +577,13 @@ function InventoryPrompt:__new()
         --Show the close button (may override controller selection).
         CloseButton.Visible = true
     end)
-    UserInputService.InputBegan:Connect(function(Input,Processed)
-        if Processed then return end
-        if Input.UserInputType ~= Enum.UserInputType.MouseButton1 then return end
-        StartDragging(Input.Position.X,Input.Position.Y)
-    end)
     UserInputService.InputEnded:Connect(function(Input)
         if Input.UserInputType ~= Enum.UserInputType.MouseButton1 and Input.UserInputType ~= Enum.UserInputType.Touch then return end
         StopDragging()
     end)
     for _,SlotFrame in pairs(SlotFrames) do
         SlotFrame.SlotFrame.InputBegan:Connect(function(Input)
-            if Input.UserInputType ~= Enum.UserInputType.Touch or InitialDragSlot then return end
+            if (Input.UserInputType ~= Enum.UserInputType.Touch and Input.UserInputType ~= Enum.UserInputType.MouseButton1) or InitialDragSlot then return end
             SetHoveredFrame(SlotFrame)
             StartDragging(Input.Position.X,Input.Position.Y)
         end)
