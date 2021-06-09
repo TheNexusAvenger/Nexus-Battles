@@ -5,7 +5,8 @@ Static class for managing rounds.
 --]]
 
 local DEFAULT_LOBBY_RESPAWN_DELAY = 3
-local MAP_POSITION_MULTIPLIER = 1000
+local MAP_POSITION_MULTIPLIER = -1000
+local DEFAULT_MAP_LOBBY_OFFSET = CFrame.new(0,300,-800) * CFrame.Angles(0,math.rad(-185),0)
 
 
 
@@ -21,6 +22,7 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 local LobbySpawnLocation = Workspace:WaitForChild("Lobby"):WaitForChild("LobbySpawnLocation")
 local NexusRoundSystem = ReplicatedStorageProject:GetResource("NexusRoundSystem")
 local ObjectReplicator = NexusRoundSystem:GetObjectReplicator()
+local MapTypes = ReplicatedStorageProject:GetResource("Data.MapTypes")
 local Maps = ServerStorage:WaitForChild("Maps")
 local CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
 local Tools = ServerStorage:WaitForChild("Tools")
@@ -161,6 +163,18 @@ function RoundService:StartRound(RoundType,MapType,Players)
     Round.MapName = MapType
     Round.Map = Map
     Round.Parent = ActiveRounds
+
+    --Create the lobby location.
+    if MapTypes[MapType].ShowLobby ~= false and not Map:FindFirstChild("LobbyLocation") then
+        local LobbyLocationPart = Instance.new("Part")
+        LobbyLocationPart.Transparency = 1
+        LobbyLocationPart.Name = "LobbyLocation"
+        LobbyLocationPart.Size = Vector3.new(1,1,1)
+        LobbyLocationPart.CFrame = CFrame.new(0,0,AllocatedPosition * MAP_POSITION_MULTIPLIER) * DEFAULT_MAP_LOBBY_OFFSET
+        LobbyLocationPart.Anchored = true
+        LobbyLocationPart.CanCollide = false
+        LobbyLocationPart.Parent = Map
+    end
 
     --Start the round.
     coroutine.wrap(function()

@@ -63,6 +63,7 @@ return {
             ShadowColor = Color3.new(179/255,179/255,184/255),
             TimeOfDay = 14,
         },
+        ShowLobby = false,
     },
     TheShard = {
         DisplayName = "The Shard",
@@ -89,6 +90,7 @@ return {
             ShadowColor = Color3.new(190/255,190/255,190/255),
             TimeOfDay = 1,
         },
+        ShowLobby = false,
     },
     RocketRace = {
         DisplayName = "Rocket Race",

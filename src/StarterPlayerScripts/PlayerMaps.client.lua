@@ -15,10 +15,33 @@ local ActiveMaps = Workspace:WaitForChild("ActiveMaps")
 local Lobby = Workspace:WaitForChild("Lobby")
 local ActiveHiddenMaps = ReplicatedStorageProject:GetResource("ActiveHiddenMaps")
 local CurrentRoundState = ReplicatedStorageProject:GetResource("State.CurrentRound")
+local SimplifiedLobby = ReplicatedStorageProject:GetResource("Model.SimplifiedLobby")
 
-local CurrentMap,CurrentId
+local CurrentMap,CurrentId = nil,nil
+local CurrentFakeLobby = nil
 
 
+
+--[[
+Updates the fake lobby.
+--]]
+local function UpdateFakeLobby()
+    --Get the lobby location part.
+    local LobbyLocationPart = nil
+    if CurrentMap then
+        LobbyLocationPart = CurrentMap:FindFirstChild("LobbyLocation",true)
+    end
+
+    --Destroy or create the lobby.
+    if LobbyLocationPart and not CurrentFakeLobby then
+        CurrentFakeLobby = SimplifiedLobby:Clone()
+        CurrentFakeLobby:SetPrimaryPartCFrame(LobbyLocationPart.CFrame)
+        CurrentFakeLobby.Parent = CurrentMap
+    elseif not LobbyLocationPart and CurrentFakeLobby then
+        CurrentFakeLobby:Destroy()
+        CurrentFakeLobby = nil
+    end
+end
 
 --[[
 Invoked when the round changes.
@@ -37,9 +60,19 @@ local function CurrentRoundChanged(CurrentRound)
         CurrentMap = ActiveHiddenMaps:WaitForChild(tostring(RoundId))
         CurrentMap.Parent = ActiveMaps
         Lobby.Parent = ReplicatedStorage
+
+        --Connect the lobby location being added.
+        CurrentMap.DescendantAdded:Connect(function(Part)
+            if Part.Name == "LobbyLocation" then
+                UpdateFakeLobby()
+            end
+        end)
     else
         Lobby.Parent = Workspace
     end
+
+    --Update the fake lobby.
+    UpdateFakeLobby()
 end
 
 
