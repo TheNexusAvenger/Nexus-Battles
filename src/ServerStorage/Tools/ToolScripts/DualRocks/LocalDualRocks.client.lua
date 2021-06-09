@@ -62,9 +62,10 @@ InputHandler.WeaponActivateEnded:Connect(function()
 end)
 
 --Set up tool equipping and unequipping.
-Tool.Equipped:Connect(function()
+Tool.Equipped:Connect(function(NewMouse)
     if not Equipped then
         Equipped = true
+        NewMouse.Icon = "rbxasset://textures/GunCursor.png"
 
         --Start the hold animation.
         HoldTrack = AnimationPlayer:PlayAnimation("DualRocksHold")
