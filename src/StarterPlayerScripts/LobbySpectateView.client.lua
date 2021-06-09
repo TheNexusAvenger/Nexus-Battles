@@ -23,7 +23,7 @@ local GreenTextButtonFactory = ReplicatedStorageProject:GetResource("UI.AudibleT
 --Set up the spectate parts.
 local RoundChangedEvents = {}
 local SpectateGuis = {}
-local SpectateParts = Workspace:WaitForChild("SpectateParts"):GetChildren()
+local SpectateParts = Workspace:WaitForChild("Lobby"):WaitForChild("SpectateParts"):GetChildren()
 local SpectatePartsToRound = {}
 local ClearCurrentSpectatatePrompt
 table.sort(SpectateParts,function(a,b) return a.Name < b.Name end)

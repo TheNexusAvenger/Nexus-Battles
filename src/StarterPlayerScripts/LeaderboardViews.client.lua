@@ -10,12 +10,12 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local HttpService = game:GetService("HttpService")
 local RunService = game:GetService("RunService")
 
-local Leaderboards = Workspace:WaitForChild("Leaderboards")
+local Leaderboards = Workspace:WaitForChild("Lobby"):WaitForChild("Leaderboards")
 local UsernamesCache = {}
 local Boards = {
-    TotalKOs = Leaderboards:WaitForChild("TotalKOs"), --TODO: Replace when lobby added.
-    TotalCoins = Leaderboards:WaitForChild("TotalCoins"), --TODO: Replace when lobby added.
-    TimesMVP = Leaderboards:WaitForChild("TimesMVP"), --TODO: Replace when lobby added.
+    TotalKOs = Leaderboards:WaitForChild("TotalKOs"),
+    TotalCoins = Leaderboards:WaitForChild("TotalCoins"),
+    TimesMVP = Leaderboards:WaitForChild("TimesMVP"),
 }
 local StatNames = {
     TotalKOs = "Knockouts",

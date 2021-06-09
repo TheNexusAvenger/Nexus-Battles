@@ -20,7 +20,7 @@ local StarterPlayer = game:GetService("StarterPlayer")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
-local LobbySpawnLocation = Workspace:WaitForChild("LobbySpawnLocation") --TODO: Replace with actual lobby part
+local LobbySpawnLocation = Workspace:WaitForChild("Lobby"):WaitForChild("LobbySpawnLocation")
 local ArmorService = ServerScriptServiceProject:GetResource("Service.ArmorService")
 local FeatureFlagService = ServerScriptServiceProject:GetResource("Service.FeatureFlagService")
 local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")

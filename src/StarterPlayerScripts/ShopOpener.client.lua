@@ -16,7 +16,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
-local ShopOpenZone = Workspace:WaitForChild("ShopOpenZone") --TODO: Replace when lobby added
+local ShopOpenZone = Workspace:WaitForChild("Lobby"):WaitForChild("ArmorShop"):WaitForChild("ShopOpenZone")
 local StorePrompt = ReplicatedStorageProject:GetResource("UI.Prompt.StorePrompt").new()
 
 

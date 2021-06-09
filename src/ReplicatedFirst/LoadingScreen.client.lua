@@ -5,7 +5,7 @@ Loads assets at the beginning of the game.
 --]]
 
 local TWEEN_TO_CHARACTER_TIME = 2
-local LOBBY_CAMEAR_CFRAME = CFrame.new(-26.7213497, 23.5045509, 26.4502716, 0.764506102, 0.455816835, -0.45580858, -0, 0.707100391, 0.707113206, 0.644616485, -0.540592372, 0.540582597) --TODO: Replace when lobby added
+local LOBBY_CAMEAR_CFRAME = CFrame.new(71.336792, 224.332581, 34.2545738, 0.599687099, -0.16191265, 0.783683419, 7.45058149e-09, 0.979317129, 0.202331454, -0.800234675, -0.121335559, 0.58728379)
 
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")

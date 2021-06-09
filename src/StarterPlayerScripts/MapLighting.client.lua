@@ -5,7 +5,7 @@ Updates the lighting depending on the current map.
 --]]
 
 local DEFAULT_LIGHTING = {
-    --TODO: Fill when lobby added.
+    TimeOfDay = 0,
 }
 
 

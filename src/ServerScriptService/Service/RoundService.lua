@@ -18,7 +18,7 @@ local PhysicsService = game:GetService("PhysicsService")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
-local LobbySpawnLocation = Workspace:WaitForChild("LobbySpawnLocation") --TODO: Replace with actual lobby part
+local LobbySpawnLocation = Workspace:WaitForChild("Lobby"):WaitForChild("LobbySpawnLocation")
 local NexusRoundSystem = ReplicatedStorageProject:GetResource("NexusRoundSystem")
 local ObjectReplicator = NexusRoundSystem:GetObjectReplicator()
 local Maps = ServerStorage:WaitForChild("Maps")

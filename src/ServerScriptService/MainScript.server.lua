@@ -40,13 +40,26 @@ for _,MapData in pairs(MapTypes) do
     end
 end
 
+--Determine if there are any rounds with RocksVsBazookas exist.
+local RocksVsBazookasExists = false
+for _,MapData in pairs(MapTypes) do
+    for _,RoundTypeName in pairs(MapData.GameTypes or {}) do
+        if RoundTypeName == "RocksVsBazookas" then
+            RocksVsBazookasExists = true
+            break
+        end
+    end
+end
+
 --Initialize the lobby selection parts.
-for i = 1,3 do
+for i = 1,4 do
     coroutine.wrap(function()
-        LobbySelectionService:InitializePart(Workspace:WaitForChild("RoundPart"..tostring(i)),function(RoundData)
+        LobbySelectionService:InitializePart(Workspace:WaitForChild("Lobby"):WaitForChild("RoundParts"):WaitForChild("RoundPart"..tostring(i)),function(RoundData)
             --Allow the round with the first 2 slots being non-team rounds and the last round being for teams.
             if i == 3 then
                 return (not RoundWith4PlayersExists or RoundData.RequiredPlayers >= 4) and not RoundData.Hidden
+            elseif i == 4 then
+                return not RocksVsBazookasExists or RoundData.DisplayName == "???"
             else
                return RoundData.RequiredPlayers <= 2 and not RoundData.Hidden
             end
