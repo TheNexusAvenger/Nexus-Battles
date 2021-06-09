@@ -4,7 +4,7 @@ TheNexusAvenger
 Animations used by the tools.
 --]]
 
-local ASSET_URL = "rbxasset://"
+local ASSET_URL = "rbxassetid://"
 
 
 
