@@ -201,6 +201,13 @@ for i,Screen in pairs(PlayerScreens) do
     local ListOffset = (i - 1) * PLAYER_ENTRIES_PER_DISPLAY
     local MaxPlayers = PLAYER_ENTRIES_PER_DISPLAY * #PlayerScreens
     RunService.Stepped:Connect(function()
+        --Hide the display if the lobby is not in Workspace.
+        if Lobby.Parent ~= Workspace then
+            PlayerDisplaySurfaceGui.Enabled = false
+            return
+        end
+        PlayerDisplaySurfaceGui.Enabled = true
+
         --Determine the offset of the list.
         local TimeOffset = tick() % 1
         local StartIndex = math.ceil(tick() % #PlayersToDisplay)

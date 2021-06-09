@@ -10,7 +10,8 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local HttpService = game:GetService("HttpService")
 local RunService = game:GetService("RunService")
 
-local Leaderboards = Workspace:WaitForChild("Lobby"):WaitForChild("Leaderboards")
+local Lobby = Workspace:WaitForChild("Lobby")
+local Leaderboards = Lobby:WaitForChild("Leaderboards")
 local UsernamesCache = {}
 local Boards = {
     TotalKOs = Leaderboards:WaitForChild("TotalKOs"),
@@ -140,6 +141,13 @@ for StatName,Board in pairs(Boards) do
 
     --Connect updating the board.
     RunService.Stepped:Connect(function()
+        --Hide the display if the lobby is not in Workspace.
+        if Lobby.Parent ~= Workspace then
+            BoardSurfaceGui.Enabled = false
+            return
+        end
+        BoardSurfaceGui.Enabled = true
+
         --Determine the offset of the list.
         local TimeOffset = tick() % 1
         local ColorOffset = math.ceil(tick() % 2)
