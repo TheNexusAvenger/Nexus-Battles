@@ -9,6 +9,9 @@
             "$properties": {
                 "FallenPartsDestroyHeight": -50000,
                 "FilteringEnabled": true
+            },
+            "Terrain": {
+                "$className": "Terrain"
             }
         },
         "Players": {
