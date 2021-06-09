@@ -79,30 +79,16 @@ local Assets = {
     Mesh("Rocket Launcher mesh","rbxassetid://94690054"),
     Image("Rocket Launcher texture","rbxassetid://94689966"),
     Image("Red bomb texture","rbxassetid://94691735"),
-
-    --Weapon animations
-    Animation("R15 Bomb Hold Animation","rbxassetid://2960980426"),
-    Animation("R15 Bomb Throw Animation","rbxassetid://2960980426"),
-    Animation("R15 Broom Idle Animation","rbxassetid://2960982045"),
-    Animation("R15 Broom Whack Animation","rbxassetid://2960982598"),
-    Animation("R15 Reflector Activate Animation","rbxassetid://2960983050"),
-    Animation("R15 Rocket Launcher Fire Animation","rbxassetid://2960984492"),
-    Animation("R15 Slingshot Equip Animation","rbxassetid://2960984865"),
-    Animation("R15 Slingshot Fire Animation","rbxassetid://2960985364"),
-    Animation("R15 Superball Equip Animation","rbxassetid://2960986220"),
-    Animation("R15 Superball Idle Animation","rbxassetid://2960986577"),
-    Animation("R15 Superball Throw Animation","rbxassetid://2960986912"),
-    Animation("R15 Sword Equip Animation","rbxassetid://2960987338"),
-    Animation("R15 Sword Unequip Animation","rbxassetid://2960987857"),
-    Animation("R15 Sword Idle Animation","rbxassetid://2960988663"),
-    Animation("R15 Sword Slash Animation","rbxassetid://2960989171"),
-    Animation("R15 Sword Thrust Animation","rbxassetid://2960989618"),
-    Animation("R15 Sword Overhead Animation","rbxassetid://2960990006"),
 }
 
 --Add the maps.
 for _,MapData in pairs(require(ReplicatedStorage:WaitForChild("Data"):WaitForChild("MapTypes"))) do
     table.insert(Assets,Image("Map Icon","rbxassetid://"..tostring(MapData.ImageId)))
+end
+
+--Add the animations.
+for AnimationName,Animations in pairs(ReplicatedStorage:WaitForChild("Data"):WaitForChild("Animations"):GetChildren()) do
+    table.insert(Assets,Animation("R15 "..AnimationName,Animations[Enum.HumanoidRigType.R15]))
 end
 
 --Add the weapon icons.
