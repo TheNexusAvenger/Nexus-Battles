@@ -66,6 +66,7 @@ function CharacterService:SpawnCharacter(Player,SpawnPart)
     if not Player or not Player.Parent then return end
 
     --Load the character.
+    while not Player:FindFirstChild("DataLoadSuccessful") do Player.ChildAdded:Wait() end
     Player:LoadCharacter()
     local Character = Player.Character
     local Humanoid = Character:WaitForChild("Humanoid")
