@@ -29,6 +29,9 @@ end
 
 --Set up the sign.
 local SignSurfaceGui = Instance.new("SurfaceGui")
+SignSurfaceGui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
+SignSurfaceGui.PixelsPerStud = 50
+SignSurfaceGui.ResetOnSpawn = false
 SignSurfaceGui.Name = "PremiumSign"
 SignSurfaceGui.Adornee = SignPart
 SignSurfaceGui.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
