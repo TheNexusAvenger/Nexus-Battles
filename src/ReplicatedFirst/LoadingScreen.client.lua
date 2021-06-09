@@ -130,6 +130,28 @@ while not LoadingCompleteValue.Value do
     LoadingCompleteValue:GetPropertyChangedSignal("Value"):Wait()
 end
 
+--Hide the skip button.
+SkipButton.AdornFrame:TweenPosition(UDim2.new(0.5,0,1,0),Enum.EasingDirection.In,Enum.EasingStyle.Back,0.5,true,function()
+    SkipButton:Destroy()
+end)
+
+--Wait for the data to load.
+if not Players.LocalPlayer:FindFirstChild("DataLoadSuccessful") then
+    local PendingDataText = Instance.new("TextLabel")
+    PendingDataText.BackgroundTransparency = 1
+    PendingDataText.Size = UDim2.new(1,0,0.06,0)
+    PendingDataText.Position = UDim2.new(0,0,0.8,0)
+    PendingDataText.Font = "SourceSansBold"
+    PendingDataText.Text = "LOADING DATA"
+    PendingDataText.TextColor3 = Color3.new(1,1,1)
+    PendingDataText.TextStrokeColor3 = Color3.new(0,0,0)
+    PendingDataText.TextStrokeTransparency = 0
+    PendingDataText.TextScaled = true
+    PendingDataText.Parent = LoadingScreenContainer
+
+    Players.LocalPlayer:WaitForChild("DataLoadSuccessful")
+end
+
 --Unlock the camera.
 CameraLockEvent:Disconnect()
 CameraLockEvent = nil
@@ -144,9 +166,6 @@ if Character then
     end
 end
 
-SkipButton.AdornFrame:TweenPosition(UDim2.new(0.5,0,1,0),Enum.EasingDirection.In,Enum.EasingStyle.Back,0.5,true,function()
-    SkipButton:Destroy()
-end)
 wait(0.5)
 TweenService:Create(Camera,TweenInfo.new(TWEEN_TO_CHARACTER_TIME),{
     CFrame = TargetCameraCFrame,
