@@ -12,6 +12,7 @@ local NexusRoundSystem = ReplicatedStorageProject:GetResource("NexusRoundSystem"
 local ActiveRounds = NexusRoundSystem:GetObjectReplicator():GetGlobalContainer():WaitForChildBy("Name","ActiveRounds")
 
 local ActiveMaps = Workspace:WaitForChild("ActiveMaps")
+local Lobby = Workspace:WaitForChild("Lobby")
 local ActiveHiddenMaps = ReplicatedStorageProject:GetResource("ActiveHiddenMaps")
 local CurrentRoundState = ReplicatedStorageProject:GetResource("State.CurrentRound")
 
@@ -35,6 +36,9 @@ local function CurrentRoundChanged(CurrentRound)
         CurrentId = RoundId
         CurrentMap = ActiveHiddenMaps:WaitForChild(tostring(RoundId))
         CurrentMap.Parent = ActiveMaps
+        Lobby.Parent = ReplicatedStorage
+    else
+        Lobby.Parent = Workspace
     end
 end
 
