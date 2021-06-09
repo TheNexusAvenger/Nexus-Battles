@@ -7,7 +7,6 @@
             "$className": "Workspace",
             "$path": "src/Workspace",
             "$properties": {
-                "FallenPartsDestroyHeight": -50000,
                 "FilteringEnabled": true
             },
             "Terrain": {
