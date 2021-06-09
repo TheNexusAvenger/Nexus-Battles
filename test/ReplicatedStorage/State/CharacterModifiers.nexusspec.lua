@@ -43,8 +43,11 @@ NexusUnitTesting:RegisterUnitTest(CharacterModifiersTest.new("ChangingModifiers"
 
     --Add a few modifiers and assert the totals are correct.
     self.CuT:Add("Key1","Type1",0.1)
+    wait()
     self.CuT:Add("Key2","Type2",0.2)
+    wait()
     self.CuT:Add("Key3","Type1",0.3)
+    wait()
     self:AssertClose(self.CuT:Get("Type1"),0.4,0.001)
     self:AssertClose(self.CuT:Get("Type2"),0.2,0.001)
     self:AssertEquals(self.CuT:Get("Type3"),0)
@@ -59,7 +62,9 @@ NexusUnitTesting:RegisterUnitTest(CharacterModifiersTest.new("ChangingModifiers"
 
     --Remove and re-add a modifier.
     self.CuT:Remove("Key3")
+    wait()
     self.CuT:Add("Key3","Type2",0.4)
+    wait()
     self:AssertClose(self.CuT:Get("Type1"),0.1,0.001)
     self:AssertClose(self.CuT:Get("Type2"),0.6,0.001)
 
@@ -82,9 +87,13 @@ NexusUnitTesting:RegisterUnitTest(CharacterModifiersTest.new("ChangingModifiers"
 
     --Remove all the keys.
     self.CuT:Remove("Key1")
+    wait()
     self.CuT:Remove("Key2")
+    wait()
     self.CuT:Remove("Key3")
+    wait()
     self.CuT:Remove("Key4")
+    wait()
     self:AssertEquals(self.CuT:Get("Type1"),0)
     self:AssertEquals(self.CuT:Get("Type2"),0)
     self:AssertEquals(self.CuT:Get("Type3"),0)
@@ -104,6 +113,7 @@ NexusUnitTesting:RegisterUnitTest(CharacterModifiersTest.new("ChangingModifiers"
         {"Type2",0},
     }
     wait()
+    self:AssertEquals(#ExpectedEventResults,#ChangedModifiers)
     for i,ExpectedResult in pairs(ExpectedEventResults) do
         local ActualResult = ChangedModifiers[i]
         self:AssertEquals(ExpectedResult[1],ActualResult[1],"Result "..tostring(i).." doesn't  match")

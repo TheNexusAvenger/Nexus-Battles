@@ -150,6 +150,7 @@ NexusUnitTesting:RegisterUnitTest(TeamSelectionTest.new("SetPlayerTeam"):SetRun(
     PlayerToRemove = self.MockPlayers[5]
     table.remove(self.MockPlayers,5)
     self.MockRound.Players.ItemRemoved:Fire(PlayerToRemove)
+    wait()
     self:AssertEquals(self.CuT.PlayerTeams.Table,{
         [self.MockPlayers[1].Name] = BrickColor.new("Bright blue"),
         [self.MockPlayers[2].Name] = BrickColor.new("Bright green"),
