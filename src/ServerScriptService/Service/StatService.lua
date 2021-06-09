@@ -80,12 +80,24 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusDataStore = ReplicatedStorageProject:GetResource("External.NexusDataStore")
+local WeaponIconModels = ReplicatedStorageProject:GetResource("Model.WeaponIconModels")
 local StatContainer = ReplicatedStorageProject:GetResource("State.Stats.StatContainer")
 
 local StatService = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
 StatService:SetClassName("StatService")
 StatService.CachedPersistentStats = {}
 StatService.CachedTemporaryStats = {}
+
+
+
+--Add the weapon stats.
+for _,WeaponModel in pairs(WeaponIconModels:GetChildren()) do
+    table.insert(DEFAULT_STATS,{
+        Name = "TotalKOs_"..WeaponModel.Name,
+        ValueType = "IntValue",
+        DefaultValue = 0,
+    })
+end
 
 
 
