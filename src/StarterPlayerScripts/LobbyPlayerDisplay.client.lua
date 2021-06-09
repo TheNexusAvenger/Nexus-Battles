@@ -87,7 +87,7 @@ for _,Player in pairs(Players:GetPlayers()) do
 end
 
 --Create the displays.
-for i,Screen in pairs(PlayerScreens) do
+for ScreenId,Screen in pairs(PlayerScreens) do
     --Create the container.
     local PlayerDisplaySurfaceGui = Instance.new("SurfaceGui")
     PlayerDisplaySurfaceGui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
@@ -198,7 +198,7 @@ for i,Screen in pairs(PlayerScreens) do
     end
 
     --Update the displays continously.
-    local ListOffset = (i - 1) * PLAYER_ENTRIES_PER_DISPLAY
+    local ListOffset = (ScreenId - 1) * PLAYER_ENTRIES_PER_DISPLAY
     local MaxPlayers = PLAYER_ENTRIES_PER_DISPLAY * #PlayerScreens
     RunService.Stepped:Connect(function()
         --Hide the display if the lobby is not in Workspace.

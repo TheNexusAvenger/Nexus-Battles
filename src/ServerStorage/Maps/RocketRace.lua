@@ -103,27 +103,27 @@ return function(MapModel,MapCenter,Round)
             
             --Create the side wedges.
             local WedgeWidth = (OuterWidth - InnerWidth)/2
-            local Wedge = Instance.new("WedgePart")
-            Wedge.BrickColor = PlayerColor
-            Wedge.Name = "LevelPart"
-            Wedge.TopSurface = "Smooth"
-            Wedge.BottomSurface = "Smooth"
-            Wedge.Material = "Plastic"
-            Wedge.Anchored = true
-            Wedge.Size = Vector3.new(2,WedgeWidth,SPAWN_PART_DEPTH)
-            Wedge.CFrame = SpawnPartCF * CFrame.new(-((WedgeWidth/2) + (InnerWidth/2)),0,0) * CFrame.Angles(math.pi,0,math.pi/2)
-            Wedge.Parent = MapModel
+            local Wedge1 = Instance.new("WedgePart")
+            Wedge1.BrickColor = PlayerColor
+            Wedge1.Name = "LevelPart"
+            Wedge1.TopSurface = "Smooth"
+            Wedge1.BottomSurface = "Smooth"
+            Wedge1.Material = "Plastic"
+            Wedge1.Anchored = true
+            Wedge1.Size = Vector3.new(2,WedgeWidth,SPAWN_PART_DEPTH)
+            Wedge1.CFrame = SpawnPartCF * CFrame.new(-((WedgeWidth/2) + (InnerWidth/2)),0,0) * CFrame.Angles(math.pi,0,math.pi/2)
+            Wedge1.Parent = MapModel
             
-            local Wedge = Instance.new("WedgePart")
-            Wedge.BrickColor = PlayerColor
-            Wedge.Name = "LevelPart"
-            Wedge.TopSurface = "Smooth"
-            Wedge.BottomSurface = "Smooth"
-            Wedge.Material = "Plastic"
-            Wedge.Anchored = true
-            Wedge.Size = Vector3.new(2,WedgeWidth,SPAWN_PART_DEPTH)
-            Wedge.CFrame = SpawnPartCF * CFrame.new((WedgeWidth/2) + (InnerWidth/2),0,0) * CFrame.Angles(math.pi,0,-math.pi/2)
-            Wedge.Parent = MapModel
+            local Wedge2 = Instance.new("WedgePart")
+            Wedge2.BrickColor = PlayerColor
+            Wedge2.Name = "LevelPart"
+            Wedge2.TopSurface = "Smooth"
+            Wedge2.BottomSurface = "Smooth"
+            Wedge2.Material = "Plastic"
+            Wedge2.Anchored = true
+            Wedge2.Size = Vector3.new(2,WedgeWidth,SPAWN_PART_DEPTH)
+            Wedge2.CFrame = SpawnPartCF * CFrame.new((WedgeWidth/2) + (InnerWidth/2),0,0) * CFrame.Angles(math.pi,0,-math.pi/2)
+            Wedge2.Parent = MapModel
         end
     
         --Generate the main parts.
@@ -176,7 +176,7 @@ return function(MapModel,MapCenter,Round)
         end
     
         --Set the color of random parts.
-        for i = 1,LEVEL_PART_COUNT/math.max(PlayerCount,4)/2 do
+        for _ = 1,LEVEL_PART_COUNT/math.max(PlayerCount,4)/2 do
             for _,PlayerColor in pairs(TEAM_COLORS) do
                 if #ColorCandidates > 0 then
                     --Color a random part.

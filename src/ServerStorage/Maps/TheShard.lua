@@ -47,7 +47,7 @@ return function(MapModel,MapCenter,Round)
     end
 
     --Creates a triangle between 3 points. Assumes the triangle has a non-zero area.
-    function FillTriangle(PointA,PointB,PointC)
+    local function FillTriangle(PointA,PointB,PointC)
         --Make line AB the longest.
         local ABLength = (PointA - PointB).Magnitude
         local ACLength = (PointA - PointC).Magnitude
@@ -122,7 +122,7 @@ return function(MapModel,MapCenter,Round)
     end
 
     --Generates the level.
-    function GenerateLevel()
+    local function GenerateLevel()
         local Seed = math.random(1,100)
         
         local function BaseNoise(Coordinate,Lambda)
