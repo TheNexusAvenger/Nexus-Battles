@@ -13,6 +13,7 @@ local Lighting = game:GetService("Lighting")
 local ReplicatedFirst = game:GetService("ReplicatedFirst")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ContentProvider = game:GetService("ContentProvider")
+local RunService = game:GetService("RunService")
 local TweenService = game:GetService("TweenService")
 
 
@@ -157,20 +158,34 @@ CameraLockEvent:Disconnect()
 CameraLockEvent = nil
 
 --Hide the loading UI and tween the camera.
-local TargetCameraCFrame = CFrame.new()
-local Character = Players.LocalPlayer.Character
-if Character then
-    local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
-    if HumanoidRootPart then
-        TargetCameraCFrame = HumanoidRootPart.CFrame * CFrame.new(0,(HumanoidRootPart.Size.Y/2) + 0.5,0) * CFrame.Angles(math.rad(-15),0,0) * CFrame.new(0,0,12.5)
-    end
-end
-
 wait(0.5)
-TweenService:Create(Camera,TweenInfo.new(TWEEN_TO_CHARACTER_TIME),{
-    CFrame = TargetCameraCFrame,
-    Focus = TargetCameraCFrame * CFrame.new(0,0,-1),
-}):Play()
+local Character = Players.LocalPlayer.Character
+local HumanoidRootPart = nil
+if Character then
+    HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+end
+coroutine.wrap(function()
+    local StartTweenTime = tick()
+    while tick() - StartTweenTime < TWEEN_TO_CHARACTER_TIME do
+        --Determine the ratio to tween.
+        local CurrentTime = (tick() - StartTweenTime)/TWEEN_TO_CHARACTER_TIME
+        local LerpRatio = 1 - (((math.cos((CurrentTime/TWEEN_TO_CHARACTER_TIME) * (2 * math.pi)))/2) + 0.5)
+
+        --Determine the target CFrame.
+        local TargetCFrame = CFrame.new()
+        if HumanoidRootPart then
+            TargetCFrame = HumanoidRootPart.CFrame * CFrame.new(0,(HumanoidRootPart.Size.Y/2) + 0.5,0) * CFrame.Angles(math.rad(-15),0,0) * CFrame.new(0,0,12.5)
+        end
+
+        --Move the camera.
+        local CurrentCFrame = LOBBY_CAMEAR_CFRAME:Lerp(TargetCFrame,LerpRatio)
+        Camera.CFrame = CurrentCFrame
+        Camera.Focus = HumanoidRootPart.CFrame
+
+        --Wait until the next frame to update.
+        RunService.RenderStepped:Wait()
+    end
+end)()
 TweenService:Create(LogoFront,TweenInfo.new(TWEEN_TO_CHARACTER_TIME),{
     ImageTransparency = 1,
 }):Play()
