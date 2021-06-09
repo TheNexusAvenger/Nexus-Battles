@@ -17,6 +17,11 @@ if game.GameId == 2346548105 then
 else
     --Release Game
     return {
-        --TODO: Update with release version
+        ReachedRank4 = 2124761797,
+        ReachedRank8 = 2124761798,
+        ReachedRank12 = 2124761800,
+        ReachedRank16 = 2124761801,
+        ReachedRank20 = 2124761803,
+        PlayedRocksVsBazookasRound = 2124761807,
     }
 end
