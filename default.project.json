@@ -3,6 +3,14 @@
     "name": "Nexus-Battles",
     "tree": {
         "$className": "DataModel",
+        "Workspace": {
+            "$className": "Workspace",
+            "$path": "src/Workspace",
+            "$properties": {
+                "FallenPartsDestroyHeight": -50000,
+                "FilteringEnabled": true
+            }
+        },
         "Players": {
             "$className": "Players",
             "$properties": {
@@ -15,6 +23,7 @@
                 "Ambient": [0.5,0.5,0.5],
                 "OutdoorAmbient": [0.5,0.5,0.5],
                 "Brightness": 2,
+                "ClockTime": 0,
                 "GlobalShadows": true,
                 "Technology": {
                     "Type": "Enum",
