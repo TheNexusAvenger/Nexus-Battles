@@ -45,11 +45,13 @@ function BaseTeamRound:__new()
     end
 
     --Connect the team colors changing.
-    self:GetPropertyChangedSignal("TeamColors"):Connect(function()
-        if not self.TeamSelection then
-            self:GetPropertyChangedSignal("TeamSelection"):Wait()
-        end
-        self.TeamSelection:SetTeamColors(self.TeamColors)
+    self:AddPropertyFinalizer("TeamColors",function()
+        coroutine.wrap(function()
+            if not self.TeamSelection then
+                self:GetPropertyChangedSignal("TeamSelection"):Wait()
+            end
+            self.TeamSelection:SetTeamColors(self.TeamColors)
+        end)()
     end)
 end
 

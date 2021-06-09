@@ -121,30 +121,30 @@ function BaseEntry:__new()
         --Update the text size.
         self:UpdateTextSize()
     end)
-    self:GetPropertyChangedSignal("Parent"):Connect(function()
-        self.AdornFrame.Parent = self.Parent
+    self:AddPropertyFinalizer("Parent",function(_,Parent)
+        self.AdornFrame.Parent = Parent
     end)
-    self:GetPropertyChangedSignal("BackgroundColor3"):Connect(function()
-        self.BottomLeftTriangle.ImageColor3 = self.BackgroundColor3
-        self.TopRightTriangle.ImageColor3 = self.BackgroundColor3
-        self.CenterFillFrame.BackgroundColor3 = self.BackgroundColor3
+    self:AddPropertyFinalizer("BackgroundColor3",function(_,BackgroundColor3)
+        self.BottomLeftTriangle.ImageColor3 = BackgroundColor3
+        self.TopRightTriangle.ImageColor3 = BackgroundColor3
+        self.CenterFillFrame.BackgroundColor3 = BackgroundColor3
     end)
-    self:GetPropertyChangedSignal("BorderColor3"):Connect(function()
-        self.BorderBottomLeftTriangle.ImageColor3 = self.BorderColor3
-        self.BorderTopRightTriangle.ImageColor3 = self.BorderColor3
+    self:AddPropertyFinalizer("BorderColor3",function(_,BorderColor3)
+        self.BorderBottomLeftTriangle.ImageColor3 = BorderColor3
+        self.BorderTopRightTriangle.ImageColor3 = BorderColor3
     end)
-    self:GetPropertyChangedSignal("BackgroundTransparency"):Connect(function()
-        self.BottomLeftTriangle.ImageTransparency = self.BackgroundTransparency
-        self.TopRightTriangle.ImageTransparency = self.BackgroundTransparency
-        self.CenterFillFrame.BackgroundTransparency = self.BackgroundTransparency
+    self:AddPropertyFinalizer("BackgroundTransparency",function(_,BackgroundTransparency)
+        self.BottomLeftTriangle.ImageTransparency = BackgroundTransparency
+        self.TopRightTriangle.ImageTransparency = BackgroundTransparency
+        self.CenterFillFrame.BackgroundTransparency = BackgroundTransparency
     end)
-    self:GetPropertyChangedSignal("BorderTransparency"):Connect(function()
-        self.BorderBottomLeftTriangle.ImageTransparency = self.BorderTransparency
-        self.BorderTopRightTriangle.ImageTransparency = self.BorderTransparency
+    self:AddPropertyFinalizer("BorderTransparency",function(_,BorderTransparency)
+        self.BorderBottomLeftTriangle.ImageTransparency = BorderTransparency
+        self.BorderTopRightTriangle.ImageTransparency = BorderTransparency
     end)
-    self:GetPropertyChangedSignal("TotalStats"):Connect(function()
+    self:AddPropertyFinalizer("TotalStats",function(_,TotalStats)
         --Create the additional text labels.
-        for _ = #self.StatLabels,self.TotalStats - 1 do
+        for _ = #self.StatLabels,TotalStats - 1 do
             local NewTextLabel = Instance.new("TextLabel")
             NewTextLabel.BackgroundTransparency = 1
             NewTextLabel.Font = "SourceSansBold"
@@ -157,18 +157,18 @@ function BaseEntry:__new()
         end
 
         --Remove extra text labels.
-        for i = #self.StatLabels,self.TotalStats + 1,-1 do
+        for i = #self.StatLabels,TotalStats + 1,-1 do
             table.remove(self.StatLabels,i):Destroy()
         end
 
         --Update the text size.
         self:UpdateTextSize()
     end)
-    self:GetPropertyChangedSignal("TextColor3"):Connect(function()
+    self:AddPropertyFinalizer("TextColor3",function(_,TextColor3)
         for _,StatLabel in pairs(self.StatLabels) do
-            StatLabel.TextColor3 = self.TextColor3
+            StatLabel.TextColor3 = TextColor3
         end
-        self.MainText.TextColor3 = self.TextColor3
+        self.MainText.TextColor3 = TextColor3
     end)
 
     --Set the defaults.

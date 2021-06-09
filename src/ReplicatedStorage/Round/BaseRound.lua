@@ -96,7 +96,7 @@ function BaseRound:__new()
         Team = {},
         Players = {},
     }
-    self:GetPropertyChangedSignal("Map"):Connect(function()
+    self:AddPropertyFinalizer("Map",function(_,Map)
         --Get the spawn point models.
         local NewSpawnPoints = {
             Normal = {
@@ -107,7 +107,7 @@ function BaseRound:__new()
             Players = {},
         }
         self.SpawnPoints = NewSpawnPoints
-        local SpawnPoints = self.Map:FindFirstChild("SpawnPoints")
+        local SpawnPoints = Map:FindFirstChild("SpawnPoints")
         if not SpawnPoints then return end
         local TeamSpawnPoints = SpawnPoints:FindFirstChild("TeamSpawnPoints")
 

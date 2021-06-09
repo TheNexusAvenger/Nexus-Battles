@@ -36,9 +36,9 @@ function Base3DIcon:__new(Model)
     self.UpdateRotationEvent = RunService.RenderStepped:Connect(function()
         self.Module3DFrame:SetCFrame(CFrame.Angles(0,(tick() * self.RotationSpeed) % (math.pi * 2),0) * self.RotationOffset)
     end)
-    self.Changed:Connect(function(Name)
+    self:AddGenericPropertyFinalizer(function(Name,Value)
         if Name == "UpdateRotationEvent" or Name == "RotationOffset" or Name == "RotationSpeed" then return end
-        self.Module3DFrame[Name] = self[Name]
+        self.Module3DFrame[Name] = Value
     end)
 end
 

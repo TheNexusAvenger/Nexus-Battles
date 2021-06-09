@@ -45,9 +45,9 @@ function TeamSelection:__new()
 
     if NexusRoundSystem:IsServer() then
         --Connect players leaving the round.
-        self:GetPropertyChangedSignal("ParentRound"):Connect(function()
-            if self.ParentRound then
-                self.ParentRound.Players.ItemRemoved:Connect(function(Player)
+        self:AddPropertyFinalizer("ParentRound",function(_,ParentRound)
+            if ParentRound then
+                ParentRound.Players.ItemRemoved:Connect(function(Player)
                     self.PlayerTeams:Set(Player.Name,nil)
                 end)
             end

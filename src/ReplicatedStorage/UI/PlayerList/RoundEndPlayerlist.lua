@@ -62,26 +62,26 @@ function RoundEndPlayerlist:__new(RoundPlayers,EliminatedPlayerStats)
     end
 
     --Connect the events.
-    self:GetPropertyChangedSignal("Stats"):Connect(function()
+    self:AddPropertyFinalizer("Stats",function(_,Stats)
         --Update the total stats of the existing entries.
         for _,Entry in pairs(self.PlayerEntries) do
-            Entry.TotalStats = #self.Stats
+            Entry.TotalStats = #Stats
         end
 
         --Update the main header.
-        self.TotalStats = #self.Stats
-        for i,StatData in pairs(self.Stats) do
+        self.TotalStats = #Stats
+        for i,StatData in pairs(Stats) do
             self.StatLabels[i].Text = StatData.Name
         end
 
         --Update the players.
-        self.StatsSorter = StatsSorter.new(self.Stats)
+        self.StatsSorter = StatsSorter.new(Stats)
         self:UpdatePlayers()
     end)
-    self:GetPropertyChangedSignal("MVPs"):Connect(function()
+    self:AddPropertyFinalizer("MVPs",function()
         self:UpdatePlayers()
     end)
-    self:GetPropertyChangedSignal("MaxEntries"):Connect(function()
+    self:AddPropertyFinalizer("MaxEntries",function()
         self:UpdatePlayers()
     end)
     self.AdornFrame:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()

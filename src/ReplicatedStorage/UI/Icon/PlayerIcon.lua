@@ -61,23 +61,9 @@ function PlayerIcon:__new()
     self.CharacterArmor = {}
 
     --Connect changing the properties.
-    self:GetPropertyChangedSignal("Parent"):Connect(function()
-        ViewportFrame.Parent = self.Parent
-    end)
-    self:GetPropertyChangedSignal("AnchorPoint"):Connect(function()
-        ViewportFrame.AnchorPoint = self.AnchorPoint
-    end)
-    self:GetPropertyChangedSignal("Size"):Connect(function()
-        ViewportFrame.Size = self.Size
-    end)
-    self:GetPropertyChangedSignal("SizeConstraint"):Connect(function()
-        ViewportFrame.SizeConstraint = self.SizeConstraint
-    end)
-    self:GetPropertyChangedSignal("Position"):Connect(function()
-        ViewportFrame.Position = self.Position
-    end)
-    self:GetPropertyChangedSignal("ZIndex"):Connect(function()
-        ViewportFrame.ZIndex = self.ZIndex
+    self:AddGenericPropertyFinalizer(function(Name,Value)
+        if Name == "Inventory" then return end
+        ViewportFrame[Name] = Value
     end)
 end
 

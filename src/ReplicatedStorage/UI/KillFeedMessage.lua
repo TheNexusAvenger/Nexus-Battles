@@ -43,10 +43,10 @@ function KillFeedMessage:__new(KillFeedData)
         self.MessageFrame = Message
 
         --Connect the resize event.
-        self:GetPropertyChangedSignal("HeightPixels"):Connect(function()
-            local MessageSizeBounds = TextService:GetTextSize(KillFeedData.Message,self.HeightPixels,Enum.Font.SourceSansBold,Vector2.new(10000,self.HeightPixels))
-            Message.TextSize = self.HeightPixels
-            Message.Size = UDim2.new(0,MessageSizeBounds.X + 10,0,self.HeightPixels)
+        self:AddPropertyFinalizer("HeightPixels",function(_,HeightPixels)
+            local MessageSizeBounds = TextService:GetTextSize(KillFeedData.Message,HeightPixels,Enum.Font.SourceSansBold,Vector2.new(10000,HeightPixels))
+            Message.TextSize = HeightPixels
+            Message.Size = UDim2.new(0,MessageSizeBounds.X + 10,0,HeightPixels)
         end)
     else
         local AdornFrame = Instance.new("Frame")
@@ -77,24 +77,24 @@ function KillFeedMessage:__new(KillFeedData)
         KilledPlayerText.Parent = AdornFrame
 
         --Connect the resize event.
-        self:GetPropertyChangedSignal("HeightPixels"):Connect(function()
-            local KillingPlayerSizeBounds = TextService:GetTextSize(KillFeedData.KillingPlayer.DisplayName,self.HeightPixels,Enum.Font.SourceSansBold,Vector2.new(10000,self.HeightPixels))
-            local KilledPlayerSizeBounds = TextService:GetTextSize(KillFeedData.KilledPlayer.DisplayName,self.HeightPixels,Enum.Font.SourceSansBold,Vector2.new(10000,self.HeightPixels))
+        self:AddPropertyFinalizer("HeightPixels",function(_,HeightPixels)
+            local KillingPlayerSizeBounds = TextService:GetTextSize(KillFeedData.KillingPlayer.DisplayName,HeightPixels,Enum.Font.SourceSansBold,Vector2.new(10000,HeightPixels))
+            local KilledPlayerSizeBounds = TextService:GetTextSize(KillFeedData.KilledPlayer.DisplayName,HeightPixels,Enum.Font.SourceSansBold,Vector2.new(10000,HeightPixels))
 
-            KillingPlayerText.Size = UDim2.new(0,KillingPlayerSizeBounds.X + 10,0,self.HeightPixels)
-            KillingPlayerText.TextSize = self.HeightPixels
-            KillingWeaponIcon.Size = UDim2.new(0,self.HeightPixels,0,self.HeightPixels)
+            KillingPlayerText.Size = UDim2.new(0,KillingPlayerSizeBounds.X + 10,0,HeightPixels)
+            KillingPlayerText.TextSize = HeightPixels
+            KillingWeaponIcon.Size = UDim2.new(0,HeightPixels,0,HeightPixels)
             KillingWeaponIcon.Position = UDim2.new(0,KillingPlayerSizeBounds.X + 10,0,0)
-            KilledPlayerText.Size = UDim2.new(0,KilledPlayerSizeBounds.X + 10,0,self.HeightPixels)
-            KilledPlayerText.Position = UDim2.new(0,KillingPlayerSizeBounds.X + self.HeightPixels + 10,0,0)
-            KilledPlayerText.TextSize = self.HeightPixels
-            AdornFrame.Size = UDim2.new(0,KillingPlayerSizeBounds.X + KilledPlayerSizeBounds.Y + self.HeightPixels + 20,0,self.HeightPixels)
+            KilledPlayerText.Size = UDim2.new(0,KilledPlayerSizeBounds.X + 10,0,HeightPixels)
+            KilledPlayerText.Position = UDim2.new(0,KillingPlayerSizeBounds.X + HeightPixels + 10,0,0)
+            KilledPlayerText.TextSize = HeightPixels
+            AdornFrame.Size = UDim2.new(0,KillingPlayerSizeBounds.X + KilledPlayerSizeBounds.Y + HeightPixels + 20,0,HeightPixels)
         end)
     end
 
     --Connect the events.
-    self:GetPropertyChangedSignal("Parent"):Connect(function()
-        self.MessageFrame.Parent = self.Parent
+    self:AddPropertyFinalizer("Parent",function(_,Parent)
+        self.MessageFrame.Parent = Parent
     end)
 end
 

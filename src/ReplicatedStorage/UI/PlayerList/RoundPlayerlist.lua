@@ -44,28 +44,28 @@ function RoundPlayerlist:__new(RoundPlayers,EliminatedPlayerStats)
     self.MainText.Text = ""
 
     --Connect the events.
-    self:GetPropertyChangedSignal("Stats"):Connect(function()
+    self:AddPropertyFinalizer("Stats",function(_,Stats)
         --Update the labels.
-        self.TotalStats = #self.Stats
-        for i,StatData in pairs(self.Stats) do
+        self.TotalStats = #Stats
+        for i,StatData in pairs(Stats) do
             self.StatLabels[i].Text = StatData.Name
         end
 
         --Update the stats of the player entries.
-        self.StatsSorter = StatsSorter.new(self.Stats)
+        self.StatsSorter = StatsSorter.new(Stats)
         for _,Entry in pairs(self.PlayerEntries) do
-            Entry.Stats = self.Stats
+            Entry.Stats = Stats
         end
         for _,Entry in pairs(self.TeamHeaders) do
-            Entry.Stats = self.Stats
+            Entry.Stats = Stats
         end
 
         --Update the order.
         self:UpdateEntries()
     end)
-    self:GetPropertyChangedSignal("TeamColors"):Connect(function()
+    self:AddPropertyFinalizer("TeamColors",function(_,TeamColors)
         --Create the missing team labels.
-        local TeamColors = self.TeamColors or {}
+        local TeamColors = TeamColors or {}
         for _,Color in pairs(TeamColors) do
             if not self.TeamHeaders[Color.Name] then
                 local Header = TeamHeader.new()

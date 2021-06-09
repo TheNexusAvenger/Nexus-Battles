@@ -29,18 +29,18 @@ function PlayerEntry:__new()
 
     --Connect the events.
     self.StatChanged = NexusEventCreator:CreateEvent()
-    self:GetPropertyChangedSignal("Player"):Connect(function()
-        if self.Player then
-            self.MainText.Text = self.Player.DisplayName
+    self:AddPropertyFinalizer("Player",function(_,Player)
+        if Player then
+            self.MainText.Text = Player.DisplayName
         else
             self.MainText.Text = ""
         end
-        self.PlayerRankIcon.Player = self.Player
-        self.TextColor3 = (self.Player == Players.LocalPlayer and SAME_PLAYER_COLOR_TEXT or DIFFERENT_PLAYER_COLOR_TEXT)
+        self.PlayerRankIcon.Player = Player
+        self.TextColor3 = (Player == Players.LocalPlayer and SAME_PLAYER_COLOR_TEXT or DIFFERENT_PLAYER_COLOR_TEXT)
         self:UpdateStatEvents()
     end)
-    self:GetPropertyChangedSignal("Stats"):Connect(function()
-        self.TotalStats = #self.Stats
+    self:AddPropertyFinalizer("Stats",function(_,Stats)
+        self.TotalStats = #Stats
         self:UpdateStatEvents()
     end)
 

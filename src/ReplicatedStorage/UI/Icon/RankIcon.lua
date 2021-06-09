@@ -32,7 +32,7 @@ function RankIcon:__new(ImageLabel)
     --Connect the events.
     self.Events = {}
     self.PlayerEvents = {}
-    table.insert(self.Events,self:GetPropertyChangedSignal("Player"):Connect(function()
+    self:AddPropertyFinalizer("Player",function(_,Player)
         --Disconnect the existing player events.
         for _,Event in pairs(self.PlayerEvents) do
             Event:Disconnect()
@@ -43,13 +43,13 @@ function RankIcon:__new(ImageLabel)
         self:Update()
 
         --Connect updating based on stat changes.
-        if self.Player then
-            local RankScoreValue = self.Player:WaitForChild("PersistentStats"):WaitForChild("RankScore")
+        if Player then
+            local RankScoreValue = Player:WaitForChild("PersistentStats"):WaitForChild("RankScore")
             table.insert(self.PlayerEvents,RankScoreValue.Changed:Connect(function()
                 self:Update()
             end))
         end
-    end))
+    end)
     table.insert(self.Events,self.NexusAdmin.Authorization.AdminLevelChanged:Connect(function(Player)
         if Player == self.Player then
             self:Update()

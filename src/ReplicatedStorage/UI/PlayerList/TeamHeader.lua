@@ -27,12 +27,12 @@ function TeamHeader:__new()
     --Connect the events.
     self.MainText.Text = ""
     self.PlayersEntries = {}
-    self:GetPropertyChangedSignal("Stats"):Connect(function()
-        self.TotalStats = #self.Stats
+    self:AddPropertyFinalizer("Stats",function(_,Stats)
+        self.TotalStats = #Stats
         self:UpdateTotals()
     end)
-    self:GetPropertyChangedSignal("TeamColor"):Connect(function()
-        self.BorderColor3 = self.TeamColor.Color
+    self:AddPropertyFinalizer("TeamColor",function(_,TeamColor)
+        self.BorderColor3 = TeamColor.Color
         self.BackgroundColor3 = Color3.new(TEAM_COLOR_BACKGROUND_MULTIPLIER * self.TeamColor.Color.R,TEAM_COLOR_BACKGROUND_MULTIPLIER * self.TeamColor.Color.G,TEAM_COLOR_BACKGROUND_MULTIPLIER * self.TeamColor.Color.B)
     end)
 

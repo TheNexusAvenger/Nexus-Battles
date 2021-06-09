@@ -68,12 +68,12 @@ function ReplicatedContainer:__new()
     self:AddToSerialization("Name")
 
     --Connect parent changes.
-    self:GetPropertyChangedSignal("Parent"):Connect(function()
+    self:AddPropertyFinalizer("Parent",function(_,Parent)
         --Invoke the child being removed.
         if self.LastParent then
             self.LastParent:UnregisterChild(self.object)
         end
-        self.LastParent = self.Parent
+        self.LastParent = Parent
 
         --Invoke the child being added.
         if self.Parent then
@@ -150,8 +150,8 @@ function ReplicatedContainer:AddToSerialization(PropertyName,SerializeType)
 
     --Replicate changes from the server to the client.
     if NexusRoundSystem:IsServer() then
-        self:GetPropertyChangedSignal(PropertyName):Connect(function()
-            self:SendSignal("Changed_"..PropertyName,self.SerializationMethods[SerializeType](self[PropertyName]))
+        self:AddPropertyFinalizer(PropertyName,function(_,NewValue)
+            self:SendSignal("Changed_"..PropertyName,self.SerializationMethods[SerializeType](NewValue))
         end)
     else
         self:ListenToSignal("Changed_"..PropertyName,function(NewValue)
