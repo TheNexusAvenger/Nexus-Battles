@@ -137,6 +137,13 @@ local function CurrentRoundChanged(CurrentRound)
         --Wait for the character to load.
         if CurrentRound.Players:Contains(Players.LocalPlayer) then
             Players.LocalPlayer.CharacterAdded:Wait()
+            local Character = Players.LocalPlayer.Character
+            if Character then
+                local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+                if Humanoid then
+                    Camera.CameraSubject = Humanoid
+                end
+            end
         else
             while CurrentRound.State == "LOADING" do
                 CurrentRound:GetPropertyChangedSignal("State"):Wait()
