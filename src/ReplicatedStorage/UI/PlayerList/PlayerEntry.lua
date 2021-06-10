@@ -55,7 +55,7 @@ Returns the values of the stats.
 --]]
 function PlayerEntry:GetStatValues()
     local Values = {}
-    local TemporaryStats = self.Player and self.Player:WaitForChild("TemporaryStats")
+    local TemporaryStats = self.Player and self.Player:FindFirstChild("TemporaryStats")
     for _,StatData in pairs(self.Stats) do
         table.insert(Values,TemporaryStats and TemporaryStats:WaitForChild(StatData.Name).Value or 0)
     end
