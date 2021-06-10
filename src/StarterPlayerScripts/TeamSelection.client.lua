@@ -176,6 +176,7 @@ local function CurrentRoundChanged(CurrentRound)
     local function UpdateJoinButtons()
         --Create the additional buttons.
         local TeamColors = CurrentRound.TeamSelection.TeamColors
+        if CurrentRound.Spectators:Contains(Players.LocalPlayer) then TeamColors = {} end
         for i = #JoinTeamButtons + 1,#TeamColors do
             --Create the button.
             local JoinTeamButton,JoinTeamText = JoinTeamTextButtonFactory:Create()
