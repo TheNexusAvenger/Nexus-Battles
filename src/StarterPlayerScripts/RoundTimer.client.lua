@@ -203,9 +203,18 @@ local function CurrentRoundChanged(CurrentRound)
         end
         FlashScreen()
 
+        --Reset the camera.
+        Camera.CameraType = Enum.CameraType.Custom
+        local Character = Players.LocalPlayer.Character
+        if Character then
+            local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+            if Humanoid then
+                Camera.CameraSubject = Humanoid
+            end
+        end
+
         --Hide the user interface.
         Blur:Destroy()
-        Camera.CameraType = Enum.CameraType.Custom
         LoadingTopFrame.Visible = false
         LoadingBottomFrame.Visible = false
         TimerMessageText.Visible = false
