@@ -212,7 +212,7 @@ function DamageService:DamageHumanoid(Humanoid,Damage,DamagingPlayer,DamagingToo
     Damage = math.min(Damage,Humanoid.Health)
 
     --Apply the reactance back at the damaging player.
-    if Modifiers and DamagingPlayer and DamagingToolName ~= "Reactance" then
+    if Modifiers and DamagingPlayer and DamagingToolName ~= "Reactance" and DamagingPlayer ~= Player then
         local Reactance = Modifiers:Get("Reactance")
         if Reactance > 0 then
             local DamagingCharacter = DamagingPlayer.Character
