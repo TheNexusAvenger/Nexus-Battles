@@ -194,6 +194,7 @@ Starts the round.
 function BaseRound:Start(RoundPlayers,LoadTimeElapsedCallback)
     --Create the temporary stats.
     for _,Player in pairs(RoundPlayers) do
+        self:GetService("StatService"):ClearTemporaryStats(Player)
         local Stats = self:GetService("StatService"):GetTemporaryStats(Player)
         for _,StatData in pairs(self.RoundStats) do
             Stats:Create(StatData.Name,StatData.ValueType,StatData.DefaultValue)
