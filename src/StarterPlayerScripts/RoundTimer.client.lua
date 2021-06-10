@@ -90,6 +90,8 @@ GameTypeDescriptionText.TextScaled = true
 GameTypeDescriptionText.Visible = false
 GameTypeDescriptionText.Parent = RoundGui
 
+local CurrentRoundTimer = nil
+
 
 
 --[[
@@ -104,6 +106,9 @@ local function CurrentRoundChanged(CurrentRound)
         TimerTimeText.Visible = false
         GameTypeNameText.Visible = false
         GameTypeDescriptionText.Visible = false
+        if CurrentRoundTimer then
+            CurrentRoundTimer:Destroy()
+        end
         return
     end
 
@@ -167,14 +172,14 @@ local function CurrentRoundChanged(CurrentRound)
         TimerMessageText.Text = CurrentRound.TimerText
     end)
     TimerMessageText.Text = CurrentRound.TimerText
-    local RoundTimer = TextTimer.new(TimerTimeText,CurrentRound.Timer)
+    CurrentRoundTimer = TextTimer.new(TimerTimeText,CurrentRound.Timer)
 
     --Wait for the round to end.
     while CurrentRoundState.CurrentRound == CurrentRound and CurrentRound.State ~= "ENDED" do
         CurrentRound:GetPropertyChangedSignal("State"):Wait()
     end
     TimerTextChangedEvent:Disconnect()
-    RoundTimer:Destroy()
+    CurrentRoundTimer:Destroy()
 
     --Display the round end.
     if CurrentRoundState.CurrentRound == CurrentRound then
