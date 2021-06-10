@@ -5,7 +5,9 @@ Runs the reflector effect.
 --]]
 
 local EFFECT_TIME_DELAY = 0.2
-local REFLECT_RADIUS = Vector3.new(20,20,20)
+local REFLECT_RADIUS = Vector3.new(24,24,24)
+
+
 
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
