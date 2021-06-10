@@ -12,14 +12,68 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 local NexusRoundSystem = ReplicatedStorageProject:GetResource("NexusRoundSystem")
 local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
 local ActiveRounds = NexusRoundSystem:GetObjectReplicator():GetGlobalContainer():WaitForChildBy("Name","ActiveRounds")
+local NexusObject = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusObject")
 
-local CurrentRound = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusObject"):Extend()
+local CurrentRound = NexusObject:Extend()
 CurrentRound:SetClassName("CurrentRound")
 CurrentRound.CurrentRoundChanged = NexusEventCreator:CreateEvent()
 CurrentRound.CurrentPlayingRoundChanged = NexusEventCreator:CreateEvent()
 CurrentRound.CurrentSpectatingRoundChanged = NexusEventCreator:CreateEvent()
 
 
+--[[
+Connects to a state.
+--]]
+function CurrentRound:ConnectTo(Name,Functions)
+    --Create the class.
+    local StateClass = NexusObject:Extend()
+    local CurrentObject = nil
+    local CurrentObjectRound = nil
+
+    --[[
+    Returns if the object is active.
+    --]]
+    function StateClass:IsActive()
+        return CurrentObject == self.object
+    end
+
+    --[[
+    Updates the current object.
+    --]]
+    function StateClass:Update()
+        --Return if the round didn't change.
+        local NewRound = CurrentRound[Name]
+        if NewRound == CurrentObjectRound then return end
+        CurrentObjectRound = NewRound
+
+        --Clear the existing object.
+        if CurrentObject then
+            if CurrentObject.Clear then
+                CurrentObject:Clear()
+            end
+            CurrentObject = nil
+        end
+
+        --Create the new object.
+        if NewRound then
+            CurrentObject = StateClass.new()
+            if CurrentObject.Start then
+                CurrentObject:Start(NewRound)
+            end
+        end
+    end
+
+    --Add the functions.
+    for FunctionName,Function in pairs(Functions) do
+        StateClass[FunctionName] = Function
+    end
+
+    --Connect the round changing.
+    CurrentRound[Name.."Changed"]:Connect(function()
+        StateClass:Update()
+    end)
+    StateClass:Update()
+end
 
 
 --[[
