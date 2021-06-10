@@ -17,6 +17,9 @@ local Humanoids = {
 
 
 
+--Hide the board.
+Lobby:WaitForChild("Leaderboards"):WaitForChild("TotalCoins").Transparency = 1
+
 --Set up the animations.
 for _,Humanoid in pairs(Humanoids) do
     local Animation = Instance.new("Animation")
