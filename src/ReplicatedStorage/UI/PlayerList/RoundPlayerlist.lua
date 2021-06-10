@@ -65,7 +65,7 @@ function RoundPlayerlist:__new(RoundPlayers,EliminatedPlayerStats)
     end)
     self:AddPropertyFinalizer("TeamColors",function(_,TeamColors)
         --Create the missing team labels.
-        local TeamColors = TeamColors or {}
+        TeamColors = TeamColors or {}
         for _,Color in pairs(TeamColors) do
             if not self.TeamHeaders[Color.Name] then
                 local Header = TeamHeader.new()
