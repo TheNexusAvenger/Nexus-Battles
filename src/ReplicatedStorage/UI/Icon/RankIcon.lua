@@ -40,10 +40,10 @@ function RankIcon:__new(ImageLabel)
         self.PlayerEvents = {}
 
         --Update the icon.
-        self:Update()
-
-        --Connect updating based on stat changes.
         coroutine.wrap(function()
+            self:Update()
+
+            --Connect updating based on stat changes.
             if Player then
                 local RankScoreValue = Player:WaitForChild("PersistentStats"):WaitForChild("RankScore")
                 table.insert(self.PlayerEvents,RankScoreValue.Changed:Connect(function()
@@ -54,7 +54,9 @@ function RankIcon:__new(ImageLabel)
     end)
     table.insert(self.Events,self.NexusAdmin.Authorization.AdminLevelChanged:Connect(function(Player)
         if Player == self.Player then
-            self:Update()
+            coroutine.wrap(function()
+                self:Update()
+            end)()
         end
     end))
 end
