@@ -433,6 +433,94 @@ NexusUnitTesting:RegisterUnitTest(InventoryTest.new("DamageItem"):SetRun(functio
             Slot = 5,
         },
     }))
+
+    --Test auto-equipping.
+    self.CuT:AddItem(102)
+    self.CuT:SwapItems(self.CuT:AddItem(101),"Body")
+    self:AssertEquals(self.InventoryValue.Value,HttpService:JSONEncode({
+        {
+            Id = 101,
+            Health = 400,
+            Slot = 4,
+        },
+        {
+            Id = 101,
+            Health = 400,
+            Slot = 5,
+        },
+        {
+            Id = 102,
+            Health = 660,
+            Slot = 1,
+        },
+        {
+            Id = 101,
+            Health = 300,
+            Slot = "Body",
+        },
+    }))
+    self.CuT:DamageItem("Body",200)
+    self:AssertEquals(self.InventoryValue.Value,HttpService:JSONEncode({
+        {
+            Id = 101,
+            Health = 400,
+            Slot = 4,
+        },
+        {
+            Id = 101,
+            Health = 400,
+            Slot = 5,
+        },
+        {
+            Id = 102,
+            Health = 660,
+            Slot = 1,
+        },
+        {
+            Id = 101,
+            Health = 100,
+            Slot = "Body",
+        },
+    }))
+    self.CuT:DamageItem("Body",200)
+    self:AssertEquals(self.InventoryValue.Value,HttpService:JSONEncode({
+        {
+            Id = 101,
+            Health = 400,
+            Slot = "Body",
+        },
+        {
+            Id = 101,
+            Health = 400,
+            Slot = 5,
+        },
+        {
+            Id = 102,
+            Health = 660,
+            Slot = 1,
+        },
+    }))
+    self.CuT:DamageItem("Body",400)
+    self:AssertEquals(self.InventoryValue.Value,HttpService:JSONEncode({
+        {
+            Id = 101,
+            Health = 400,
+            Slot = "Body",
+        },
+        {
+            Id = 102,
+            Health = 660,
+            Slot = 1,
+        },
+    }))
+    self.CuT:DamageItem("Body",400)
+    self:AssertEquals(self.InventoryValue.Value,HttpService:JSONEncode({
+        {
+            Id = 102,
+            Health = 660,
+            Slot = 1,
+        },
+    }))
 end))
 
 --[[

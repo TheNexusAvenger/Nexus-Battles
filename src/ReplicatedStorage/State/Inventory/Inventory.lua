@@ -4,6 +4,10 @@ TheNexusAvenger
 Manages the inventory for the player.
 --]]
 
+local AUTO_EQUIP_SAME_ARMOR_ON_DESTROY = true
+
+
+
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local HttpService = game:GetService("HttpService")
 
@@ -165,7 +169,25 @@ function Inventory:DamageItem(Slot,Damage)
     if Item.Health > 0 then
         self:Save()
     else
+        --Remove the item.
         self:RemoveItem(Slot)
+
+        --Attempt to equip the next item of the same type.
+        if typeof(Slot) ~= "number" and AUTO_EQUIP_SAME_ARMOR_ON_DESTROY then
+            --Get the next item of the same id.
+            local NextSlot = nil
+            for _,NewItem in pairs(self.Inventory) do
+                if NewItem.Id == Item.Id and typeof(NewItem.Slot) == "number" then
+                    NextSlot = NextSlot and math.min(NextSlot,NewItem.Slot) or NewItem.Slot
+                    break
+                end
+            end
+
+            --Swap the slots.
+            if NextSlot then
+                self:SwapItems(Slot,NextSlot)
+            end
+        end
     end
 end
 
