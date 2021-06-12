@@ -77,10 +77,10 @@ function MarketplaceService.ProcessReceipt(ReceiptInfo)
     --Handle the purchase.
     if RobuxItem.Coins then
         for _ = 1,TOTAL_COINS_TO_ANIMATE - 1 do
-            CoinService:GiveCoins(Player,math.floor(RobuxItem.Coins/TOTAL_COINS_TO_ANIMATE))
+            CoinService:GiveCoinsFromRobuxPurchase(Player,math.floor(RobuxItem.Coins/TOTAL_COINS_TO_ANIMATE))
             wait()
         end
-        CoinService:GiveCoins(Player,RobuxItem.Coins - ((TOTAL_COINS_TO_ANIMATE - 1) * math.floor(RobuxItem.Coins/TOTAL_COINS_TO_ANIMATE)))
+        CoinService:GiveCoinsFromRobuxPurchase(Player,RobuxItem.Coins - ((TOTAL_COINS_TO_ANIMATE - 1) * math.floor(RobuxItem.Coins/TOTAL_COINS_TO_ANIMATE)))
     end
     if RobuxItem.Armor then
         for _,Id in pairs(RobuxItem.Armor) do

@@ -61,6 +61,19 @@ function CoinService:GiveCoins(Player,Total,WorldPosition)
 end
 
 --[[
+Awards coins to a player for a Robux purchase.
+--]]
+function CoinService:GiveCoinsFromRobuxPurchase(Player,Total)
+    --Add the coins.
+    local Stats = StatService:GetPersistentStats(Player)
+    Stats:Get("Coins"):Increment(Total)
+    Stats:Get("PurchaseCoins"):Increment(Total)
+
+    --Play the animation on the client.
+    LocalEffectService:PlayLocalEffect(Player,"DisplayCoinsUpdate",Total)
+end
+
+--[[
 Drops a coin in Workspace.
 --]]
 function CoinService:DropCoin(SpawnPosition,Parent)

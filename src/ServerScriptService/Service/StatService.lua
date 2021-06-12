@@ -16,6 +16,12 @@ local DEFAULT_STATS = {
         DefaultValue = 0,
     },
     {
+        --Seprate stat suggested so that players don't mix the coins they collected and purchased in the stats view.
+        Name = "PurchaseCoins",
+        ValueType = "IntValue",
+        DefaultValue = 0,
+    },
+    {
         Name = "Inventory",
         ValueType = "StringValue",
         DefaultValue = "[]",
