@@ -26,7 +26,7 @@ function KillFeedMessage:__new(KillFeedData)
     --Convert the message for a self-kill.
     if KillFeedData.KilledPlayer and not KillFeedData.KillingPlayer then
         KillFeedData = {
-            Message = tostring(KillFeedData.KilledPlayer).." BLOXXED themself!"
+            Message = tostring(KillFeedData.KilledPlayer and KillFeedData.KilledPlayer.DisplayName).." BLOXXED themself!"
         }
     end
 
