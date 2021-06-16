@@ -7,12 +7,12 @@ Class for a Juggernaut round.
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Debris = game:GetService("Debris")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
 
 local Juggernaut = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 Juggernaut:SetClassName("Juggernaut")
 Juggernaut:AddFromSerializeData("Juggernaut")
-NexusRoundSystem:GetObjectReplicator():RegisterType("Juggernaut",Juggernaut)
+NexusReplication:GetObjectReplicator():RegisterType("Juggernaut",Juggernaut)
 
 
 

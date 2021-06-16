@@ -6,12 +6,12 @@ Class for a Team Swap round.
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
 
 local TeamSwap = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseTeamRound")):Extend()
 TeamSwap:SetClassName("TeamSwap")
 TeamSwap:AddFromSerializeData("TeamSwap")
-NexusRoundSystem:GetObjectReplicator():RegisterType("TeamSwap",TeamSwap)
+NexusReplication:GetObjectReplicator():RegisterType("TeamSwap",TeamSwap)
 
 
 

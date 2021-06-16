@@ -6,12 +6,12 @@ Class for a One Weapon Rocket Launcher round.
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
 
 local OneWeaponRocketLauncher = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 OneWeaponRocketLauncher:SetClassName("OneWeaponRocketLauncher")
 OneWeaponRocketLauncher:AddFromSerializeData("OneWeaponRocketLauncher")
-NexusRoundSystem:GetObjectReplicator():RegisterType("OneWeaponRocketLauncher",OneWeaponRocketLauncher)
+NexusReplication:GetObjectReplicator():RegisterType("OneWeaponRocketLauncher",OneWeaponRocketLauncher)
 
 
 

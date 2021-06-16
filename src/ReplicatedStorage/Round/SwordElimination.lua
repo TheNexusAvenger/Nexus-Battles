@@ -10,12 +10,12 @@ local DEFAULT_RESPAWN_TIME = 3
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
 
 local SwordElimination = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 SwordElimination:SetClassName("SwordElimination")
 SwordElimination:AddFromSerializeData("SwordElimination")
-NexusRoundSystem:GetObjectReplicator():RegisterType("SwordElimination",SwordElimination)
+NexusReplication:GetObjectReplicator():RegisterType("SwordElimination",SwordElimination)
 
 
 

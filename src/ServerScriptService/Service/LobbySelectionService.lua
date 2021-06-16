@@ -12,8 +12,8 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 local GameTypes = ReplicatedStorageProject:GetResource("Data.GameTypes")
 local MapTypes = ReplicatedStorageProject:GetResource("Data.MapTypes")
 local WaitAny = ReplicatedStorageProject:GetResource("State.Event.WaitAny")
-local NexusRoundSystem = ReplicatedStorageProject:GetResource("NexusRoundSystem")
-local ObjectReplicator = NexusRoundSystem:GetObjectReplicator()
+local NexusReplication = ReplicatedStorageProject:GetResource("External.NexusReplication")
+local ObjectReplicator = NexusReplication:GetObjectReplicator()
 local FeatureFlagService = ServerScriptServiceProject:GetResource("Service.FeatureFlagService")
 local RoundService = ServerScriptServiceProject:GetResource("Service.RoundService")
 

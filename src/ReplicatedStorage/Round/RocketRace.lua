@@ -29,12 +29,12 @@ local TEAM_COLORS = {
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
 
 local RocketRace = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 RocketRace:SetClassName("RocketRace")
 RocketRace:AddFromSerializeData("RocketRace")
-NexusRoundSystem:GetObjectReplicator():RegisterType("RocketRace",RocketRace)
+NexusReplication:GetObjectReplicator():RegisterType("RocketRace",RocketRace)
 
 
 

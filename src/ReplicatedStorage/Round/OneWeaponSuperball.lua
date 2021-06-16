@@ -6,12 +6,12 @@ Class for a One Weapon Superball round.
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
 
 local OneWeaponSuperball = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 OneWeaponSuperball:SetClassName("OneWeaponSuperball")
 OneWeaponSuperball:AddFromSerializeData("OneWeaponSuperball")
-NexusRoundSystem:GetObjectReplicator():RegisterType("OneWeaponSuperball",OneWeaponSuperball)
+NexusReplication:GetObjectReplicator():RegisterType("OneWeaponSuperball",OneWeaponSuperball)
 
 
 

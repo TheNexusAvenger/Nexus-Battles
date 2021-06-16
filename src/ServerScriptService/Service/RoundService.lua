@@ -20,8 +20,8 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
 local LobbySpawnLocation = Workspace:WaitForChild("Lobby"):WaitForChild("LobbySpawnLocation")
-local NexusRoundSystem = ReplicatedStorageProject:GetResource("NexusRoundSystem")
-local ObjectReplicator = NexusRoundSystem:GetObjectReplicator()
+local NexusReplication = ReplicatedStorageProject:GetResource("External.NexusReplication")
+local ObjectReplicator = NexusReplication:GetObjectReplicator()
 local MapTypes = ReplicatedStorageProject:GetResource("Data.MapTypes")
 local Maps = ServerStorage:WaitForChild("Maps")
 local CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")

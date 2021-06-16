@@ -9,9 +9,9 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
-local NexusRoundSystem = ReplicatedStorageProject:GetResource("NexusRoundSystem")
+local NexusReplication = ReplicatedStorageProject:GetResource("External.NexusReplication")
 local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
-local ActiveRounds = NexusRoundSystem:GetObjectReplicator():GetGlobalContainer():WaitForChildBy("Name","ActiveRounds")
+local ActiveRounds = NexusReplication:GetObjectReplicator():GetGlobalContainer():WaitForChildBy("Name","ActiveRounds")
 local NexusObject = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusObject")
 
 local CurrentRound = NexusObject:Extend()

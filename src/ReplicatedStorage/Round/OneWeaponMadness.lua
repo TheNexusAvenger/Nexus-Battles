@@ -16,12 +16,12 @@ local WEAPON_OPTIONS = {
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
 
 local OneWeaponMadness = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 OneWeaponMadness:SetClassName("OneWeaponMadness")
 OneWeaponMadness:AddFromSerializeData("OneWeaponMadness")
-NexusRoundSystem:GetObjectReplicator():RegisterType("OneWeaponMadness",OneWeaponMadness)
+NexusReplication:GetObjectReplicator():RegisterType("OneWeaponMadness",OneWeaponMadness)
 
 
 

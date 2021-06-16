@@ -19,13 +19,13 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 local StatsSorter
 local RankScoreBonuses
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
-local ObjectReplication = NexusRoundSystem:GetObjectReplicator()
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
+local ObjectReplication = NexusReplication:GetObjectReplicator()
 
-local BaseRound = NexusRoundSystem:GetResource("Common.Object.Base.ReplicatedContainer"):Extend()
+local BaseRound = NexusReplication:GetResource("Common.Object.ReplicatedContainer"):Extend()
 BaseRound:SetClassName("BaseRound")
 BaseRound:AddFromSerializeData("BaseRound")
-NexusRoundSystem:GetObjectReplicator():RegisterType("BaseRound",BaseRound)
+NexusReplication:GetObjectReplicator():RegisterType("BaseRound",BaseRound)
 
 
 
@@ -42,7 +42,7 @@ function BaseRound:__new()
     self.State = "LOADING"
     self.TimerText = "TIME REMAINING"
     self.MVPs = {}
-    if NexusRoundSystem:IsServer() then
+    if NexusReplication:IsServer() then
         self.Players = ObjectReplication:CreateObject("ReplicatedTable")
         self.Spectators = ObjectReplication:CreateObject("ReplicatedTable")
         self.EliminatedPlayerStats = ObjectReplication:CreateObject("ReplicatedTable")

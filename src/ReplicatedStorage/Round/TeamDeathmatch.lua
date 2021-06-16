@@ -6,12 +6,12 @@ Class for a Team Death Match round.
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
 
 local TeamDeathmatch = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseTeamRound")):Extend()
 TeamDeathmatch:SetClassName("TeamDeathmatch")
 TeamDeathmatch:AddFromSerializeData("TeamDeathmatch")
-NexusRoundSystem:GetObjectReplicator():RegisterType("TeamDeathmatch",TeamDeathmatch)
+NexusReplication:GetObjectReplicator():RegisterType("TeamDeathmatch",TeamDeathmatch)
 
 
 

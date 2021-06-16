@@ -6,12 +6,12 @@ Class for a Free For All round.
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
 
 local FreeForAll = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 FreeForAll:SetClassName("FreeForAll")
 FreeForAll:AddFromSerializeData("FreeForAll")
-NexusRoundSystem:GetObjectReplicator():RegisterType("FreeForAll",FreeForAll)
+NexusReplication:GetObjectReplicator():RegisterType("FreeForAll",FreeForAll)
 
 
 

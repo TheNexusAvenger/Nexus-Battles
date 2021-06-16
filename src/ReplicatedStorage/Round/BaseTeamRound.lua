@@ -15,8 +15,8 @@ local DEFAULT_TEAMS = {
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
-local ObjectReplication = NexusRoundSystem:GetObjectReplicator()
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
+local ObjectReplication = NexusReplication:GetObjectReplicator()
 require(ReplicatedStorage:WaitForChild("State"):WaitForChild("TeamSelection"))
 
 local BaseTeamRound = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
@@ -33,7 +33,7 @@ function BaseTeamRound:__new()
     self:InitializeSuper()
 
     --Store the teams.
-    if NexusRoundSystem:IsServer() then
+    if NexusReplication:IsServer() then
         self.LoadTime = TEAM_SELECTION_TIME
         self.TeamColors = self.TeamColors or DEFAULT_TEAMS
         self.TeamSelection = ObjectReplication:CreateObject("TeamSelection")

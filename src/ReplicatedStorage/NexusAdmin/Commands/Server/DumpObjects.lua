@@ -9,8 +9,8 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
-local NexusRoundSystem = ReplicatedStorageProject:GetResource("NexusRoundSystem")
-local ObjectReplicator = NexusRoundSystem:GetObjectReplicator()
+local NexusReplication = ReplicatedStorageProject:GetResource("External.NexusReplication")
+local ObjectReplicator = NexusReplication:GetObjectReplicator()
 
 
 

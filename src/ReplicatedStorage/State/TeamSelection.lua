@@ -9,11 +9,11 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 local TeamService
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
-local ObjectReplication = NexusRoundSystem:GetObjectReplicator()
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
+local ObjectReplication = NexusReplication:GetObjectReplicator()
 local JoinTeamEvent
 
-local TeamSelection = NexusRoundSystem:GetResource("Common.Object.Base.ReplicatedContainer"):Extend()
+local TeamSelection = NexusReplication:GetResource("Common.Object.ReplicatedContainer"):Extend()
 TeamSelection:SetClassName("TeamSelection")
 TeamSelection:AddFromSerializeData("TeamSelection")
 ObjectReplication:RegisterType("TeamSelection",TeamSelection)
@@ -36,14 +36,14 @@ function TeamSelection:__new()
     self.Finalized = false
     self.TotalTeams = 0
     self.TeamColors = {}
-    if NexusRoundSystem:IsServer() then
+    if NexusReplication:IsServer() then
         self.PlayerTeams = ObjectReplication:CreateObject("ReplicatedTable")
     end
     self:AddToSerialization("Finalized")
     self:AddToSerialization("PlayerTeams","ObjectReference")
     self:AddToSerialization("ParentRound","ObjectReference")
 
-    if NexusRoundSystem:IsServer() then
+    if NexusReplication:IsServer() then
         --Connect players leaving the round.
         self:AddPropertyFinalizer("ParentRound",function(_,ParentRound)
             if ParentRound then
@@ -116,7 +116,7 @@ function TeamSelection:SetPlayerTeam(Player,TeamColor)
     end
 
     --Join the team.
-    if NexusRoundSystem:IsServer() then
+    if NexusReplication:IsServer() then
         --Set the player team.
         self.PlayerTeams:Set(Player.Name,TeamColor)
         if not TeamService then

@@ -13,3 +13,6 @@
 [submodule "module/Module3D"]
 	path = module/Module3D
 	url = https://github.com/TheNexusAvenger/Module3D.git
+[submodule "module/Nexus-Replication"]
+	path = module/Nexus-Replication
+	url = https://github.com/TheNexusAvenger/Nexus-Replication.git

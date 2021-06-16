@@ -17,12 +17,12 @@ local TOTAL_WEAPONS = 3
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
 
 local Party = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 Party:SetClassName("Party")
 Party:AddFromSerializeData("Party")
-NexusRoundSystem:GetObjectReplicator():RegisterType("Party",Party)
+NexusReplication:GetObjectReplicator():RegisterType("Party",Party)
 
 
 

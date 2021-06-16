@@ -6,12 +6,12 @@ Class for a King Of The Hill round.
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
 
 local KingOfTheHill = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 KingOfTheHill:SetClassName("KingOfTheHill")
 KingOfTheHill:AddFromSerializeData("KingOfTheHill")
-NexusRoundSystem:GetObjectReplicator():RegisterType("KingOfTheHill",KingOfTheHill)
+NexusReplication:GetObjectReplicator():RegisterType("KingOfTheHill",KingOfTheHill)
 
 
 

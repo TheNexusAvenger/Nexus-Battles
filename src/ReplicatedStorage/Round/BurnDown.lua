@@ -17,12 +17,12 @@ local INITIAL_WEAPONS = {
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
 
 local BurnDown = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 BurnDown:SetClassName("BurnDown")
 BurnDown:AddFromSerializeData("BurnDown")
-NexusRoundSystem:GetObjectReplicator():RegisterType("BurnDown",BurnDown)
+NexusReplication:GetObjectReplicator():RegisterType("BurnDown",BurnDown)
 
 
 

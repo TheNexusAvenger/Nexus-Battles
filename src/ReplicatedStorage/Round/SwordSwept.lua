@@ -17,12 +17,12 @@ local TEAM_TOOLS = {
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
 
 local SwordSwept = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseTeamRound")):Extend()
 SwordSwept:SetClassName("SwordSwept")
 SwordSwept:AddFromSerializeData("SwordSwept")
-NexusRoundSystem:GetObjectReplicator():RegisterType("SwordSwept",SwordSwept)
+NexusReplication:GetObjectReplicator():RegisterType("SwordSwept",SwordSwept)
 
 
 

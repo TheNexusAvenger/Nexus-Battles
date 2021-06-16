@@ -11,8 +11,8 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
-local NexusRoundSystem = ReplicatedStorageProject:GetResource("NexusRoundSystem")
-local ActiveRounds = NexusRoundSystem:GetObjectReplicator():GetGlobalContainer():WaitForChildBy("Name","ActiveRounds")
+local NexusReplication = ReplicatedStorageProject:GetResource("External.NexusReplication")
+local ActiveRounds = NexusReplication:GetObjectReplicator():GetGlobalContainer():WaitForChildBy("Name","ActiveRounds")
 local MapTypes = ReplicatedStorageProject:GetResource("Data.MapTypes")
 local GameTypes = ReplicatedStorageProject:GetResource("Data.GameTypes")
 local StartSpectating = ReplicatedStorageProject:GetResource("Replication.Lobby.StartSpectating")

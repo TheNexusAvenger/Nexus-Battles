@@ -12,8 +12,8 @@ local PhysicsService = game:GetService("PhysicsService")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local CurrentRoundState = ReplicatedStorageProject:GetResource("State.CurrentRound")
-local NexusRoundSystem = ReplicatedStorageProject:GetResource("NexusRoundSystem")
-local ActiveRounds = NexusRoundSystem:GetObjectReplicator():GetGlobalContainer():WaitForChildBy("Name","ActiveRounds")
+local NexusReplication = ReplicatedStorageProject:GetResource("External.NexusReplication")
+local ActiveRounds = NexusReplication:GetObjectReplicator():GetGlobalContainer():WaitForChildBy("Name","ActiveRounds")
 local SameRoundPlayersId
 local OtherRoundPlayersId
 while not SameRoundPlayersId and not OtherRoundPlayersId do

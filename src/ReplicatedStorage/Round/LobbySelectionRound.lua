@@ -17,13 +17,13 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local TweenService = game:GetService("TweenService")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
-local ObjectReplication = NexusRoundSystem:GetObjectReplicator()
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
+local ObjectReplication = NexusReplication:GetObjectReplicator()
 
-local LobbySelectionRound = NexusRoundSystem:GetResource("Common.Object.Base.ReplicatedContainer"):Extend()
+local LobbySelectionRound = NexusReplication:GetResource("Common.Object.ReplicatedContainer"):Extend()
 LobbySelectionRound:SetClassName("LobbySelectionRound")
 LobbySelectionRound:AddFromSerializeData("LobbySelectionRound")
-NexusRoundSystem:GetObjectReplicator():RegisterType("LobbySelectionRound",LobbySelectionRound)
+NexusReplication:GetObjectReplicator():RegisterType("LobbySelectionRound",LobbySelectionRound)
 
 
 
@@ -35,7 +35,7 @@ function LobbySelectionRound:__new()
     self.Name = "LobbySelectionRound"
 
     --Store the round data.
-    if NexusRoundSystem:IsServer() then
+    if NexusReplication:IsServer() then
         self.Players = ObjectReplication:CreateObject("ReplicatedTable")
         self.ReadyPlayers = ObjectReplication:CreateObject("ReplicatedTable")
         self.Timer = ObjectReplication:CreateObject("Timer")
@@ -53,7 +53,7 @@ function LobbySelectionRound:__new()
     self.MaxPlayers = 10
 
     --Initialize the selector.
-    if NexusRoundSystem:IsServer() then
+    if NexusReplication:IsServer() then
         --Update players entering and leaving the part.
         coroutine.wrap(function()
             while self.Timer.State ~= "COMPLETE" do

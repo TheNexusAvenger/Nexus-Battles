@@ -6,12 +6,12 @@ Class for a One Weapon Bomb round.
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local NexusRoundSystem = require(ReplicatedStorage:WaitForChild("NexusRoundSystem"))
+local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
 
 local OneWeaponBomb = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 OneWeaponBomb:SetClassName("OneWeaponBomb")
 OneWeaponBomb:AddFromSerializeData("OneWeaponBomb")
-NexusRoundSystem:GetObjectReplicator():RegisterType("OneWeaponBomb",OneWeaponBomb)
+NexusReplication:GetObjectReplicator():RegisterType("OneWeaponBomb",OneWeaponBomb)
 
 
 
