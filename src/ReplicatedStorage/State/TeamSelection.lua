@@ -40,8 +40,8 @@ function TeamSelection:__new()
         self.PlayerTeams = ObjectReplication:CreateObject("ReplicatedTable")
     end
     self:AddToSerialization("Finalized")
-    self:AddToSerialization("PlayerTeams","ObjectReference")
-    self:AddToSerialization("ParentRound","ObjectReference")
+    self:AddToSerialization("PlayerTeams")
+    self:AddToSerialization("ParentRound")
 
     if NexusReplication:IsServer() then
         --Connect players leaving the round.

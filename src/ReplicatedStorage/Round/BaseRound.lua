@@ -54,10 +54,10 @@ function BaseRound:__new()
     self:AddToSerialization("MapName")
     self:AddToSerialization("RoundContainer")
     self:AddToSerialization("MVPs")
-    self:AddToSerialization("Players","ObjectReference")
-    self:AddToSerialization("Spectators","ObjectReference")
-    self:AddToSerialization("EliminatedPlayerStats","ObjectReference")
-    self:AddToSerialization("Timer","ObjectReference")
+    self:AddToSerialization("Players")
+    self:AddToSerialization("Spectators")
+    self:AddToSerialization("EliminatedPlayerStats")
+    self:AddToSerialization("Timer")
 
     --Store the stats.
     self.RoundStats = {

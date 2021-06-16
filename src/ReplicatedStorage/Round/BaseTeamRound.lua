@@ -39,7 +39,7 @@ function BaseTeamRound:__new()
         self.TeamSelection = ObjectReplication:CreateObject("TeamSelection")
     end
     self:AddToSerialization("TeamColors")
-    self:AddToSerialization("TeamSelection","ObjectReference")
+    self:AddToSerialization("TeamSelection")
     if self.TeamSelection then
         self.TeamSelection:SetTeamColors(self.TeamColors)
     end

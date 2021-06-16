@@ -49,7 +49,7 @@ function TeamDestruction:__new()
         self.TeamScores:Set("Bright green",0)
         self.TeamScores:Set("Bright yellow",0)
     end
-    self:AddToSerialization("TeamScores","ObjectReference")
+    self:AddToSerialization("TeamScores")
 end
 
 --[[

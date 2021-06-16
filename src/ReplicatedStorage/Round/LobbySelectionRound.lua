@@ -45,9 +45,9 @@ function LobbySelectionRound:__new()
     self:AddToSerialization("RequiredPlayers")
     self:AddToSerialization("MaxPlayers")
     self:AddToSerialization("SelectionPart")
-    self:AddToSerialization("Players","ObjectReference")
-    self:AddToSerialization("ReadyPlayers","ObjectReference")
-    self:AddToSerialization("Timer","ObjectReference")
+    self:AddToSerialization("Players")
+    self:AddToSerialization("ReadyPlayers")
+    self:AddToSerialization("Timer")
     self.RoundName = "Unnamed"
     self.RequiredPlayers = 1
     self.MaxPlayers = 10

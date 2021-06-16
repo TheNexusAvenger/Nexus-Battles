@@ -39,7 +39,7 @@ function Dodgeball:__new()
         self.TeamScores:Set("Bright blue",0)
         self.TeamScores:Set("Bright red",0)
     end
-    self:AddToSerialization("TeamScores","ObjectReference")
+    self:AddToSerialization("TeamScores")
 end
 
 --[[
