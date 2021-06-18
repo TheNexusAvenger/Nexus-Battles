@@ -10,7 +10,6 @@ local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):Wait
 
 local TeamDeathmatch = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseTeamRound")):Extend()
 TeamDeathmatch:SetClassName("TeamDeathmatch")
-TeamDeathmatch:AddFromSerializeData("TeamDeathmatch")
 NexusReplication:GetObjectReplicator():RegisterType("TeamDeathmatch",TeamDeathmatch)
 
 

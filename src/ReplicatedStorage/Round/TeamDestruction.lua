@@ -21,7 +21,6 @@ local ObjectReplication = NexusReplication:GetObjectReplicator()
 
 local TeamDestruction = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseTeamRound")):Extend()
 TeamDestruction:SetClassName("TeamDestruction")
-TeamDestruction:AddFromSerializeData("TeamDestruction")
 NexusReplication:GetObjectReplicator():RegisterType("TeamDestruction",TeamDestruction)
 
 

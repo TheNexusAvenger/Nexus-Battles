@@ -21,7 +21,6 @@ local ObjectReplication = NexusReplication:GetObjectReplicator()
 
 local Dodgeball = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseTeamRound")):Extend()
 Dodgeball:SetClassName("Dodgeball")
-Dodgeball:AddFromSerializeData("Dodgeball")
 NexusReplication:GetObjectReplicator():RegisterType("Dodgeball",Dodgeball)
 
 

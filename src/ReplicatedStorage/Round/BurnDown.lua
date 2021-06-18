@@ -21,7 +21,6 @@ local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):Wait
 
 local BurnDown = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 BurnDown:SetClassName("BurnDown")
-BurnDown:AddFromSerializeData("BurnDown")
 NexusReplication:GetObjectReplicator():RegisterType("BurnDown",BurnDown)
 
 

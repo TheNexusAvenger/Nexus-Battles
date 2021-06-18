@@ -11,7 +11,6 @@ local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):Wait
 
 local Juggernaut = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 Juggernaut:SetClassName("Juggernaut")
-Juggernaut:AddFromSerializeData("Juggernaut")
 NexusReplication:GetObjectReplicator():RegisterType("Juggernaut",Juggernaut)
 
 

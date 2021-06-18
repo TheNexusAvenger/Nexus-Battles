@@ -24,7 +24,6 @@ local ObjectReplication = NexusReplication:GetObjectReplicator()
 
 local CaptureTheFlag = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseTeamRound")):Extend()
 CaptureTheFlag:SetClassName("CaptureTheFlag")
-CaptureTheFlag:AddFromSerializeData("CaptureTheFlag")
 NexusReplication:GetObjectReplicator():RegisterType("CaptureTheFlag",CaptureTheFlag)
 
 

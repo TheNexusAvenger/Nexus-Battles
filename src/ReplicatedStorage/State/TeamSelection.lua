@@ -15,7 +15,6 @@ local JoinTeamEvent
 
 local TeamSelection = NexusReplication:GetResource("Common.Object.ReplicatedContainer"):Extend()
 TeamSelection:SetClassName("TeamSelection")
-TeamSelection:AddFromSerializeData("TeamSelection")
 ObjectReplication:RegisterType("TeamSelection",TeamSelection)
 
 

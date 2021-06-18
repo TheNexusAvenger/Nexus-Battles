@@ -10,7 +10,6 @@ local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):Wait
 
 local OneWeaponRocketLauncher = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 OneWeaponRocketLauncher:SetClassName("OneWeaponRocketLauncher")
-OneWeaponRocketLauncher:AddFromSerializeData("OneWeaponRocketLauncher")
 NexusReplication:GetObjectReplicator():RegisterType("OneWeaponRocketLauncher",OneWeaponRocketLauncher)
 
 

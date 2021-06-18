@@ -24,7 +24,6 @@ local ObjectReplication = NexusReplication:GetObjectReplicator()
 
 local BaseRound = NexusReplication:GetResource("Common.Object.ReplicatedContainer"):Extend()
 BaseRound:SetClassName("BaseRound")
-BaseRound:AddFromSerializeData("BaseRound")
 NexusReplication:GetObjectReplicator():RegisterType("BaseRound",BaseRound)
 
 

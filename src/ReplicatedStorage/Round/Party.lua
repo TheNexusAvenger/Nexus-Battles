@@ -21,7 +21,6 @@ local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):Wait
 
 local Party = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 Party:SetClassName("Party")
-Party:AddFromSerializeData("Party")
 NexusReplication:GetObjectReplicator():RegisterType("Party",Party)
 
 

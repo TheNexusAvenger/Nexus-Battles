@@ -10,7 +10,6 @@ local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):Wait
 
 local FreeForAll = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 FreeForAll:SetClassName("FreeForAll")
-FreeForAll:AddFromSerializeData("FreeForAll")
 NexusReplication:GetObjectReplicator():RegisterType("FreeForAll",FreeForAll)
 
 

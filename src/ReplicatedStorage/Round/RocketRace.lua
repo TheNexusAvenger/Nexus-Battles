@@ -33,7 +33,6 @@ local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):Wait
 
 local RocketRace = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 RocketRace:SetClassName("RocketRace")
-RocketRace:AddFromSerializeData("RocketRace")
 NexusReplication:GetObjectReplicator():RegisterType("RocketRace",RocketRace)
 
 

@@ -10,7 +10,6 @@ local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):Wait
 
 local OneWeaponSword = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 OneWeaponSword:SetClassName("OneWeaponSword")
-OneWeaponSword:AddFromSerializeData("OneWeaponSword")
 NexusReplication:GetObjectReplicator():RegisterType("OneWeaponSword",OneWeaponSword)
 
 

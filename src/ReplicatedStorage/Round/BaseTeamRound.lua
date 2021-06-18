@@ -21,7 +21,6 @@ require(ReplicatedStorage:WaitForChild("State"):WaitForChild("TeamSelection"))
 
 local BaseTeamRound = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 BaseTeamRound:SetClassName("BaseTeamRound")
-BaseTeamRound:AddFromSerializeData("BaseTeamRound")
 ObjectReplication:RegisterType("BaseTeamRound",BaseTeamRound)
 
 

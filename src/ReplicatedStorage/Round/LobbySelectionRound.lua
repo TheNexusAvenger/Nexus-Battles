@@ -22,7 +22,6 @@ local ObjectReplication = NexusReplication:GetObjectReplicator()
 
 local LobbySelectionRound = NexusReplication:GetResource("Common.Object.ReplicatedContainer"):Extend()
 LobbySelectionRound:SetClassName("LobbySelectionRound")
-LobbySelectionRound:AddFromSerializeData("LobbySelectionRound")
 NexusReplication:GetObjectReplicator():RegisterType("LobbySelectionRound",LobbySelectionRound)
 
 
