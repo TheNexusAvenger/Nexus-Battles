@@ -9,6 +9,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Teams = game:GetService("Teams")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+local NexusReplication = ReplicatedStorageProject:GetResource("External.NexusReplication")
 local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
 local TeamSelection = ReplicatedStorageProject:GetResource("State.TeamSelection")
 local TeamSelectionTest = NexusUnitTesting.UnitTest:Extend()
@@ -60,7 +61,14 @@ function TeamSelectionTest:Setup()
                 return self.MockPlayers
             end,
         },
+
+        --Overhead for Nexus Replication.
+        Id = 1,
+        IsA = function()
+            return true
+        end,
     }
+    NexusReplication:GetObjectReplicator().ObjectRegistry[1] = self.MockRound
 
     --Create the component under testing.
     self.CuT = TeamSelection.new()
@@ -79,6 +87,9 @@ function TeamSelectionTest:Teardown()
     self.ReplicationContainer:Destroy()
     Teams:ClearAllChildren()
     ReplicatedStorageProject:Clear()
+    if ReplicatedStorage:FindFirstChild("Replication") then
+        ReplicatedStorage:FindFirstChild("Replication"):Destroy()
+    end
 end
 
 --[[
