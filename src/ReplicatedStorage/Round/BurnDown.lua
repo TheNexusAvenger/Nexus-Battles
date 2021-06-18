@@ -80,6 +80,8 @@ function BurnDown:RoundStarted()
                 local ToolCount = #PlayerLoadout
                 if ToolCount == 0 then
                     self.Timer:Complete()
+                    self.MVPs = {Player}
+                    self:BroadcastLocalEffect("DisplayAlert",Player.DisplayName.." wins!")
                     return
                 end
 

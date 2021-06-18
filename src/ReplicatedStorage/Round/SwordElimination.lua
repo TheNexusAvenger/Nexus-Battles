@@ -54,6 +54,7 @@ function SwordElimination:RoundStarted()
                 for _,OtherPlayer in pairs(self.Players:GetAll()) do
                     if Player ~= OtherPlayer then
                         self.MVPs = {OtherPlayer}
+                        self:BroadcastLocalEffect("DisplayAlert",OtherPlayer.DisplayName.." wins!")
                         break
                     end
                 end
