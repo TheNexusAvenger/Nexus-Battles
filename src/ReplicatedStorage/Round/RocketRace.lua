@@ -136,8 +136,7 @@ function RocketRace:RoundStarted()
             local DeltaTime = tick() - LastCaptureStartTime
             if DeltaTime >= CAPTURE_TIME_SECONDS then
                 self.MVPs = {CapturingPlayer}
-                self.Timer:Stop()
-                self.Timer.State = "COMPLETE"
+                self.Timer:Complete()
                 self:End()
             else
                 local TimeLeft = CAPTURE_TIME_SECONDS - DeltaTime

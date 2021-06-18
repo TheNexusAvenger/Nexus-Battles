@@ -79,8 +79,7 @@ function BurnDown:RoundStarted()
                 --End the round if there are no more weapons.
                 local ToolCount = #PlayerLoadout
                 if ToolCount == 0 then
-                    self.Timer:Stop()
-                    self.Timer.State = "COMPLETE"
+                    self.Timer:Complete()
                     return
                 end
 

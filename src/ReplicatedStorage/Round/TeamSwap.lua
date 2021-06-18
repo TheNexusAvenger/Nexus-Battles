@@ -78,8 +78,7 @@ function TeamSwap:EndIfTeamEmpty()
 
     --End the timer if there is only 1 team.
     if TotalTeams <= 1 then
-        self.Timer:Stop()
-        self.Timer.State = "COMPLETE"
+        self.Timer:Complete()
     end
 end
 

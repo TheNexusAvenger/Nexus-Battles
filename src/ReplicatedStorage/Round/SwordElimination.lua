@@ -59,8 +59,7 @@ function SwordElimination:RoundStarted()
                 end
 
                 --Stop the timer and allow the round to complete.
-                self.Timer:Stop()
-                self.Timer.State = "COMPLETE"
+                self.Timer:Complete()
             else
                 self:BroadcastLocalEffect("DisplayAlert",Player.DisplayName.." eliminated! "..tostring(#self.Players:GetAll() - PendingEliminationPlayers).." players left!")
             end

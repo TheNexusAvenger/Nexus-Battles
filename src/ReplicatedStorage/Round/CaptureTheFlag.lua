@@ -131,8 +131,7 @@ function CaptureTheFlag:RoundStarted()
     --Connect a team getting 3 or more points.
     self.TeamScores.ItemChanged:Connect(function(Index)
         if self.TeamScores:Get(Index) >= SCORE_TO_END then
-            self.Timer:Stop()
-            self.Timer.State = "COMPLETE"
+            self.Timer:Complete()
         end
     end)
 

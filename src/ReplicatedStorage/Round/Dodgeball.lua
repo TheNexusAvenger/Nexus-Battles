@@ -63,8 +63,7 @@ function Dodgeball:RoundStarted()
             if self.Timer.State ~= "COMPLETE" then
                 for _,Score in pairs(self.TeamScores:GetAll()) do
                     if Score >= SCORE_TO_END then
-                        self.Timer:Stop()
-                        self.Timer.State = "COMPLETE"
+                        self.Timer:Complete()
                         break
                     end
                 end

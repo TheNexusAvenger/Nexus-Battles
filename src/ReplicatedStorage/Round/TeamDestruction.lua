@@ -102,8 +102,7 @@ function TeamDestruction:RoundStarted()
 
         --End the round if there is 1 team left.
         if ScoresAbove0 <= 1 then
-            self.Timer:Stop()
-            self.Timer.State = "COMPLETE"
+            self.Timer:Complete()
         end
     end
 
