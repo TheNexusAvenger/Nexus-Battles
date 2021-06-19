@@ -13,7 +13,6 @@ local GameTypes = ReplicatedStorageProject:GetResource("Data.GameTypes")
 local MapTypes = ReplicatedStorageProject:GetResource("Data.MapTypes")
 local WaitAny = ReplicatedStorageProject:GetResource("State.Event.WaitAny")
 local NexusReplication = ReplicatedStorageProject:GetResource("External.NexusReplication")
-local ObjectReplicator = NexusReplication:GetObjectReplicator()
 local FeatureFlagService = ServerScriptServiceProject:GetResource("Service.FeatureFlagService")
 local RoundService = ServerScriptServiceProject:GetResource("Service.RoundService")
 
@@ -36,9 +35,9 @@ local StartSpectating = Instance.new("RemoteEvent")
 StartSpectating.Name = "StartSpectating"
 StartSpectating.Parent = LobbyReplication
 
-local LobbySelectionRounds = ObjectReplicator:CreateObject("ReplicatedContainer")
+local LobbySelectionRounds = NexusReplication:CreateObject("ReplicatedContainer")
 LobbySelectionRounds.Name = "LobbySelectionRounds"
-LobbySelectionRounds.Parent = ObjectReplicator:GetGlobalContainer()
+LobbySelectionRounds.Parent = NexusReplication:GetGlobalContainer()
 
 --Load the round options.
 for MapName,MapData in pairs(MapTypes) do
@@ -115,7 +114,7 @@ function LobbySelectionService:InitializePart(Part,RoundValidationFunction)
         RoundTypeText.Text = RoundType.DisplayName or SelectedRound.Type
 
         --Start the round for selecting players.
-        local LobbySelectionRound = ObjectReplicator:CreateObject("LobbySelectionRound")
+        local LobbySelectionRound = NexusReplication:CreateObject("LobbySelectionRound")
         if RoundType.DisplayName then LobbySelectionRound.RoundName = RoundType.DisplayName end
         if RoundType.RequiredPlayers then LobbySelectionRound.RequiredPlayers = RoundType.RequiredPlayers end
         if RoundType.MaxPlayers then LobbySelectionRound.MaxPlayers = RoundType.MaxPlayers end

@@ -20,11 +20,10 @@ local StatsSorter
 local RankScoreBonuses
 
 local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
-local ObjectReplication = NexusReplication:GetObjectReplicator()
 
 local BaseRound = NexusReplication:GetResource("Common.Object.ReplicatedContainer"):Extend()
 BaseRound:SetClassName("BaseRound")
-NexusReplication:GetObjectReplicator():RegisterType("BaseRound",BaseRound)
+NexusReplication:RegisterType("BaseRound",BaseRound)
 
 
 
@@ -42,10 +41,10 @@ function BaseRound:__new()
     self.TimerText = "TIME REMAINING"
     self.MVPs = {}
     if NexusReplication:IsServer() then
-        self.Players = ObjectReplication:CreateObject("ReplicatedTable")
-        self.Spectators = ObjectReplication:CreateObject("ReplicatedTable")
-        self.EliminatedPlayerStats = ObjectReplication:CreateObject("ReplicatedTable")
-        self.Timer = ObjectReplication:CreateObject("Timer")
+        self.Players = NexusReplication:CreateObject("ReplicatedTable")
+        self.Spectators = NexusReplication:CreateObject("ReplicatedTable")
+        self.EliminatedPlayerStats = NexusReplication:CreateObject("ReplicatedTable")
+        self.Timer = NexusReplication:CreateObject("Timer")
     end
     self:AddToSerialization("State")
     self:AddToSerialization("TimerText")

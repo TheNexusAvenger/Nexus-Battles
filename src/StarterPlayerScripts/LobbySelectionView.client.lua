@@ -12,7 +12,7 @@ local RunService = game:GetService("RunService")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusReplication = ReplicatedStorageProject:GetResource("External.NexusReplication")
-local LobbySelectionRounds = NexusReplication:GetObjectReplicator():GetGlobalContainer():WaitForChildBy("Name","LobbySelectionRounds")
+local LobbySelectionRounds = NexusReplication:GetGlobalContainer():WaitForChildBy("Name","LobbySelectionRounds")
 local SetReady = ReplicatedStorageProject:GetResource("Replication.Lobby.SetReady")
 local CurrentRoundState = ReplicatedStorageProject:GetResource("State.CurrentRound")
 local GreenTextButtonFactory = ReplicatedStorageProject:GetResource("UI.AudibleTextButtonFactory").CreateDefault(Color3.new(0,170/255,0))

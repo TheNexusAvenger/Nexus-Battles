@@ -21,7 +21,6 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 
 local LobbySpawnLocation = Workspace:WaitForChild("Lobby"):WaitForChild("LobbySpawnLocation")
 local NexusReplication = ReplicatedStorageProject:GetResource("External.NexusReplication")
-local ObjectReplicator = NexusReplication:GetObjectReplicator()
 local MapTypes = ReplicatedStorageProject:GetResource("Data.MapTypes")
 local Maps = ServerStorage:WaitForChild("Maps")
 local CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
@@ -48,9 +47,9 @@ local JoinTeam = Instance.new("RemoteEvent")
 JoinTeam.Name = "JoinTeam"
 JoinTeam.Parent = RoundReplication
 
-local ActiveRounds = ObjectReplicator:CreateObject("ReplicatedContainer")
+local ActiveRounds = NexusReplication:CreateObject("ReplicatedContainer")
 ActiveRounds.Name = "ActiveRounds"
-ActiveRounds.Parent = ObjectReplicator:GetGlobalContainer()
+ActiveRounds.Parent = NexusReplication:GetGlobalContainer()
 
 --Set up the map containers and physics groups so only the player's map is visible.
 local ActiveMaps = Instance.new("Folder")
@@ -144,7 +143,7 @@ function RoundService:StartRound(RoundType,MapType,Players)
 
     --Load the round.
     local RoundContainer = GetAllocatedRoundContainer()
-    local Round = ObjectReplicator:CreateObject(RoundType)
+    local Round = NexusReplication:CreateObject(RoundType)
     Round.RoundContainer = RoundContainer
     RoundContainer.Name = tostring(Round.Id)
 

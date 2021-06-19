@@ -21,7 +21,7 @@ local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):Wait
 
 local RocksVsBazookas = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseTeamRound")):Extend()
 RocksVsBazookas:SetClassName("RocksVsBazookas")
-NexusReplication:GetObjectReplicator():RegisterType("RocksVsBazookas",RocksVsBazookas)
+NexusReplication:RegisterType("RocksVsBazookas",RocksVsBazookas)
 
 
 

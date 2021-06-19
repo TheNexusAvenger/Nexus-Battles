@@ -17,11 +17,10 @@ local TEAM_COLOR_NAME_TO_NAME = {
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
-local ObjectReplication = NexusReplication:GetObjectReplicator()
 
 local Dodgeball = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseTeamRound")):Extend()
 Dodgeball:SetClassName("Dodgeball")
-NexusReplication:GetObjectReplicator():RegisterType("Dodgeball",Dodgeball)
+NexusReplication:RegisterType("Dodgeball",Dodgeball)
 
 
 
@@ -34,7 +33,7 @@ function Dodgeball:__new()
 
     --Set up the scores.
     if NexusReplication:IsServer() then
-        self.TeamScores = ObjectReplication:CreateObject("ReplicatedTable")
+        self.TeamScores = NexusReplication:CreateObject("ReplicatedTable")
         self.TeamScores:Set("Bright blue",0)
         self.TeamScores:Set("Bright red",0)
     end

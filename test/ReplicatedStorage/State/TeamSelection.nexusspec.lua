@@ -68,7 +68,7 @@ function TeamSelectionTest:Setup()
             return true
         end,
     }
-    NexusReplication:GetObjectReplicator().ObjectRegistry[1] = self.MockRound
+    NexusReplication.ObjectRegistry[1] = self.MockRound
 
     --Create the component under testing.
     self.CuT = TeamSelection.new()

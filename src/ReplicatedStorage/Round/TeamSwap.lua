@@ -10,7 +10,7 @@ local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):Wait
 
 local TeamSwap = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseTeamRound")):Extend()
 TeamSwap:SetClassName("TeamSwap")
-NexusReplication:GetObjectReplicator():RegisterType("TeamSwap",TeamSwap)
+NexusReplication:RegisterType("TeamSwap",TeamSwap)
 
 
 

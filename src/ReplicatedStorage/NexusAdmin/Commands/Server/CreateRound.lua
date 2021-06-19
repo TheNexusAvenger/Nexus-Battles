@@ -10,8 +10,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
 local NexusReplication = ReplicatedStorageProject:GetResource("External.NexusReplication")
-local ObjectReplicator = NexusReplication:GetObjectReplicator()
-local ActiveRounds = ObjectReplicator:GetGlobalContainer():WaitForChildBy("Name","ActiveRounds")
+local ActiveRounds = NexusReplication:GetGlobalContainer():WaitForChildBy("Name","ActiveRounds")
 local RoundService = ServerScriptServiceProject:GetResource("Service.RoundService")
 local CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
 

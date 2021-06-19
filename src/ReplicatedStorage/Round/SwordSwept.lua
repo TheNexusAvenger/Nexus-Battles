@@ -21,7 +21,7 @@ local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):Wait
 
 local SwordSwept = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseTeamRound")):Extend()
 SwordSwept:SetClassName("SwordSwept")
-NexusReplication:GetObjectReplicator():RegisterType("SwordSwept",SwordSwept)
+NexusReplication:RegisterType("SwordSwept",SwordSwept)
 
 
 

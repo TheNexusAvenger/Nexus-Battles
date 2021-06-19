@@ -13,7 +13,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 
 local CurrentRoundState = ReplicatedStorageProject:GetResource("State.CurrentRound")
 local NexusReplication = ReplicatedStorageProject:GetResource("External.NexusReplication")
-local ActiveRounds = NexusReplication:GetObjectReplicator():GetGlobalContainer():WaitForChildBy("Name","ActiveRounds")
+local ActiveRounds = NexusReplication:GetGlobalContainer():WaitForChildBy("Name","ActiveRounds")
 local SameRoundPlayersId
 local OtherRoundPlayersId
 while not SameRoundPlayersId and not OtherRoundPlayersId do

@@ -10,12 +10,11 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 local TeamService
 
 local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
-local ObjectReplication = NexusReplication:GetObjectReplicator()
 local JoinTeamEvent
 
 local TeamSelection = NexusReplication:GetResource("Common.Object.ReplicatedContainer"):Extend()
 TeamSelection:SetClassName("TeamSelection")
-ObjectReplication:RegisterType("TeamSelection",TeamSelection)
+NexusReplication:RegisterType("TeamSelection",TeamSelection)
 
 
 
@@ -36,7 +35,7 @@ function TeamSelection:__new()
     self.TotalTeams = 0
     self.TeamColors = {}
     if NexusReplication:IsServer() then
-        self.PlayerTeams = ObjectReplication:CreateObject("ReplicatedTable")
+        self.PlayerTeams = NexusReplication:CreateObject("ReplicatedTable")
     end
     self:AddToSerialization("Finalized")
     self:AddToSerialization("PlayerTeams")

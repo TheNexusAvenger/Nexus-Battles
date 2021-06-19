@@ -10,7 +10,7 @@ local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):Wait
 
 local KingOfTheHill = require(ReplicatedStorage:WaitForChild("Round"):WaitForChild("BaseRound")):Extend()
 KingOfTheHill:SetClassName("KingOfTheHill")
-NexusReplication:GetObjectReplicator():RegisterType("KingOfTheHill",KingOfTheHill)
+NexusReplication:RegisterType("KingOfTheHill",KingOfTheHill)
 
 
 

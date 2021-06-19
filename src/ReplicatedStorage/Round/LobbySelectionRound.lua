@@ -18,11 +18,10 @@ local RunService = game:GetService("RunService")
 local TweenService = game:GetService("TweenService")
 
 local NexusReplication = require(ReplicatedStorage:WaitForChild("External"):WaitForChild("NexusReplication"))
-local ObjectReplication = NexusReplication:GetObjectReplicator()
 
 local LobbySelectionRound = NexusReplication:GetResource("Common.Object.ReplicatedContainer"):Extend()
 LobbySelectionRound:SetClassName("LobbySelectionRound")
-NexusReplication:GetObjectReplicator():RegisterType("LobbySelectionRound",LobbySelectionRound)
+NexusReplication:RegisterType("LobbySelectionRound",LobbySelectionRound)
 
 
 
@@ -35,9 +34,9 @@ function LobbySelectionRound:__new()
 
     --Store the round data.
     if NexusReplication:IsServer() then
-        self.Players = ObjectReplication:CreateObject("ReplicatedTable")
-        self.ReadyPlayers = ObjectReplication:CreateObject("ReplicatedTable")
-        self.Timer = ObjectReplication:CreateObject("Timer")
+        self.Players = NexusReplication:CreateObject("ReplicatedTable")
+        self.ReadyPlayers = NexusReplication:CreateObject("ReplicatedTable")
+        self.Timer = NexusReplication:CreateObject("Timer")
         self.Timer:SetDuration(ROUND_SELECTION_DURATION)
     end
     self:AddToSerialization("RoundName")
