@@ -11,6 +11,7 @@ local TOTAL_COINS_TO_ANIMATE = 20
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local HttpService = game:GetService("HttpService")
+local DataStoreService = game:GetService("DataStoreService")
 local MarketplaceService = game:GetService("MarketplaceService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
@@ -73,6 +74,16 @@ function MarketplaceService.ProcessReceipt(ReceiptInfo)
         RobuxSpent = ReceiptInfo.CurrencySpent,
     })
     PurchaseHistoryStat:Set(HttpService:JSONEncode(PurchaseHistory))
+
+    --Add the purchase to the global purchase records in the background.
+    coroutine.wrap(function()
+        local Worked,Error = pcall(function()
+            DataStoreService:GetDataStore("RobuxPurchaseHistory"):IncrementAsync(tostring(ReceiptInfo.ProductId),1)
+        end)
+        if not Worked then
+            warn("Failed to increment purchase for "..tostring(ReceiptInfo.ProductId).." because "..tostring(Error))
+        end
+    end)()
 
     --Handle the purchase.
     if RobuxItem.Coins then
