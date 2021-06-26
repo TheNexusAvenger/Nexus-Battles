@@ -129,9 +129,7 @@ function Dodgeball:RunDoggeballMatch()
     }
     for TeamColorName,TeamPlayers in pairs(ActiveMatchPlayers) do
         local TeamZone = Zones[TeamColorName]
-        local ZonePosition,ZoneSize2 = TeamZone.Position,TeamZone.Size/2
-        local MinX,MaxX = ZonePosition.X - ZoneSize2.X,ZonePosition.X + ZoneSize2.X
-        local MinZ,MaxZ = ZonePosition.Z - ZoneSize2.Z,ZonePosition.Z + ZoneSize2.Z
+        local ZoneSize2 = TeamZone.Size/2
         if TeamZone then
             for _,Player in pairs(TeamPlayers) do
                 local Character = Player.Character
@@ -155,8 +153,8 @@ function Dodgeball:RunDoggeballMatch()
 
                             --Kill the player if the exit the zone.
                             while MatchActive and Humanoid.Health > 0 do
-                                local CharacterPosition = HumanoidRootPart.Position
-                                if CharacterPosition.X < MinX or CharacterPosition.X > MaxX or CharacterPosition.Z < MinZ or CharacterPosition.Z > MaxZ then
+                                local LocalCharacterPosition = TeamZone.CFrame:Inverse() * HumanoidRootPart.CFrame
+                                if LocalCharacterPosition.X < -ZoneSize2.X or LocalCharacterPosition.X > ZoneSize2.X or LocalCharacterPosition.Z < -ZoneSize2.Z or LocalCharacterPosition.Z > ZoneSize2.Z then
                                     Humanoid.Health = 0
                                     LocalEffectService:PlayLocalEffect(Player,"DisplayAlert","Don't cross the line!")
                                 end
