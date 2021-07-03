@@ -19,8 +19,8 @@ end
 
 --Initialize Nexus Replication's global container.
 local NexusReplication = Project:GetResource("External.NexusReplication")
-NexusReplication:GetGlobalContainer()
 require(ReplicatedStorage:WaitForChild("State"):WaitForChild("TeamSelection"))
+NexusReplication:GetGlobalContainer()
 
 
 
