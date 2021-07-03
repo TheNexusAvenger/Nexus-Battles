@@ -31,6 +31,7 @@ LoadingScreenCompleteValue.Parent = Players.LocalPlayer
 
 local LoadingScreenContainer = Instance.new("ScreenGui")
 LoadingScreenContainer.Name = "LoadingScreen"
+LoadingScreenContainer.ResetOnSpawn = false
 LoadingScreenContainer.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
 
 local LoadingLogoContainer = Instance.new("Frame")
