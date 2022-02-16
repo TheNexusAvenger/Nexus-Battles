@@ -13,7 +13,7 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
-local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
+local NexusEvent = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEvent")
 local BaseEntry = ReplicatedStorageProject:GetResource("UI.PlayerList.BaseEntry")
 
 local PlayerEntry = BaseEntry:Extend()
@@ -28,7 +28,7 @@ function PlayerEntry:__new()
     self:InitializeSuper()
 
     --Connect the events.
-    self.StatChanged = NexusEventCreator:CreateEvent()
+    self.StatChanged = NexusEvent.new()
     self:AddPropertyFinalizer("Player",function(_,Player)
         if Player then
             self.MainText.Text = Player.DisplayName

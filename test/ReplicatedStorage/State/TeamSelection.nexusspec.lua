@@ -10,7 +10,7 @@ local Teams = game:GetService("Teams")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local NexusReplication = ReplicatedStorageProject:GetResource("External.NexusReplication")
-local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
+local NexusEvent = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEvent")
 local TeamSelection = ReplicatedStorageProject:GetResource("State.TeamSelection")
 local TeamSelectionTest = NexusUnitTesting.UnitTest:Extend()
 
@@ -48,7 +48,7 @@ function TeamSelectionTest:Setup()
     --Create a mock round.
     self.MockRound = {
         Players = {
-            ItemRemoved = NexusEventCreator:CreateEvent(),
+            ItemRemoved = NexusEvent.new(),
             Contains = function(_,Player)
                 for _,OtherPlayer in pairs(self.MockPlayers) do
                     if Player == OtherPlayer then

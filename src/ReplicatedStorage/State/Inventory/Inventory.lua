@@ -14,7 +14,7 @@ local HttpService = game:GetService("HttpService")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local Armor = ReplicatedStorageProject:GetResource("Data.Armor")
-local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
+local NexusEvent = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEvent")
 
 local Inventory = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusObject"):Extend()
 Inventory:SetClassName("Inventory")
@@ -41,7 +41,7 @@ function Inventory:__new(InventoryStringValue)
     self:InitializeSuper()
 
     --Create the container.
-    self.InventoryChanged = NexusEventCreator:CreateEvent()
+    self.InventoryChanged = NexusEvent.new()
     self.InventoryStringValue = InventoryStringValue
     self.LastInventoryString = InventoryStringValue.Value
     self:Reload()

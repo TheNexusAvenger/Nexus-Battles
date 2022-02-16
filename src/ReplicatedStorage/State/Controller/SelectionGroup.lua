@@ -8,7 +8,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
-local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
+local NexusEvent = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEvent")
 
 local SelectionGroup = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
 SelectionGroup:SetClassName("SelectionGroup")
@@ -23,7 +23,7 @@ function SelectionGroup:__new()
 
     --Set up the initial state.
     self.Frames = {}
-    self.GroupChanged = NexusEventCreator:CreateEvent()
+    self.GroupChanged = NexusEvent.new()
 end
 
 --[[

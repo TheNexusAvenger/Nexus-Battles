@@ -10,15 +10,15 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusReplication = ReplicatedStorageProject:GetResource("External.NexusReplication")
-local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
+local NexusEvent = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEvent")
 local ActiveRounds = NexusReplication:GetGlobalContainer():WaitForChildBy("Name","ActiveRounds")
 local NexusObject = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusObject")
 
 local CurrentRound = NexusObject:Extend()
 CurrentRound:SetClassName("CurrentRound")
-CurrentRound.CurrentRoundChanged = NexusEventCreator:CreateEvent()
-CurrentRound.CurrentPlayingRoundChanged = NexusEventCreator:CreateEvent()
-CurrentRound.CurrentSpectatingRoundChanged = NexusEventCreator:CreateEvent()
+CurrentRound.CurrentRoundChanged = NexusEvent.new()
+CurrentRound.CurrentPlayingRoundChanged = NexusEvent.new()
+CurrentRound.CurrentSpectatingRoundChanged = NexusEvent.new()
 
 
 --[[

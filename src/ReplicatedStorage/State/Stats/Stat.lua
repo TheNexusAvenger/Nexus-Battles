@@ -8,7 +8,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
-local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
+local NexusEvent = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEvent")
 
 local Stat = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusObject"):Extend()
 Stat:SetClassName("Stat")
@@ -25,7 +25,7 @@ function Stat:__new(ValueObject)
     self.ValueObject = ValueObject
 
     --Set up the events.
-    self.StatChanged = NexusEventCreator:CreateEvent()
+    self.StatChanged = NexusEvent.new()
     ValueObject:GetPropertyChangedSignal("Value"):Connect(function()
         self:Set(self.ValueObject.Value)
     end)

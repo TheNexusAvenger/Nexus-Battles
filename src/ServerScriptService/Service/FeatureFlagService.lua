@@ -13,13 +13,13 @@ local Armor = ReplicatedStorageProject:GetResource("Data.Armor")
 local GameTypes = ReplicatedStorageProject:GetResource("Data.GameTypes")
 local MapTypes = ReplicatedStorageProject:GetResource("Data.MapTypes")
 local RobuxItems = ReplicatedStorageProject:GetResource("Data.RobuxItems")
-local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
+local NexusEvent = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEvent")
 local NexusAdminFeatureFlags
 
 local FeatureFlagService = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusInstance"):Extend()
 FeatureFlagService:SetClassName("FeatureFlagService")
-FeatureFlagService.RoundFeatureFlagChanged = NexusEventCreator:CreateEvent()
-FeatureFlagService.MeshDeformationFeatureFlagChanged = NexusEventCreator:CreateEvent()
+FeatureFlagService.RoundFeatureFlagChanged = NexusEvent.new()
+FeatureFlagService.MeshDeformationFeatureFlagChanged = NexusEvent.new()
 
 
 

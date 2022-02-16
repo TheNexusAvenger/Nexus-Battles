@@ -8,7 +8,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
-local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
+local NexusEvent = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEvent")
 
 local CharacterModifiers = ReplicatedStorageProject:GetResource("External.NexusInstance.NexusObject"):Extend()
 CharacterModifiers:SetClassName("CharacterModifiers")
@@ -26,7 +26,7 @@ function CharacterModifiers:__new(Character)
     ModifiersContainer.Name = "Modifiers"
     ModifiersContainer.Parent = Character
     self.ModifiersContainer = ModifiersContainer
-    self.ModifierChanged = NexusEventCreator:CreateEvent()
+    self.ModifierChanged = NexusEvent.new()
 
     --Connect the events.
     self.Events = {}

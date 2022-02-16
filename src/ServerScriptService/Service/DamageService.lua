@@ -21,7 +21,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 
-local NexusEventCreator = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEventCreator")
+local NexusEvent = ReplicatedStorageProject:GetResource("External.NexusInstance.Event.NexusEvent")
 local CoinService = ServerScriptServiceProject:GetResource("Service.CoinService")
 local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 local LocalEffectService = ServerScriptServiceProject:GetResource("Service.LocalEffectService")
@@ -258,7 +258,7 @@ Returns the KO event for a player.
 --]]
 function DamageService:GetKOEvent(Player)
     if not self.PlayerKOEvents[Player] then
-        self.PlayerKOEvents[Player] = NexusEventCreator:CreateEvent()
+        self.PlayerKOEvents[Player] = NexusEvent.new()
     end
     return self.PlayerKOEvents[Player]
 end
@@ -268,7 +268,7 @@ Returns the WO event for a player.
 --]]
 function DamageService:GetWOEvent(Player)
     if not self.PlayerWOEvents[Player] then
-        self.PlayerWOEvents[Player] = NexusEventCreator:CreateEvent()
+        self.PlayerWOEvents[Player] = NexusEvent.new()
     end
     return self.PlayerWOEvents[Player]
 end
