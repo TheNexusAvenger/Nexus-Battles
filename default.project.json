@@ -8,10 +8,7 @@
             "$path": "src/Workspace",
             "$properties": {
                 "FilteringEnabled": true,
-                "SignalBehavior": {
-                    "Type": "Enum",
-                    "Value": 2
-                }
+                "SignalBehavior": "Deferred"
             },
             "Terrain": {
                 "$className": "Terrain"
@@ -31,10 +28,7 @@
                 "Brightness": 2,
                 "ClockTime": 0,
                 "GlobalShadows": true,
-                "Technology": {
-                    "Type": "Enum",
-                    "Value": 4
-                }
+                "Technology": "Future"
             }
         },
         "ReplicatedFirst": {
